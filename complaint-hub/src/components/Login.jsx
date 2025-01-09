@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"; // Added useNavigate
+import axios from "axios"; // Import axios
 import "../main.css";
 import Validation from "./LoginValidation";
 
@@ -9,6 +10,7 @@ function Login() {
     password: "",
   });
   const [errors, setErrors] = useState({});
+  const [loginError, setLoginError] = useState(""); // Added state for login errors
   const navigate = useNavigate(); // Initialize navigate
 
   const handleInput = (event) => {
@@ -18,13 +20,35 @@ function Login() {
     }));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
     const validationErrors = Validation(values);
     setErrors(validationErrors);
 
+    // Proceed only if there are no validation errors
     if (Object.keys(validationErrors).length === 0) {
-      navigate("/home"); // Navigate to the Home page if validation passes
+      try {
+        const response = await axios.post(
+          `${process.env.REACT_APP_API_URL}/login`, // Use correct API URL
+          {
+            username: values.username, // Use correct field name
+            password: values.password, // Use correct field name
+          }
+        );
+
+        // Save the token to local storage
+        localStorage.setItem("token", response.data.token);
+
+        // Redirect or show success message
+        console.log("Login successful:", response.data);
+        setLoginError(""); // Clear any previous login error
+        alert("Login successful!");
+        navigate("/home"); // Redirect to home on successful login
+      } catch (err) {
+        console.error("Error:", err.response?.data || err.message);
+        setLoginError(err.response?.data?.error || "Invalid username or password");
+      }
     }
   };
 
@@ -44,7 +68,10 @@ function Login() {
           </div>
           <h2 className="heading">LOGIN</h2>
           <p className="sub-text">Enter Login Credentials</p>
-          <form onSubmit={handleSubmit}>
+          {loginError && (
+            <p className="error-text">{loginError}</p>
+          )}
+          <form onSubmit={handleLogin}>
             {/* Username Field */}
             <div className="form-group">
               <label htmlFor="username">Username</label>
