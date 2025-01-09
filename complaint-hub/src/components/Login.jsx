@@ -34,7 +34,7 @@ function Login() {
         <div className="card">
           <div className="logo-section">
             <img
-              src="../assets/resolvIT-logo.png"
+              src="resolvIT-logo.png"
               alt="ResolvIT Logo"
               className="logo"
             />
