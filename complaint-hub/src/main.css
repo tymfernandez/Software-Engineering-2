@@ -758,6 +758,22 @@ html, body {
   margin-bottom: 15px; /* Adds spacing between the error and the form */
   display: block; /* Ensures it spans the full width */
 }
+.signup-text {
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.signup-link {
+  color: #007bff; /* Adjust to your theme's color */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
 
 
 /*Home page*/

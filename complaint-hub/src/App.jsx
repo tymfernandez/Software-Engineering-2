@@ -5,11 +5,13 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Sidebar from "./components/Sidebar";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import BlotterForm from "./components/BlotterForm";
 import Login from "./components/Login";
+import SignUp from "./components/signup";
 import Form7 from "./components/Form7";
 import Form8 from "./components/Form8";
 import Form9 from "./components/Form9";
@@ -47,6 +49,7 @@ const App = () => {
         <Routes>
           {/* Login Page (Default Route) */}
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
