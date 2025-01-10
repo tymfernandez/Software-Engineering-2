@@ -29,7 +29,7 @@ function Login() {
 
       try {
         const result = await axios.post("http://localhost:3001/login", {
-          username: values.username,
+          username: values.username.toLowerCase(), // Convert username to lowercase
           password: values.password,
         });
         console.log("Server response:", result.data); // Debugging response

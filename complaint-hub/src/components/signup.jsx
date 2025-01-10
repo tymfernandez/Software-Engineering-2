@@ -6,14 +6,13 @@ import "../main.css";
 function Signup() {
   const [values, setValues] = useState({
     name: "",
-    position: "",
+    position: "Secretary", // Default value for dropdown
     username: "",
     password: "",
   });
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [passwordStrength, setPasswordStrength] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [errors, setErrors] = useState({});
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -86,17 +85,19 @@ function Signup() {
               />
             </div>
 
-            {/* Position Field */}
+            {/* Position Dropdown */}
             <div className="form-group">
               <label htmlFor="position">Position</label>
-              <input
-                type="text"
+              <select
                 name="position"
                 value={values.position}
                 onChange={handleInput}
                 className="input"
                 required
-              />
+              >
+                <option value="Secretary">Secretary</option>
+                <option value="Brgy. Captain">Brgy. Captain</option>
+              </select>
             </div>
 
             {/* Username Field */}
