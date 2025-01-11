@@ -1596,7 +1596,7 @@ html, body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
-  width: 50%;
+  width: 50% !important;
 }
 
 .form7-title {
@@ -4827,9 +4827,9 @@ label {
 }
 
 /*Form20 page*/
-.katibayan-form-page {
+.form20-page {
   font-family: Arial, sans-serif;
-  background-image: url("blotterformpage.png");
+  background-color: #e7f6ff;
   min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
@@ -4841,7 +4841,7 @@ label {
   margin: 0;
 }
 
-.tanggapan-form-container {
+.form20-container {
   background-color: white;
   padding: 50px 50px;
   border-radius: 10px;
@@ -4851,35 +4851,61 @@ label {
   max-width: 850px;
 }
 
-h1 {
-  font-family: "Inria Sans", serif;
-  font-size: 3.2rem;
+.form20-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
   color: black;
   margin-top: 50px;
   margin-bottom: 5px;
   text-align: center;
 }
 
-.form22 h2 {
-  font-family: "Inria Sans", serif;
-  font-size: 2rem;
+.form20-subtitle {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.centered-text {
+/* Ensure the parent container centers its children */
+.form20-container, .form20-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form20-head, .form20-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form20-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form20-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.form20-centered-text {
   font-size: 1.2rem;
   color: black;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.centered-label {
+.form20-centered-label {
   margin-bottom: 30px;
 }
 
-.kp-input {
+.form20-kp-input {
   display: flex;
   gap: 5px;
   justify-content: flex-end;
@@ -4887,29 +4913,29 @@ h1 {
   line-height: 1.5;
 }
 
-.kp-input input {
+.form20-kp-input input {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kp {
+.form20-kp {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.kpcase {
+.form20-kpcase {
   text-align: right;
   margin-bottom: 8px;
 }
 
-.kp input {
+.form20-kp input {
   width: 120px;
 }
 
-.head {
+.form20-head {
   text-align: center;
 }
 
@@ -4923,67 +4949,77 @@ h1 {
   width: 250px;
 }
 
-.sumbong {
+.form20-sumbong {
   margin-bottom: 25px;
   margin-left: 15px !important;
 }
 
-.ipinagsusumbong {
+.form20-ipinagsusumbong {
   text-align: center;
   margin-bottom: 25px;
   margin-left: 35px;
 }
 
-#sumbong-kay {
+#form20-maysumbong {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form20-ipinagsumbong {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form20-sumbong-kay {
   margin-left: 40px;
   width: 270px;
 }
 
-.blg-input {
+.form20-blg-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.blg-input input {
+.form20-blg-input input {
   width: 50px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.ukol-input {
+.form20-ukol-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.ukol-input input {
-  width: 160px !important;
+.form20-ukol-input input {
+  width: 155px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kay-input {
+.form20-kay-input {
   display: flex;
   gap: 1px;
   align-items: center;
 }
 
-.kay-input input {
+.form20-kay-input input {
   height: 38px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#kay {
+#form20-kay {
   width: 270px;
 }
 
-.form-input {
+.form20-form-input {
   display: flex;
   gap: 5px;
   align-items: center;
@@ -4991,64 +5027,64 @@ h1 {
   line-height: 1.5;
 }
 
-.form-input input {
+.form20-form-input input {
   width: 110px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.justify {
+.form20-justify {
   text-align: justify;
 }
 
-#year {
+#form20-year {
   width: 40px;
 }
 
-#day {
+#form20-day {
   width: 50px;
 }
 
-#time {
+#form20-time {
   width: 70px;
 }
 
-#name {
+#form20-name {
   width: 300px !important;
   height: 30px;
   box-sizing: border-box;
 }
 
-#pangalan {
+#form20-pangalan {
   width: 290px;
   height: 30px;
   box-sizing: border-box;
 }
 
-.indent {
+.form20-indent {
   text-indent: 100px;
   text-align: justify;
 }
 
-.indent1 {
+.form20-indent1 {
   text-indent: 50px;
   text-align: justify;
 }
 
-.indent2 {
+.form20-indent2 {
   margin-left: 100px;
   margin-right: 80px;
   text-align: justify;
 }
 
-#reason {
+#form20-reason {
+  align-items: center;
   height: 30px;
   width: 180px;
 }
 
-.paragraph {
-  text-indent: 50px;
+.form20-paragraph {
   font-weight: bold;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -5066,35 +5102,35 @@ label {
   text-align: left;
 }
 
-.signature-section {
+.form20-signature-section {
   display: flex;
   align-items: center;
 }
 
-.signature-line {
+.form20-signature-line {
   border-top: 1px solid black;
   margin-left: 10px !important;
   width: 250px !important;
 }
 
-.sig-text {
+.form20-sig-text {
   text-align: left !important;
   margin-top: 0px !important;
   margin-left: 150px !important;
 }
 
-.signtext {
+.form20-signtext {
   text-align: left !important;
   font-weight: bold;
 }
 
-.sign-line {
+.form20-sign-line {
   border-top: 1px solid black;
   width: 205px !important;
   margin-left: auto !important;
 }
 
-.sign-text {
+.form20-sign-text {
   justify-content: flex-end;
   margin-top: 10px;
   font-weight: bold;
@@ -5103,7 +5139,7 @@ label {
   margin-right: 35px !important;
 }
 
-.button-group {
+.form20-button-group {
   display: flex;
   justify-content: space-evenly;
   gap: 15px;
@@ -5111,8 +5147,8 @@ label {
   margin-bottom: 50px;
 }
 
-.print-button,
-.next-button {
+.form20-print-button,
+.form20-next-button {
   background-color: #0056b3;
   color: white;
   font-weight: bold;
@@ -5124,17 +5160,20 @@ label {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.print-button:hover {
-  background-color: #003d82;
+
+.form20-print-button:hover {
+  background-color: #000000;
   transform: scale(1.02);
 }
-.next-button:hover {
-  background-color: #003d82;
+
+.form20-next-button:hover {
+  background-color: #000000;
   color: #ffffff;
   transform: scale(1.02);
 }
-.print-button:active,
-.next-button:active {
+
+.form20-print-button:active,
+.form20-next-button:active {
   transform: scale(0.98);
 }
 
@@ -5146,9 +5185,9 @@ label {
 }
 
 /*Form21 page*/
-.katibayan-form-page {
+.form21-page {
   font-family: Arial, sans-serif;
-  background-image: url("blotterformpage.png");
+  background-color: #e7f6ff;
   min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
@@ -5160,7 +5199,7 @@ label {
   margin: 0;
 }
 
-.tanggapan-form-container {
+.form21-container {
   background-color: white;
   padding: 50px 50px;
   border-radius: 10px;
@@ -5170,35 +5209,61 @@ label {
   max-width: 850px;
 }
 
-h1 {
-  font-family: "Inria Sans", serif;
-  font-size: 3.2rem;
+.form21-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
   color: black;
   margin-top: 50px;
   margin-bottom: 5px;
   text-align: center;
 }
 
-h2 {
-  font-family: "Inria Sans", serif;
-  font-size: 2rem;
+.form21-subtitle {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.centered-text {
+/* Ensure the parent container centers its children */
+.form21-container, .form21-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form21-head, .form21-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form21-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form21-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.form21-centered-text {
   font-size: 1.2rem;
   color: black;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.centered-label {
+.form21-centered-label {
   margin-bottom: 30px;
 }
 
-.kp-input {
+.form21-kp-input {
   display: flex;
   gap: 5px;
   justify-content: flex-end;
@@ -5206,29 +5271,29 @@ h2 {
   line-height: 1.5;
 }
 
-.kp-input input {
+.form21-kp-input input {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kp {
+.form21-kp {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.kpcase {
+.form21-kpcase {
   text-align: right;
   margin-bottom: 8px;
 }
 
-.kp input {
+.form21-kp input {
   width: 120px;
 }
 
-.head {
+.form21-head {
   text-align: center;
 }
 
@@ -5242,67 +5307,77 @@ h2 {
   width: 250px;
 }
 
-.sumbong {
+#form21-maysumbong {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+#form21-ipinagsumbong {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.form21-sumbong {
   margin-bottom: 25px;
   margin-left: 15px !important;
 }
 
-.ipinagsusumbong {
+.form21-ipinagsusumbong {
   text-align: center;
   margin-bottom: 25px;
   margin-left: 35px;
 }
 
-#sumbong-kay {
+.form21-sumbong-kay {
   margin-left: 40px;
   width: 270px;
 }
 
-.blg-input {
+.form21-blg-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.blg-input input {
+.form21-blg-input input {
   width: 50px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.ukol-input {
+.form21-ukol-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.ukol-input input {
-  width: 160px !important;
+.form21-ukol-input input {
+  width: 155px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kay-input {
+.form21-kay-input {
   display: flex;
   gap: 1px;
   align-items: center;
 }
 
-.kay-input input {
+.form21-kay-input input {
   height: 38px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#kay {
+.form21-kay {
   width: 270px;
 }
 
-.form-input {
+.form21-form-input {
   display: flex;
   gap: 5px;
   align-items: center;
@@ -5310,52 +5385,51 @@ h2 {
   line-height: 1.5;
 }
 
-.form-input input {
+.form21-form-input input {
   width: 110px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.justify {
+.form21-justify {
   text-align: justify;
 }
 
-#year {
+#form21-year {
   width: 40px;
 }
 
-#day {
+#form21-day {
   width: 50px;
 }
 
-#time {
+#form21-time {
   width: 70px;
 }
 
-#date {
+#form21-date {
   width: 200px !important;
 }
 
-#name {
+#form21-name {
   width: 300px !important;
   height: 30px;
   box-sizing: border-box;
 }
 
-#pangalan {
+#form21-pangalan {
   width: 240px !important;
   height: 30px;
   box-sizing: border-box;
 }
 
-.indent {
+.form21-indent {
   text-indent: 50px;
   text-align: justify;
 }
 
-.paragraph {
-  text-indent: 50px;
+.form21-paragraph {
   font-weight: bold;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -5373,39 +5447,45 @@ label {
   text-align: left;
 }
 
-.signature-section {
+.form21-signature-section {
   display: flex;
   align-items: center;
 }
 
-.signature-line {
+.form21-signature-line {
   border-top: 1px solid black;
   margin-left: 10px !important;
   width: 250px !important;
 }
 
-.sig-text {
+.form21-sig-text {
   text-align: left !important;
   margin-top: 0px !important;
-  margin-left: 120px !important;
+  margin-left: 117px !important;
+  font-weight: bold;
 }
 
-.sign-line {
+.form21-sign-line {
   border-top: 1px solid black;
   width: 205px !important;
   margin-left: auto !important;
 }
 
-.sign-text {
+.form21-signtext {
+  text-align: left !important;
+  font-weight: bold;
+}
+
+.form21-sign-text {
   justify-content: flex-end;
   margin-top: 10px;
   font-weight: bold;
   font-style: normal !important;
   text-align: right !important;
-  margin-right: 30px !important;
+  margin-right: 35px !important;
 }
 
-.button-group {
+.form21-button-group {
   display: flex;
   justify-content: space-evenly;
   gap: 15px;
@@ -5413,8 +5493,8 @@ label {
   margin-bottom: 50px;
 }
 
-.print-button,
-.next-button {
+.form21-print-button,
+.form21-next-button {
   background-color: #0056b3;
   color: white;
   font-weight: bold;
@@ -5426,19 +5506,20 @@ label {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.print-button:hover {
-  background-color: #003d82;
+.form21-print-button:hover {
+  background-color: #000000;
   transform: scale(1.02);
 }
-.next-button:hover {
+.form21-next-button:hover {
   background-color: #003d82;
   color: #ffffff;
   transform: scale(1.02);
 }
-.print-button:active,
-.next-button:active {
+.form21-print-button:active,
+.form21-next-button:active {
   transform: scale(0.98);
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -5448,9 +5529,9 @@ label {
 }
 
 /*Form22 page*/
-.katibayan-form-page {
+.form22-page {
   font-family: Arial, sans-serif;
-  background-image: url("blotterformpage.png");
+  background-color: #e7f6ff;
   min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
@@ -5462,7 +5543,7 @@ label {
   margin: 0;
 }
 
-.tanggapan-form-container {
+.form22-container {
   background-color: white;
   padding: 50px 50px;
   border-radius: 10px;
@@ -5472,35 +5553,61 @@ label {
   max-width: 850px;
 }
 
-h1 {
-  font-family: "Inria Sans", serif;
-  font-size: 3.2rem;
+.form22-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
   color: black;
   margin-top: 50px;
   margin-bottom: 5px;
   text-align: center;
 }
 
-h2 {
-  font-family: "Inria Sans", serif;
-  font-size: 2rem;
+.form22-subtitle {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.centered-text {
+/* Ensure the parent container centers its children */
+.form22-container, .form22-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form22-head, .form22-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form22-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form22-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.form22-centered-text {
   font-size: 1.2rem;
   color: black;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.centered-label {
+.form22-centered-label {
   margin-bottom: 30px;
 }
 
-.kp-input {
+.form22-kp-input {
   display: flex;
   gap: 5px;
   justify-content: flex-end;
@@ -5508,29 +5615,29 @@ h2 {
   line-height: 1.5;
 }
 
-.kp-input input {
+.form22-kp-input input {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kp {
+.form22-kp {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.kpcase {
+.form22-kpcase {
   text-align: right;
   margin-bottom: 8px;
 }
 
-.kp input {
+.form22-kp input {
   width: 120px;
 }
 
-.head {
+.form22-head {
   text-align: center;
 }
 
@@ -5544,67 +5651,78 @@ h2 {
   width: 250px;
 }
 
-.sumbong {
+#form22-maysumbong {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+#form22-ipinagsumbong {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+
+.form22-sumbong {
   margin-bottom: 25px;
   margin-left: 15px !important;
 }
 
-.ipinagsusumbong {
+.form22-ipinagsusumbong {
   text-align: center;
   margin-bottom: 25px;
   margin-left: 35px;
 }
 
-#sumbong-kay {
+#form22-sumbong-kay {
   margin-left: 40px;
   width: 270px;
 }
 
-.blg-input {
+.form22-blg-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.blg-input input {
+.form22-blg-input input {
   width: 50px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.ukol-input {
+.form22-ukol-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.ukol-input input {
-  width: 160px !important;
+.form22-ukol-input input {
+  width: 155px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kay-input {
+.form22-kay-input {
   display: flex;
   gap: 1px;
   align-items: center;
 }
 
-.kay-input input {
+.form22-kay-input input {
   height: 38px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#kay {
+#form22-kay {
   width: 270px;
 }
 
-.form-input {
+.form22-form-input {
   display: flex;
   gap: 5px;
   align-items: center;
@@ -5612,42 +5730,41 @@ h2 {
   line-height: 1.5;
 }
 
-.form-input input {
+.form22-form-input input {
   width: 110px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.justify {
+.form22-justify {
   text-align: justify;
 }
 
-#year {
+#form22-year {
   width: 40px;
 }
 
-#day {
+#form22-day {
   width: 50px;
 }
 
-#time {
+#form22-time {
   width: 70px;
 }
 
-#pangalan {
-  width: 250px !important;
+#form22-pangalan {
+  width: 260px !important;
   height: 30px;
   box-sizing: border-box;
 }
 
-.indent {
+.form22-indent {
   text-indent: 50px;
   text-align: justify;
 }
 
-.paragraph {
-  text-indent: 50px;
+.form22-paragraph {
   font-weight: bold;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -5665,35 +5782,36 @@ label {
   text-align: left;
 }
 
-.signature-section {
+.form22-signature-section {
   display: flex;
   align-items: center;
 }
 
-.signature-line {
+.form22-signature-line {
   border-top: 1px solid black;
   margin-left: 10px !important;
   width: 250px !important;
 }
 
-.sig-text {
+.form22-sig-text {
   text-align: left !important;
   margin-top: 0px !important;
   margin-left: 120px !important;
+  font-weight: bold !important;
 }
 
-.signtext {
+.form22-signtext {
   text-align: left !important;
-  font-weight: bold;
+  font-weight: bold !important;
 }
 
-.sign-line {
+.form22-sign-line {
   border-top: 1px solid black;
   width: 205px !important;
   margin-left: auto !important;
 }
 
-.sign-text {
+.form22-sign-text {
   justify-content: flex-end;
   margin-top: 10px;
   font-weight: bold;
@@ -5702,7 +5820,7 @@ label {
   margin-right: 30px !important;
 }
 
-.button-group {
+.form22-button-group {
   display: flex;
   justify-content: space-evenly;
   gap: 15px;
@@ -5710,8 +5828,8 @@ label {
   margin-bottom: 50px;
 }
 
-.print-button,
-.next-button {
+.form22-print-button,
+.form22-next-button {
   background-color: #0056b3;
   color: white;
   font-weight: bold;
@@ -5723,17 +5841,17 @@ label {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.print-button:hover {
-  background-color: #003d82;
+.form22-print-button:hover {
+  background-color: #000000;
   transform: scale(1.02);
 }
-.next-button:hover {
-  background-color: #003d82;
+.form22-next-button:hover {
+  background-color: #000000;
   color: #ffffff;
   transform: scale(1.02);
 }
-.print-button:active,
-.next-button:active {
+.form22-print-button:active,
+.form22-next-button:active {
   transform: scale(0.98);
 }
 
@@ -5745,9 +5863,9 @@ label {
 }
 
 /*Form23 page*/
-.katibayan-form-page {
+.form23-page {
   font-family: Arial, sans-serif;
-  background-image: url("blotterformpage.png");
+  background-color: #e7f6ff;
   min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
@@ -5759,7 +5877,7 @@ label {
   margin: 0;
 }
 
-.tanggapan-form-container {
+.form23-container {
   background-color: white;
   padding: 50px 50px;
   border-radius: 10px;
@@ -5769,35 +5887,61 @@ label {
   max-width: 850px;
 }
 
-h1 {
-  font-family: "Inria Sans", serif;
-  font-size: 3.2rem;
+.form23-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
   color: black;
   margin-top: 50px;
   margin-bottom: 5px;
   text-align: center;
 }
 
-h2 {
-  font-family: "Inria Sans", serif;
-  font-size: 2rem;
+.form23-subtitle {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.centered-text {
+/* Ensure the parent container centers its children */
+.form23-container, .form23-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form23-head, .form23-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form23-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form23-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.form23-centered-text {
   font-size: 1.2rem;
   color: black;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.centered-label {
+.form23-centered-label {
   margin-bottom: 30px;
 }
 
-.kp-input {
+.form23-kp-input {
   display: flex;
   gap: 5px;
   justify-content: flex-end;
@@ -5805,29 +5949,29 @@ h2 {
   line-height: 1.5;
 }
 
-.kp-input input {
+.form23-kp-input input {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kp {
+.form23-kp {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.kpcase {
+.form23-kpcase {
   text-align: right;
   margin-bottom: 8px;
 }
 
-.kp input {
+.form23-kp input {
   width: 120px;
 }
 
-.head {
+.form23-head {
   text-align: center;
 }
 
@@ -5841,67 +5985,78 @@ h2 {
   width: 250px;
 }
 
-.sumbong {
+#form23-maysumbong {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+#form23-ipinagsumbong {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+
+.form23-sumbong {
   margin-bottom: 25px;
   margin-left: 15px !important;
 }
 
-.ipinagsusumbong {
+.form23-ipinagsusumbong {
   text-align: center;
   margin-bottom: 25px;
   margin-left: 35px;
 }
 
-#sumbong-kay {
+#form23-sumbong-kay {
   margin-left: 40px;
   width: 270px;
 }
 
-.blg-input {
+.form23-blg-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.blg-input input {
+.form23-blg-input input {
   width: 50px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.ukol-input {
+.form23-ukol-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.ukol-input input {
+.form23-ukol-input input {
   width: 160px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kay-input {
+.form23-kay-input {
   display: flex;
   gap: 1px;
   align-items: center;
 }
 
-.kay-input input {
+.form23-kay-input input {
   height: 38px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#kay {
+#form23-kay {
   width: 270px;
 }
 
-.form-input {
+.form23-form-input {
   display: flex;
   gap: 5px;
   align-items: center;
@@ -5909,37 +6064,38 @@ h2 {
   line-height: 1.5;
 }
 
-.form-input input {
+.form23-form-input input {
   width: 110px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.justify {
+.form23-justify {
   text-align: justify;
   line-height: 1.5;
+  margin-left: 50px;
 }
 
-#year {
+#form23-year {
   width: 40px;
 }
 
-#day {
+#form23-day {
   width: 50px;
 }
 
-#time {
+#form23-time {
   width: 70px;
 }
 
-#name {
+#form23-name {
   width: 300px !important;
   height: 30px;
   box-sizing: border-box;
 }
 
-#petsa {
+#form23-petsa {
   width: 250px !important;
   height: 30px;
   text-align: center;
@@ -5947,14 +6103,13 @@ h2 {
   box-sizing: border-box;
 }
 
-.indent {
+.form23-indent {
   text-indent: 50px;
   text-align: justify;
   line-height: 1.5;
 }
 
-.paragraph {
-  text-indent: 50px;
+.form23-paragraph {
   font-weight: bold;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -5972,19 +6127,19 @@ label {
   text-align: left;
 }
 
-.sign-line {
+.form23-sign-line {
   border-top: 1px solid black;
   width: 250px !important;
   margin-left: 10px !important;
 }
 
-.signa-line {
+.form23-signa-line {
   border-top: 1px solid black;
   width: 300px !important;
   margin-left: 105px !important;
 }
 
-.sign-text {
+.form23-sign-text {
   justify-content: flex-end;
   margin-top: 10px;
   font-weight: bold;
@@ -5993,7 +6148,7 @@ label {
   margin-left: 120px !important;
 }
 
-.signa-text {
+.form23-signa-text {
   justify-content: flex-end;
   margin-top: 10px;
   font-weight: bold;
@@ -6002,7 +6157,7 @@ label {
   margin-left: 125px !important;
 }
 
-.button-group {
+.form23-button-group {
   display: flex;
   justify-content: space-evenly;
   gap: 15px;
@@ -6010,8 +6165,8 @@ label {
   margin-bottom: 50px;
 }
 
-.print-button,
-.next-button {
+.form23-print-button,
+.form23-next-button {
   background-color: #0056b3;
   color: white;
   font-weight: bold;
@@ -6023,17 +6178,17 @@ label {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.print-button:hover {
-  background-color: #003d82;
+.form23-print-button:hover {
+  background-color: #000000;
   transform: scale(1.02);
 }
-.next-button:hover {
-  background-color: #003d82;
+.form23-next-button:hover {
+  background-color: #000000;
   color: #ffffff;
   transform: scale(1.02);
 }
-.print-button:active,
-.next-button:active {
+.form23-print-button:active,
+.form23-next-button:active {
   transform: scale(0.98);
 }
 
@@ -6045,9 +6200,9 @@ label {
 }
 
 /*Form24 page*/
-.patawag-form-page {
+.form24-page {
   font-family: Arial, sans-serif;
-  background-image: url("blotterformpage.png");
+  background-color: #e7f6ff;
   min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
@@ -6059,55 +6214,71 @@ label {
   margin: 0;
 }
 
-.tanggapan-form-container {
+.form24-container {
   background-color: white;
   padding: 50px 50px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
-  width: 90%;
+  width: 100% !important;
   max-width: 800px;
 }
 
-.patawag-form-container {
-  background-color: white;
-  padding: 50px 85px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;
-  width: 90%;
-  max-width: 800px;
-}
-
-h1 {
-  font-family: "Inria Sans", serif;
-  font-size: 3.2rem;
+.form24-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
   color: black;
   margin-top: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-align: center;
 }
 
-h2 {
-  font-family: "Inria Sans", serif;
-  font-size: 2rem;
+.form24-subtitle {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.centered-text {
+/* Ensure the parent container centers its children */
+.form24-container, .form24-patawag-form-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form24-head, .form24-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form24-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form24-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.form24-centered-text {
   font-size: 1.2rem;
   color: black;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.centered-label {
+.form24-centered-label {
   margin-bottom: 5px;
 }
 
-.kp-input {
+.form24-kp-input {
   display: flex;
   gap: 5px;
   justify-content: flex-end;
@@ -6115,29 +6286,29 @@ h2 {
   line-height: 1.5;
 }
 
-.kp-input input {
+.form24-kp-input input {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kp {
+.form24-kp {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.kpcase {
+.form24-kpcase {
   text-align: right;
   margin-bottom: 8px;
 }
 
-.kp input {
+.form24-kp input {
   width: 120px;
 }
 
-.head {
+.form24-head {
   text-align: center;
 }
 
@@ -6147,161 +6318,166 @@ h2 {
   margin-bottom: 0px !important;
 }
 
-#maysumbong {
+#form24-maysumbong {
   width: 250px;
+  margin-bottom: 10px;
 }
 
-#ipinagsumbong {
+#form24-ipinagsumbong {
   width: 250px;
+  margin-bottom: 10px;
 }
 
-.line {
+.form24-line {
   width: 250px;
   margin-left: 450px !important;
 }
 
-.mgasumbong {
+.form24-mgasumbong {
   margin-left: 420px !important;
 }
 
-.sumbong {
+.form24-sumbong {
   text-align: left;
   margin-bottom: 25px;
   margin-left: 15px;
 }
 
-.ipinagsusumbong {
+.form24-ipinagsusumbong {
   text-align: center;
   margin-bottom: 25px;
   margin-left: 0px;
 }
 
-#sumbong-kay {
+#form24-sumbong-kay {
   margin-left: 40px;
   width: 300px;
 }
 
-#sumbong-kay2 {
+#form24-sumbong-kay2 {
   margin-left: 40px !important;
   width: 300px;
 }
 
-.sumbong-label {
+.form24-sumbong-label {
   margin-left: 120px !important;
 }
 
-.ipinagsusumbong-label {
+.form24-ipinagsusumbong-label {
   margin-left: 190px !important;
 }
 
-.blg-input {
+.form24-blg-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.blg-input input {
-  width: 50px;
+.form24-blg-input input {
+  width: 50px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.ukol-input {
+.form24-ukol-input {
   display: flex;
   gap: 5px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.ukol-input input {
-  width: 155px;
+.form24-ukol-input input {
+  width: 155px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kay-input {
+.form24-kay-input {
   display: flex;
   gap: 1px;
   align-items: center;
 }
 
-.kay-input input {
+.form24-kay-input input {
   height: 38px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#kay {
+#form24-kay {
   width: 300px;
 }
 
-#kay2 {
+#form24-kay2 {
   width: 300px;
   margin-left: 40px;
 }
-.form-input {
+
+.form24-form-input {
   display: flex;
   gap: 5px;
   align-items: center;
 }
 
-.form-input input {
+.form24-form-input input {
   width: 110px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 5px;
 }
 
-#date {
+#form24-date {
   width: 150px;
 }
 
-#year {
+#form24-year {
   width: 50px;
 }
 
-#day {
+#form24-day {
   width: 50px;
 }
 
-#time {
+#form24-time {
   width: 70px;
 }
 
-#araw {
+#form24-araw {
   width: 40px;
 }
 
-#buwan {
+#form24-buwan {
   width: 100px;
 }
 
-#pangalan {
+#form24-pangalan {
   width: 230px;
 }
 
-.indent {
+.form24-indent {
   text-indent: 40px;
 }
 
-.center {
+.form24-center {
   text-align: center;
-  margin-bottom: 40px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
-.justify {
+.form24-justify {
   text-align: justify;
 }
 
-.left {
+.form24-left {
   text-align: left;
   text-indent: 0px !important;
 }
 
-.paragraph {
+.form24-paragraph {
   text-indent: 40px !important;
   font-weight: bold;
   font-size: 0.9rem;
@@ -6322,63 +6498,63 @@ label {
   text-align: left;
 }
 
-.sign-section {
+.form24-sign-section {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.signature-container {
+.form24-signature-container {
   text-align: center;
   margin-top: 50px;
 }
 
-.signature-line {
+.form24-signature-line {
   border-top: 1px solid black;
   width: 300px !important;
   margin: 0 !important;
 }
 
-.sign-line {
+.form24-sign-line {
   border-top: 1px solid black;
   width: 250px !important;
   margin: 0 !important;
 }
 
-.signature-text {
+.form24-signature-text {
   margin-top: 10px;
   font-weight: bold;
   font-style: normal !important;
   text-align: left !important;
-  margin-left: 25px !important;
+  margin-left: 15px !important;
 }
 
-.sign-text {
+.form24-sign-text {
   margin-top: 10px;
   font-weight: bold;
   font-style: normal !important;
   text-align: left !important;
-  margin-left: 115px !important;
+  margin-left: 105px !important;
   margin-bottom: 5px !important;
 }
 
-.text1 {
+.form24-text1 {
   text-align: center !important;
-  margin-left: 25px !important;
+  margin-left: 60px !important;
 }
 
-.text2 {
+.form24-text2 {
   text-align: center !important;
-  margin-left: 110px !important;
+  margin-left: 170px !important;
 }
 
-.signa-line {
+.form24-signa-line {
   border-top: 1px solid black;
   width: 300px !important;
   margin-left: 105px !important;
 }
 
-.signa-text {
+.form24-signa-text {
   justify-content: flex-end;
   margin-top: 10px;
   font-weight: bold;
@@ -6388,7 +6564,7 @@ label {
   margin-bottom: 5px !important;
 }
 
-.button-group {
+.form24-button-group {
   display: flex;
   justify-content: space-evenly;
   gap: 15px;
@@ -6397,8 +6573,8 @@ label {
   margin-left: 10px !important;
 }
 
-.print-button,
-.next-button {
+.form24-print-button,
+.form24-next-button {
   background-color: #0056b3;
   color: white;
   font-weight: bold;
@@ -6410,17 +6586,17 @@ label {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.print-button:hover {
+.form24-print-button:hover {
   background-color: #003d82;
   transform: scale(1.02);
 }
-.next-button:hover {
+.form24-next-button:hover {
   background-color: #003d82;
   color: #ffffff;
   transform: scale(1.02);
 }
-.print-button:active,
-.next-button:active {
+.form24-print-button:active,
+.form24-next-button:active {
   transform: scale(0.98);
 }
 
@@ -6432,9 +6608,9 @@ label {
 }
 
 /*Form25 page*/
-.patawag-form-page {
+.form25-page {
   font-family: Arial, sans-serif;
-  background-image: url("blotterformpage.png");
+  background-color: #e7f6ff;
   min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
@@ -6446,55 +6622,71 @@ label {
   margin: 0;
 }
 
-.tanggapan-form-container {
+.form25-container {
   background-color: white;
   padding: 50px 50px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
-  width: 90%;
+  width: 100% !important;
   max-width: 800px;
 }
 
-.patawag-form-container {
-  background-color: white;
-  padding: 50px 85px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;
-  width: 90%;
-  max-width: 800px;
-}
-
-h1 {
-  font-family: "Inria Sans", serif;
-  font-size: 3.2rem;
+.form25-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
   color: black;
   margin-top: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-align: center;
 }
 
-h2 {
-  font-family: "Inria Sans", serif;
-  font-size: 2rem;
+.form25-subtitle {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.centered-text {
+/* Ensure the parent container centers its children */
+.form25-container, .form25-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form25-head, .form25-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form25-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form25-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.form25-centered-text {
   font-size: 1.2rem;
   color: black;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.centered-label {
+.form25-centered-label {
   margin-bottom: 5px;
 }
 
-.kp-input {
+.form25-kp-input {
   display: flex;
   gap: 5px;
   justify-content: flex-end;
@@ -6502,169 +6694,179 @@ h2 {
   line-height: 1.5;
 }
 
-.kp-input input {
+.form25-kp-input input {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kp {
+.form25-kp {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.kpcase {
+.form25-kpcase {
   text-align: right;
   margin-bottom: 8px;
 }
 
-.kp input {
+.form25-kp input {
   width: 120px;
 }
 
-.head {
+.form25-head {
   text-align: center;
 }
 
-.two-columns .form-group-input {
+.two-columns .form25-group-input {
   flex: 1;
 }
 
-.mga-sumbong {
+#form25-maysumbong {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form25-ipinagsumbong {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.form25-mga-sumbong {
   text-align: left !important;
   margin-left: 55px !important;
   margin-bottom: 25px;
 }
 
-.line {
+.form25-line {
   border-top: 1px solid black;
   width: 250px !important;
   margin-left: 10px !important;
 }
 
-.sumbong {
+.form25-sumbong {
   text-align: left;
   margin-bottom: 25px;
   margin-left: 15px;
 }
 
-.ipinagsusumbong {
+.form25-ipinagsusumbong {
   text-align: center;
   margin-bottom: 25px;
   margin-left: 0px;
 }
 
-#sumbong-kay {
+.form25-sumbong-kay {
   margin-left: 40px;
   width: 270px;
 }
 
-.blg-input {
+.form25-blg-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.blg-input input {
-  width: 50px;
+.form25-blg-input input {
+  width: 50px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.ukol-input {
+.form25-ukol-input {
   display: flex;
   gap: 5px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.ukol-input input {
-  width: 155px;
+.form25-ukol-input input {
+  width: 155px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kay-input {
+.form25-kay-input {
   display: flex;
   gap: 1px;
   align-items: center;
 }
 
-.kay-input input {
+.form25-kay-input input {
   height: 38px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#kay {
+.form25-kay {
   width: 270px;
 }
 
-.form-input {
+.form25-form-input {
   display: flex;
   gap: 5px;
   align-items: center;
 }
 
-.form-input input {
+.form25-form-input input {
   width: 110px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 5px;
 }
 
-#date {
+#form25-date {
   width: 150px;
 }
 
-#year {
+#form25-year {
   width: 50px;
 }
 
-#day {
+#form25-day {
   width: 50px;
 }
 
-#time {
+#form25-time {
   width: 70px;
 }
 
-#petsa {
-  width: 250px;
-  height: 30px;
+#form25-petsas {
+  width: 250px !important;
+  height: 30px !important;
   text-align: center;
   padding: 0;
   box-sizing: border-box;
 }
 
-#pangalan {
+#form25-pangalan {
   width: 175px !important;
 }
 
-#compensation {
+#form25-compensation {
   width: 280px;
 }
 
-.indent {
+.form25-indent {
   text-indent: 40px;
   text-align: justify !important;
 }
 
-.center {
+.form25-center {
   text-align: center;
   margin-bottom: 40px;
 }
 
-.justify {
+.form25-justify {
   text-align: justify;
 }
 
-.paragraph {
+.form25-paragraph {
   text-indent: 40px !important;
   font-weight: bold;
   font-size: 0.9rem;
@@ -6685,24 +6887,29 @@ label {
   text-align: left;
 }
 
-.sign-section {
+.form25-form-group-input {
+  align-items: center;
+  margin-left: 50px;
+}
+
+.form25-sign-section {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.signature-container {
+.form25-signature-container {
   text-align: center;
   margin-top: 50px;
 }
 
-.signature-line {
+.form25-signature-line {
   border-top: 1px solid black;
   width: 200px !important;
   margin-left: 10px !important;
 }
 
-.signature-text {
+.form25-signature-text {
   margin-top: 10px;
   font-weight: bold;
   font-style: normal !important;
@@ -6710,7 +6917,7 @@ label {
   margin-left: 50px !important;
 }
 
-.signa-text {
+.form25-signa-text {
   margin-top: 10px;
   font-weight: bold;
   font-style: normal !important;
@@ -6718,7 +6925,7 @@ label {
   margin-left: 455px !important;
 }
 
-.button-group {
+.form25-button-group {
   display: flex;
   justify-content: space-evenly;
   gap: 15px;
@@ -6727,8 +6934,8 @@ label {
   margin-left: 10px !important;
 }
 
-.print-button,
-.next-button {
+.form25-print-button,
+.form25-next-button {
   background-color: #0056b3;
   color: white;
   font-weight: bold;
@@ -6740,17 +6947,17 @@ label {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.print-button:hover {
-  background-color: #003d82;
+.form25-print-button:hover {
+  background-color: #000000;
   transform: scale(1.02);
 }
-.next-button:hover {
-  background-color: #003d82;
+.form25-next-button:hover {
+  background-color: #000000;
   color: #ffffff;
   transform: scale(1.02);
 }
-.print-button:active,
-.next-button:active {
+.form25-print-button:active,
+.form25-next-button:active {
   transform: scale(0.98);
 }
 

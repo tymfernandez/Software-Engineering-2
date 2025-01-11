@@ -4,26 +4,26 @@ import Header from "./Header";
 
 const Form20 = () => {
   return (
-    <div className="katibayan-form-page">
+    <div className="form20-page">
       <Header showButton={false} />
-      <div className="katibayan-form-text">
-        <h1>FORM 20:</h1>
-        <h2 className="form22">
+      <div className="form20-text">
+        <h1 className="form20-title">FORM 20:</h1>
+        <h2 className="form20-subtitle">
           KATIBAYAN UPANG MAKADULOG SA HUKUMAN <br /> DAHIL SA DI PAGTUPAD SA
           KASUNDUAN
         </h2>
 
-        <div className="tanggapan-form-container">
-          <form className="katibayan-form">
-            <div className="kp-input">
-              <label className="kpcase">KP Case Number:</label>
-              <input type="text" id="kpnum" placeholder=" " />
+        <div className="form20-container">
+          <form className="form20">
+            <div className="form20-kp-input">
+              <label className="form20-kpcase">KP Case Number:</label>
+              <input type="text" id="form20-kpnum" placeholder=" " />
             </div>
-            <div className="pormularyoblg">
-              <label className="pormularyo">Pormularyo ng KP Blg. 20</label>
+            <div className="form20-pormularyoblg">
+              <label className="form20-pormularyo">Pormularyo ng KP Blg. 20</label>
             </div>
-            <div className="heading">
-              <label className="head">
+            <div className="form20-heading">
+              <label className="form20-head">
                 Republika ng Pilipinas <br />
                 Lalawigan ng Kabite <br />
                 Bayan ng Indang <br />
@@ -31,113 +31,114 @@ const Form20 = () => {
               </label>
             </div>
             <div className="form-group">
-              <label className="centered-label">
+              <label className="form20-centered-label">
                 <br /> TANGGAPAN NG LUPONG TAGAPAMAYAPA
               </label>
             </div>
             <div className="form-row two-columns centered-row">
               <div className="form-group">
-                <input type="text" />
-                <input type="text" />
-                <label className="sumbong">
+              <input type="text" id="form20-maysumbong" />
+              <input type="text" id="form20-maysumbong" /> 
+                <label className="form20-sumbong">
                   (Mga) May Sumbong <br /> -laban kay/kina-
                 </label>
-                <input type="text" />
-                <input type="text" />
-                <label className="sumbong"> (Mga) Ipinagsusumbong </label>
+                <input type="text" id="form20-ipinagsumbong" /> 
+                <input type="text" id="form20-ipinagsumbong" />
+                <label className="form20-sumbong"> (Mga) Ipinagsusumbong </label>
               </div>
 
               <div className="form-group">
-                <div className="blg-input">
+                <div className="form20-blg-input">
                   <label>Usaping Barangay Blg. </label>
-                  <input type="text" id="blg" placeholder=" " />
+                  <input type="text" id="form20-blg" placeholder=" " />
                 </div>
-                <div className="ukol-input">
+                <div className="form20-ukol-input">
                   <label>Ukol sa</label>
                   <input type="text" />
                 </div>
               </div>
-            </div>
+            </div> 
+            <br />
             <div className="form-group">
-              <label className="centered-label">
+              <label className="form20-centered-label">
                 KATIBAYAN UPANG MAKADULOG SA HUKUMAN
               </label>
             </div>
-            <div className="paragraph">
-              <label className="indent1">Ito ay nagpapatunay na:</label>
+            <div className="form20-paragraph">
+              <label className="form20-indent1">Ito ay nagpapatunay na:</label>
             </div>
-            <div className="form-input">
-              <label className="indent2">
+            <div className="form20-form-input">
+              <label className="form20-indent2">
                 1. Nagkaroon ng personal na pagharap sa pagitan ng mga panig sa
                 harap ng Punong Barangay/Pangkat ng Tagapagkasundo;
               </label>{" "}
             </div>{" "}
             <br />
-            <div className="form-input">
-              <label className="indent2">2. Nagkaroon ng pag-aayos; </label>
+            <div className="form20-form-input">
+              <label className="form20-indent2">2. Nagkaroon ng pag-aayos; </label>
             </div>{" "}
             <br />
-            <div className="form-input">
-              <label className="indent2">
+            <div className="form20-form-input">
+              <label className="form20-indent2">
                 3. Ang kasunduan sa pag-aayos ay tinanggihan sa isang salaysay
                 na pinanumpaan{" "}
               </label>
             </div>
-            <div className="form-input">
-              <label className="indent">
+            <div className="form20-form-input">
+              <label className="form20-indent">
                 sa harap ng Puno ng Barangay sa pamamagitan ng{" "}
               </label>
-              <input type="text" id="reason" placeholder=" " />
+              <input type="text" id="form20-reason" placeholder=" " />
               <label>sa</label>
             </div>
-            <div className="form-input">
-              <label className="indent">ng </label>
-              <input type="text" id="reason" placeholder=" " />
+            <div className="form20-form-input">
+              <label className="form20-indent">ng </label>
+              <input type="text" id="form20-reason" placeholder=" " />
               <label>; at </label>
             </div>
             <br />
-            <div className="form-input">
-              <label className="indent2">
+            <div className="form20-form-input">
+              <label className="form20-indent2">
                 4. Dahil dito, ang kaukulang sumbong para sa alitan ay maaari
                 ngayong ihain sa hukuman/ tanggpan ng Pamahalaan.
               </label>
             </div>
             <br /> <br />
-            <div className="form-input">
-              <label className="indent1">Ngayong ika-</label>
-              <input type="text" id="day" placeholder=" " />
+            <div className="form20-form-input">
+              <label className="form20-indent1">Ngayong ika-</label>
+              <input type="text" id="form20-day" placeholder=" " />
               <label>araw ng</label>
-              <input type="text" id="month" placeholder=" " />
+              <input type="text" id="form20-month" placeholder=" " />
               <label>, 20</label>
-              <input type="text" id="year" placeholder=" " />
+              <input type="text" id="form20-year" placeholder=" " />
               <label>.</label>
             </div>
             <br />
-            <div className="sign-container">
-              <div className="sign-line"></div>
-              <p className="sign-text">Kalihim ng Lupon</p>
+            <div className="form20-sign-container">
+              <div className="form20-sign-line"></div>
+              <p className="form20-sign-text">Kalihim ng Lupon</p>
             </div>
             <br />
-            <div className="signature-section">
-              <p className="signtext">Pinatunayan:</p>
-              <div className="signature-wrapper">
-                <div className="signature-line"></div>
+            <div className="form20-signature-section">
+              <p className="form20-signtext">Pinatunayan:</p>
+              <div className="form20-signature-wrapper">
+                <div className="form20-signature-line"></div>
               </div>
             </div>
-            <p className="sig-text">Tagapangulo ng Lupon</p>
+            <p className="form20-sig-text">Tagapangulo ng Lupon</p>
             <br />
           </form>
         </div>
 
-        <div className="button-group">
+        <div className="form20-button-group">
           <button
             type="button"
-            className="print-button"
+            className="form20-print-button"
             onClick={() => window.print()}
           >
             Print
           </button>
-          <button type="button" className="next-button">
+          <button type="button" className="form20-next-button">
             {" "}
             Next{" "}
           </button>
