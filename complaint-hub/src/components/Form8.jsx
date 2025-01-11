@@ -4,118 +4,118 @@ import Header from "./Header";
 
 const Form8 = () => {
   return (
-    <div className="paabiso-form-page">
+    <div className="form8-page">
       <Header showButton={false} />
-      <div className="paabiso-form-text">
-        <h1>FORM 8: PAABISO</h1>
-        <p className="centered-text">Para sa complainant o nagrereklamo</p>
+      <div className="form8-text">
+        <h1 className="form8-title">FORM 8: PAABISO</h1>
+        <h2 className="form8-subtitle">Para sa complainant o nagrereklamo</h2>
 
-        <div className="tanggapan-form-container">
-          <form className="paabiso-form">
-            <div className="kp-input">
-              <label className="kpcase">KP Case Number:</label>
-              <input type="text" id="kpnum" placeholder=" " />
+        <div className="form8-container">
+          <form className="form8">
+            <div className="form8-kp-input">
+              <label className="form8-kpcase">KP Case Number:</label>
+              <input type="text" id="form8-kpnum" placeholder=" " />
             </div>
-            <div className="pormularyoblg">
-              <label className="pormularyo">Pormularyo ng KP Blg. 8</label>
+            <div className="form8-pormularyoblg">
+              <label className="form8-pormularyo">Pormularyo ng KP Blg. 8</label>
             </div>
-            <div className="heading">
-              <label className="head">
+            <div className="form8-heading">
+              <label className="form8-head">
                 Republika ng Pilipinas <br />
                 Lalawigan ng Kabite <br />
                 Bayan ng Indang <br />
                 Barangay Poblacion 1
               </label>
             </div>
-            <div className="form-group">
-              <label className="centered-label">
+            <div className="form8-group">
+              <label className="form8-centered-label">
                 <br /> TANGGAPAN NG LUPONG TAGAPAMAYAPA
               </label>
             </div>
-            <div className="date">
-              <input type="text" id="date" placeholder=" " />
+            <div className="form8-date">
+              <input type="text" id="form8-date" placeholder=" " />
               <label>, 20</label>
-              <input type="text" id="year" placeholder=" " />
+              <input type="text" id="form8-year" placeholder=" " />
             </div>
-            <div className="form-group">
-              <label className="centered-label">
+            <div className="form8-group">
+              <label className="form8-centered-label">
                 <br /> PAABISO NG PAGDINIG <br />
                 (Mga Hakbang ng Pamamagitan)
-              </label>
-            </div>
-            <div className="may-sumbong">
-              <div className="kay-input">
+              </label> 
+            </div> <br/>
+            <div className="form8-may-sumbong">
+              <div className="form8-kay-input">
                 <label>KAY: </label>
-                <input type="text" id="kay" placeholder=" " />
+                <input type="text" id="form8-kay" placeholder=" " />
               </div>
-              <input type="text" id="sumbong" placeholder=" " />
-              <label className="text-sumbong"> (Mga) May Sumbong </label>
+              <input type="text" id="form8-sumbong" placeholder=" " /> <br/>
+              <label className="form8-text-sumbong"> (Mga) May Sumbong </label>
             </div>
             <br /> <br />
-            <div className="form-input">
-              <label className="indent">
+            <div className="form8-form-input">
+              <label className="form8-indent">
                 Ikaw ay inuutusan na sa akin sa ika-
               </label>
-              <input type="text" id="day" placeholder=" " />
+              <input type="text" id="form8-day" placeholder=" " />
               <label>araw ng</label>
-              <input type="text" id="month" placeholder=" " />
+              <input type="text" id="form8-month" placeholder=" " />
               <label>, 20</label>
-              <input type="text" id="year" placeholder=" " />
+              <input type="text" id="form8-year" placeholder=" " />
             </div>
-            <div className="form-input">
+            <div className="form8-form-input">
               <label>sa ganap na ika-</label>
-              <input type="text" id="time" placeholder=" " />
+              <input type="text" id="form8-time" placeholder=" " />
               <label>ng umaga/hapon, para sa pagdinig ng inyong sumbong.</label>
             </div>
             <br />
-            <div className="form-input">
-              <label className="indent">Ngayong ika-</label>
-              <input type="text" id="day" placeholder=" " />
+            <div className="form8-form-input">
+              <label className="form8-indent">Ngayong ika-</label>
+              <input type="text" id="form8-day" placeholder=" " />
               <label>araw ng</label>
-              <input type="text" id="month" placeholder=" " />
+              <input type="text" id="form8-month" placeholder=" " />
               <label>, 20</label>
-              <input type="text" id="year" placeholder=" " />
+              <input type="text" id="form8-year" placeholder=" " />
               <label>.</label>
             </div>
             <br />
             <br />
-            <div className="signature-container">
-              <div className="signature-line"></div>
-              <p className="signature-text">
+            <div className="form8-signature-container">
+              <div className="form8-signature-line"></div>
+              <p className="form8-signature-text">
                 Punong Barangay/Tagapangulo ng Lupon
               </p>
             </div>
             <br /> <br />
-            <div className="form-input">
-              <label className="indent">Pinaaabisuhan ngayong ika-</label>
-              <input type="text" id="day" placeholder=" " />
+            <div className="form8-form-input">
+              <label className="form8-indent">Pinaaabisuhan ngayong ika-</label>
+              <input type="text" id="form8-day" placeholder=" " />
               <label> ng</label>
-              <input type="text" id="month" placeholder=" " />
+              <input type="text" id="form8-month" placeholder=" " />
               <label>, 20</label>
-              <input type="text" id="year" placeholder=" " />
+              <input type="text" id="form8-year" placeholder=" " />
               <label>.</label>
             </div>
             <br /> <br />
             <br />
             <br />
-            <div className="signatures">
-              <div className="sign-line"></div>
-              <div className="sign-container">
-                <div className="sign-line"></div>
+            <div className="form8-signatures">
+              <div className="form8-sign-line"></div>
+              <div className="form8-sign-container">
+                <div className="form8-sign-line"></div>
               </div>
-              <p className="sign-text">(Mga) May Sumbong</p>
+              <p className="form8-sign-text">(Mga) May Sumbong</p>
             </div>
           </form>
         </div>
-        <div className="button-group">
+        <div className="form8-button-group">
           <button
             type="button"
-            className="print-button"
+            className="form8-print-button"
             onClick={() => window.print()}
           >
             Print
           </button>
-          <button type="button" className="next-button">
+          <button type="button" className="form8-next-button">
             {" "}
             Proceed to Form 9{" "}
           </button>

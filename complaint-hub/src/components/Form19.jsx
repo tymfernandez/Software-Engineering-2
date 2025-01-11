@@ -4,23 +4,23 @@ import Header from "./Header";
 
 const Form19 = () => {
   return (
-    <div className="patawag-form-page">
+    <div className="form19-page">
       <Header showButton={false} />
-      <div className="patawag-form-text">
-        <h1>FORM 19:</h1>
-        <h2>PAG-ABISO NG PAGDINIG PARA SA RESPONDENT</h2>
+      <div className="form19-text">
+        <h1 className="form19-title">FORM 19:</h1>
+        <h2 className="form19-subtitle">PAG-ABISO NG PAGDINIG PARA SA RESPONDENT</h2>
 
-        <div className="tanggapan-form-container">
-          <form className="patawag-form">
-            <div className="kp-input">
-              <label className="kpcase">KP Case Number:</label>
-              <input type="text" id="kpnum" placeholder=" " />
+        <div className="form19-container">
+          <form className="form19">
+            <div className="form19-kp-input">
+              <label className="form19-kpcase">KP Case Number:</label>
+              <input type="text" id="form19-kpnum" placeholder=" " />
             </div>
-            <div className="pormularyoblg">
-              <label className="pormularyo">Pormularyo ng KP Blg. 19</label>
+            <div className="form19-pormularyoblg">
+              <label className="form19-pormularyo">Pormularyo ng KP Blg. 19</label>
             </div>
-            <div className="heading">
-              <label className="head">
+            <div className="form19-heading">
+              <label className="form19-head">
                 Republika ng Pilipinas <br />
                 Lalawigan ng Kabite <br />
                 Bayan ng Indang <br />
@@ -28,138 +28,137 @@ const Form19 = () => {
               </label>
             </div>
             <div className="form-group">
-              <label className="centered-label">
+              <label className="form19-centered-label">
                 <br /> TANGGAPAN NG LUPONG TAGAPAMAYAPA
               </label>
             </div>
             <div className="form-row two-columns centered-row">
               <div className="form-group">
-                <input type="text" id="maysumbong" /> <br />
-                <input type="text" id="maysumbong" />
-                <label className="sumbong">
+                <input type="text" id="form19-maysumbong" /> <br />
+                <input type="text" id="form19-maysumbong" />
+                <label className="form19-sumbong">
                   (Mga) May Sumbong <br /> -laban kay/kina-
                 </label>
-                <input type="text" id="ipinagsumbong" /> <br />
-                <input type="text" id="ipinagsumbong" />
-                <label className="sumbong"> (Mga) Ipinagsusumbong </label>
+                <input type="text" id="form19-ipinagsumbong" /> <br />
+                <input type="text" id="form19-ipinagsumbong" />
+                <label className="form19-sumbong"> (Mga) Ipinagsusumbong </label>
               </div>
 
               <div className="form-group">
-                <div className="blg-input">
+                <div className="form19-blg-input">
                   <label>Usaping Barangay Blg. </label>
-                  <input type="text" id="blg" placeholder=" " />
+                  <input type="text" id="form19-blg" placeholder=" " />
                 </div>
-                <div className="ukol-input">
+                <div className="form19-ukol-input">
                   <label>Ukol sa:</label>
                   <input type="text" />
                 </div>
               </div>
             </div>
             <div className="form-group">
-              <label className="centered-label">PAG-ABISO NG PAGDINIG</label>
-              <label className="center">(ukol sa: Di-Pagharap)</label>
-            </div>
+              <label className="form19-centered-label">PAG-ABISO NG PAGDINIG</label>
+              <label className="form19-center">(ukol sa: Di-Pagharap)</label>
+            </div> <br /> 
             <div className="form-row two-columns centered-row">
               <div className="form-group">
-                <div className="kay-input">
+                <div className="form19-kay-input">
                   <label>KAY: </label>
-                  <input type="text" id="kay" placeholder=" " />
+                  <input type="text" id="form19-kay" placeholder=" " />
                 </div>
-                <input type="text" id="sumbong-kay" placeholder=" " />
+                <input type="text" id="form19-sumbong-kay" placeholder=" " />
               </div>
-            </div>
-            <div className="form-input">
-              <label className="indent">
+            </div> <br /> <br />
+            <div className="form19-form-input">
+              <label className="form19-indent">
                 Sa pamamagitan nito’y inaatasan ka na humarap sa akin/Pangkat sa
                 ika-
               </label>
-              <input type="text" id="day" placeholder=" " />
+              <input type="text" id="form19-day" placeholder=" " />
               <label> araw ng</label>
             </div>
-            <div className="form-input">
-              <input type="text" id="month" placeholder=" " />
+            <div className="form19-form-input">
+              <input type="text" id="form19-month" placeholder=" " />
               <label>, 20</label>
-              <input type="text" id="year" placeholder=" " />
+              <input type="text" id="form19-year" placeholder=" " />
               <label>sa ganap na ika-</label>
-              <input type="text" id="time" placeholder=" " />
+              <input type="text" id="form19-time" placeholder=" " />
               <label>ng umaga/hapon upang ipaliwanag kung</label>
             </div>
-            <div className="form-input">
+            <div className="form19-form-input">
               <label>
-                {" "}
                 bakit di ka humarap para sa pamamagitan/pag-aayos na nakatakda
                 noong
               </label>
-              <input type="text" id="date" placeholder=" " />
+              <input type="text" id="form19-date" placeholder=" " />
             </div>
-            <div className="form-input">
+            <div className="form19-form-input">
               <label>, 20</label>
-              <input type="text" id="year" placeholder=" " />
+              <input type="text" id="form19-year" placeholder=" " />
               <label>
                 , at kung bakit ang iyong ganting sumbong (kung meron man) na
-                nagbuhat sa sumbong{" "}
+                nagbuhat sa sumbong
               </label>
             </div>
-            <label className="justify">
+            <label className="form19-justify">
               ay di dapat ipagwalang-saysay, at kung bakit hindi dapat
               magpalabas ng isang paghahadlang na makapaghain ng ganting-sumbong
               sa hukuman ay di dapat gawin sanhi ng di mo pagharap o pagtangging
               humarap sa Punong Barangay/Pangkat ng tagapagsundo.
             </label>{" "}
-            <br />
-            <div className="form-input">
-              <label className="indent">Ngayong ika-</label>
-              <input type="text" id="day" placeholder=" " />
+            <br /> <br /> 
+            <div className="form19-form-input">
+              <label className="form19-indent">Ngayong ika-</label>
+              <input type="text" id="form19-day" placeholder=" " />
               <label>araw ng</label>
-              <input type="text" id="month" placeholder=" " />
+              <input type="text" id="form19-month" placeholder=" " />
               <label>, 20</label>
-              <input type="text" id="year" placeholder=" " />
+              <input type="text" id="form19-year" placeholder=" " />
               <label>.</label>
             </div>{" "}
             <br /> <br />
-            <div className="signature-container">
-              <div className="signature-line"></div>
-              <p className="signature-text">
+            <div className="form19-signature-container">
+              <div className="form19-signature-line"></div>
+              <p className="form19-signature-text">
                 Punong Barangay/Tagapangulo ng Pangkat
               </p>
-              <p className="signa-text">(Guhitan ang di-Angkop) </p>
+              <p className="form19-signa-text">(Guhitan ang di-Angkop) </p>
             </div>{" "}
             <br />
-            <div className="form-input">
-              <label className="indent">Pinaabisuhan ngayong ika-</label>
-              <input type="text" id="day" placeholder=" " />
+            <div className="form19-form-input">
+              <label className="form19-indent">Pinaabisuhan ngayong ika-</label>
+              <input type="text" id="form19-day" placeholder=" " />
               <label>araw ng</label>
-              <input type="text" id="date" placeholder=" " />
+              <input type="text" id="form19-date" placeholder=" " />
               <label>.</label>
             </div>{" "}
             <br /> <br />
             <div className="form-row two-columns centered-row">
               <div className="form-group-input">
-                <label className="mga-sumbong">(Mga) May Sumbong</label> <br />
-                <div className="line"></div> <br /> <br /> <br />
-                <div className="line"></div>
+                <label className="form19-mga-sumbong">(Mga) May Sumbong</label> <br /> <br />
+                <div className="form19-line"></div> <br /> <br /> <br />
+                <div className="form19-line"></div>
               </div>
 
               <div className="form-group-input">
-                <label className="mga-sumbong">(Mga) Ipinagsusumbong </label>{" "}
-                <br />
-                <div className="line"></div> <br /> <br /> <br />
-                <div className="line"></div>
+                <label className="form19-mga-sumbong">(Mga) Ipinagsusumbong </label>{" "}
+                <br /> <br />
+                <div className="form19-line"></div> <br /> <br /> <br />
+                <div className="form19-line"></div>
               </div>
             </div>{" "}
           </form>
         </div>
-        <div className="button-group">
+        <div className="form19-button-group">
           <button
             type="button"
-            className="print-button"
+            className="form19-print-button"
             onClick={() => window.print()}
           >
             Print
           </button>
-          <button type="button" className="next-button">
+          <button type="button" className="form19-next-button">
             {" "}
-            Next{" "}
+            Next {" "}
           </button>
         </div>
       </div>

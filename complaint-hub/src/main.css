@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
 
 /*header page*/
 header {
@@ -1570,336 +1572,9 @@ html, body {
   overflow: auto; /* Enable scrolling */
 }
 
-.katibayan-form-page {
+.form7-page {
   font-family: Arial, sans-serif;
-  background-image: url("/blotterformpage.png");
-  min-height: 100vh;
-  min-width: 100vw;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: block; /* Change from flex to block */
-  margin: 0;
-  top: 0;
-  left: 0;
-  position: relative;
-  overflow: auto;
-}
-
-.tanggapan-form-container {
-  background-color: white;
-  padding: 50px 50px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;
-  width: 90%;
-}
-
-.katibayan-form-container {
-  background-color: white;
-  padding: 50px 85px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;
-  width: 90%;
-  max-width: 800px;
-}
-
-h1 {
-  font-family: "Inria Sans", serif;
-  font-size: 3.2rem;
-  color: black;
-  margin-top: 50px;
-  margin-bottom: 5px;
-  text-align: center;
-}
-
-p {
-  font-family: "Inria Sans", serif;
-  font-size: 0.95rem;
-  color: black;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.centered-text {
-  font-size: 1.2rem;
-  color: black;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.centered-label {
-  margin-bottom: 30px;
-}
-
-.kp-input {
-  display: flex;
-  gap: 5px;
-  justify-content: flex-end;
-  text-align: justify;
-  line-height: 1.5;
-}
-
-.kp-input input {
-  width: 150px;
-  height: 30px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-
-.kp {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.kpcase {
-  text-align: right;
-  margin-bottom: 8px;
-}
-
-.kp input {
-  width: 120px;
-}
-
-.head {
-  text-align: center;
-}
-
-.three-columns .form-group,
-.two-columns .form-group {
-  flex: 1;
-}
-
-#maysumbong {
-  width: 250px;
-}
-
-#ipinagsumbong {
-  width: 250px;
-}
-
-.sumbong {
-  text-align: left;
-  margin-bottom: 25px;
-  margin-left: 15px;
-}
-
-.ipinagsusumbong {
-  text-align: center;
-  margin-bottom: 25px;
-  margin-left: 35px;
-}
-
-#sumbong-kay {
-  margin-left: 40px;
-  width: 270px;
-}
-
-.blg-input {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.blg-input input {
-  width: 50px;
-  height: 35px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-
-.ukol-input {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.ukol-input input {
-  width: 155px;
-  height: 35px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-
-.kay-input {
-  display: flex;
-  gap: 1px;
-  align-items: center;
-}
-
-.kay-input input {
-  height: 38px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-
-#kay {
-  width: 270px;
-}
-
-.form-input {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  text-align: justify;
-  line-height: 1.5;
-}
-
-.form-input input {
-  width: 110px;
-  height: 30px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-
-.justify {
-  text-align: justify;
-}
-
-#year {
-  width: 50px;
-}
-
-#day {
-  width: 50px;
-}
-
-#time {
-  width: 70px;
-}
-
-#name {
-  width: 300px;
-  height: 30px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-
-#pangalan {
-  width: 230px;
-  height: 30px;
-  box-sizing: border-box;
-}
-
-.indent {
-  text-indent: 50px;
-  text-align: justify;
-}
-
-.paragraph {
-  text-indent: 50px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-bottom: 16px;
-  text-align: justify;
-}
-
-label {
-  font-weight: bold;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-  margin-right: 5px;
-  line-height: 1.5;
-  display: block;
-  color: black;
-  text-align: left;
-}
-
-.sign-section {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.sig-container {
-  justify-content: flex-start;
-}
-
-.sig-line {
-  border-top: 1px solid black;
-  width: 300px !important;
-  margin: 0 !important;
-}
-
-.sig-text {
-  text-align: left !important;
-  margin-top: 10px;
-  margin-left: 30px !important;
-  font-weight: bold;
-  font-style: normal !important;
-}
-
-.sign-container {
-  align-items: center;
-  margin-top: 50px;
-}
-
-.sign-line {
-  border-top: 1px solid black;
-  width: 205px !important;
-  margin-left: auto !important;
-}
-
-.sign-text {
-  justify-content: flex-end !important;
-  margin-top: 10px;
-  font-weight: bold;
-  font-style: normal !important;
-  text-align: right !important;
-  margin-right: 30px !important;
-}
-
-.button-group {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 15px;
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
-
-.print-button,
-.next-button {
-  background-color: #0056b3;
-  color: white;
-  font-weight: bold;
-  width: 150px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-.print-button:hover {
-  background-color: #003d82;
-  transform: scale(1.02);
-}
-.next-button:hover {
-  background-color: #003d82;
-  color: #ffffff;
-  transform: scale(1.02);
-}
-.print-button:active,
-.next-button:active {
-  transform: scale(0.98);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .form-row {
-    flex-direction: column;
-  }
-}
-
-/*Form8 page*/
-.paabiso-form-page {
-  font-family: Arial, sans-serif;
-  background-image: url("blotterformpage.png");
+  background-color: #e7f6ff;
   min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
@@ -1915,37 +1590,47 @@ label {
   overflow-y: auto;
 }
 
-.tanggapan-form-container {
+.form7-container {
   background-color: white;
-  padding: 50px 50px;
+  padding: 50px 80px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
-  width: 100% !important;
-  max-width: 800px;
+  width: 50%;
 }
 
-h1 {
-  font-family: "Inria Sans", serif;
-  font-size: 3.2rem;
+.form7-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
   color: black;
   margin-top: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-align: center;
 }
 
-.centered-text {
+.form7-subtitle {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form7-centered-text {
   font-size: 1.2rem;
   color: black;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.centered-label {
-  margin-bottom: 30px;
+.form7-group {
+  display: flex;
+  flex-direction: column;
 }
 
-.kp-input {
+.form7-kp-input {
   display: flex;
   gap: 5px;
   justify-content: flex-end;
@@ -1953,130 +1638,517 @@ h1 {
   line-height: 1.5;
 }
 
-.kp-input input {
+.form7-kp-input input {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kp {
+.form7-kp {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.kpcase {
+.form7-kpcase {
   text-align: right;
   margin-bottom: 8px;
 }
 
-.kp input {
+.form7-kp input {
   width: 120px;
 }
 
-.head {
-  text-align: center;
+/* Ensure the parent container centers its children */
+.form7-container, .form7-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.date {
+/* Center-align the text */
+.form7-head, .form7-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form7-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form7-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.three-columns .form-group,
+.two-columns .form7-group {
+  flex: 1;
+}
+
+#form7-maysumbong {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+#form7-ipinagsumbong {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.form7-sumbong {
+  text-align: left;
+  margin-bottom: 25px;
+  margin-left: 15px;
+}
+
+.form7-ipinagsusumbong {
+  text-align: center;
+  margin-bottom: 25px;
+  margin-left: 35px;
+}
+
+#form7-sumbong-kay {
+  margin-left: 40px;
+  width: 270px;
+}
+
+.form7-blg-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.form7-blg-text {
+  text-align: right;
+  margin-bottom: 8px;
+  margin-right: 10px;
+  justify-content: flex-end;
+
+}
+
+.form7-blg-input input {
+  width: 50px;
+  height: 35px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form7-ukol-input {
   display: flex;
   gap: 5px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.date input {
-  width: 120px;
-  height: 30px;
-  padding: 5px;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-#year {
-  width: 50px;
-}
-
-#day {
-  width: 50px;
-}
-
-.utos {
-  letter-spacing: 0.2px;
-  gap: 10px;
-}
-
-.sumbong {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.blg-input {
-  margin-left: 76px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.blg-input input {
-  width: 50px;
+.form7-ukol-input input {
+  width: 155px;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.ukol-input {
-  margin-left: 76px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.ukol-input input {
-  width: 160px;
-  height: 35px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-
-.kay-input {
+.form7-kay-input {
   display: flex;
   gap: 1px;
   align-items: center;
 }
 
-.kay-input input {
-  width: 250px;
+.form7-kay-input input {
   height: 38px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#sumbong {
+#form7-kay {
   width: 270px;
-  margin-left: 40px;
 }
 
-.text-sumbong {
-  margin-left: 95px;
-  margin-bottom: 30px;
-}
-
-.form-input {
+.form7-form-input {
   display: flex;
-  gap: 10px;
+  gap: 5px;
   align-items: center;
+  text-align: justify;
+  line-height: 1.5;
 }
 
-.form-input input {
+.form7-form-input input {
   width: 110px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.indent {
+.form7-justify {
+  text-align: justify;
+  margin-right: 100px;
+  margin-bottom: 20px;
+}
+
+#form7-year {
+  width: 50px;
+  margin-right: 5px;
+}
+
+#form7-day {
+  width: 50px;
+  margin-right: 5px;
+}
+
+#form7-month {
+  width: 150px;
+  margin-right: 5px;
+}
+
+#form7-time {
+  width: 70px;
+  margin-right: 5px;
+}
+
+#form7-name {
+  width: 300px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+#form7-pangalan {
+  width: 230px;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.form7-indent {
+  text-indent: 50px;
+  text-align: justify;
+}
+
+.form7-paragraph {
+  text-indent: 50px;
+  font-weight: bold;
+  font-size: 0.916rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  line-height: 1.5;
+  display: block;
+  color: black;
+  text-align: left;
+}
+
+.form7-sign-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form7-sig-container {
+  justify-content: flex-start;
+}
+
+.form7-sig-line {
+  border-top: 1px solid black;
+  width: 300px !important;
+  margin: 0 !important;
+}
+
+.form7-sig-text {
+  text-align: left !important;
+  margin-top: 10px;
+  margin-left: 30px !important;
+  font-weight: bold;
+  font-style: normal !important;
+}
+
+.form7-sign-container {
+  align-items: center;
+  margin-top: 50px;
+}
+
+.form7-sign-line {
+  border-top: 1px solid black;
+  width: 205px !important;
+  margin-left: auto !important;
+}
+
+.form7-sign-text {
+  justify-content: flex-end !important;
+  margin-top: 10px;
+  font-weight: bold;
+  font-style: normal !important;
+  text-align: right !important;
+  margin-right: 30px !important;
+}
+
+.form7-button-group {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.form7-print-button,
+.form7-next-button {
+  background-color: #0056b3;
+  color: white;
+  font-weight: bold;
+  width: 150px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.form7-print-button:hover {
+  background-color: #000000;
+  transform: scale(1.02);
+}
+.form7-next-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+  transform: scale(1.02);
+}
+.form7-print-button:active,
+.form7-next-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+
+/*Form8 page*/
+html, body {
+  height: 100%; /* Ensure the full height of the viewport */
+  margin: 0;
+  padding: 0;
+  
+  font-family: Arial, sans-serif;
+  overflow: auto; /* Enable scrolling */
+}
+
+.form8-page {
+  font-family: Arial, sans-serif;
+  background-color: #e7f6ff;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%; /* Ensure the container width is 100% of the viewport */
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  
+}
+
+.form8-container {
+  background-color: white;
+  padding: 50px 80px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  width: 100%;
+}
+
+.form8-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
+  color: black;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.form8-subtitle {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form8-centered-label {
+  margin-bottom: 30px;
+}
+
+/* Center-align the text */
+.form8-head, .form8-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form8-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form8-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.form8-kp-input {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.form8-kp-input input {
+  width: 150px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form8-kp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.form8-kpcase {
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.form8-kp input {
+  width: 120px;
+}
+
+.form8-head {
+  text-align: center;
+}
+
+.form8-date {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.form8-date input {
+  width: 120px;
+  height: 30px;
+  padding: 5px;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+#form8-year {
+  width: 50px;
+}
+
+#form8-day {
+  width: 50px;
+  
+}
+
+#form8-date {
+  width: 150px;
+}
+
+.form8-utos {
+  letter-spacing: 0.2px;
+  gap: 10px;
+}
+
+.form8-sumbong {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form8-blg-input {
+  margin-left: 76px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.form8-blg-input input {
+  width: 50px;
+  height: 35px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form8-ukol-input {
+  margin-left: 76px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.form8-ukol-input input {
+  width: 160px;
+  height: 35px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form8-kay-input {
+  display: flex;
+  gap: 1px;
+  align-items: center;
+}
+
+.form8-kay-input input {
+  width: 270px;
+  height: 38px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+#form8-sumbong {
+  width: 270px;
+  height: 38px;
+  margin-left: 40px;
+}
+
+.form8-text-sumbong {
+  margin-left: 100px;
+  margin-bottom: 30px;
+}
+
+.form8-form-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.form8-form-input input {
+  width: 110px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form8-indent {
   text-indent: 40px;
 }
 
@@ -2091,24 +2163,24 @@ label {
   text-align: left;
 }
 
-.sign-section {
+.form8-sign-section {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.signature-container {
+.form8-signature-container {
   text-align: center;
   margin-top: 50px;
 }
 
-.signature-line {
+.form8-signature-line {
   border-top: 1px solid black;
   width: 300px !important;
   margin: 0;
 }
 
-.signature-text {
+.form8-signature-text {
   margin-left: 25px !important;
   margin-top: 10px;
   font-weight: bold;
@@ -2116,27 +2188,28 @@ label {
   text-align: left !important;
 }
 
-.sign-container {
+.form8-sign-container {
   align-items: center;
   margin-top: 50px;
 }
 
-.sign-line {
+.form8-sign-line {
   border-top: 1px solid black;
   width: 205px;
   margin-left: auto !important;
 }
 
-.sign-text {
+.form8-sign-text {
   justify-content: flex-end;
   margin-top: 10px;
   font-weight: bold;
   font-style: normal;
   text-align: right !important;
-  margin-right: 50px !important;
+  margin-left: auto !important;
+  margin-right: 30px !important;
 }
 
-.button-group {
+.form8-button-group {
   display: flex;
   justify-content: space-evenly;
   gap: 15px;
@@ -2144,8 +2217,8 @@ label {
   margin-bottom: 50px;
 }
 
-.print-button,
-.next-button {
+.form8-print-button,
+.form8-next-button {
   background-color: #0056b3;
   color: white;
   font-weight: bold;
@@ -2157,24 +2230,24 @@ label {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.print-button {
+.form8-print-button {
   width: 150px;
 }
-.next-button {
+.form8-next-button {
   width: 200px;
 }
 
-.print-button:hover {
-  background-color: #003d82;
+.form8-print-button:hover {
+  background-color: #000000;
   transform: scale(1.02);
 }
-.next-button:hover {
-  background-color: #003d82;
+.form8-next-button:hover {
+  background-color: #000000;
   color: #ffffff;
   transform: scale(1.02);
 }
-.print-button:active,
-.next-button:active {
+.form8-print-button:active,
+.form8-next-button:active {
   transform: scale(0.98);
 }
 
@@ -2185,10 +2258,20 @@ label {
   }
 }
 
+
 /*Form9 page*/
-.patawag-form-page {
+html, body {
+  height: 100%; /* Ensure the full height of the viewport */
+  margin: 0;
+  padding: 0;
+  
   font-family: Arial, sans-serif;
-  background-image: url("blotterformpage.png");
+  overflow: auto; /* Enable scrolling */
+}
+
+.form9-page {
+  font-family: Arial, sans-serif;
+  background-color: #e7f6ff;
   min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
@@ -2210,7 +2293,7 @@ label {
   max-width: 800px;
 }
 
-.patawag-form-container {
+.form9-patawag-form-container {
   background-color: white;
   padding: 50px 50px;
   border-radius: 10px;
@@ -2220,27 +2303,61 @@ label {
   max-width: 800px;
 }
 
-h1 {
-  font-family: "Inria Sans", serif;
-  font-size: 3.2rem;
+.form9-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
   color: black;
   margin-top: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-align: center;
 }
 
-.centered-text {
+.form9-subtitle {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Ensure the parent container centers its children */
+.form9-container, .form9-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form9-head, .form9-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form9-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form9-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.form9-centered-text {
   font-size: 1.2rem;
   color: black;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.centered-label {
+.form9-centered-label {
   margin-bottom: 30px;
 }
 
-.kp-input {
+.form9-kp-input {
   display: flex;
   gap: 5px;
   justify-content: flex-end;
@@ -2248,29 +2365,29 @@ h1 {
   line-height: 1.5;
 }
 
-.kp-input input {
+.form9-kp-input input {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kp {
+.form9-kp {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.kpcase {
+.form9-kpcase {
   text-align: right;
   margin-bottom: 8px;
 }
 
-.kp input {
+.form9-kp input {
   width: 120px;
 }
 
-.head {
+.form9-head {
   text-align: center;
 }
 
@@ -2279,152 +2396,163 @@ h1 {
   flex: 1;
 }
 
-#maysumbong {
+#form9-maysumbong {
   width: 250px;
+  height: 35px;
+  margin-bottom: 10px;
 }
 
-#ipinagsumbong {
+#form9-ipinagsumbong {
   width: 250px;
+  height: 35px;
+  margin-bottom: 10px;
 }
 
-.sumbong {
+.form9-sumbong {
   text-align: left;
   margin-bottom: 25px;
   margin-left: 15px;
 }
 
-.ipinagsusumbong {
+.form9-ipinagsusumbong {
   text-align: center;
   margin-bottom: 25px;
-  margin-left: 0px;
+  margin-left: 80px;
 }
 
-#sumbong-kay {
+#form9-sumbong-kay {
   margin-left: 40px;
   width: 270px;
 }
 
-.blg-input {
+.form9-blg-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.blg-input input {
-  width: 50px;
+.form9-blg-input input {
+  width: 50px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.ukol-input {
+.form9-ukol-input {
   display: flex;
   gap: 5px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.ukol-input input {
-  width: 155px;
+.form9-ukol-input input {
+  width: 155px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kay-input {
+.form9-kay-input {
   display: flex;
   gap: 1px;
   align-items: center;
 }
 
-.kay-input input {
-  height: 38px;
+.form9-kay-input input {
+  height: 50px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#kay {
+#form9-kay {
   width: 270px;
+  margin-bottom: 10px;
 }
 
-.form-input {
+.form9-form-input {
   display: flex;
   gap: 5px;
   align-items: center;
 }
 
-.form-input input {
+.form9-form-input input {
   width: 110px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#year {
+#form9-year {
   width: 50px;
+  height: 35px;
 }
 
-#day {
+#form9-day {
   width: 50px;
+  height: 35px;
 }
 
-#time {
+#form9-time {
   width: 70px;
+  height: 35px;
 }
 
-#blank {
+#form9-blank {
   width: 150px;
+  height: 35px;
 }
 
-#name {
+#form9-name {
   width: 250px;
   margin-left: 150px;
+  height: 35px;
 }
 
-#pangalan {
+#form9-pangalan {
   width: 200px;
+  height: 35px;
 }
 
-.four {
+.form9-four {
   margin-left: 150px;
 }
 
-.patawag-input {
+.form9-patawag-input {
   margin-left: 0px;
 }
 
-.name-input {
+.form9-name-input {
   display: flex;
   gap: 5px;
   align-items: center;
 }
 
-.name-input input {
+.form9-name-input input {
   width: 200px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.reasons-input {
+.form9-reasons-input {
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
-.reasons-input input {
+.form9-reasons-input input {
   width: 200px;
   height: 30px;
   box-sizing: border-box;
   margin-top: 5px;
 }
 
-.reasons-input label {
+.form9-reasons-input label {
   align-items: center;
 }
 
-.reason-input input[type="radio"] {
+.form9-reason-input input[type="radio"] {
   width: 10px;
   height: 10px;
   appearance: none;
@@ -2437,7 +2565,7 @@ h1 {
   position: relative;
 }
 
-.reason-input input[type="radio"]:checked::before {
+.form9-reason-input input[type="radio"]:checked::before {
   content: "";
   display: block;
   width: 12px;
@@ -2450,12 +2578,13 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
-.indent {
-  text-indent: 50px;
+.form9-indent {
+  text-indent: 50px !important;
+  text-align: justify;
 }
 
-.paragraph {
-  text-indent: 50px !important;
+.form9-paragraph {
+  text-indent: 40px !important;
   font-weight: bold;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -2471,27 +2600,27 @@ label {
   margin-right: 5px;
   display: block;
   color: black;
-  text-align: left;
+  text-align: justify;
 }
 
-.sign-section {
+.form9-sign-section {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.signature-container {
+.form9-signature-container {
   text-align: center;
   margin-top: 50px;
 }
 
-.signature-line {
+.form9-signature-line {
   border-top: 1px solid black;
   width: 300px !important;
   margin: 0;
 }
 
-.signature-text {
+.form9-signature-text {
   margin-top: 10px;
   font-weight: bold;
   font-style: normal !important;
@@ -2499,18 +2628,18 @@ label {
   margin-left: 25px !important;
 }
 
-.sign-container {
+.form9-sign-container {
   align-items: center;
   margin-top: 50px;
 }
 
-.sign-line {
+.form9-sign-line {
   border-top: 1px solid black;
   width: 200px !important;
   margin-left: auto !important;
 }
 
-.sign-text {
+.form9-sign-text {
   margin-top: 10px;
   font-weight: bold;
   font-style: normal !important;
@@ -2518,13 +2647,13 @@ label {
   margin-right: 70px !important;
 }
 
-.signa-line {
+.form9-signa-line {
   border-top: 1px solid black;
   width: 250px !important;
   margin: 0px !important;
 }
 
-.button-group {
+.form9-button-group {
   display: flex;
   justify-content: space-evenly;
   gap: 15px;
@@ -2532,8 +2661,8 @@ label {
   margin-bottom: 50px;
 }
 
-.print-button,
-.next-button {
+.form9-print-button,
+.form9-next-button {
   background-color: #0056b3;
   color: white;
   font-weight: bold;
@@ -2545,17 +2674,20 @@ label {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.print-button:hover {
+
+.form9-print-button:hover {
   background-color: #003d82;
   transform: scale(1.02);
 }
-.next-button:hover {
+
+.form9-next-button:hover {
   background-color: #003d82;
   color: #ffffff;
   transform: scale(1.02);
 }
-.print-button:active,
-.next-button:active {
+
+.form9-print-button:active,
+.form9-next-button:active {
   transform: scale(0.98);
 }
 
@@ -2566,10 +2698,20 @@ label {
   }
 }
 
+
 /*Form14 page*/
-.katibayan-form-page {
+html, body {
+  height: 100%; /* Ensure the full height of the viewport */
+  margin: 0;
+  padding: 0;
+  background-color: #e7f6ff;
   font-family: Arial, sans-serif;
-  background-image: url("blotterformpage.png");
+  overflow: auto; /* Enable scrolling */
+} 
+
+.form14-page {
+  font-family: Arial, sans-serif;
+  background-color: #e7f6ff;
   min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
@@ -2579,43 +2721,63 @@ label {
   justify-content: center;
   align-items: center;
   margin: 0;
+  width: 100%; /* Ensure the container width is 100% of the viewport */
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-.tanggapan-form-container {
+.form14-container {
   background-color: white;
   padding: 50px 50px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
-  width: 90%;
+  width: 100%;
   max-width: 800px;
 }
 
-.katibayan-form-container {
-  background-color: white;
-  padding: 50px 85px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;
-  width: 90%;
-  max-width: 800px;
-}
-
-h2 {
-  font-family: "Inria Sans", serif;
-  font-size: 2rem;
-  color: black;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-h1 {
-  font-family: "Inria Sans", serif;
-  font-size: 3.2rem;
+.form14-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
   color: black;
   margin-top: 50px;
   margin-bottom: 5px;
   text-align: center;
+}
+
+.form14-subtitle {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Ensure the parent container centers its children */
+.form14-container, .form14-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form14-head, .form14-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form14-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form14-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
 }
 
 p {
@@ -2626,18 +2788,18 @@ p {
   text-align: center;
 }
 
-.centered-text {
+.form14-centered-text {
   font-size: 1.2rem;
   color: black;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.centered-label {
+.form14-centered-label {
   margin-bottom: 30px;
 }
 
-.kp-input {
+.form14-kp-input {
   display: flex;
   gap: 5px;
   justify-content: flex-end;
@@ -2645,29 +2807,29 @@ p {
   line-height: 1.5;
 }
 
-.kp-input input {
+.form14-kp-input input {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kp {
+.form14-kp {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.kpcase {
+.form14-kpcase {
   text-align: right;
   margin-bottom: 8px;
 }
 
-.kp input {
+.form14-kp input {
   width: 120px;
 }
 
-.head {
+.form14-head {
   text-align: center;
 }
 
@@ -2675,87 +2837,90 @@ p {
   flex: 1;
 }
 
-.sumbong {
+.form14-sumbong {
   text-align: left;
   margin-bottom: 25px;
   margin-left: 15px;
 }
 
-.mgasumbong {
+.form14-mgasumbong {
   text-align: center !important;
-  margin-left: 0px !important;
+  margin-left: 90px !important;
+  margin-bottom: 10px;
 }
 
-#mgamaysumbong {
+#form14-mgamaysumbong {
   width: 250px !important;
   align-items: center;
   justify-content: center !important;
   margin-left: 45px !important;
+  margin-bottom: 10px;
 }
 
-#mgaipinagsumbong {
+#form14-mgaipinagsumbong {
   width: 250px !important;
   align-items: center;
   justify-content: center !important;
   margin-left: 45px !important;
+  margin-bottom: 10px;
 }
 
-.ipinagsusumbong {
+.form14-ipinagsusumbong {
   text-align: center;
   margin-bottom: 25px;
   margin-left: 35px;
 }
 
-#sumbong-kay {
+#form14-sumbong-kay {
   margin-left: 40px;
   width: 270px;
 }
 
-.blg-input {
+.form14-blg-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: right;
 }
 
-.blg-input input {
-  width: 50px;
+.form14-blg-input input {
+  width: 50px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.ukol-input {
+.form14-ukol-input {
   display: flex;
   gap: 5px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.ukol-input input {
-  width: 155px;
+.form14-ukol-input input {
+  width: 155px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kay-input {
+.form14-kay-input {
   display: flex;
   gap: 1px;
   align-items: center;
 }
 
-.kay-input input {
+.form14-kay-input input {
   height: 38px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#kay {
+#form14-kay {
   width: 270px;
 }
 
-.form-input {
+.form14-form-input {
   display: flex;
   gap: 5px;
   align-items: center;
@@ -2763,48 +2928,49 @@ p {
   line-height: 1.5;
 }
 
-.form-input input {
+.form14-form-input input {
   width: 110px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.justify {
+.form14-justify {
   text-align: justify;
 }
 
-.left {
+.form14-left {
   text-align: left;
 }
 
-#year {
+#form14-year {
   width: 50px;
 }
 
-#day {
+#form14-day {
   width: 50px;
 }
 
-#time {
+#form14-time {
   width: 70px;
 }
 
-#maysumbong {
+#form14-maysumbong {
   width: 250px;
+  margin-bottom: 10px;
 }
 
-#ipinagsumbong {
+#form14-ipinagsumbong {
   width: 250px;
+  margin-bottom: 10px;
 }
 
-.indent {
+.form14-indent {
   text-indent: 50px;
   text-align: justify;
 }
 
-.paragraph {
-  text-indent: 50px;
+.form14-paragraph {
   font-weight: bold;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -2823,23 +2989,23 @@ label {
   text-align: left;
 }
 
-.sign-section {
+.form14-sign-section {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.sig-container {
+.form14-sig-container {
   justify-content: flex-start;
 }
 
-.sig-line {
+.form14-sig-line {
   border-top: 1px solid black;
   width: 300px !important;
   margin: 0px !important;
 }
 
-.sig-text {
+.form14-sig-text {
   text-align: left !important;
   margin-top: 10px;
   margin-left: 10px !important;
@@ -2847,14 +3013,14 @@ label {
   font-style: normal !important;
 }
 
-.signa-text {
+.form14-signa-text {
   text-align: left !important;
   margin-left: 50px !important;
   font-weight: bold;
   font-style: normal !important;
 }
 
-.button-group {
+.form14-button-group {
   display: flex;
   justify-content: space-evenly;
   gap: 15px;
@@ -2862,8 +3028,8 @@ label {
   margin-bottom: 50px;
 }
 
-.print-button,
-.next-button {
+.form14-print-button,
+.form14-next-button {
   background-color: #0056b3;
   color: white;
   font-weight: bold;
@@ -2875,17 +3041,20 @@ label {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.print-button:hover {
+
+.form14-print-button:hover {
   background-color: #003d82;
   transform: scale(1.02);
 }
-.next-button:hover {
+
+.form14-next-button:hover {
   background-color: #003d82;
   color: #ffffff;
   transform: scale(1.02);
 }
-.print-button:active,
-.next-button:active {
+
+.form14-print-button:active,
+.form14-next-button:active {
   transform: scale(0.98);
 }
 
@@ -2896,10 +3065,11 @@ label {
   }
 }
 
+
 /*Form15 page*/
-.katibayan-form-page {
+.form15-page {
   font-family: Arial, sans-serif;
-  background-image: url("blotterformpage.png");
+  background-color: #e7f6ff;
   min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
@@ -2911,33 +3081,48 @@ label {
   margin: 0;
 }
 
-.tanggapan-form-container {
+.form15-container {
   background-color: white;
   padding: 50px 50px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
-  width: 90%;
+  width: 100%;
   max-width: 800px;
 }
 
-.katibayan-form-container {
-  background-color: white;
-  padding: 50px 85px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;
-  width: 90%;
-  max-width: 800px;
-}
-
-h1 {
-  font-family: "Inria Sans", serif;
-  font-size: 3.2rem;
+.form15-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
   color: black;
   margin-top: 50px;
   margin-bottom: 5px;
   text-align: center;
+}
+
+/* Ensure the parent container centers its children */
+.form15-container, .form15-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form15-head, .form15-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form15-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form15-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
 }
 
 p {
@@ -2948,18 +3133,7 @@ p {
   text-align: center;
 }
 
-.centered-text {
-  font-size: 1.2rem;
-  color: black;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.centered-label {
-  margin-bottom: 30px;
-}
-
-.kp-input {
+.form15-kp-input {
   display: flex;
   gap: 5px;
   justify-content: flex-end;
@@ -2967,29 +3141,29 @@ p {
   line-height: 1.5;
 }
 
-.kp-input input {
+.form15-kp-input input {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kp {
+.form15-kp {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.kpcase {
+.form15-kpcase {
   text-align: right;
   margin-bottom: 8px;
 }
 
-.kp input {
+.form15-kp input {
   width: 120px;
 }
 
-.head {
+.form15-head {
   text-align: center;
 }
 
@@ -2998,76 +3172,83 @@ p {
   flex: 1;
 }
 
-#maysumbong {
+#form15-maysumbong {
   width: 250px;
+  margin-bottom: 10px;
 }
 
-#ipinagsumbong {
+#form15-ipinagsumbong {
   width: 250px;
+  margin-bottom: 10px;
 }
 
-.sumbong {
+.form15-sumbong {
   text-align: left;
   margin-bottom: 25px;
   margin-left: 15px;
 }
 
-.ipinagsusumbong {
+.form15-ipinagsusumbong {
   text-align: center;
   margin-bottom: 25px;
   margin-left: 35px;
 }
 
-#sumbong-kay {
+#form15-sumbong-kay {
   margin-left: 40px;
   width: 270px;
+  margin-bottom: 10px;
 }
 
-.blg-input {
+.form15-blg-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.blg-input input {
-  width: 50px;
+.form15-blg-input input {
+  width: 50px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.ukol-input {
+.form15-ukol-input {
   display: flex;
   gap: 5px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.ukol-input input {
-  width: 155px;
+.form15-ukol-input input {
+  width: 155px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kay-input {
+.form15-kay-input {
   display: flex;
   gap: 1px;
   align-items: center;
 }
 
-.kay-input input {
+.form15-kay-input input {
   height: 38px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#kay {
+#form15-kay {
   width: 270px;
 }
 
-.form-input {
+#form15-gawad {
+  margin-top: 10px;
+}
+
+.form15-form-input {
   display: flex;
   gap: 5px;
   align-items: center;
@@ -3075,49 +3256,48 @@ p {
   line-height: 1.5;
 }
 
-.form-input input {
+.form15-form-input input {
   width: 110px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.justify {
+.form15-justify {
   text-align: justify;
 }
 
-#year {
+#form15-year {
   width: 40px;
 }
 
-#day {
+#form15-day {
   width: 50px;
 }
 
-#place {
+#form15-place {
   width: 140px;
 }
 
-#name {
+#form15-name {
   width: 300px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#pangalan {
+#form15-pangalan {
   width: 230px;
   height: 30px;
   box-sizing: border-box;
 }
 
-.indent {
+.form15-indent {
   text-indent: 50px;
   text-align: justify;
 }
 
-.paragraph {
-  text-indent: 50px;
+.form15-paragraph {
   font-weight: bold;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -3136,23 +3316,23 @@ label {
   text-align: left;
 }
 
-.sign-section {
+.form15-sign-section {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.sig-container {
+.form15-sig-container {
   justify-content: flex-start;
 }
 
-.sig-line {
+.form15-sig-line {
   border-top: 1px solid black;
   width: 200px !important;
   margin: 0;
 }
 
-.sig-text {
+.form15-sig-text {
   text-align: left;
   margin-top: 7px;
   margin-left: 75px !important;
@@ -3160,18 +3340,18 @@ label {
   font-style: normal !important;
 }
 
-.sign-container {
+.form15-sign-container {
   align-items: center;
   margin-top: 50px;
 }
 
-.sign-line {
+.form15-sign-line {
   border-top: 1px solid black;
   width: 300px !important;
   margin-left: auto !important;
 }
 
-.sign-text {
+.form15-sign-text {
   justify-content: flex-end;
   margin-top: 10px;
   font-weight: bold;
@@ -3180,13 +3360,13 @@ label {
   margin-right: 3px !important;
 }
 
-.signa-line {
+.form15-signa-line {
   border-top: 1px solid black;
   width: 255px !important;
   margin: 0 !important;
 }
 
-.signa-text {
+.form15-signa-text {
   text-align: left !important;
   margin-top: 7px;
   margin-left: 5px !important;
@@ -3201,11 +3381,11 @@ ul {
 
 li {
   margin-bottom: 5px;
-  margin-left: 60px !important;
+  margin-left: 50px !important;
   line-height: 1.5;
 }
 
-.button-group {
+.form15-button-group {
   display: flex;
   justify-content: space-evenly;
   gap: 15px;
@@ -3213,8 +3393,8 @@ li {
   margin-bottom: 50px;
 }
 
-.print-button,
-.next-button {
+.form15-print-button,
+.form15-next-button {
   background-color: #0056b3;
   color: white;
   font-weight: bold;
@@ -3226,17 +3406,20 @@ li {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.print-button:hover {
-  background-color: #003d82;
+
+.form15-print-button:hover {
+  background-color: #000000;
   transform: scale(1.02);
 }
-.next-button:hover {
-  background-color: #003d82;
+
+.form15-next-button:hover {
+  background-color: #000000;
   color: #ffffff;
   transform: scale(1.02);
 }
-.print-button:active,
-.next-button:active {
+
+.form15-print-button:active,
+.form15-next-button:active {
   transform: scale(0.98);
 }
 
@@ -3248,9 +3431,9 @@ li {
 }
 
 /*Form16 page*/
-.katibayan-form-page {
+.form16-page {
   font-family: Arial, sans-serif;
-  background-image: url("blotterformpage.png");
+  background-color: #e7f6ff;
   min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
@@ -3262,41 +3445,48 @@ li {
   margin: 0;
 }
 
-.tanggapan-form-container {
+.form16-container {
   background-color: white;
   padding: 50px 50px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
-  width: 90%;
+  width: 100%;
   max-width: 800px;
 }
 
-.katibayan-form-container {
-  background-color: white;
-  padding: 50px 85px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;
-  width: 90%;
-  max-width: 800px;
-}
-
-h2 {
-  font-family: "Inria Sans", serif;
-  font-size: 2rem;
-  color: black;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-h1 {
-  font-family: "Inria Sans", serif;
-  font-size: 3.2rem;
+.form16-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
   color: black;
   margin-top: 50px;
   margin-bottom: 5px;
   text-align: center;
+}
+
+/* Ensure the parent container centers its children */
+.form16-container, .form16-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form16-head, .form16-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form16-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form16-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
 }
 
 p {
@@ -3307,18 +3497,18 @@ p {
   text-align: center;
 }
 
-.centered-text {
+.form16-centered-text {
   font-size: 1.2rem;
   color: black;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.centered-label {
+.form16-centered-label {
   margin-bottom: 30px;
 }
 
-.kp-input {
+.form16-kp-input {
   display: flex;
   gap: 5px;
   justify-content: flex-end;
@@ -3326,29 +3516,29 @@ p {
   line-height: 1.5;
 }
 
-.kp-input input {
+.form16-kp-input input {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kp {
+.form16-kp {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.kpcase {
+.form16-kpcase {
   text-align: right;
   margin-bottom: 8px;
 }
 
-.kp input {
+.form16-kp input {
   width: 120px;
 }
 
-.head {
+.form16-head {
   text-align: center;
 }
 
@@ -3357,87 +3547,90 @@ p {
   flex: 1;
 }
 
-.sumbong {
+.form16-sumbong {
   text-align: left;
   margin-bottom: 25px;
   margin-left: 15px;
 }
 
-.mgasumbong {
+.form16-mgasumbong {
   text-align: center !important;
-  margin-left: 0px !important;
+  margin-left: 90px !important;
+  margin-bottom: 10px !important;
 }
 
-#mgamaysumbong {
+#form16-mgamaysumbong {
   width: 250px !important;
   align-items: center;
   justify-content: center !important;
   margin-left: 45px !important;
+  margin-bottom: 10px !important; 
 }
 
-#mgaipinagsumbong {
+#form16-mgaipinagsumbong {
   width: 250px !important;
   align-items: center;
   justify-content: center !important;
   margin-left: 45px !important;
+  margin-bottom: 10px !important;
 }
 
-.ipinagsusumbong {
+.form16-ipinagsusumbong {
   text-align: center;
   margin-bottom: 25px;
   margin-left: 35px;
 }
 
-#sumbong-kay {
+#form16-sumbong-kay {
   margin-left: 40px;
   width: 270px;
 }
 
-.blg-input {
+.form16-blg-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.blg-input input {
+.form16-blg-input input {
   width: 50px;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.ukol-input {
+.form16-ukol-input {
   display: flex;
   gap: 5px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.ukol-input input {
+.form16-ukol-input input {
   width: 155px;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kay-input {
+.form16-kay-input {
   display: flex;
   gap: 1px;
   align-items: center;
 }
 
-.kay-input input {
+.form16-kay-input input {
   height: 38px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#kay {
+#form16-kay {
   width: 270px;
 }
 
-.form-input {
+.form16-form-input {
   display: flex;
   gap: 5px;
   align-items: center;
@@ -3445,7 +3638,7 @@ p {
   line-height: 1.5;
 }
 
-.form-input input {
+.form16-form-input input {
   width: 110px;
   height: 30px;
   box-sizing: border-box;
@@ -3453,50 +3646,52 @@ p {
 }
 
 textarea {
-  margin-bottom: 0px;
-}
-
-.justify {
-  text-align: justify;
-}
-
-.left {
-  text-align: left;
-  margin-top: 0px;
-}
-
-.center {
-  text-align: center;
+  margin-top: 10px !important;
   margin-bottom: 0px !important;
 }
 
-#year {
+.form16-justify {
+  text-align: justify;
+}
+
+.form16-left {
+  text-align: left;
+  margin-top: 0px !important;
+}
+
+.form16-center {
+  text-align: center !important;
+  margin-bottom: 0px !important;
+}
+
+#form16-year {
   width: 50px;
 }
 
-#day {
+#form16-day {
   width: 50px;
 }
 
-#time {
+#form16-time {
   width: 70px;
 }
 
-#maysumbong {
+#form16-maysumbong {
   width: 250px;
+  margin-bottom: 10px;
 }
 
-#ipinagsumbong {
+#form16-ipinagsumbong {
   width: 250px;
+  margin-bottom: 10px;
 }
 
-.indent {
+.form16-indent {
   text-indent: 50px;
   text-align: justify;
 }
 
-.paragraph {
-  text-indent: 50px;
+.form16-paragraph {
   font-weight: bold;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -3515,23 +3710,23 @@ label {
   text-align: left;
 }
 
-.sign-section {
+.form16-sign-section {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.sig-container {
+.form16-sig-container {
   justify-content: flex-start;
 }
 
-.sig-line {
+.form16-sig-line {
   border-top: 1px solid black;
   width: 300px !important;
   margin: 0 !important;
 }
 
-.sig-text {
+.form16-sig-text {
   text-align: left !important;
   margin-top: 10px;
   margin-left: 10px !important;
@@ -3539,7 +3734,7 @@ label {
   font-style: normal !important;
 }
 
-.button-group {
+.form16-button-group {
   display: flex;
   justify-content: space-evenly;
   gap: 15px;
@@ -3547,8 +3742,8 @@ label {
   margin-bottom: 50px;
 }
 
-.print-button,
-.next-button {
+.form16-print-button,
+.form16-next-button {
   background-color: #0056b3;
   color: white;
   font-weight: bold;
@@ -3560,17 +3755,20 @@ label {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.print-button:hover {
-  background-color: #003d82;
+
+.form16-print-button:hover {
+  background-color: #000000;
   transform: scale(1.02);
 }
-.next-button:hover {
-  background-color: #003d82;
+
+.form16-next-button:hover {
+  background-color: #000000;
   color: #ffffff;
   transform: scale(1.02);
 }
-.print-button:active,
-.next-button:active {
+
+.form16-print-button:active,
+.form16-next-button:active {
   transform: scale(0.98);
 }
 
@@ -3582,9 +3780,9 @@ label {
 }
 
 /*Form17 page*/
-.katibayan-form-page {
+.form17-page {
   font-family: Arial, sans-serif;
-  background-image: url("blotterformpage.png");
+  background-color: #e7f6ff;
   min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
@@ -3596,55 +3794,38 @@ label {
   margin: 0;
 }
 
-.tanggapan-form-container {
+.form17-container {
   background-color: white;
   padding: 50px 50px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
-  width: 90%;
+  width: 100%;
   max-width: 800px;
 }
 
-.katibayan-form-container {
-  background-color: white;
-  padding: 50px 85px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;
-  width: 90%;
-  max-width: 800px;
-}
-
-h1 {
-  font-family: "Inria Sans", serif;
-  font-size: 3.2rem;
+.form17-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
   color: black;
   margin-top: 50px;
   margin-bottom: 5px;
   text-align: center;
 }
 
-p {
-  font-family: "Inria Sans", serif;
-  font-size: 0.95rem;
-  color: black;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.centered-text {
+.form17-centered-text {
   font-size: 1.2rem;
   color: black;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.centered-label {
+.form17-centered-label {
   margin-bottom: 30px;
 }
 
-.kp-input {
+.form17-kp-input {
   display: flex;
   gap: 5px;
   justify-content: flex-end;
@@ -3652,30 +3833,54 @@ p {
   line-height: 1.5;
 }
 
-.kp-input input {
+.form17-kp-input input {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kp {
+.form17-kp {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.kpcase {
+.form17-kpcase {
   text-align: right;
   margin-bottom: 8px;
 }
 
-.kp input {
+.form17-kp input {
   width: 120px;
 }
 
-.head {
+.form17-head {
   text-align: center;
+}
+
+/* Ensure the parent container centers its children */
+.form17-container, .form17-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form17-head, .form17-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form17-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form17-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
 }
 
 .three-columns .form-group,
@@ -3683,21 +3888,23 @@ p {
   flex: 1;
 }
 
-#maysumbong {
+#form17-maysumbong {
   width: 250px;
+  margin-bottom: 10px;
 }
 
-#ipinagsumbong {
+#form17-ipinagsumbong {
   width: 250px;
+  margin-bottom: 10px;
 }
 
-.sumbong {
+.form17-sumbong {
   text-align: left;
   margin-bottom: 25px;
   margin-left: 15px;
 }
 
-.ipinagsusumbong {
+.form17-ipinagsusumbong {
   text-align: center;
   margin-bottom: 25px;
   margin-left: 35px;
@@ -3708,56 +3915,72 @@ p {
   width: 270px;
 }
 
-.mgasumbong {
+.form17-mgasumbong {
   text-align: center !important;
-  margin-left: 0px !important;
+  margin-left: 90px !important;
 }
 
-.blg-input {
+#form17-mgamaysumbong {
+  width: 250px !important;
+  align-items: center;
+  justify-content: center !important;
+  margin-left: 45px !important;
+  margin-bottom: 10px !important; 
+}
+
+#form17-mgaipinagsumbong {
+  width: 250px !important;
+  align-items: center;
+  justify-content: center !important;
+  margin-left: 45px !important;
+  margin-bottom: 10px !important;
+}
+
+.form17-blg-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.blg-input input {
-  width: 50px;
+.form17-blg-input input {
+  width: 50px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.ukol-input {
+.form17-ukol-input {
   display: flex;
   gap: 5px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.ukol-input input {
-  width: 155px;
+.form17-ukol-input input {
+  width: 155px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kay-input {
+.form17-kay-input {
   display: flex;
   gap: 1px;
   align-items: center;
 }
 
-.kay-input input {
+.form17-kay-input input {
   height: 38px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#kay {
+#form17-kay {
   width: 270px;
 }
 
-.form-input {
+.form17-form-input {
   display: flex;
   gap: 5px;
   align-items: center;
@@ -3765,49 +3988,48 @@ p {
   line-height: 1.5;
 }
 
-.form-input input {
+.form17-form-input input {
   width: 110px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.justify {
+.form17-justify {
   text-align: justify;
 }
 
-#year {
+#form17-year {
   width: 40px;
 }
 
-#day {
+#form17-day {
   width: 50px;
 }
 
-#place {
+#form17-place {
   width: 140px;
 }
 
-#name {
+#form17-name {
   width: 300px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#pangalan {
+#form17-pangalan {
   width: 230px;
   height: 30px;
   box-sizing: border-box;
 }
 
-.indent {
+.form17-indent {
   text-indent: 50px;
   text-align: justify;
 }
 
-.paragraph {
-  text-indent: 50px;
+.form17-paragraph {
   font-weight: bold;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -3815,7 +4037,7 @@ p {
   text-align: justify;
 }
 
-label {
+form17-label {
   font-weight: bold;
   font-size: 0.9rem;
   margin-bottom: 10px;
@@ -3826,30 +4048,30 @@ label {
   text-align: left;
 }
 
-.checkbox-container {
+.form17-checkbox-container {
   margin-left: 100px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.checkbox-item {
+.form17-checkbox-item {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.checkbox {
+.form17-checkbox {
   width: 15px;
   height: 20px;
   margin-right: 10px;
 }
 
-.checkbox-label {
+.form17-checkbox-label {
   font-size: 0.9rem;
 }
 
-.checkbox-textarea {
+.form17-checkbox-textarea {
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -3858,29 +4080,29 @@ label {
   height: 60px;
 }
 
-.checkbox:disabled {
+.form17-checkbox:disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-.sign-section {
+.form17-sign-section {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.sign-container {
+.form17-sign-container {
   align-items: center;
   margin-top: 50px;
 }
 
-.sign-line {
+.form17-sign-line {
   border-top: 1px solid black;
   width: 350px !important;
   margin-left: 5px !important;
 }
 
-.sign-text {
+.form17-sign-text {
   justify-content: flex-start;
   font-style: normal !important;
   margin-top: 10px;
@@ -3889,7 +4111,7 @@ label {
   margin-left: 10px !important;
 }
 
-.button-group {
+.form17-button-group {
   display: flex;
   justify-content: space-evenly;
   gap: 15px;
@@ -3897,8 +4119,8 @@ label {
   margin-bottom: 50px;
 }
 
-.print-button,
-.next-button {
+.form17-print-button,
+.form17-next-button {
   background-color: #0056b3;
   color: white;
   font-weight: bold;
@@ -3910,17 +4132,20 @@ label {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.print-button:hover {
-  background-color: #003d82;
+
+.form17-print-button:hover {
+  background-color: #000000;
   transform: scale(1.02);
 }
-.next-button:hover {
-  background-color: #003d82;
+
+.form17-next-button:hover {
+  background-color: #000000;
   color: #ffffff;
   transform: scale(1.02);
 }
-.print-button:active,
-.next-button:active {
+
+.form17-print-button:active,
+.form17-next-button:active {
   transform: scale(0.98);
 }
 
@@ -3931,10 +4156,10 @@ label {
   }
 }
 
-/*Form18 page*/
-.patawag-form-page {
+/* Form18 page */
+.form18-page {
   font-family: Arial, sans-serif;
-  background-image: url("blotterformpage.png");
+  background-color: #e7f6ff;
   min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
@@ -3946,55 +4171,68 @@ label {
   margin: 0;
 }
 
-.tanggapan-form-container {
+.form18-container {
   background-color: white;
   padding: 50px 50px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
-  width: 90%;
+  width: 100%;
   max-width: 800px;
 }
 
-.patawag-form-container {
-  background-color: white;
-  padding: 50px 85px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;
-  width: 90%;
-  max-width: 800px;
-}
-
-h1 {
-  font-family: "Inria Sans", serif;
-  font-size: 3.2rem;
+.form18-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
   color: black;
   margin-top: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-align: center;
 }
 
-h2 {
-  font-family: "Inria Sans", serif;
-  font-size: 2rem;
+.form18-subtitle {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.centered-text {
+.form18-container, .form18-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form18-head, .form18-centered-label {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.form18-head {
+  margin-top: 20px;
+}
+
+.form18-centered-label {
+  margin-bottom: 20px;
+}
+
+.form18-centered-text {
   font-size: 1.2rem;
   color: black;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.centered-label {
+.form18-centered-label {
   margin-bottom: 5px;
 }
 
-.kp-input {
+.form18-kp-input {
   display: flex;
   gap: 5px;
   justify-content: flex-end;
@@ -4002,158 +4240,159 @@ h2 {
   line-height: 1.5;
 }
 
-.kp-input input {
+.form18-kp-input input {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kp {
+.form18-kp {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.kpcase {
+.form18-kpcase {
   text-align: right;
   margin-bottom: 8px;
 }
 
-.kp input {
+.form18-kp input {
   width: 120px;
 }
 
-.head {
+.form18-head {
   text-align: center;
 }
 
-.three-columns .form-group,
-.two-columns .form-group {
-  flex: 1;
-}
-
-#maysumbong {
+#form18-maysumbong {
   width: 250px;
+  margin-bottom: 10px;
 }
 
-#ipinagsumbong {
+#form18-ipinagsumbong {
   width: 250px;
+  margin-bottom: 10px;
 }
 
-.line {
+.form18-line {
   width: 250px !important;
   margin-left: 450px !important;
+  border-top: 1px solid black;
 }
 
-.mgasumbong {
-  margin-left: 420px !important;
+.form18-mgasumbong {
+  margin-left: 480px !important;
 }
 
-.sumbong {
+.form18-sumbong {
   text-align: left;
   margin-bottom: 25px;
   margin-left: 15px;
 }
 
-.ipinagsusumbong {
+.form18-ipinagsusumbong {
   text-align: center;
   margin-bottom: 25px;
   margin-left: 0px;
 }
 
-#sumbong-kay {
+#form18-sumbong-kay {
   margin-left: 40px;
   width: 300px;
 }
 
-.blg-input {
+.form18-blg-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.blg-input input {
-  width: 50px;
+.form18-blg-input input {
+  width: 50px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.ukol-input {
+.form18-ukol-input {
   display: flex;
   gap: 5px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.ukol-input input {
-  width: 155px;
+.form18-ukol-input input {
+  width: 155px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kay-input {
+.form18-kay-input {
   display: flex;
   gap: 1px;
   align-items: center;
 }
 
-.kay-input input {
-  height: 38px;
+.form18-kay-input input {
+  height: 38px !important;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#kay {
+#form18-kay {
   width: 300px;
+  height: 45px;
 }
 
-.form-input {
+.form18-form-input {
   display: flex;
   gap: 5px;
   align-items: center;
 }
 
-.form-input input {
+.form18-form-input input {
   width: 110px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 5px;
 }
 
-#date {
+#form18-date {
   width: 150px;
 }
 
-#year {
+#form18-year {
   width: 50px;
 }
 
-#day {
+#form18-day {
   width: 50px;
 }
 
-#time {
+#form18-time {
   width: 70px;
 }
 
-.indent {
+.form18-indent {
   text-indent: 40px;
 }
 
-.center {
+.form18-center {
   text-align: center;
-  margin-bottom: 40px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
-.justify {
+.form18-justify {
   text-align: justify;
 }
 
-.paragraph {
+.form18-paragraph {
   text-indent: 40px !important;
   font-weight: bold;
   font-size: 0.9rem;
@@ -4174,24 +4413,24 @@ label {
   text-align: left;
 }
 
-.sign-section {
+.form18-sign-section {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.signature-container {
+.form18-signature-container {
   text-align: center;
   margin-top: 50px;
 }
 
-.signature-line {
+.form18-signature-line {
   border-top: 1px solid black;
   width: 300px !important;
   margin: 0 !important;
 }
 
-.signature-text {
+.form18-signature-text {
   margin-top: 10px;
   font-weight: bold;
   font-style: normal !important;
@@ -4199,7 +4438,7 @@ label {
   margin-left: 5px !important;
 }
 
-.button-group {
+.form18-button-group {
   display: flex;
   justify-content: space-evenly;
   gap: 15px;
@@ -4208,8 +4447,8 @@ label {
   margin-left: 10px !important;
 }
 
-.print-button,
-.next-button {
+.form18-print-button,
+.form18-next-button {
   background-color: #0056b3;
   color: white;
   font-weight: bold;
@@ -4221,17 +4460,20 @@ label {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.print-button:hover {
-  background-color: #003d82;
+
+.form18-print-button:hover {
+  background-color: #000000;
   transform: scale(1.02);
 }
-.next-button:hover {
-  background-color: #003d82;
+
+.form18-next-button:hover {
+  background-color: #000000;
   color: #ffffff;
   transform: scale(1.02);
 }
-.print-button:active,
-.next-button:active {
+
+.form18-print-button:active,
+.form18-next-button:active {
   transform: scale(0.98);
 }
 
@@ -4243,9 +4485,9 @@ label {
 }
 
 /*Form19 page*/
-.patawag-form-page {
+.form19-page {
   font-family: Arial, sans-serif;
-  background-image: url("blotterformpage.png");
+  background-color: #e7f6ff;
   min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
@@ -4257,41 +4499,57 @@ label {
   margin: 0;
 }
 
-.tanggapan-form-container {
+.form19-container {
   background-color: white;
   padding: 50px 50px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
-  width: 90%;
+  width: 100%;
   max-width: 800px;
 }
 
-.patawag-form-container {
-  background-color: white;
-  padding: 50px 85px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;
-  width: 90%;
-  max-width: 800px;
-}
-
-h1 {
-  font-family: "Inria Sans", serif;
-  font-size: 3.2rem;
+.form19-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
   color: black;
   margin-top: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-align: center;
 }
 
-h2 {
-  font-family: "Inria Sans", serif;
-  font-size: 2rem;
+.form19-subtitle {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
+}
+
+/* Ensure the parent container centers its children */
+.form19-container, .form19-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form19-head, .form19-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form19-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form19-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
 }
 
 .centered-text {
@@ -4305,7 +4563,7 @@ h2 {
   margin-bottom: 5px;
 }
 
-.kp-input {
+.form19-kp-input {
   display: flex;
   gap: 5px;
   justify-content: flex-end;
@@ -4313,152 +4571,165 @@ h2 {
   line-height: 1.5;
 }
 
-.kp-input input {
+.form19-kp-input input {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.kp {
+.form19-kp {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.kpcase {
+.form19-kpcase {
   text-align: right;
   margin-bottom: 8px;
 }
 
-.kp input {
+.form19-kp input {
   width: 120px;
 }
 
-.head {
+.form19-head {
   text-align: center;
 }
 
-.two-columns .form-group-input {
+.two-columns .form19-form-group-input {
   flex: 1;
 }
 
-.mga-sumbong {
+.form19-mga-sumbong {
   text-align: left !important;
-  margin-left: 10px !important;
+  margin-left: 50px !important;
   margin-bottom: 25px;
 }
 
-.line {
+.form19-line {
   border-top: 1px solid black;
   width: 250px !important;
   margin-left: 10px !important;
 }
 
-.sumbong {
+.form19-sumbong {
   text-align: left;
   margin-bottom: 25px;
   margin-left: 15px;
 }
 
-.ipinagsusumbong {
+.form19-ipinagsusumbong {
   text-align: center;
   margin-bottom: 25px;
   margin-left: 0px;
 }
 
-#sumbong-kay {
+#form19-sumbong-kay {
   margin-left: 40px;
   width: 270px;
 }
 
-.blg-input {
+.form19-blg-input {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.blg-input input {
-  width: 50px;
+.form19-blg-input input {
+  width: 50px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.ukol-input {
+.form19-ukol-input {
   display: flex;
   gap: 5px;
   align-items: center;
   justify-content: flex-end;
 }
 
-.ukol-input input {
-  width: 155px;
+.form19-ukol-input input {
+  width: 155px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
+#form19-maysumbong {
+  width: 250px;
+  margin-bottom: 10px;
+}
 
-.kay-input {
+#form19-ipinagsumbong {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.form19-kay-input {
   display: flex;
   gap: 1px;
   align-items: center;
 }
 
-.kay-input input {
-  height: 38px;
+.form19-kay-input input {
+  height: 38px ;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#kay {
+#form19-kay {
   width: 270px;
+  height: 45px;
 }
 
-.form-input {
+.form19-form-input {
   display: flex;
   gap: 5px;
   align-items: center;
 }
 
-.form-input input {
+.form19-form-input input {
   width: 110px;
   height: 30px;
   box-sizing: border-box;
   margin-bottom: 5px;
 }
 
-#date {
+#form19-date {
   width: 150px;
 }
 
-#year {
+#form19-year {
   width: 50px;
 }
 
-#day {
+#form19-day {
   width: 50px;
 }
 
-#time {
+#form19-time {
   width: 70px;
 }
 
-.indent {
+.form19-indent {
   text-indent: 40px;
 }
 
-.center {
+.form19-center {
   text-align: center;
-  margin-bottom: 40px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  
 }
 
-.justify {
+.form19-justify {
   text-align: justify;
 }
 
-.paragraph {
+.form19-paragraph {
   text-indent: 40px !important;
   font-weight: bold;
   font-size: 0.9rem;
@@ -4479,24 +4750,24 @@ label {
   text-align: left;
 }
 
-.sign-section {
+.form19-sign-section {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.signature-container {
+.form19-signature-container {
   text-align: center;
   margin-top: 50px;
 }
 
-.signature-line {
+.form19-signature-line {
   border-top: 1px solid black;
   width: 300px !important;
   margin-left: 390px !important;
 }
 
-.signature-text {
+.form19-signature-text {
   margin-top: 10px;
   font-weight: bold;
   font-style: normal !important;
@@ -4504,7 +4775,7 @@ label {
   margin-left: 395px !important;
 }
 
-.signa-text {
+.form19-signa-text {
   margin-top: 10px;
   font-weight: bold;
   font-style: normal !important;
@@ -4512,7 +4783,7 @@ label {
   margin-left: 455px !important;
 }
 
-.button-group {
+.form19-button-group {
   display: flex;
   justify-content: space-evenly;
   gap: 15px;
@@ -4521,8 +4792,8 @@ label {
   margin-left: 10px !important;
 }
 
-.print-button,
-.next-button {
+.form19-print-button,
+.form19-next-button {
   background-color: #0056b3;
   color: white;
   font-weight: bold;
@@ -4534,17 +4805,17 @@ label {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.print-button:hover {
-  background-color: #003d82;
+.form19-print-button:hover {
+  background-color: #000000;
   transform: scale(1.02);
 }
-.next-button:hover {
-  background-color: #003d82;
+.form19-next-button:hover {
+  background-color: #000000;
   color: #ffffff;
   transform: scale(1.02);
 }
-.print-button:active,
-.next-button:active {
+.form19-print-button:active,
+.form19-next-button:active {
   transform: scale(0.98);
 }
 

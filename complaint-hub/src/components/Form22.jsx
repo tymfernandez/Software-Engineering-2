@@ -38,7 +38,7 @@ const Form22 = () => {
             <div className="form-row two-columns centered-row">
               <div className="form-group">
                 <input type="text" />
-                <input type="text" />
+                <input type="text" /> 
                 <label className="sumbong">
                   (Mga) May Sumbong <br /> -laban kay/kina-
                 </label>
