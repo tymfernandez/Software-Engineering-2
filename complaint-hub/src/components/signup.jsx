@@ -6,11 +6,12 @@ import "../main.css";
 function Signup() {
   const [values, setValues] = useState({
     name: "",
-    position: "Please select your position :)", // Default value for dropdown
+    position: "Secretary", // Default value for dropdown
     username: "",
     password: "",
   });
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [passwordStrength, setPasswordStrength] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -24,6 +25,19 @@ function Signup() {
       ...prev,
       [event.target.name]: event.target.value,
     }));
+  };
+
+  const handlePasswordChange = (event) => {
+    const password = event.target.value;
+    setValues((prev) => ({ ...prev, password }));
+
+    if (password.length < 6) {
+      setPasswordStrength("strength-weak");
+    } else if (password.length < 10) {
+      setPasswordStrength("strength-medium");
+    } else {
+      setPasswordStrength("strength-strong");
+    }
   };
 
   const handleSubmit = (event) => {
