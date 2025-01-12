@@ -4,23 +4,23 @@ import Header from "./Header";
 
 const Form23 = () => {
   return (
-    <div className="katibayan-form-page">
+    <div className="form23-page">
       <Header showButton={false} />
-      <div className="katibayan-form-text">
-        <h1>FORM 23:</h1>
-        <h2>PANUKALA SA PAGPAPATUPAD</h2>
+      <div className="form23-text">
+        <h1 className="form23-title">FORM 23:</h1>
+        <h2 className="form23-subtitle">PANUKALA SA PAGPAPATUPAD</h2>
 
-        <div className="tanggapan-form-container">
-          <form className="katibayan-form">
-            <div className="kp-input">
-              <label className="kpcase">KP Case Number:</label>
-              <input type="text" id="kpnum" placeholder=" " />
+        <div className="form23-container">
+          <form className="form23">
+            <div className="form23-kp-input">
+              <label className="form23-kpcase">KP Case Number:</label>
+              <input type="text" id="form23-kpnum" placeholder=" " />
             </div>
-            <div className="pormularyoblg">
-              <label className="pormularyo">Pormularyo ng KP Blg. 23</label>
+            <div className="form23-pormularyoblg">
+              <label className="form23-pormularyo">Pormularyo ng KP Blg. 23</label>
             </div>
-            <div className="heading">
-              <label className="head">
+            <div className="form23-heading">
+              <label className="form23-head">
                 Republika ng Pilipinas <br />
                 Lalawigan ng Kabite <br />
                 Bayan ng Indang <br />
@@ -28,56 +28,55 @@ const Form23 = () => {
               </label>
             </div>
             <div className="form-group">
-              <label className="centered-label">
+              <label className="form23-centered-label">
                 <br /> TANGGAPAN NG LUPONG TAGAPAMAYAPA
               </label>
             </div>
             <div className="form-row two-columns centered-row">
               <div className="form-group">
-                <input type="text" />
-                <input type="text" />
-                <label className="sumbong">
+              <input type="text" id="form23-maysumbong" />
+              <input type="text" id="form23-maysumbong" /> 
+                <label className="form23-sumbong">
                   (Mga) May Sumbong <br /> -laban kay/kina-
                 </label>
-                <input type="text" />
-                <input type="text" />
-                <label className="sumbong"> (Mga) Ipinagsusumbong </label>
+                <input type="text" id="form23-ipinagsumbong" /> 
+                <input type="text" id="form23-ipinagsumbong" /> 
+                <label className="form23-sumbong"> (Mga) Ipinagsusumbong </label>
               </div>
 
               <div className="form-group">
-                <div className="blg-input">
+                <div className="form23-blg-input">
                   <label>Usaping Barangay Blg. </label>
-                  <input type="text" id="blg" placeholder=" " />
+                  <input type="text" id="form23-blg" placeholder=" " />
                 </div>
-                <div className="ukol-input">
+                <div className="form23-ukol-input">
                   <label>Ukol sa</label>
                   <input type="text" />
                 </div>
               </div>
             </div>
             <div className="form-group">
-              <label className="centered-label">PANUKALA SA PAGPAPATUPAD</label>
+              <label className="form23-centered-label">PANUKALA SA PAGPAPATUPAD</label>
             </div>
-            <div className="paragraph">
-              <label className="indent">
+            <div className="form23-paragraph">
+              <label className="form23-indent">
                 Ang (mga) may sumbong/ pinagsusumbong ay nagpahayag ng mga
                 sumusunod:
               </label>
             </div>
-            <div className="form-input">
-              <label className="indent">1. Noong</label>
-              <input type="text" id="petsa" placeholder="(petsa)" />
+            <div className="form23-form-input">
+              <label className="form23-indent">1. Noong</label>
+              <input type="text" id="form23-petsa" placeholder="(petsa)" />
               <label>ang mga panig sa usaping ito ay lumagda sa isang </label>
             </div>
-            <div className="form-input">
-              <label className="justify">
+            <div className="form23-paragraph">
+              <label className="form23-justify">
                 matiwasay na pag-aayos/tumanggap ng gawad ng paghahatol na
                 ibinigay ng Tagapangulo ng Lupon/Pangkat ng tagapagsundo;
               </label>
             </div>
-            <br />
-            <div className="form-input">
-              <label className="indent">
+            <div className="form23-paragraph">
+              <label className="form23-justify">
                 2. Ang sampung araw na taning mula sa petsang binaggit sa itaas
                 ay natapos ng wala sa sinumang panig ang naghain ng sinumang
                 sanaysay ng pagtanggi sa pag-aayos sa harap ng Tagapangulo ng
@@ -85,45 +84,45 @@ const Form23 = () => {
                 sa hukuman; at
               </label>
             </div>{" "}
-            <div className="form-input">
-              <label className="indent">
+            <div className="form23-paragraph">
+              <label className="form23-justify">
                 3. Ang matiwasay na pag-aayos/gawad ng paghahatol ay pinal at
                 ngayon ay nararapat lang ipatupad.
               </label>
             </div>{" "}
             <br />
-            <div className="form-input">
-              <label className="indent">
+            <div className="form23-form-input">
+              <label className="form23-indent">
                 DAHIL DITO, ang mga may sumbong/ipinagsusumbong ay humiling na
                 ang katumbas na kasulatan sa pagpapatupad sa usaping ito ay
                 ipalabas na ng Tagapangulo ng Lupon.
               </label>
             </div>
-            <br />
+            <br /> <br /> <br />
             <div className="form-row two-columns centered-row">
-              <div className="sign-container">
-                <div className="sign-line"></div>
-                <p className="sign-text">Petsa</p>
+              <div className="form23-sign-container">
+                <div className="form23-sign-line"></div>
+                <p className="form23-sign-text">Petsa</p>
               </div>
               <br />
-              <div className="sign-container">
-                <div className="signa-line"></div>
-                <p className="signa-text">(Mga) May Sumbong/ipinagsusumbong</p>
+              <div className="form23-sign-container">
+                <div className="form23-signa-line"></div>
+                <p className="form23-signa-text">(Mga) May Sumbong/Ipinagsusumbong</p>
               </div>
             </div>
             <br />
           </form>
         </div>
 
-        <div className="button-group">
+        <div className="form23-button-group">
           <button
             type="button"
-            className="print-button"
+            className="form23-print-button"
             onClick={() => window.print()}
           >
             Print
           </button>
-          <button type="button" className="next-button">
+          <button type="button" className="form23-next-button">
             {" "}
             Next{" "}
           </button>

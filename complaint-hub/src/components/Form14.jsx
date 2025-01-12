@@ -4,23 +4,23 @@ import Header from "./Header";
 
 const Form14 = () => {
   return (
-    <div className="katibayan-form-page">
+    <div className="form14-page">
       <Header showButton={false} />
-      <div className="katibayan-form-text">
-        <h1>FORM 14:</h1>
-        <h2>KASUNDUAN UKOL SA PAGHAHATOL NG TAGAPAMAGITAN</h2>
+      <div className="form14-text">
+        <h1 className="form14-title">FORM 14:</h1>
+        <h2 className="form14-subtitle">KASUNDUAN UKOL SA PAGHAHATOL NG TAGAPAMAGITAN</h2>
 
-        <div className="tanggapan-form-container">
-          <form className="katibayan-form">
-            <div className="kp-input">
-              <label className="kpcase">KP Case Number:</label>
-              <input type="text" id="kpnum" placeholder=" " />
+        <div className="form14-container">
+          <form className="form14">
+            <div className="form14-kp-input">
+              <label className="form14-kpcase">KP Case Number:</label>
+              <input type="text" id="form14-kpnum" placeholder=" " />
             </div>
-            <div className="pormularyoblg">
-              <label className="pormularyo">Pormularyo ng KP Blg. 14</label>
+            <div className="form14-pormularyoblg">
+              <label className="form14-pormularyo">Pormularyo ng KP Blg. 14</label>
             </div>
-            <div className="heading">
-              <label className="head">
+            <div className="form14-heading">
+              <label className="form14-head">
                 Republika ng Pilipinas <br />
                 Lalawigan ng Kabite <br />
                 Bayan ng Indang <br />
@@ -28,41 +28,41 @@ const Form14 = () => {
               </label>
             </div>
             <div className="form-group">
-              <label className="centered-label">
+              <label className="form14-centered-label">
                 <br /> TANGGAPAN NG LUPONG TAGAPAMAYAPA
               </label>
             </div>
             <div className="form-row two-columns centered-row">
               <div className="form-group">
-                <input type="text" id="maysumbong" /> <br />
-                <input type="text" id="maysumbong" />
-                <label className="sumbong">
+                <input type="text" id="form14-maysumbong" /> <br />
+                <input type="text" id="form14-maysumbong" />
+                <label className="form14-sumbong">
                   (Mga) May Sumbong <br /> -laban kay/kina-
                 </label>
-                <input type="text" id="ipinagsumbong" /> <br />
-                <input type="text" id="ipinagsumbong" />
-                <label className="sumbong"> (Mga) Ipinagsusumbong </label>
+                <input type="text" id="form14-ipinagsumbong" /> <br />
+                <input type="text" id="form14-ipinagsumbong" />
+                <label className="form14-sumbong"> (Mga) Ipinagsusumbong </label>
               </div>
 
               <div className="form-group">
-                <div className="blg-input">
+                <div className="form14-blg-input">
                   <label>Usaping Barangay Blg. </label>
-                  <input type="text" id="blg" placeholder=" " />
+                  <input type="text" id="form14-blg" placeholder=" " />
                 </div>
-                <div className="ukol-input">
+                <div className="form14-ukol-input">
                   <label>Ukol sa:</label>
-                  <input type="text" id="ukol" />
+                  <input type="text" id="form14-ukol" />
                 </div>
               </div>
             </div>
             <br />
             <div className="form-group">
-              <label className="centered-label">
+              <label className="form14-centered-label">
                 KASUNDUAN UKOL SA PAGHAHATOL NG TAGAPAMAGITAN{" "}
               </label>
             </div>
-            <div className="paragraph">
-              <label className="justify">
+            <div className="form14-paragraph">
+              <label className="form14-indent">
                 Sa pamamagitan nito'y nagkakasundo kami na pahatulan ang aming
                 alitan sa Punong Barangay/Pangkat at Tagapagkasundo (mangyaring
                 guhitan ang di-kailangan), at nangangako kami na tutupad sa
@@ -72,38 +72,38 @@ const Form14 = () => {
               </label>
             </div>
             <br />
-            <div className="form-input">
-              <label className="indent">Pinagkasunduan ngayong ika-</label>
-              <input type="text" id="day" placeholder=" " />
+            <div className="form14-form-input">
+              <label className="form14-indent">Pinagkasunduan ngayong ika-</label>
+              <input type="text" id="form14-day" placeholder=" " />
               <label>araw ng</label>
-              <input type="text" id="month" placeholder=" " />
+              <input type="text" id="form14-month" placeholder=" " />
               <label>, 20</label>
-              <input type="text" id="year" placeholder=" " />
+              <input type="text" id="form14-year" placeholder=" " />
               <label>.</label>
             </div>{" "}
             <br /> <br />
             <div className="form-row two-columns centered-row">
               <div className="form-group">
-                <label className="mgasumbong">
+                <label className="form14-mgasumbong">
                   (Mga) May Sumbong <br /> -laban kay/kina-
                 </label>
-                <input type="text" id="mgamaysumbong" /> <br />
-                <input type="text" id="mgamaysumbong" />
+                <input type="text" id="form14-mgamaysumbong" /> <br />
+                <input type="text" id="form14-mgamaysumbong" />
               </div>
 
               <div className="form-group">
-                <label className="mgasumbong">
+                <label className="form14-mgasumbong">
                   {" "}
                   <br /> (Mga) Ipinagsusumbong{" "}
                 </label>
-                <input type="text" id="mgaipinagsumbong" /> <br />
-                <input type="text" id="mgaipinagsumbong" />
+                <input type="text" id="form14-mgaipinagsumbong" /> <br />
+                <input type="text" id="form14-mgaipinagsumbong" />
               </div>
             </div>{" "}
             <br /> <br />
-            <label className="left"> PAGPAPATUNAY: </label>
-            <div className="paragraph">
-              <label className="justify">
+            <label className="form14-left"> PAGPAPATUNAY: </label>
+            <div className="form14-paragraph">
+              <label className="form14-indent">
                 Sa pamamagitan nito’y pinatutunayan ko na ang sinusundang
                 Kasunduan ng Paghahatol ay pinagkasunduan ng mga panig nang
                 Malaya at kusang-loob, matapos kong maipaliwanag sa kanila kung
@@ -111,24 +111,24 @@ const Form14 = () => {
               </label>
             </div>
             <br /> <br /> <br />
-            <div className="sig-container">
-              <div className="sig-line"></div>
+            <div className="form14-sig-container">
+              <div className="form14-sig-line"></div>
             </div>
-            <p className="sig-text">Punong Barangay/Tagapangulo ng Lupon</p>
-            <p className="signa-text">(Guhitan ang di-kailangan)</p>
+            <p className="form14-sig-text">Punong Barangay/Tagapangulo ng Lupon</p>
+            <p className="form14-signa-text">(Guhitan ang di-kailangan)</p>
             <br />
           </form>
         </div>
 
-        <div className="button-group">
+        <div className="form14-button-group">
           <button
             type="button"
-            className="print-button"
+            className="form14-print-button"
             onClick={() => window.print()}
           >
             Print
           </button>
-          <button type="button" className="next-button">
+          <button type="button" className="form14-next-button">
             {" "}
             Next{" "}
           </button>

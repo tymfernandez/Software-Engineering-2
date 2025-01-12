@@ -4,22 +4,22 @@ import Header from "./Header";
 
 const Form15 = () => {
   return (
-    <div className="katibayan-form-page">
+    <div className="form15-page">
       <Header showButton={false} />
-      <div className="katibayan-form-text">
-        <h1>FORM 15: GAWAD NG PAGHAHATOL</h1>
+      <div className="form15-text">
+        <h1 className="form15-title">FORM 15: GAWAD NG PAGHAHATOL</h1>
 
-        <div className="tanggapan-form-container">
-          <form className="katibayan-form">
-            <div className="kp-input">
-              <label className="kpcase">KP Case Number:</label>
-              <input type="text" id="kpnum" placeholder=" " />
+        <div className="form15-container">
+          <form className="form15">
+            <div className="form15-kp-input">
+              <label className="form15-kpcase">KP Case Number:</label>
+              <input type="text" id="form15-kpnum" placeholder=" " />
             </div>
-            <div className="pormularyoblg">
-              <label className="pormularyo">Pormularyo ng KP Blg. 15</label>
+            <div className="form15-pormularyoblg">
+              <label className="form15-pormularyo">Pormularyo ng KP Blg. 15</label>
             </div>
-            <div className="heading">
-              <label className="head">
+            <div className="form15-heading">
+              <label className="form15-head">
                 Republika ng Pilipinas <br />
                 Lalawigan ng Kabite <br />
                 Bayan ng Indang <br />
@@ -27,82 +27,82 @@ const Form15 = () => {
               </label>
             </div>
             <div className="form-group">
-              <label className="centered-label">
+              <label className="form15-centered-label">
                 <br /> TANGGAPAN NG LUPONG TAGAPAMAYAPA
               </label>
             </div>
             <div className="form-row two-columns centered-row">
               <div className="form-group">
-                <input type="text" id="maysumbong" /> <br />
-                <input type="text" id="maysumbong" />
-                <label className="sumbong">
+                <input type="text" id="form15-maysumbong" /> <br />
+                <input type="text" id="form15-maysumbong" />
+                <label className="form15-sumbong">
                   (Mga) May Sumbong <br /> -laban kay/kina-
                 </label>
-                <input type="text" id="ipinagsumbong" /> <br />
-                <input type="text" id="ipinagsumbong" />
-                <label className="sumbong"> (Mga) Ipinagsusumbong </label>
+                <input type="text" id="form15-ipinagsumbong" /> <br />
+                <input type="text" id="form15-ipinagsumbong" />
+                <label className="form15-sumbong"> (Mga) Ipinagsusumbong </label>
               </div>
 
               <div className="form-group">
-                <div className="blg-input">
+                <div className="form15-blg-input">
                   <label>Usaping Barangay Blg. </label>
-                  <input type="text" id="blg" placeholder=" " />
+                  <input type="text" id="form15-blg" placeholder=" " />
                 </div>
-                <div className="ukol-input">
+                <div className="form15-ukol-input">
                   <label>Ukol sa:</label>
-                  <input type="text" />
+                  <input type="text" id="form15-ukol" />
                 </div>
               </div>
             </div>
             <div className="form-group">
-              <label className="centered-label">GAWAD NG PAGHAHATOL</label>
+              <label className="form15-centered-label">GAWAD NG PAGHAHATOL</label>
             </div>
-            <div className="paragraph">
-              <label className="justify">
+            <div className="form15-paragraph">
+              <label className="form15-indent">
                 Matapos marinig ang mga salaysay na ipinahayag at maingat na
                 pagsusuri ng katibayan na iniharap sa usaping ito, iginagawad
                 ang mga sumusunod:
               </label>
-              <textarea placeholder=" "></textarea>
+              <textarea id="form15-gawad" placeholder=" "></textarea>
             </div>
             <br />
-            <div className="form-input">
-              <label className="indent">Ginawa ngayong ika-</label>
-              <input type="text" id="day" placeholder=" " />
+            <div className="form15-form-input">
+              <label className="form15-indent">Ginawa ngayong ika-</label>
+              <input type="text" id="form15-day" placeholder=" " />
               <label>araw ng</label>
-              <input type="text" id="month" placeholder=" " />
+              <input type="text" id="form15-month" placeholder=" " />
               <label>, 20</label>
-              <input type="text" id="year" placeholder=" " />
+              <input type="text" id="form15-year" placeholder=" " />
               <label>sa</label>
-              <input type="text" id="place" placeholder=" " />
+              <input type="text" id="form15-place" placeholder=" " />
               <label>.</label>
             </div>{" "}
             <br />
-            <div className="sign-container">
-              <div className="sign-line"></div>
-              <p className="sign-text">
+            <div className="form15-sign-container">
+              <div className="form15-sign-line"></div>
+              <p className="form15-sign-text">
                 Punong Barangay/Tagapangulo ng Pangkat
               </p>
             </div>
             <br />
-            <div className="sig-container">
-              <div className="sig-line"></div>
-              <p className="sig-text">Kasapi</p>
+            <div className="form15-sig-container">
+              <div className="form15-sig-line"></div>
+              <p className="form15-sig-text">Kasapi</p>
             </div>{" "}
             <br /> <br />
-            <div className="sig-container">
-              <div className="sig-line"></div>
-              <p className="sig-text">Kasapi</p>
+            <div className="form15-sig-container">
+              <div className="form15-sig-line"></div>
+              <p className="form15-sig-text">Kasapi</p>
             </div>{" "}
             <br />
             <label>PINATUNAYAN: </label>
             <br /> <br /> <br />
-            <div className="sig-container">
-              <div className="signa-line"></div>
-              <p className="signa-text">Punong Barangay/Kalihim ng Lupon</p>
+            <div className="form15-sig-container">
+              <div className="form15-signa-line"></div>
+              <p className="form15-signa-text">Punong Barangay/Kalihim ng Lupon</p>
             </div>
             <br />
-            <div className="bullet">
+            <div className="form15-bullet">
               <ul>
                 <li>Lagdaaan ng sinuman sa gumawa ng gawad na paghahatol.</li>
                 <li>
@@ -115,15 +115,15 @@ const Form15 = () => {
           </form>
         </div>
 
-        <div className="button-group">
+        <div className="form15-button-group">
           <button
             type="button"
-            className="print-button"
+            className="form15-print-button"
             onClick={() => window.print()}
           >
             Print
           </button>
-          <button type="button" className="next-button">
+          <button type="button" className="form15-next-button">
             {" "}
             Next{" "}
           </button>

@@ -4,25 +4,25 @@ import Header from "./Header";
 
 const Form24 = () => {
   return (
-    <div className="patawag-form-page">
+    <div className="form24-page">
       <Header showButton={false} />
-      <div className="patawag-form-text">
-        <h1>FORM 24:</h1>
-        <h2>
+      <div className="form24-text">
+        <h1 className="form24-title">FORM 24:</h1>
+        <h2 className="form24-subtitle">
           PAG-ABISO NG PAGDINIG PARA SA <br /> PAGPAPATUPAD NG KASUNDUAN
         </h2>
 
-        <div className="tanggapan-form-container">
-          <form className="patawag-form">
-            <div className="kp-input">
-              <label className="kpcase">KP Case Number:</label>
-              <input type="text" id="kpnum" placeholder=" " />
+        <div className="form24-container">
+          <form className="form24">
+            <div className="form24-kp-input">
+              <label className="form24-kpcase">KP Case Number:</label>
+              <input type="text" id="form24-kpnum" placeholder=" " />
             </div>
-            <div className="pormularyoblg">
-              <label className="pormularyo">Pormularyo ng KP Blg. 24</label>
+            <div className="form24-pormularyoblg">
+              <label className="form24-pormularyo">Pormularyo ng KP Blg. 24</label>
             </div>
-            <div className="heading">
-              <label className="head">
+            <div className="form24-heading">
+              <label className="form24-head">
                 Republika ng Pilipinas <br />
                 Lalawigan ng Kabite <br />
                 Bayan ng Indang <br />
@@ -30,57 +30,57 @@ const Form24 = () => {
               </label>
             </div>
             <div className="form-group">
-              <label className="centered-label">
+              <label className="form24-centered-label">
                 <br /> TANGGAPAN NG LUPONG TAGAPAMAYAPA
               </label>
             </div>
             <div className="form-row two-columns centered-row">
               <div className="form-group">
-                <input type="text" id="maysumbong" /> <br />
-                <input type="text" id="maysumbong" />
-                <label className="sumbong">
+                <input type="text" id="form24-maysumbong" /> <br />
+                <input type="text" id="form24-maysumbong" />
+                <label className="form24-sumbong">
                   (Mga) May Sumbong <br /> -laban kay/kina-
                 </label>
-                <input type="text" id="ipinagsumbong" /> <br />
-                <input type="text" id="ipinagsumbong" />
-                <label className="sumbong"> (Mga) Ipinagsusumbong </label>
+                <input type="text" id="form24-ipinagsumbong" /> <br />
+                <input type="text" id="form24-ipinagsumbong" />
+                <label className="form24-sumbong"> (Mga) Ipinagsusumbong </label>
               </div>
 
               <div className="form-group">
-                <div className="blg-input">
+                <div className="form24-blg-input">
                   <label>Usaping Barangay Blg. </label>
-                  <input type="text" id="blg" placeholder=" " />
+                  <input type="text" id="form24-blg" placeholder=" " />
                 </div>
-                <div className="ukol-input">
+                <div className="form24-ukol-input">
                   <label>Ukol sa:</label>
                   <input type="text" />
                 </div>
               </div>
             </div>
             <div className="form-group">
-              <label className="centered-label">PAG-ABISO NG PAGDINIG</label>
-              <label className="center">
+              <label className="form24-centered-label">PAG-ABISO NG PAGDINIG</label>
+              <label className="form24-center">
                 (Ukol sa: Panukala sa Pagpapatupad)
               </label>
             </div>{" "}
             <br />
             <div className="form-row two-columns centered-row">
               <div className="form-group">
-                <div className="kay-input">
+                <div className="form24-kay-input">
                   <label>KAY: </label>
-                  <input type="text" id="kay" placeholder=" " />
-                  <input type="text" id="sumbong-kay" placeholder=" " />
+                  <input type="text" id="form24-kay" placeholder=" " />
+                  <input type="text" id="form24-sumbong-kay" placeholder=" " />
                 </div>
                 <div className="form-group">
-                  <div className="kay-input">
-                    <input type="text" id="kay2" placeholder=" " />
-                    <input type="text" id="sumbong-kay2" placeholder=" " />
+                  <div className="form24-kay-input">
+                    <input type="text" id="form24-kay2" placeholder=" " />
+                    <input type="text" id="form24-sumbong-kay2" placeholder=" " />
                   </div>
                 </div>
-                <div className="form-group-input">
-                  <div className="kay-input">
-                    <label className="sumbong-label">(Mga) May Sumbong</label>
-                    <label className="ipinagsusumbong-label">
+                <div className="form24-form-group-input">
+                  <div className="form24-kay-input">
+                    <label className="form24-sumbong-label">(Mga) May Sumbong</label>
+                    <label className="form24-ipinagsusumbong-label">
                       (Mga) Ipinagsusumbong
                     </label>
                   </div>
@@ -88,83 +88,83 @@ const Form24 = () => {
               </div>
             </div>{" "}
             <br /> <br />
-            <div className="form-input">
-              <label className="indent">
+            <div className="form24-form-input">
+              <label className="form24-indent">
                 Sa pamamagitan nito’y inaatasan ka na humarap sa akin sa ika-
               </label>
-              <input type="text" id="araw" placeholder=" " />
+              <input type="text" id="form24-araw" placeholder=" " />
               <label> araw ng</label>
-              <input type="text" id="buwan" placeholder=" " />
+              <input type="text" id="form24-buwan" placeholder=" " />
             </div>
-            <div className="form-input">
+            <div className="form24-form-input">
               <label>, 20</label>
-              <input type="text" id="year" placeholder=" " />
+              <input type="text" id="form24-year" placeholder=" " />
               <label>sa ganap na ika-</label>
-              <input type="text" id="time" placeholder=" " />
+              <input type="text" id="form24-time" placeholder=" " />
               <label>ng umaga/hapon/gabi para sa pagdinig ngpanukala sa</label>
             </div>
-            <div className="form-input">
+            <div className="form24-form-input">
               <label>
                 {" "}
                 pagpapatupad, na kung saan ang sipi ng kalakip dito, na inihain
                 ni
               </label>
-              <input type="text" id="pangalan" placeholder=" " />
+              <input type="text" id="form24-pangalan" placeholder=" " />
             </div>
-            <div className="form-input">
-              <label className="left">
+            <div className="form24-form-input">
+              <label className="form24-left">
                 (pangalan ng mga (mga) may sumbong)/{" "}
               </label>
-              <input type="text" id="pangalan" placeholder=" " />
+              <input type="text" id="form24-pangalan" placeholder=" " />
               <label>(ipinagsusumbong). </label>
             </div>{" "}
             <br /> <br />
-            <div className="signature-container">
-              <div className="sign-line"></div>
-              <p className="sign-text">Petsa</p>
+            <div className="form24-signature-container">
+              <div className="form24-sign-line"></div>
+              <p className="form24-sign-text">Petsa</p>
             </div>{" "}
             <br />
-            <div className="signature-container">
-              <div className="signature-line"></div>
-              <p className="signature-text">
+            <div className="form24-signature-container">
+              <div className="form24-signature-line"></div>
+              <p className="form24-signature-text">
                 Punong Barangay/Tagapangulo ng Lupon
               </p>
             </div>{" "}
             <br />
-            <div className="form-input">
-              <label className="indent">Pinaabisuhan ngayong ika-</label>
-              <input type="text" id="day" placeholder=" " />
+            <div className="form24-form-input">
+              <label className="form24-indent">Pinaabisuhan ngayong ika-</label>
+              <input type="text" id="form24-day" placeholder=" " />
               <label>araw ng</label>
-              <input type="text" id="month" placeholder=" " />
+              <input type="text" id="form24-month" placeholder=" " />
               <label>, 20</label>
-              <input type="text" id="year" placeholder=" " />
+              <input type="text" id="form24-year" placeholder=" " />
               <label>.</label>
             </div>{" "}
             <br /> <br />
             <div className="form-row two-columns centered-row">
-              <div className="sign-container">
-                <div className="sign-line"></div>
-                <p className="sign-text">(Lagda)</p>
-                <label className="text1">(Mga) May Sumbong</label>
+              <div className="form24-sign-container">
+                <div className="form24-sign-line"></div>
+                <p className="form24-sign-text">(Lagda)</p>
+                <label className="form24-text1">(Mga) May Sumbong</label>
               </div>
-              <div className="sign-container">
-                <div className="signa-line"></div>
-                <p className="signa-text">(Lagda)</p>
-                <label className="text2">(Mga) Ipinagsusumbong</label>
+              <div className="form24-sign-container">
+                <div className="form24-signa-line"></div>
+                <p className="form24-signa-text">(Lagda)</p>
+                <label className="form24-text2">(Mga) Ipinagsusumbong</label>
               </div>
             </div>
             <br />
           </form>
         </div>
-        <div className="button-group">
+        <div className="form24-button-group">
           <button
             type="button"
-            className="print-button"
+            className="form24-print-button"
             onClick={() => window.print()}
           >
             Print
           </button>
-          <button type="button" className="next-button">
+          <button type="button" className="form24-next-button">
             {" "}
             Next{" "}
           </button>

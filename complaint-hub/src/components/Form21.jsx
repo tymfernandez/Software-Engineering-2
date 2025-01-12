@@ -4,26 +4,26 @@ import Header from "./Header";
 
 const Form21 = () => {
   return (
-    <div className="katibayan-form-page">
+    <div className="form21-page">
       <Header showButton={false} />
-      <div className="katibayan-form-text">
-        <h1>FORM 21:</h1>
-        <h2>
+      <div className="form21-text">
+        <h1 className="form21-title">FORM 21:</h1>
+        <h2 className="form21-subtitle">
           KATIBAYAN UPANG MAKADULOG SA HUKUMAN <br /> DAHIL SA DI PAGSIPOT SA KP
           NI COMPLAINANT
         </h2>
 
-        <div className="tanggapan-form-container">
-          <form className="katibayan-form">
-            <div className="kp-input">
-              <label className="kpcase">KP Case Number:</label>
-              <input type="text" id="kpnum" placeholder=" " />
+        <div className="form21-container">
+          <form className="form21">
+            <div className="form21-kp-input">
+              <label className="form21-kpcase">KP Case Number:</label>
+              <input type="text" id="form21-kpnum" placeholder=" " />
             </div>
-            <div className="pormularyoblg">
-              <label className="pormularyo">Pormularyo ng KP Blg. 21</label>
+            <div className="form21-pormularyoblg">
+              <label className="form21-pormularyo">Pormularyo ng KP Blg. 21</label>
             </div>
-            <div className="heading">
-              <label className="head">
+            <div className="form21-heading">
+              <label className="form21-head">
                 Republika ng Pilipinas <br />
                 Lalawigan ng Kabite <br />
                 Bayan ng Indang <br />
@@ -31,28 +31,28 @@ const Form21 = () => {
               </label>
             </div>
             <div className="form-group">
-              <label className="centered-label">
+              <label className="form21-centered-label">
                 <br /> TANGGAPAN NG LUPONG TAGAPAMAYAPA
               </label>
             </div>
             <div className="form-row two-columns centered-row">
               <div className="form-group">
-                <input type="text" />
-                <input type="text" />
-                <label className="sumbong">
+              <input type="text" id="form21-maysumbong" />
+              <input type="text" id="form21-maysumbong" />
+                <label className="form21-sumbong">
                   (Mga) May Sumbong <br /> -laban kay/kina-
                 </label>
-                <input type="text" />
-                <input type="text" />
-                <label className="sumbong"> (Mga) Ipinagsusumbong </label>
+                <input type="text" id="form21-ipinagsumbong" /> 
+                <input type="text" id="form21-ipinagsumbong" />
+                <label className="form21-sumbong"> (Mga) Ipinagsusumbong </label>
               </div>
 
               <div className="form-group">
-                <div className="blg-input">
+                <div className="form21-blg-input">
                   <label>Usaping Barangay Blg. </label>
-                  <input type="text" id="blg" placeholder=" " />
+                  <input type="text" id="form21-blg" placeholder=" " />
                 </div>
-                <div className="ukol-input">
+                <div className="form21-ukol-input">
                   <label>Ukol sa</label>
                   <input type="text" />
                 </div>
@@ -60,62 +60,62 @@ const Form21 = () => {
             </div>{" "}
             <br />
             <div className="form-group">
-              <label className="centered-label">
+              <label className="form21-centered-label">
                 KATIBAYAN UPANG MAKADULOG SA HUKUMAN
               </label>
             </div>
-            <div className="paragraph">
-              <label className="indent">
+            <div className="form21-paragraph">
+              <label className="form21-indent">
                 Ito ay nagpapatunay na ang usaping nakasaad sa itaas ay
                 ipinawalangsaysay alinsunod sa kautusan
               </label>
             </div>
-            <div className="form-input">
+            <div className="form21-form-input">
               <label>mga petsang </label>
-              <input type="text" id="date" placeholder=" " />
+              <input type="text" id="form21-date" placeholder=" " />
               <label>para sa (mga) may sumbong </label>
-              <input type="text" id="pangalan" placeholder=" " />
+              <input type="text" id="form21-pangalan" placeholder=" " />
             </div>
-            <div className="form-input">
+            <div className="form21-form-input">
               <label>(pangalan) at</label>
-              <input type="text" id="pangalan" placeholder=" " />
+              <input type="text" id="form21-pangalan" placeholder=" " />
               <label>
                 (pangalan) sanhi ng sinadya o pagtangging humarap para{" "}
               </label>
             </div>
-            <div className="form-input">
-              <label className="justify">
+            <div className="form21-form-input">
+              <label className="form21-justify">
                 sa pag dinig sa harap ng Punong Barangay/ Pangkat ng
                 Tagapagsundo at dahil dito ang mga my sumbong ay hinahadlangang
                 makadulog sa hukuman/tanggapan ng pamahalaan.
               </label>
             </div>
             <br />
-            <div className="form-input">
-              <label className="indent">Ngayong ika-</label>
-              <input type="text" id="day" placeholder=" " />
+            <div className="form21-form-input">
+              <label className="form21-indent">Ngayong ika-</label>
+              <input type="text" id="form21-day" placeholder=" " />
               <label>araw ng</label>
-              <input type="text" id="month" placeholder=" " />
+              <input type="text" id="form21-month" placeholder=" " />
               <label>, 20</label>
-              <input type="text" id="year" placeholder=" " />
+              <input type="text" id="form21-year" placeholder=" " />
               <label>.</label>
             </div>
             <br />
-            <div className="sign-container">
-              <div className="sign-line"></div>
-              <p className="sign-text">Kalihim ng Pangkat</p>
+            <div className="form21-sign-container">
+              <div className="form21-sign-line"></div>
+              <p className="form21-sign-text">Kalihim ng Pangkat</p>
             </div>
             <br />
-            <div className="signature-section">
-              <p className="signtext">Pinatunayan:</p>
-              <div className="signature-wrapper">
-                <div className="signature-line"></div>
+            <div className="form21-signature-section">
+              <p className="form21-signtext">Pinatunayan:</p>
+              <div className="form21-signature-wrapper">
+                <div className="form21-signature-line"></div>
               </div>
             </div>
-            <p className="sig-text">Tagapangulo ng Pangkat/Lupon</p>
+            <p className="form21-sig-text">Tagapangulo ng Pangkat/Lupon</p>
             <br /> <br />
-            <div className="form-input">
-              <label className="justify">
+            <div className="form21-form-input">
+              <label className="form21-justify">
                 MAHALAGA: Kung ang gumawa ng katibayan ay Kalihim ng Lupon, ang
                 Tagapangulo ng Lupon ang magpapatunay. Kung ang kalihim ng
                 Pangkat ang gumawa ng katibayan, ang Tagapangulo ng pangkat ang
@@ -126,15 +126,15 @@ const Form21 = () => {
           </form>
         </div>
 
-        <div className="button-group">
+        <div className="form21-button-group">
           <button
             type="button"
-            className="print-button"
+            className="form21-print-button"
             onClick={() => window.print()}
           >
             Print
           </button>
-          <button type="button" className="next-button">
+          <button type="button" className="form21-next-button">
             {" "}
             Next{" "}
           </button>
