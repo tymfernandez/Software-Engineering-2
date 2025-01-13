@@ -75,16 +75,16 @@ const Form16 = () => {
                 <label className="form16-mgasumbong">
                   (Mga) May Sumbong
                 </label>
-                <input type="text" id="form16-mgamaysumbong" /> <br />
-                <input type="text" id="form16-mgamaysumbong" />
+                <div className="form16-line"></div> <br />
+                <div className="form16-line"></div>
               </div>
 
               <div className="form-group">
                 <label className="form16-mgasumbong">
                   (Mga) Ipinagsusumbong{" "}
                 </label>
-                <input type="text" id="form16-mgaipinagsumbong" /> <br />
-                <input type="text" id="form16-mgaipinagsumbong" />
+                <div className="form16-line"></div> <br />
+                <div className="form16-line"></div>
               </div>
             </div>{" "}
             <br /> <br />

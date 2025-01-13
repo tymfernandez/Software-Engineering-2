@@ -106,23 +106,22 @@ const Form17 = () => {
               <input type="text" id="form17-year" placeholder=" " />
               <label>.</label>
             </div>
-            <br /> <br />
             <br />
             <div className="form-row two-columns centered-row">
               <div className="form-group">
                 <label className="form17-mgasumbong">
                   (Mga) May Sumbong 
                 </label>
-                <input type="text" id="form17-mgamaysumbong" /> <br />
-                <input type="text" id="form17-mgamaysumbong" />
+                <div className="form17-line"></div> <br />
+                <div className="form17-line"></div>
               </div>
 
               <div className="form-group">
                 <label className="form17-mgasumbong">
                  (Mga) Ipinagsusumbong{" "}
                 </label>
-                <input type="text" id="form17-mgaipinagsumbong" /> <br />
-                <input type="text" id="form17-mgaipinagsumbong" />
+                <div className="form17-line"></div> <br />
+                <div className="form17-line"></div>
               </div>
             </div>
             <br /> <br />

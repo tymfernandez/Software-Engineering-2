@@ -3455,7 +3455,7 @@ p {
 
 .form16-mgasumbong {
   text-align: center !important;
-  margin-left: 90px !important;
+  margin-left: 95px !important;
   margin-bottom: 10px !important;
 }
 
@@ -3608,6 +3608,13 @@ label {
   display: block;
   color: black;
   text-align: left;
+}
+
+.form16-line {
+  border-top: 1px solid black;
+  width: 250px !important;
+  margin: auto;
+  margin-top: 30px !important;
 }
 
 .form16-sign-section {
@@ -3983,6 +3990,13 @@ form17-label {
 .form17-checkbox:disabled {
   cursor: not-allowed;
   opacity: 0.5;
+}
+
+.form17-line {
+  border-top: 1px solid black;
+  width: 250px !important;
+  margin: auto;
+  margin-top: 30px !important;
 }
 
 .form17-sign-section {
