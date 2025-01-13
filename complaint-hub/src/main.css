@@ -1497,6 +1497,7 @@ html, body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
   width: 50% !important;
+  position: sticky;
 }
 
 .form7-title {
@@ -1554,10 +1555,14 @@ html, body {
 .form7-kpcase {
   text-align: right;
   margin-bottom: 8px;
+  gap: 5px;
 }
 
-.form7-kp input {
-  width: 120px;
+#form7-kpCaseNumber {
+  width: 120px !important;
+  height: 30px !important;
+  
+  
 }
 
 /* Ensure the parent container centers its children */
@@ -1589,12 +1594,12 @@ html, body {
   flex: 1;
 }
 
-#form7-maysumbong {
+#form7Maysumbong {
   width: 300px;
   margin-bottom: 10px;
 }
 
-#form7-ipinagsumbong {
+#form7Ipinagsumbong {
   width: 300px;
   margin-bottom: 10px;
 }
@@ -1631,7 +1636,7 @@ html, body {
 
 }
 
-.form7-blg-input input {
+#form7Blg {
   width: 50px;
   height: 35px;
   box-sizing: border-box;
@@ -1645,7 +1650,7 @@ html, body {
   justify-content: flex-end;
 }
 
-.form7-ukol-input input {
+#form7UkolSa {
   width: 155px;
   height: 35px;
   box-sizing: border-box;
@@ -1689,18 +1694,39 @@ html, body {
   margin-bottom: 20px;
 }
 
-#form7-year {
+#form7Year {
   width: 50px;
+  height: 35px;
   margin-right: 5px;
 }
 
-#form7-day {
+#form7Day {
   width: 50px;
+  height: 35px;
   margin-right: 5px;
 }
 
-#form7-month {
+#form7Month {
   width: 150px;
+  height: 35px;
+  margin-right: 5px;
+}
+
+#form7ReceiveYear {
+  width: 50px;
+  height: 35px;
+  margin-right: 5px;
+}
+
+#form7ReceiveDay {
+  width: 50px;
+  height: 35px;
+  margin-right: 5px;
+}
+
+#form7ReceiveMonth {
+  width: 150px;
+  height: 35px;
   margin-right: 5px;
 }
 
