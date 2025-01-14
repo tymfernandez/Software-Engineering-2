@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 const Counter = require("./models/counter");  // Import Counter model
 const userModel = require("./models/user");
 const form7Model = require("./models/form7");
+const form8Model = require("./models/form8");
 
 const app = express();
 app.use(express.json());
@@ -106,6 +107,86 @@ app.post("/form7", async (req, res) => {
     res.json(err);
   }
 });
+
+app.get("/form7/autogenerate", async (req, res) => {
+  try {
+    // Fetch the next counter values for kpCaseNumber and usapingBlg
+    const kpCaseNumberCounter = await Counter.findOne({ name: "kpCaseNumber" });
+    const usapingBlgCounter = await Counter.findOne({ name: "usapingBlg" });
+
+
+    if (!kpCaseNumberCounter || !usapingBlgCounter) {
+      return res.status(400).json({ message: "Counter data not found." });
+    }
+
+    // Return the next auto-generated numbers
+    res.json({
+      kpCaseNumber: kpCaseNumberCounter.count + 1,  // Incremented next value
+      usapingBlg: usapingBlgCounter.count + 1,  // Incremented next value
+    });
+  } catch (err) {
+    res.status(500).json({ error: "Error fetching auto-generated numbers" });
+  }
+});
+
+// Form8 route
+app.post("/form8", async (req, res) => {
+  try {
+    // Get the next case number and reference number
+    const caseNumberCounter = await Counter.findOneAndUpdate(
+      { name: "caseNumber" },
+      { $inc: { count: 1 } },
+      { new: true, upsert: true }
+    );
+
+    const referenceNumberCounter = await Counter.findOneAndUpdate(
+      { name: "referenceNumber" },
+      { $inc: { count: 1 } },
+      { new: true, upsert: true }
+    );
+
+    // Log the incoming form data
+    console.log(req.body);
+
+    // Add the generated caseNumber and referenceNumber to the form data
+    const form8Data = {
+      ...req.body,  // Existing form data
+      caseNumber: caseNumberCounter.count,  // Add the generated caseNumber
+      referenceNumber: referenceNumberCounter.count,  // Add the generated referenceNumber
+    };
+
+    // Create the Form 8 entry in the database
+    form7Db.model('Form8', form8Model.schema)  // Use form7Db for the 'Form8' model
+      .create(form8Data)
+      .then((form8) => res.json(form8))  // Return the saved form8 data, including the generated numbers
+      .catch((err) => res.json(err));
+
+  } catch (err) {
+    res.status(500).json({ error: "Error saving Form 8" });
+  }
+});
+
+// Route to get next auto-generated case number and reference number
+app.get("/form8/autogenerate", async (req, res) => {
+  try {
+    // Fetch the next counter values
+    const caseNumberCounter = await Counter.findOne({ name: "caseNumber" });
+    const referenceNumberCounter = await Counter.findOne({ name: "referenceNumber" });
+
+    if (!caseNumberCounter || !referenceNumberCounter) {
+      return res.status(400).json({ message: "Counter data not found." });
+    }
+
+    // Return the next auto-generated numbers
+    res.json({
+      caseNumber: caseNumberCounter.count + 1,
+      referenceNumber: referenceNumberCounter.count + 1,
+    });
+  } catch (err) {
+    res.status(500).json({ error: "Error fetching auto-generated numbers" });
+  }
+});
+
 
 app.listen(3001, () => {
   console.log("server is running!!");
