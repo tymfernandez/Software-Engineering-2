@@ -28,8 +28,10 @@ const styles = StyleSheet.create({
     fontSize: 11,
     marginRight: 5,
   },
+  center: {
+    textAlign: "center",
+  },
   inputBox: {
-    flex: 1,
     borderBottom: "1px solid black",
     fontSize: 11,
     padding: 2,
@@ -75,15 +77,18 @@ const FormDocuments = ({ data }) => {
         <View style={styles.kpNum}>
           <Text>KP Case Number: {data.form7KpCaseNumber || "____________________"}</Text>
         </View>
+        <br />
         <View style={styles.pormularyo}>
           <Text>Pormularyo ng KP Blg. 7</Text>
         </View>
+        <br />
         <View style={styles.header}>
           <Text>Republika ng Pilipinas</Text>
           <Text>Lalawigan ng Kabite</Text>
           <Text>Bayan ng Indang</Text>
           <Text>Barangay Poblation 1</Text>
         </View>
+        <br /> 
         <View style={styles.header}>
           <Text>TANGGAPAN NG LUPONG TAGAPAMAYAPA</Text>
         </View>
@@ -92,17 +97,14 @@ const FormDocuments = ({ data }) => {
         <View style={styles.twoColumnContainer}>
           {/* Left Column */}
           <View style={styles.column}>
-            <View style={styles.formRow}>
-              <Text style={styles.label}>Usaping Barangay Blg.:</Text>
-              <Text style={styles.inputBox}>{data.form7Blg || "____________________"}</Text>
-            </View>
-            <View style={styles.formRow}>
-              <Text style={styles.label}>Ukol sa:</Text>
-              <Text style={styles.inputBox}>{data.form7UkolSa || "____________________"}</Text>
-            </View>
-            <View style={styles.formRow}>
-              <Text style={styles.label}>(Mga) May Sumbong:</Text>
-              <Text style={styles.inputBox}>{data.form7MaySumbong || "____________________"}</Text>
+          <View style={styles.formRow}>
+              <Text style={styles.inputBox}>{data.form7MaySumbong || "____________________"}</Text> <br />
+              <Text style={styles.inputBox}>{data.form7MaySumbong || "____________________"}</Text> <br />
+              <Text style={styles.center}>(Mga) May Sumbong:</Text>
+              <Text style={styles.center}>(Mga) -laban kay/kina- </Text> <br /> <br />
+              <Text style={styles.inputBox}>{data.form7Ipinagsumbong || "____________________"}</Text>
+              <Text style={styles.inputBox}>{data.form7Ipinagsumbong || "____________________"}</Text>
+              <Text style={styles.center}>(Mga) Ipinagsusumbong:</Text>
             </View>
           </View>
 
