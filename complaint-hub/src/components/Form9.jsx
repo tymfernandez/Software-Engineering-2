@@ -1,8 +1,72 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../main.css";
 import Header from "./Header";
 
 const Form9 = () => {
+  const [values, setValues] = useState({
+    kpCaseNumber: "",
+    maySumbong: "",
+    ipinagsumbong: "",
+    usapingBlg: "",
+    ukolSa: "",
+    day: "",
+    month: "",
+    year: "",
+    time: "",
+    kay: "",
+    sumbongKay: "",
+    pangalan: "",
+    blank: "",
+    name: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Fetch auto-generated numbers for kpCaseNumber and usapingBlg
+    axios
+      .get("http://localhost:3001/form7/autogenerate")
+      .then((response) => {
+        setValues((prev) => ({
+          ...prev,
+          kpCaseNumber: response.data.kpCaseNumber,
+          usapingBlg: response.data.usapingBlg,
+        }));
+      })
+      .catch((error) => {
+        console.error("Error fetching auto-generated numbers: ", error);
+      });
+  }, []);
+
+  const handleInput = (event) => {
+    setValues((prev) => ({
+      ...prev,
+      [event.target.name]: event.target.value,
+    }));
+  };
+
+  const handleNext = () => {
+    setIsLoading(true);
+    setError("");
+
+    axios
+      .post("http://localhost:3001/form9", values)
+      .then((response) => {
+        console.log(response);
+        window.location.href = "/dashboard";
+      })
+      .catch((error) => {
+        console.error("Error adding Form 9 data: ", error);
+        setError("An error occurred during form submission. Please try again.");
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
+
   return (
     <div className="form9-page">
       <Header showButton={false} />
@@ -14,10 +78,20 @@ const Form9 = () => {
           <form className="patawag-form">
             <div className="form9-kp-input">
               <label className="form9-kpcase">KP Case Number:</label>
-              <input type="text" id="form9-kpnum" placeholder=" " />
+              <input
+                type="text"
+                id="form9-kpnum"
+                name="kpCaseNumber"
+                value={values.kpCaseNumber}
+                onChange={handleInput}
+                placeholder=" "
+                readOnly
+              />
             </div>
             <div className="form9-pormularyoblg">
-              <label className="form9-pormularyo">Pormularyo ng KP Blg. 9</label>
+              <label className="form9-pormularyo">
+                Pormularyo ng KP Blg. 9
+              </label>
             </div>
             <div className="form9-heading">
               <label className="form9-head">
@@ -34,24 +108,64 @@ const Form9 = () => {
             </div>
             <div className="form-row two-columns centered-row">
               <div className="form-group">
-                <input type="text" id="form9-maysumbong" /> <br />
-                <input type="text" id="form9-maysumbong" /> <br />
+                <input
+                  type="text"
+                  id="form9-maysumbong"
+                  name="maySumbong"
+                  value={values.maySumbong}
+                  onChange={handleInput}
+                />{" "}
+                <br />
+                <input
+                  type="text"
+                  id="form9-maysumbong"
+                  name="maySumbong"
+                  value={values.maySumbong}
+                  onChange={handleInput}
+                />{" "}
+                <br />
                 <label className="form9-sumbong">
                   (Mga) May Sumbong <br /> -laban kay/kina-
                 </label>
-                <input type="text" id="form9-ipinagsumbong" /> <br />
-                <input type="text" id="form9-ipinagsumbong" />
+                <input
+                  type="text"
+                  id="form9-ipinagsumbong"
+                  name="ipinagsumbong"
+                  value={values.ipinagsumbong}
+                  onChange={handleInput}
+                />{" "}
+                <br />
+                <input
+                  type="text"
+                  id="form9-ipinagsumbong"
+                  name="ipinagsumbong"
+                  value={values.ipinagsumbong}
+                  onChange={handleInput}
+                />
                 <label className="form9-sumbong"> (Mga) Ipinagsusumbong </label>
               </div>
 
               <div className="form-group">
                 <div className="form9-blg-input">
                   <label>Usaping Barangay Blg. </label>
-                  <input type="text" id="form9-blg" placeholder=" " />
+                  <input
+                    type="text"
+                    id="form9-blg"
+                    name="usapingBlg"
+                    value={values.usapingBlg}
+                    onChange={handleInput}
+                    placeholder=" "
+                    readOnly
+                  />
                 </div>
                 <div className="form9-ukol-input">
                   <label>Ukol sa:</label>
-                  <input type="text" />
+                  <input
+                    type="text"
+                    name="ukolSa"
+                    value={values.ukolSa}
+                    onChange={handleInput}
+                  />
                 </div>
               </div>
             </div>
@@ -62,9 +176,23 @@ const Form9 = () => {
               <div className="form-group">
                 <div className="form9-kay-input">
                   <label>KAY: </label>
-                  <input type="text" id="form9-kay" placeholder=" " />
+                  <input
+                    type="text"
+                    id="form9-kay"
+                    name="kay"
+                    value={values.kay}
+                    onChange={handleInput}
+                    placeholder=" "
+                  />
                 </div>
-                <input type="text" id="form9-sumbong-kay" placeholder=" " />
+                <input
+                  type="text"
+                  id="form9-sumbong-kay"
+                  name="sumbongKay"
+                  value={values.sumbongKay}
+                  onChange={handleInput}
+                  placeholder=" "
+                />
                 <label className="form9-ipinagsusumbong">
                   {" "}
                   (Mga) Ipinagsusumbong{" "}
@@ -72,8 +200,20 @@ const Form9 = () => {
               </div>
 
               <div className="form-group">
-                <input type="text" id="form9-kay"/>
-                <input type="text" id="form9-kay"/>
+                <input
+                  type="text"
+                  id="form9-kay"
+                  name="kay"
+                  value={values.kay}
+                  onChange={handleInput}
+                />
+                <input
+                  type="text"
+                  id="form9-kay"
+                  name="kay"
+                  value={values.kay}
+                  onChange={handleInput}
+                />
               </div>
             </div>
             <div className="form9-paragraph">
@@ -84,28 +224,59 @@ const Form9 = () => {
             </div>
             <div className="form9-form-input">
               <label>ang inyong mga testigo, sa ika-</label>
-              <input type="text" id="form9-day" placeholder=" " />
+              <input
+                type="text"
+                id="form9-day"
+                name="day"
+                value={values.day}
+                onChange={handleInput}
+                placeholder=" "
+              />
               <label>araw ng</label>
-              <input type="text" id="form9-month" placeholder=" " />
+              <input
+                type="text"
+                id="form9-month"
+                name="month"
+                value={values.month}
+                onChange={handleInput}
+                placeholder=" "
+              />
               <label>, 20</label>
-              <input type="text" id="form9-year" placeholder=" " />
+              <input
+                type="text"
+                id="form9-year"
+                name="year"
+                value={values.year}
+                onChange={handleInput}
+                placeholder=" "
+              />
               <label>sa ganap na ika-</label>
             </div>
             <div className="form9-form-input">
-              <input type="text" id="form9-time" placeholder=" " />
+              <input
+                type="text"
+                id="form9-time"
+                name="time"
+                value={values.time}
+                onChange={handleInput}
+                placeholder=" "
+              />
               <label>
                 ng umaga/hapon, upang sagutin ang sumbong na ginawa sa harap ko,
                 na ang sipi ay
               </label>
-            </div> 
+            </div>
             <div className="form9-form-input">
               <label>
                 {" "}
                 kalakip nito, para pamagitnaan/pagkasunduin ang inyong (mga)
                 alitan ng (mga) nagsusumbong.
               </label>
-            </div> <br />
-            <div className="form9-form-input"> <br />
+            </div>{" "}
+            <br />
+            <div className="form9-form-input">
+              {" "}
+              <br />
               <label className="form9-indent">
                 Sa pamamagitan nito kayo’y binabalaan na ang inyong pagtanggi o
                 kusang di pagharap bilang pagtalima sa patawag na ito, kayo ay
@@ -121,11 +292,32 @@ const Form9 = () => {
             </div>
             <div className="form9-form-input">
               <label className="form9-indent">Ngayong ika-</label>
-              <input type="text" id="form9-day" placeholder=" " />
+              <input
+                type="text"
+                id="form9-day"
+                name="day"
+                value={values.day}
+                onChange={handleInput}
+                placeholder=" "
+              />
               <label>araw ng</label>
-              <input type="text" id="form9-month" placeholder=" " />
+              <input
+                type="text"
+                id="form9-month"
+                name="month"
+                value={values.month}
+                onChange={handleInput}
+                placeholder=" "
+              />
               <label>, 20</label>
-              <input type="text" id="form9-year" placeholder=" " />
+              <input
+                type="text"
+                id="form9-year"
+                name="year"
+                value={values.year}
+                onChange={handleInput}
+                placeholder=" "
+              />
               <label>.</label>
             </div>{" "}
             <br />
@@ -144,7 +336,15 @@ const Form9 = () => {
           <form className="form9-patawag-form">
             <div className="form9-kp-input">
               <label className="form9-kpcase">KP Case Number:</label>
-              <input type="text" id="form9-kpnum" placeholder=" " />
+              <input
+                type="text"
+                id="form9-kpnum"
+                name="kpCaseNumber"
+                value={values.kpCaseNumber}
+                onChange={handleInput}
+                placeholder=" "
+                readOnly
+              />
             </div>
             {/* ULAT NG OPISYAL Section */}
             <div className="form-group">
@@ -156,15 +356,43 @@ const Form9 = () => {
                 <label className="form9-indent">
                   Inihatid ang patawag na ito sa inirereklamo{" "}
                 </label>
-                <input type="text" id="form9-pangalan" placeholder=" " />
+                <input
+                  type="text"
+                  id="form9-pangalan"
+                  name="pangalan"
+                  value={values.pangalan}
+                  onChange={handleInput}
+                  placeholder=" "
+                />
                 <label>noong ika-</label>
-                <input type="text" id="form9-day" placeholder=" " />
+                <input
+                  type="text"
+                  id="form9-day"
+                  name="day"
+                  value={values.day}
+                  onChange={handleInput}
+                  placeholder=" "
+                />
               </div>
               <div className="form9-form-input">
                 <label>araw ng</label>
-                <input type="text" id="form9-month" placeholder=" " />
+                <input
+                  type="text"
+                  id="form9-month"
+                  name="month"
+                  value={values.month}
+                  onChange={handleInput}
+                  placeholder=" "
+                />
                 <label>, 20</label>
-                <input type="text" id="form9-year" placeholder=" " />
+                <input
+                  type="text"
+                  id="form9-year"
+                  name="year"
+                  value={values.year}
+                  onChange={handleInput}
+                  placeholder=" "
+                />
                 <label>
                   sa pamamagitan ng (isulat ang pangalan/mga pangalan ng
                 </label>
@@ -176,13 +404,27 @@ const Form9 = () => {
             <div className="form9-inirereklamo-section">
               <label>(Mga) Inirereklamo:</label>
               <div className="form9-reasons-input">
-                <input type="text" id="form9-blank" placeholder=" " />
+                <input
+                  type="text"
+                  id="form9-blank"
+                  name="blank"
+                  value={values.blank}
+                  onChange={handleInput}
+                  placeholder=" "
+                />
                 <label>
                   1. Ibinigay sa kanila nang personal ang patawag o{" "}
                 </label>
               </div>
               <div className="form9-reasons-input">
-                <input type="text" id="form9-blank" placeholder="" />
+                <input
+                  type="text"
+                  id="form9-blank"
+                  name="blank"
+                  value={values.blank}
+                  onChange={handleInput}
+                  placeholder=""
+                />
                 <label>
                   2. Ibinigay sa kanila ang patawag, subalit tinanggihan itong
                   tanggapin, o{" "}
@@ -190,16 +432,37 @@ const Form9 = () => {
               </div>
               <div className="form9-reason-input">
                 <div className="form9-reasons-input">
-                  <input type="text" id="form9-blank" placeholder="" />
+                  <input
+                    type="text"
+                    id="form9-blank"
+                    name="blank"
+                    value={values.blank}
+                    onChange={handleInput}
+                    placeholder=""
+                  />
                   <label>
                     3. Iniwan ang nasabing patawag sa kanilang bahay kay
                   </label>
                 </div>
-                <input type="text" id="form9-name" placeholder="Pangalan" />
+                <input
+                  type="text"
+                  id="form9-name"
+                  name="name"
+                  value={values.name}
+                  onChange={handleInput}
+                  placeholder="Pangalan"
+                />
               </div>
               <div className="form9-reason-input">
                 <div className="form9-reasons-input">
-                  <input type="text" id="form9-blank" placeholder="" />
+                  <input
+                    type="text"
+                    id="form9-blank"
+                    name="blank"
+                    value={values.blank}
+                    onChange={handleInput}
+                    placeholder=""
+                  />
                   <label>
                     4. Iniwan ang nasabing patawag sa kanya/kanilang
                   </label>
@@ -208,7 +471,14 @@ const Form9 = () => {
                   tanggapan/lugar ng kanyang pinagtatrabahuan kay
                 </label>
                 <div className="form9-reasons-input">
-                  <input type="text" id="form9-name" placeholder="Pangalan" />
+                  <input
+                    type="text"
+                    id="form9-name"
+                    name="name"
+                    value={values.name}
+                    onChange={handleInput}
+                    placeholder="Pangalan"
+                  />
                   <label> ang tao na siyang </label>
                 </div>
                 <label className="form9-four">namamahala dito.</label>
@@ -243,6 +513,8 @@ const Form9 = () => {
                 <p className="form9-signature-text">Pangalan, Lagda at Petsa</p>
               </div>
             </div>
+            {error && <p className="error-text">{error}</p>}{" "}
+            {/* Display error */}
           </form>
         </div>
         <div className="form9-button-group">
@@ -253,9 +525,13 @@ const Form9 = () => {
           >
             Print
           </button>
-          <button type="button" className="form9-next-button">
-            {" "}
-            Next{" "}
+          <button
+            type="button"
+            className="form9-next-button"
+            onClick={handleNext}
+            disabled={isLoading}
+          >
+            {isLoading ? "Submitting..." : "Next"}
           </button>
         </div>
       </div>

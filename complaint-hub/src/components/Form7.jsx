@@ -31,7 +31,7 @@ const Form7 = () => {
       .post("http://localhost:3001/form7", form7Data)
       .then((response) => {
         console.log(response);
-        navigate("/dashboard"); // Redirect to dashboard on success
+        navigate("/form8"); // Redirect to dashboard on success
       })
       .catch((error) => {
         console.error("Error adding Form 7 data: ", error);
