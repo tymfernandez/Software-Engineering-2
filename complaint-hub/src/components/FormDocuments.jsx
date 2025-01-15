@@ -235,7 +235,7 @@ const FormDocuments = ({ data }) => {
           <Text style={styles.inputDay}>{data.form7Day || "  "}</Text>
           <Text style={styles.label}>araw ng</Text>
           <Text style={styles.inputMonth}>{data.form7Month || " "}</Text>
-          <Text style={styles.label}>20</Text>
+          <Text style={styles.label}>, 20</Text>
           <Text style={styles.inputYear}>{data.form7Year || " "}</Text>
           <br />
         </View>

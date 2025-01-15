@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import "../main.css";
 import Header from "./Header"; //
-import PdfForm8 from "./pdfForm8";
+import FormDocu8 from "./FormDocu8"; //
 
 const Form8 = () => {
   const [formData, setFormData] = useState({
@@ -152,7 +152,7 @@ const Form8 = () => {
           </button>
         </div>
         <PDFDownloadLink
-          document={<pdfForm8 data={formData} />}
+          document={<FormDocu8 data={formData} />}
           fileName="Form8.pdf"
         >
         {({ loading }) => (loading ? "Generating PDF..." : <button>Download PDF</button>)}
