@@ -10,7 +10,9 @@ const Form7 = () => {
     form7Blg: "",
     form7UkolSa: "",
     form7MaySumbong: "",
+    form7MaySumbong1: "",
     form7Ipinagsumbong: "",
+    form7Ipinagsumbong1: "",
     reklamo: "",
     resolutionRequest: "",
     form7Day: "",
@@ -64,12 +66,12 @@ const Form7 = () => {
           <div className="form-row two-columns centered-row">
             <div className="form-group">
               <input type="text" id="form7MaySumbong" onChange={handleInputChange} /> <br />
-              <input type="text" id="form7MaySumbong" onChange={handleInputChange} /> <br />
+              <input type="text" id="form7MaySumbong1" onChange={handleInputChange} /> <br />
               <label className="form7-sumbong">
                 (Mga) May Sumbong <br /> -laban kay/kina-
               </label> <br />
               <input type="text" id="form7Ipinagsumbong" onChange={handleInputChange} /> <br />
-              <input type="text" id="form7Ipinagsumbong" onChange={handleInputChange} /> <br />
+              <input type="text" id="form7Ipinagsumbong1" onChange={handleInputChange} /> <br />
               <label className="form7-sumbong"> (Mga) Ipinagsusumbong </label>
             </div>
 

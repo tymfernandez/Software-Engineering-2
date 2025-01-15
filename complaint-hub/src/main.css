@@ -1599,7 +1599,16 @@ html, body {
   margin-bottom: 10px;
 }
 
+#form7MaySumbong1 {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
 #form7Ipinagsumbong {
+  width: 300px;
+  margin-bottom: 10px;
+}
+#form7Ipinagsumbong1 {
   width: 300px;
   margin-bottom: 10px;
 }
@@ -2333,7 +2342,7 @@ html, body {
   line-height: 1.5;
 }
 
-.form9-kp-input input {
+#form9KpCaseNumber {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
@@ -2364,13 +2373,25 @@ html, body {
   flex: 1;
 }
 
-#form9-maysumbong {
+#form9Maysumbong {
   width: 250px;
   height: 35px;
   margin-bottom: 10px;
 }
 
-#form9-ipinagsumbong {
+#form9Maysumbong1 {
+  width: 250px;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+#form9Ipinagsumbong {
+  width: 250px;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+#form9Ipinagsumbong1 {
   width: 250px;
   height: 35px;
   margin-bottom: 10px;
@@ -2388,9 +2409,10 @@ html, body {
   margin-left: 80px;
 }
 
-#form9-sumbong-kay {
+#form9SumbongKay {
   margin-left: 40px;
   width: 270px;
+  margin-bottom: 10px;
 }
 
 .form9-blg-input {
@@ -2400,7 +2422,7 @@ html, body {
   justify-content: flex-end;
 }
 
-.form9-blg-input input {
+#form9Blg {
   width: 50px !important;
   height: 35px;
   box-sizing: border-box;
@@ -2414,7 +2436,7 @@ html, body {
   justify-content: flex-end;
 }
 
-.form9-ukol-input input {
+#form9Ukol {
   width: 155px !important;
   height: 35px;
   box-sizing: border-box;
@@ -2433,7 +2455,7 @@ html, body {
   margin-bottom: 10px;
 }
 
-#form9-kay {
+#form9Kay {
   width: 270px;
   margin-bottom: 10px;
 }
@@ -2451,33 +2473,104 @@ html, body {
   margin-bottom: 10px;
 }
 
-#form9-year {
+#form9Year {
   width: 50px;
   height: 35px;
 }
 
-#form9-day {
+#form9Month {
+  width: 130px;
+  height: 35px;
+}
+
+#form9Day {
   width: 50px;
   height: 35px;
 }
 
-#form9-time {
-  width: 70px;
+#form9ReceiveYear {
+  width: 50px;
   height: 35px;
 }
 
-#form9-blank {
+#form9ReceiveMonth {
+  width: 130px;
+  height: 35px;
+}
+
+#form9ReceiveDay {
+  width: 50px;
+  height: 35px;
+}
+
+#form9YearNow {
+  width: 50px;
+  height: 35px;
+}
+
+#form9MonthNow {
+  width: 130px;
+  height: 35px;
+}
+
+#form9DayNow {
+  width: 50px;
+  height: 35px;
+}
+
+#form9YearUlat {
+  width: 50px;
+  height: 35px;
+}
+
+#form9MonthUlat {
+  width: 130px;
+  height: 35px;
+}
+
+#form9DayUlat {
+  width: 50px;
+  height: 35px;
+}
+
+#form9Time {
+  width: 100px;
+  height: 35px;
+}
+
+#form9Blank1 {
   width: 150px;
   height: 35px;
 }
 
-#form9-name {
-  width: 250px;
-  margin-left: 150px;
+#form9Blank2 {
+  width: 150px;
   height: 35px;
 }
 
-#form9-pangalan {
+#form9Blank3 {
+  width: 150px;
+  height: 35px;
+}
+
+#form9Blank4 {
+  width: 150px;
+  height: 35px;
+}
+
+#form9Name {
+  width: 250px;
+  margin-left: 150px !important;
+  height: 35px;
+}
+
+#form9Name1 {
+  width: 250px;
+  margin-left: 150px !important;
+  height: 35px;
+}
+
+#form9Pangalan {
   width: 200px;
   height: 35px;
 }
@@ -2633,6 +2726,7 @@ label {
 .form9-next-button {
   background-color: #0056b3;
   color: white;
+  text-align: center;
   font-weight: bold;
   width: 150px;
   padding: 10px 20px;
@@ -2644,7 +2738,7 @@ label {
 }
 
 .form9-print-button:hover {
-  background-color: #003d82;
+  background-color: #000000;
   transform: scale(1.02);
 }
 

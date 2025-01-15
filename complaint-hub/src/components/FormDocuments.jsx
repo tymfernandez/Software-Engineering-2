@@ -165,7 +165,7 @@ const FormDocuments = ({ data }) => {
               {data.form7MaySumbong || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
             <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "center", marginBottom: 5 }}>
-              {data.form7MaySumbong || " ".repeat(25)} {/* Creates the underline effect */}
+              {data.form7MaySumbong1 || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
             <Text style={{ fontStyle: "italic", marginBottom: 2 }}>(Mga) Maysumbong</Text>
             <Text>-laban kay/kina-</Text>
@@ -176,7 +176,7 @@ const FormDocuments = ({ data }) => {
               {data.form7Ipinagsumbong || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
             <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "center", marginBottom: 5 }}>
-              {data.form7Ipinagsumbong || " ".repeat(25)} {/* Creates the underline effect */}
+              {data.form7Ipinagsumbong1 || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
             <Text style={{ fontStyle: "italic", marginBottom: 2 }}>(Mga) Ipinagsusumbong</Text>
           </View>
@@ -228,16 +228,20 @@ const FormDocuments = ({ data }) => {
         
 
         {/* Footer */}
-        <View style={styles.formRow}>
-          <br />
-          <br />
-          <Text style={styles.label}>Ginawa ngayong ika-</Text>
-          <Text style={styles.inputDay}>{data.form7Day || "  "}</Text>
-          <Text style={styles.label}>araw ng</Text>
-          <Text style={styles.inputMonth}>{data.form7Month || " "}</Text>
-          <Text style={styles.label}>, 20</Text>
-          <Text style={styles.inputYear}>{data.form7Year || " "}</Text>
-          <br />
+        <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10, marginTop: 20 }}>         
+            <Text>Ginawa ngayong ika- </Text>
+            <View style={{ borderBottom: "1px solid black", width: 60, marginLeft: 5 }}>
+                <Text>{data.form7Day || " "}</Text>
+            </View>
+            <Text> araw ng </Text>
+            <View style={{ borderBottom: "1px solid black", width: 100, marginLeft: 5 }}>
+                <Text>{data.form7Month || " "}</Text>
+            </View>
+            <Text>, 20 </Text>
+            <View style={{ borderBottom: "1px solid black", width: 50, marginLeft: 5 }}>
+                <Text>{data.form7Year || " "}</Text>
+            </View>
+            <Text>. </Text>
         </View>
         
         {/* Right-Aligned Signatory */}
@@ -246,13 +250,20 @@ const FormDocuments = ({ data }) => {
           <Text style={styles.signatoryText}>(Mga) May Sumbong</Text>
         </View>
         <br />
-        <View style={styles.formRow}>
-          <Text style={styles.label}>Tinanggap at inihain ngayong ika-</Text>
-          <Text style={styles.inputDay}>{data.form7ReceiveDay || " "}</Text>
-          <Text style={styles.label}>araw ng</Text>
-          <Text style={styles.inputMonth}>{data.form7ReceiveMonth || " "}</Text>
-          <Text style={styles.label}>20</Text>
-          <Text style={styles.inputYear}>{data.form7ReceiveYear || " "}</Text>
+        <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10, marginTop: 20 }}>         
+            <Text>Tinanggap at inihain ngayong ika- </Text>
+            <View style={{ borderBottom: "1px solid black", width: 60, marginLeft: 5 }}>
+                <Text>{data.form7ReceiveDay || " "}</Text>
+            </View>
+            <Text> araw ng </Text>
+            <View style={{ borderBottom: "1px solid black", width: 100, marginLeft: 5 }}>
+                <Text>{data.form7ReceiveMonth || " "}</Text>
+            </View>
+            <Text>, 20 </Text>
+            <View style={{ borderBottom: "1px solid black", width: 50, marginLeft: 5 }}>
+                <Text>{data.form7ReceiveYear || " "}</Text>
+            </View>
+            <Text>. </Text>
         </View>
         {/* Left-Aligned Signatory */}
         <View style={styles.signatoryLeft}>
