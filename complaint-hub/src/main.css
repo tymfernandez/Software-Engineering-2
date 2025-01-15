@@ -1986,16 +1986,58 @@ html, body {
   box-sizing: border-box;
 }
 
-#form8-year {
+#form8Year {
   width: 50px;
 }
 
-#form8-day {
+#form8YearUtos {
+  width: 50px;
+}
+
+#form8YearNow {
+  width: 50px;
+}
+
+#form8YearBiso {
+  width: 50px;
+}
+
+#form8Day {
   width: 50px;
   
 }
 
-#form8-date {
+#form8DayNow {
+  width: 50px;
+  
+}
+
+#form8DayBiso {
+  width: 50px;
+  
+}
+
+#form8DayUtos {
+  width: 50px;
+  
+}
+
+#form8Date {
+  width: 150px;
+}
+
+#form8Month {
+  width: 150px;
+}
+#form8MonthUtos {
+  width: 150px;
+}
+
+#form8MonthNow {
+  width: 150px;
+}
+
+#form8MonthBiso {
   width: 150px;
 }
 
@@ -2043,14 +2085,14 @@ html, body {
   align-items: center;
 }
 
-.form8-kay-input input {
+#form8Kay {
   width: 270px;
   height: 38px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-#form8-sumbong {
+#form8Sumbong {
   width: 270px;
   height: 38px;
   margin-left: 40px;
