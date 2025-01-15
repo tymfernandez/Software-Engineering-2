@@ -102,6 +102,8 @@ const FormDocuments = ({ data }) => {
               <Text style={styles.inputBox}>{data.form7MaySumbong || "____________________"}</Text> <br />
               <Text style={styles.center}>(Mga) May Sumbong:</Text>
               <Text style={styles.center}>(Mga) -laban kay/kina- </Text> <br /> <br />
+            </View>
+            <View style={styles.formRow}>
               <Text style={styles.inputBox}>{data.form7Ipinagsumbong || "____________________"}</Text>
               <Text style={styles.inputBox}>{data.form7Ipinagsumbong || "____________________"}</Text>
               <Text style={styles.center}>(Mga) Ipinagsusumbong:</Text>
@@ -113,25 +115,7 @@ const FormDocuments = ({ data }) => {
 
           {/* Right Column */}
           <View style={styles.column}>
-            <View style={styles.formRow}>
-              <Text style={styles.label}>-laban kay/kina-:</Text>
-              <Text style={styles.inputBox}>{data.form7Ipinagsumbong || "____________________"}</Text>
-            </View>
-            <View style={styles.section}>
-              <Text style={styles.label}>REKLAMO:</Text>
-              <Text style={styles.textarea}>
-                {data.reklamo || "____________________________________________"}
-              </Text>
-            </View>
-            <View style={styles.section}>
-              <Text style={styles.label}>
-                DAHIL DITO, AKO/KAMI, na nakikiusap na ipagkaloob sa akin/amin ang sumusunod na (mga)
-                kalunasan nang naaayon sa batas:
-              </Text>
-              <Text style={styles.textarea}>
-                {data.resolutionRequest || "____________________________________________"}
-              </Text>
-            </View>
+            
           </View>
         </View>
 
