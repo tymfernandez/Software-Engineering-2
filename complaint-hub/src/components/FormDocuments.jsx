@@ -31,13 +31,23 @@ const styles = StyleSheet.create({
   center: {
     textAlign: "center",
   },
+  formRowRight: {
+    flexDirection: "row",
+    justifyContent: "flex-end", // Aligns content to the right
+    alignItems: "center", // Aligns items vertically
+    marginBottom: 8, // Spacing below the row
+  },
+  indent: {
+    indent: 20,
+    marginTop: 20,
+    marginBottom: 3,
+  },
   inputBox: {
     borderBottom: "1px solid black",
     fontSize: 11,
     padding: 2,
   },
   textarea: {
-    border: "1px solid black",
     fontSize: 11,
     padding: 5,
     height: 50,
@@ -52,6 +62,21 @@ const styles = StyleSheet.create({
     marginTop: 20,
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+  inputLine: {
+    borderBottom: "1px solid black",
+    width: "70px", // Adjust the length of the line
+    fontSize: 11,
+  },
+  inputLiney: {
+    borderBottom: "1px solid black",
+    width: "150px", // Adjust the length of the line
+    fontSize: 11,
+  },
+  line: {
+    borderBottom: "1px solid black",
+    width: "100%", // Adjust the width if you want shorter lines
+    marginBottom: 5, // Adjust spacing between lines
   },
   twoColumnContainer: {
     flexDirection: "row",
@@ -75,7 +100,7 @@ const FormDocuments = ({ data }) => {
       <Page size="A4" style={styles.page}>
         {/* Form Header */}
         <View style={styles.kpNum}>
-          <Text>KP Case Number: {data.form7KpCaseNumber || "____________________"}</Text>
+          <Text>KP Case Number: {data.form7KpCaseNumber || "                    "}</Text>
         </View>
         <br />
         <View style={styles.pormularyo}>
@@ -97,47 +122,104 @@ const FormDocuments = ({ data }) => {
         <View style={styles.twoColumnContainer}>
           {/* Left Column */}
           <View style={styles.column}>
-          <View style={styles.formRow}>
-              <Text style={styles.inputBox}>{data.form7MaySumbong || "____________________"}</Text> <br />
-              <Text style={styles.inputBox}>{data.form7MaySumbong || "____________________"}</Text> <br />
-              <Text style={styles.center}>(Mga) May Sumbong:</Text>
-              <Text style={styles.center}>(Mga) -laban kay/kina- </Text> <br /> <br />
-            </View>
-            <View style={styles.formRow}>
-              <Text style={styles.inputBox}>{data.form7Ipinagsumbong || "____________________"}</Text>
-              <Text style={styles.inputBox}>{data.form7Ipinagsumbong || "____________________"}</Text>
-              <Text style={styles.center}>(Mga) Ipinagsusumbong:</Text>
-            </View>
+          <View style={{ marginVertical: 15, textAlign: "center" }}>
+            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "center", marginBottom: 5 }}>
+              {data.form7MaySumbong || " ".repeat(25)} {/* Creates the underline effect */}
+            </Text>
+            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "center", marginBottom: 5 }}>
+              {data.form7MaySumbong || " ".repeat(25)} {/* Creates the underline effect */}
+            </Text>
+            <Text style={{ fontStyle: "italic", marginBottom: 2 }}>(Mga) Maysumbong</Text>
+            <Text>-laban kay/kina-</Text>
           </View>
 
-          {/* Divider (Optional) */}
-          <View style={styles.divider} />
+          <View style={{ marginVertical: 15, textAlign: "center" }}>
+            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "center", marginBottom: 5 }}>
+              {data.form7Ipinagsumbong || " ".repeat(25)} {/* Creates the underline effect */}
+            </Text>
+            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "center", marginBottom: 5 }}>
+              {data.form7Ipinagsumbong || " ".repeat(25)} {/* Creates the underline effect */}
+            </Text>
+            <Text style={{ fontStyle: "italic", marginBottom: 2 }}>(Mga) Ipinagsusumbong</Text>
+          </View>
+          </View>
 
           {/* Right Column */}
           <View style={styles.column}>
-            
+          <View style={styles.formRowRight}>
+            <Text style={styles.label}>Usaping Barangay Blg.:</Text>
+            <Text style={styles.inputLine}>
+              {data.form7Blg || " "}
+            </Text>
+          </View>
+            <View style={styles.formRowRight}>
+              <Text style={styles.label}>Ukol sa:</Text>
+              <Text style={styles.inputLiney}>{data.form7UkolSa || " "}</Text>
+            </View>
           </View>
         </View>
+
+        {/* Textarea */}
+        <View style={styles.section}>
+          <Text style={styles.center}>REKLAMO</Text> 
+          <br /> 
+          <br />
+          <Text style={styles.indent}> AKO/KAMI, ay nagrereklamo laban sa mga ipinagsusumbong na binanggit sa itaas dahil sa paglabag sa aking/aming mga karapatan at kapakanan sa sumusunod na pamamaraan:
+          </Text>
+        </View>
+        <View>
+          {[...Array(8)].map((_, index) => (
+            <Text key={index} style={styles.line}>
+              {data.reklamo || " "}
+            </Text>
+          ))}
+        </View>
+        <br /> 
+          <br />
+        <View style={styles.section}>          
+          <Text style={styles.indent}> DAHIL DITO, AKO/KAMI, na nakikiusap na ipagkaloob sa akin/amin ang sumusunod na (mga) kalunasan nang naaalinsunod sa batas at/o pagkamakatuwiran:
+          </Text>
+        </View>
+        <View>
+          {[...Array(2)].map((_, index) => (
+            <Text key={index} style={styles.line}>
+              {data.resolutionRequest || " "}
+            </Text>
+          ))}
+        </View>
+        
+        <br />
+        <br />
 
         {/* Footer */}
         <View style={styles.formRow}>
           <Text style={styles.label}>Ginawa ngayong ika-</Text>
-          <Text style={styles.inputBox}>{data.form7Day || "___"}</Text>
+          <Text style={styles.inputBox}>{data.form7Day || "      "}</Text>
           <Text style={styles.label}>araw ng</Text>
-          <Text style={styles.inputBox}>{data.form7Month || "__________"}</Text>
+          <Text style={styles.inputBox}>{data.form7Month || "                     "}</Text>
           <Text style={styles.label}>20</Text>
-          <Text style={styles.inputBox}>{data.form7Year || "__"}</Text>
+          <Text style={styles.inputBox}>{data.form7Year || "       "}</Text>
         </View>
+        <br />
+        <View style={styles.signSection}>
+          <Text style={{ borderBottom: "1px solid black", width: "50%", alignSelf: "center", marginBottom: 5 }}>
+              {data.form7MaySumbong || " ".repeat(25)} {/* Creates the underline effect */}
+           </Text>
+          <Text style={styles.footer}>(Mga) May Sumbong</Text>
+        </View>
+        <br />
         <View style={styles.formRow}>
           <Text style={styles.label}>Tinanggap at inihain ngayong ika-</Text>
-          <Text style={styles.inputBox}>{data.form7ReceiveDay || "___"}</Text>
+          <Text style={styles.inputBox}>{data.form7ReceiveDay || "      "}</Text>
           <Text style={styles.label}>araw ng</Text>
-          <Text style={styles.inputBox}>{data.form7ReceiveMonth || "__________"}</Text>
+          <Text style={styles.inputBox}>{data.form7ReceiveMonth || "                    "}</Text>
           <Text style={styles.label}>20</Text>
-          <Text style={styles.inputBox}>{data.form7ReceiveYear || "__"}</Text>
+          <Text style={styles.inputBox}>{data.form7ReceiveYear || "      "}</Text>
         </View>
         <View style={styles.signSection}>
-          <Text style={styles.footer}>(Mga) May Sumbong</Text>
+          <Text style={{ borderBottom: "1px solid black", width: "50%", alignSelf: "center", marginBottom: 5 }}>
+              {data.form7MaySumbong || " ".repeat(25)} {/* Creates the underline effect */}
+          </Text>
           <Text style={styles.footer}>Punong Barangay/Kalihim ng Lupon</Text>
         </View>
       </Page>
