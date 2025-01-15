@@ -42,10 +42,23 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 3,
   },
-  inputBox: {
+  inputDay: {
     borderBottom: "1px solid black",
     fontSize: 11,
     padding: 2,
+    width: "50px", // Adjust the width of the input box
+  },
+  inputMonth: {
+    borderBottom: "1px solid black",
+    fontSize: 11,
+    padding: 2,
+    width: "150px", // Adjust the width of the input box
+  },
+  inputYear: {
+    borderBottom: "1px solid black",
+    fontSize: 11,
+    padding: 2,
+    width: "50px", // Adjust the width of the input box
   },
   textarea: {
     fontSize: 11,
@@ -77,6 +90,31 @@ const styles = StyleSheet.create({
     borderBottom: "1px solid black",
     width: "100%", // Adjust the width if you want shorter lines
     marginBottom: 5, // Adjust spacing between lines
+  },
+  signatoryRight: {
+    flexDirection: "column",
+    alignItems: "flex-end", // Align content to the right side
+    marginTop: 50, // Adjust the vertical positioning as needed
+  },
+  signatoryLine: {
+    borderBottom: "1px solid black",
+    width: "200px", // Adjust the width of the signatory line
+    marginBottom: 5, // Add spacing between the line and the text
+  },
+  signatoryText: {
+    fontSize: 11,
+    textAlign: "center", // Center-align the text below the line
+    marginRight: "37px",
+  },
+  signatoryLeft: {
+    flexDirection: "column",
+    alignItems: "flex-start", // Align content to the left side
+    marginTop: 50, // Adjust the vertical positioning as needed
+  },
+  signText: {
+    fontSize: 11,
+    textAlign: "center", // Center-align the text below the line
+    marginLeft: "10px",
   },
   twoColumnContainer: {
     flexDirection: "row",
@@ -111,7 +149,7 @@ const FormDocuments = ({ data }) => {
           <Text>Republika ng Pilipinas</Text>
           <Text>Lalawigan ng Kabite</Text>
           <Text>Bayan ng Indang</Text>
-          <Text>Barangay Poblation 1</Text>
+          <Text>Barangay Poblacion 1</Text>
         </View>
         <br /> 
         <View style={styles.header}>
@@ -188,39 +226,39 @@ const FormDocuments = ({ data }) => {
           ))}
         </View>
         
-        <br />
-        <br />
 
         {/* Footer */}
         <View style={styles.formRow}>
+          <br />
+          <br />
           <Text style={styles.label}>Ginawa ngayong ika-</Text>
-          <Text style={styles.inputBox}>{data.form7Day || "      "}</Text>
+          <Text style={styles.inputDay}>{data.form7Day || "  "}</Text>
           <Text style={styles.label}>araw ng</Text>
-          <Text style={styles.inputBox}>{data.form7Month || "                     "}</Text>
+          <Text style={styles.inputMonth}>{data.form7Month || " "}</Text>
           <Text style={styles.label}>20</Text>
-          <Text style={styles.inputBox}>{data.form7Year || "       "}</Text>
+          <Text style={styles.inputYear}>{data.form7Year || " "}</Text>
+          <br />
         </View>
-        <br />
-        <View style={styles.signSection}>
-          <Text style={{ borderBottom: "1px solid black", width: "50%", alignSelf: "center", marginBottom: 5 }}>
-              {data.form7MaySumbong || " ".repeat(25)} {/* Creates the underline effect */}
-           </Text>
-          <Text style={styles.footer}>(Mga) May Sumbong</Text>
+        
+        {/* Right-Aligned Signatory */}
+        <View style={styles.signatoryRight}>
+          <View style={styles.signatoryLine}></View>
+          <Text style={styles.signatoryText}>(Mga) May Sumbong</Text>
         </View>
         <br />
         <View style={styles.formRow}>
           <Text style={styles.label}>Tinanggap at inihain ngayong ika-</Text>
-          <Text style={styles.inputBox}>{data.form7ReceiveDay || "      "}</Text>
+          <Text style={styles.inputDay}>{data.form7ReceiveDay || " "}</Text>
           <Text style={styles.label}>araw ng</Text>
-          <Text style={styles.inputBox}>{data.form7ReceiveMonth || "                    "}</Text>
+          <Text style={styles.inputMonth}>{data.form7ReceiveMonth || " "}</Text>
           <Text style={styles.label}>20</Text>
-          <Text style={styles.inputBox}>{data.form7ReceiveYear || "      "}</Text>
+          <Text style={styles.inputYear}>{data.form7ReceiveYear || " "}</Text>
         </View>
-        <View style={styles.signSection}>
-          <Text style={{ borderBottom: "1px solid black", width: "50%", alignSelf: "center", marginBottom: 5 }}>
-              {data.form7MaySumbong || " ".repeat(25)} {/* Creates the underline effect */}
-          </Text>
-          <Text style={styles.footer}>Punong Barangay/Kalihim ng Lupon</Text>
+        {/* Left-Aligned Signatory */}
+        <View style={styles.signatoryLeft}>
+          <br />
+          <View style={styles.signatoryLine}></View>
+          <Text style={styles.signText}>Punong Barangay/Kalihim ng Lupon</Text>
         </View>
       </Page>
     </Document>
