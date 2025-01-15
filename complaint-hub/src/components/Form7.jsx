@@ -28,6 +28,8 @@ const Form7 = () => {
       [id]: value,
     }));
   };
+  
+  
 
   return (
     <div className="form7-page">
@@ -61,8 +63,8 @@ const Form7 = () => {
           </div>
           <div className="form-row two-columns centered-row">
             <div className="form-group">
-              <input type="text" id="form7Maysumbong" onChange={handleInputChange} /> <br />
-              <input type="text" id="form7Maysumbong" onChange={handleInputChange} /> <br />
+              <input type="text" id="form7MaySumbong" onChange={handleInputChange} /> <br />
+              <input type="text" id="form7MaySumbong" onChange={handleInputChange} /> <br />
               <label className="form7-sumbong">
                 (Mga) May Sumbong <br /> -laban kay/kina-
               </label> <br />
@@ -149,9 +151,13 @@ const Form7 = () => {
           </button>
         </div>
         
-        <PDFDownloadLink document={<FormDocuments data={formData} />} fileName="Form7_Sumbong.pdf">
-          {({ loading }) => (loading ? "Generating PDF..." : "Download PDF")}
+        <PDFDownloadLink
+          document={<FormDocuments data={formData} />}
+          fileName="Form7_Sumbong.pdf"
+        >
+          {({ loading }) => (loading ? "Generating PDF..." : <button>Download PDF</button>)}
         </PDFDownloadLink>
+
 
     </div>
   );
