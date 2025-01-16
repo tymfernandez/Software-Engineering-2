@@ -767,6 +767,379 @@ html, body {
   text-decoration: underline;
 }
 
+/*-----REPORT PAGE-----*/
+input[type="radio"] {
+  all: unset; /* Remove all inherited styles */
+}
+/* Ensure html and body take up full height and allow scrolling */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure the body can take up full height */
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Report container */
+.report-container {
+  min-height: 100vh; /* Ensures the container takes full height */
+  background-image: url("../assets/report-page.png"); /* Use your dashboard background */
+  background-size: cover; /* Ensure the background covers the entire container */
+  background-position: center; /* Align the background to the center */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  overflow-y: auto; /* Allow vertical scrolling */
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Ensure the Submit Button can be positioned within this container */
+  width: 100%; /* Ensure the container width is 100% of the viewport */
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Submit Blotter Button */
+.report-container .submit-blotter-header {
+  background-color: transparent !important;
+  color: #003366 !important;
+  padding: 5px 15px !important;
+  border: 2px solid #003366 !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  font-size: 16px;
+  font-weight: 700;
+  position: absolute !important; /* Absolute positioning to move it to the top-left corner */
+  top: 15px !important; /* Adjust as needed to position it */
+  right: 100px !important; /* Adjust as needed to position it */
+  z-index: 10 !important; /* Ensures it is above other elements */
+  width: auto;
+}
+
+/* Hover effect for Submit Blotter Button */
+.report-container .submit-blotter-header:hover {
+  background-color: #003366 !important;
+  color: #ffffff !important;
+}
+
+/* Ensure scroll is working */
+.report-container::after {
+  content: "";
+  display: block;
+  height: 385px; /* Make the container tall enough to ensure scrolling */
+}
+
+.report-title {
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 90px; /* Moves it down, you can adjust the value to your preference */
+  margin-left: 120px; /* Moves it to the left, adjust as needed */
+  text-align: left; /* Aligns the text to the left */
+  font-family: "Inria Sans", sans-serif;
+  color: #212121;
+  margin-bottom: 0;
+}
+
+/* Separator line style */
+.separator-line-r1 {
+  border: none;
+  border-top: 3px solid #6a7784;
+  width: 93%; /* Adjust the width as needed */
+  margin: 15px auto;
+}
+
+.generate-table {
+  width: 81%; /* Adjust this value to make it smaller */
+  margin: 13px auto 20px auto; /* Center the container */
+  padding: 0 0 70px 0;
+  background: #ffffff;
+  border-radius: 36px;
+  margin-top: 42px;
+  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.5); /* Darker and sharp shadow */
+}
+
+.generate-report {
+  text-align: left; /* Align text to the left */
+  font-size: 25px; /* Slightly adjust font size */
+  color: #ffffff; /* Adjust the text color */
+  margin: 0;
+  background-color: ;
+  background-image: url("../assets/new-report-bg.png"); /* Path to your background image */
+  background-size: cover; /* Ensure the image covers the entire element */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center; /* Center the image */
+  padding: 11px 10px 11px 35px; /* Add padding for spacing inside the element */
+  border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+.report-type {
+  display: flex; /* Use flexbox for horizontal alignment */
+  flex-direction: row; /* Align items in a row */
+  align-items: center; /* Align items vertically in the center */
+  gap: 30px; /* Add spacing between items */
+  margin-top: 37px;
+}
+
+.report-type span {
+  font-family: "Inria Sans", sans-serif; /* Change font family */
+  font-size: 16px; /* Adjust font size */
+  color: #000000; /* Adjust font color */
+  font-weight: bold; /* Make the text bold, if desired */
+  margin-left: 5px; /* Add spacing between the radio button and the text */
+  cursor: pointer; /* Change cursor to pointer for better interactivity */
+}
+
+.report-type label {
+  margin-right: 10px; /* Ensure space between the label and radio buttons */
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between the radio button and text */
+  cursor: pointer; /* Pointer cursor for the entire label */
+}
+
+.report-type div {
+  display: flex; /* Flexbox for aligning radio buttons and text horizontally */
+  gap: 10px; /* Add spacing between radio buttons and their labels */
+  align-items: center;
+}
+
+.report-type-label,
+.date-range-label {
+  font-weight: bold;
+  margin-left: 55px;
+  font-size: 17px;
+  font-family: "Inria Sans", sans-serif;
+}
+
+/* Default (Unselected) Radio Button Style */
+.report-type input[type="radio"] {
+  appearance: none; /* Fully remove default styles */
+  width: 12px; /* Set the size of the circle */
+  height: 12px;
+  border: 1.5px solid #000000; /* Border color for unselected */
+  border-radius: 50%; /* Make it circular */
+  position: relative;
+  outline: none; /* Remove focus outline */
+  background-color: #fff; /* Background color for unselected */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  transition: background-color 0.2s, border-color 0.2s; /* Add smooth transitions */
+}
+
+/* When the radio button is selected */
+.report-type input[type="radio"]:checked {
+  background-color: #ffffff; /* Background color when selected */
+  border-color: #000000; /* Border color when selected */
+  position: relative;
+}
+
+/* Add a dot inside the circle when selected */
+.report-type input[type="radio"]:checked::after {
+  content: ""; /* Add a pseudo-element */
+  width: 6px; /* Size of the dot */
+  height: 6px;
+  background-color: #000000; /* Color of the dot */
+  border-radius: 50%; /* Make it circular */
+  position: absolute;
+  top: 50%; /* Position vertically in the center */
+  left: 50%; /* Position horizontally in the center */
+  transform: translate(-50%, -50%); /* Center the dot exactly */
+}
+
+.separator-line-r2 {
+  border: none;
+  border-top: 2px solid #c9ccce;
+  width: 93%; /* Adjust the width as needed */
+  margin: 8px auto 13px auto;
+}
+
+.date-range {
+  display: flex; /* Use flexbox for layout */
+  align-items: center;
+  gap: 10px; /* Space between "From", "To", and input fields */
+  position: relative; /* Ensure the button can be positioned relative to this container */
+}
+
+.date-inputs {
+  display: flex;
+  gap: 10px; /* Space between the input groups */
+}
+
+.date-input-group {
+  display: flex;
+  flex-direction: column; /* Stack label and input */
+}
+
+.custom-date-input {
+  padding-right: 35px;
+  padding: 5px;
+  font-size: 17px;
+  width: 130px;
+  height: 22px;
+  border: 1px solid #3f3f3f;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0px 0 0 0;
+  background-color: #f2f0f0;
+}
+
+.date-input-with-icon {
+  position: relative; /* Allows positioning the icon within the container */
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  right: 5px; /* Position the icon on the right side */
+  width: 16px; /* Adjust icon size */
+  height: 16px; /* Adjust icon size */
+  pointer-events: none; /* Prevent the icon from interfering with input focus */
+}
+
+.custom-date-input::placeholder {
+  color: #000000; /* Change this to your desired color */
+  font-weight: lighter;
+  font-family: "Inria Sans", sans-serif;
+}
+
+.custom-date-input:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.custom-date-input::-webkit-calendar-picker-indicator {
+  display: none; /* Hide the default date picker button */
+}
+
+.generate-button {
+  position: absolute; /* Position relative to the .date-range container */
+  top: 51px; /* Adjust the distance from the bottom */
+  right: 28px; /* Adjust the distance from the right */
+  background-color: #1a2d42; /* Button background color */
+  color: #ffffff; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 7px; /* Optional: Add rounded corners */
+  padding: 6px 12px; /* Add padding for button size */
+  font-size: 12px; /* Adjust font size */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  transition: background-color 0.3s ease; /* Add a hover effect transition */
+  width: auto; /* Ensure the width adjusts to the content */
+  height: auto; /* Ensure height adjusts to content */
+  font-family: "Inter", serif;
+}
+
+/* Button Hover Effect */
+.generate-button:hover {
+  background-color: #163042; /* Slightly darker shade for hover effect */
+}
+
+.report-table-container {
+  width: 81%; /* Adjust the container width */
+  margin: 25px auto; /* Center the container */
+  padding: 0 0 10px 0;
+  background: #ffffff;
+  border-radius: 36px;
+  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.5); /* Darker and sharp shadow */
+}
+
+/* Table Styling */
+.report-table-container table {
+  width: 100%;
+  border-spacing: 0; /* Remove gaps between cells */
+  border-collapse: collapse; /* Keeps the borders clean between cells */
+  border-radius: 10px; /* Apply radius to the table itself */
+  overflow: hidden; /* Ensures the container's corners are rounded */
+}
+
+/* Apply background image and border-radius to the entire header */
+.report-table-container thead {
+  background-image: url("../assets/new-report-bg.png"); /* Path to your background image */
+  background-size: cover; /* Ensure the image covers the row */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.report-table-container th {
+  background-color: transparent; /* Remove background color */
+  color: white; /* Ensure text is visible over the background */
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Inria Sans", sans-serif;
+  text-align: left;
+  padding: 0 15px; /* Add padding for better alignment */
+  height: 50px; /* Fixed height for consistent alignment */
+  border: none; /* Remove borders for a seamless design */
+  vertical-align: middle; /* Vertically align text in the header */
+  white-space: nowrap; /* Prevent text wrapping in headers */
+}
+
+/* Add border-radius to the first column header */
+.report-table-container th:first-child {
+  border-bottom-left-radius: 10px; /* Adjust the radius as needed */
+}
+
+.report-table-container th:last-child {
+  border-bottom-right-radius: 10px; /* Adjust the radius as needed */
+}
+
+/* Fix cell spacing */
+.report-table-container td {
+  padding: 10px 15px; /* Adjust spacing */
+  text-align: left;
+  white-space: nowrap; /* Prevent text wrapping */
+  font-family: "Inter", serif;
+  font-weight: 300;
+  color: #220505;
+}
+
+/* Adjust column widths */
+.report-table-container th:nth-child(1),
+.report-table-container td:nth-child(1) {
+  width: 10%; /* Adjust Report ID width */
+  padding-left: 30px;
+}
+
+.report-table-container th:nth-child(2),
+.report-table-container td:nth-child(2) {
+  width: 15%; /* Adjust Report Type width */
+}
+
+.report-table-container th:nth-child(3),
+.report-table-container td:nth-child(3) {
+  width: 20%; /* Adjust Date Generated width */
+}
+
+.report-table-container th:nth-child(4),
+.report-table-container td:nth-child(4) {
+  width: 20%; /* Adjust Total Complaints width */
+  text-align: center;
+}
+
+.report-table-container th:nth-child(5),
+.report-table-container td:nth-child(5) {
+  width: auto; /* Let Actions adjust to button size */
+  text-align: center;
+}
+
+/* Table Buttons */
+.report-table-container td button {
+  margin: 3px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #8b8b8b; /* Button background color */
+  color: #ffffff; /* Button text color */
+  font-size: 12px;
+  font-family: "Inter", serif;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: background-color 0.3s ease;
+  height: auto;
+  width: auto;
+  white-space: nowrap; /* Prevent text wrapping inside buttons */
+}
+
+/* Button Hover Effect */
+.report-table-container td button:hover {
+  background-color: #163042; /* Slightly darker on hover */
+}
 
 
 /*-----HOME PAGE-----*/
