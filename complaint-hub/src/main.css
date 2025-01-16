@@ -3,8 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
-
-/*header page*/
+/*-----HEADER PAGE-----*/
 header {
   position: absolute; /* Absolute positioning */
   top: 20px; /* Space from the top */
@@ -163,6 +162,7 @@ header {
   width: 18px;
   height: 18px;
 }
+
 .logout-modal {
   position: fixed;
   top: 0;
@@ -206,7 +206,8 @@ header {
   color: white;
 }
 
-/*layout page*/
+/*-----LAYOUT PAGE-----*/
+/* Layout Styles */
 .layout-container {
   display: flex;
   position: relative;
@@ -249,17 +250,7 @@ header {
   }
 }
 
-/*sidebar page*/
-html,
-body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  box-sizing: border-box;
-}
-
+/*-----SIDEBAR PAGE-----*/
 .sidebar {
   display: flex; /* Use flexbox for layout */
   flex-direction: column; /* Stack items vertically */
@@ -464,8 +455,8 @@ hr {
   opacity: 0.8;
 }
 
-/* Help and Logout */
-.help,
+/* Support and Logout */
+.support,
 .logout {
   display: flex;
   align-items: center;
@@ -475,7 +466,7 @@ hr {
   font-family: "Inria Sans", sans-serif;
 }
 
-.help {
+.support {
   margin-bottom: 10px;
   margin-top: 30px;
 }
@@ -484,14 +475,14 @@ hr {
   margin-top: 10px;
 }
 
-.help:hover,
+.support:hover,
 .logout:hover {
   text-decoration: none;
   cursor: pointer;
   opacity: 0.8;
 }
 
-.help span,
+.support span,
 .logout span {
   color: white;
   font-size: 14px;
@@ -528,9 +519,9 @@ hr {
   display: none; /* Optionally hide the submit blotter button when collapsed */
 }
 
-.sidebar.collapsed .help,
+.sidebar.collapsed .support,
 .sidebar.collapsed .logout {
-  display: none; /* Optionally hide help and logout sections when collapsed */
+  display: none; /* Optionally hide support and logout sections when collapsed */
 }
 
 /* Main content area adjustment when sidebar is collapsed */
@@ -628,7 +619,7 @@ p {
   color: #ffffff; /* the confirmation of logout */
 }
 
-/*login page*/
+/*-----LOGIN PAGE-----*/
 /* General Styles */
 html, body {
   height: 100%; /* Ensures the full height of the viewport */
@@ -778,7 +769,8 @@ html, body {
 
 
 
-/*Home page*/
+/*-----HOME PAGE-----*/
+html,
 body {
   margin: 0;
   padding: 0;
@@ -789,33 +781,35 @@ body {
 
 .home-container {
   min-height: 100vh;
-  background-image: url("home-page.png"); /* Updated path for public folder */
+  background-image: url("../assets/home-page.png"); /* Updated path for public folder */
   background-size: cover; /* Ensure the background covers the entire container */
   background-position: center; /* Align the background to the center */
   background-repeat: no-repeat; /* Do not repeat the image */
+  overflow-y: auto; /* Allow vertical scrolling */
   display: flex;
   flex-direction: column;
-  position: fixed; /* Ensure the Submit Button can be positioned within this container */
+  position: relative; /* Ensure the Submit Button can be positioned within this container */
   width: 100%; /* Ensure the container width is 100% of the viewport */
   height: 100%;
-  top: 0;
-  left: 0;
+  overflow-x: hidden;
 }
 
 /* Ensure scroll is working */
 .home-container::after {
   content: "";
   display: block;
-  height: 700px; /* Make the container tall enough to ensure scrolling */
+  height: 720px; /* Make the container tall enough to ensure scrolling */
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start; /* Align items towards the top */
+  align-items: flex-start; /* Keep alignment to the left */
   flex-grow: 1;
   gap: 20px; /* Add space between sections */
+  margin-top: 170px; /* Move the content down */
+  margin-left: 50px; /* Move the content to the right */
 }
 
 .title-container {
@@ -918,7 +912,8 @@ button:hover {
   z-index: -1;
 }
 
-/*dashboard page*/
+/*-----DASHBOARD PAGE-----*/
+html,
 body {
   margin: 0;
   padding: 0;
@@ -930,18 +925,24 @@ body {
 /* Dashboard container */
 .dashboard-container {
   min-height: 100vh; /* Ensures the container takes full height */
-  background-image: url("dashboard-page.png"); /* Use your dashboard background */
+  background-image: url("../assets/dashboard-page.png"); /* Use your dashboard background */
   background-size: cover; /* Ensure the background covers the entire container */
   background-position: center; /* Align the background to the center */
   background-repeat: no-repeat; /* Do not repeat the image */
   overflow-y: auto; /* Allow vertical scrolling */
   display: flex;
   flex-direction: column;
-  position: fixed; /* Ensure the Submit Button can be positioned within this container */
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
+  position: relative; /* Ensure the Submit Button can be positioned within this container */
+  width: 100%; /* Ensure the container width is 100% of the viewport */
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure scroll is working */
+.dashboard-container::after {
+  content: "";
+  display: block;
+  height: 600px; /* Make the container tall enough to ensure scrolling */
 }
 
 /* Submit Blotter Button */
@@ -1015,7 +1016,7 @@ body {
 .card-title {
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 7px;
+  margin-top: -2px;
   font-family: "Inria Sans", sans-serif;
   text-align: left;
   color: #034d66;
@@ -1059,13 +1060,6 @@ body {
 
 .card-percentage .percent-value {
   font-weight: bold;
-}
-
-/* Ensure scroll is working */
-.dashboard-container::after {
-  content: "";
-  display: block;
-  height: 650px; /* Make the container tall enough to ensure scrolling */
 }
 
 /* Chart container styles */
@@ -1388,7 +1382,7 @@ body {
   cursor: pointer;
 }
 
-/* blotter form */
+/*-----BLOTTER FORM-----*/
 .centered-label {
   font-size: 0.95rem;
   text-align: center;
