@@ -2869,7 +2869,7 @@ p {
   line-height: 1.5;
 }
 
-.form14-kp-input input {
+#form14KpNum {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
@@ -2945,7 +2945,7 @@ p {
   justify-content: right;
 }
 
-.form14-blg-input input {
+#form14Blg {
   width: 50px !important;
   height: 35px;
   box-sizing: border-box;
@@ -2959,7 +2959,7 @@ p {
   justify-content: flex-end;
 }
 
-.form14-ukol-input input {
+#form14Ukol {
   width: 155px !important;
   height: 35px;
   box-sizing: border-box;
@@ -3005,24 +3005,34 @@ p {
   text-align: left;
 }
 
-#form14-year {
+#form14Year {
   width: 50px;
 }
 
-#form14-day {
+#form14Day {
   width: 50px;
 }
 
-#form14-time {
-  width: 70px;
+#form14Month {
+  width: 120px;
 }
 
-#form14-maysumbong {
+#form14MaySumbong {
   width: 250px;
   margin-bottom: 10px;
 }
 
-#form14-ipinagsumbong {
+#form14MaySumbong1 {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form14IpinagSumbong {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form14IpinagSumbong1 {
   width: 250px;
   margin-bottom: 10px;
 }
@@ -3049,6 +3059,13 @@ label {
   display: block;
   color: black;
   text-align: left;
+}
+
+.form14-line {
+  border-top: 1px solid black;
+  width: 250px !important;
+  margin: auto;
+  margin-top: 30px !important;
 }
 
 .form14-sign-section {
@@ -3100,6 +3117,7 @@ label {
   border: none;
   border-radius: 5px;
   font-size: 1rem;
+  text-align: center;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }

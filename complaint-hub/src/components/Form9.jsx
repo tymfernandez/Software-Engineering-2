@@ -280,10 +280,6 @@ const Form9 = () => {
                 <p className="form9-signature-text">Pangalan, Lagda at Petsa</p>
               </div>
             </div>
-
-            
-
-
           </form>
         </div>
         <div className="form9-button-group">

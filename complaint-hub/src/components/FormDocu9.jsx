@@ -354,11 +354,11 @@ const FormDocu9 = ({ data }) => {
                 <Text>{data.form9Pangalan || " "}</Text>
             </View>
             <Text> noong ika- </Text>
-            <View style={{ borderBottom: "1px solid black", width: 50, marginLeft: 5 }}>
+            <View style={{ borderBottom: "1px solid black", width: 30, marginLeft: 5 }}>
                 <Text>{data.form9DayUlat || " "}</Text>
             </View>
             <Text>araw ng </Text>
-            <View style={{ borderBottom: "1px solid black", width: 100, marginLeft: 5 }}>
+            <View style={{ borderBottom: "1px solid black", width: 90, marginLeft: 5 }}>
                 <Text>{data.form9MonthUlat || " "}</Text>
             </View>
         </View>
