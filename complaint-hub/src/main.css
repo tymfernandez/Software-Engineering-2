@@ -3823,6 +3823,7 @@ label {
   color: white;
   font-weight: bold;
   width: 150px;
+  text-align: center;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -3908,7 +3909,7 @@ label {
   line-height: 1.5;
 }
 
-.form17-kp-input input {
+#form17KpNum {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
@@ -3963,12 +3964,22 @@ label {
   flex: 1;
 }
 
-#form17-maysumbong {
+#form17Maysumbong {
   width: 250px;
   margin-bottom: 10px;
 }
 
-#form17-ipinagsumbong {
+#form17Maysumbong1 {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form17Ipinagsumbong {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form17Ipinagsumbong1 {
   width: 250px;
   margin-bottom: 10px;
 }
@@ -4018,7 +4029,7 @@ label {
   justify-content: flex-end;
 }
 
-.form17-blg-input input {
+#form17Blg {
   width: 50px !important;
   height: 35px;
   box-sizing: border-box;
@@ -4032,7 +4043,7 @@ label {
   justify-content: flex-end;
 }
 
-.form17-ukol-input input {
+#form17Ukol {
   width: 155px !important;
   height: 35px;
   box-sizing: border-box;
@@ -4074,29 +4085,45 @@ label {
   text-align: justify;
 }
 
-#form17-year {
+#form17Year {
   width: 40px;
 }
 
-#form17-day {
+#form17Day {
   width: 50px;
 }
 
-#form17-place {
+#form17Month {
+  width: 120px;
+}
+
+#form17YearReceived {
+  width: 40px;
+}
+
+#form17DayReceived {
+  width: 50px;
+}
+
+#form17MonthReceived {
+  width: 120px;
+}
+
+#form17YearSigned {
+  width: 40px;
+}
+
+#form17DaySigned {
+  width: 50px;
+}
+
+#form17MonthSigned {
+  width: 120px;
+}
+
+
+#form17PlaceSigned {
   width: 140px;
-}
-
-#form17-name {
-  width: 300px;
-  height: 30px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-
-#form17-pangalan {
-  width: 230px;
-  height: 30px;
-  box-sizing: border-box;
 }
 
 .form17-indent {
@@ -4112,7 +4139,7 @@ label {
   text-align: justify;
 }
 
-form17-label {
+label {
   font-weight: bold;
   font-size: 0.9rem;
   margin-bottom: 10px;
@@ -4146,7 +4173,25 @@ form17-label {
   font-size: 0.9rem;
 }
 
-.form17-checkbox-textarea {
+#form17Panlilinlang {
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  width: 500px;
+  height: 60px;
+}
+
+#form17Karahasan {
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  width: 500px;
+  height: 60px;
+}
+
+#form17Pananakot {
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -4207,6 +4252,7 @@ form17-label {
   color: white;
   font-weight: bold;
   width: 150px;
+  text-align: center;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
