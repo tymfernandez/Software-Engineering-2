@@ -188,9 +188,11 @@ const FormDocu8 = ({ data }) => {
         <View style={styles.section}>
           <View style={{ marginVertical: 15, textAlign: "left" }}>
             <Text>KAY: </Text>
+            <Text>{'\n'}</Text> {/* Blank line */}
             <Text style={{ borderBottom: "1px solid black", width: "150px", alignSelf: "left", marginBottom: 5, justifyContent: "flex-start" }}>
                 {data.form8Kay || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
+            <Text>{'\n'}</Text> {/* Blank line */}
             <Text style={{ borderBottom: "1px solid black", width: "150px", alignSelf: "left", marginBottom: 5, justifyContent: "flex-start" }}>
                 {data.form8Sumbong || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
@@ -271,6 +273,10 @@ const FormDocu8 = ({ data }) => {
 
         {/* Right-Aligned Signatory */}
         <View style={styles.signatoryRight}>
+          <View style={styles.signatoryLine}></View>
+          <Text>{'\n'}</Text> {/* Blank line */}
+          <Text>{'\n'}</Text> {/* Blank line */}
+          <Text>{'\n'}</Text> {/* Blank line */}
           <View style={styles.signatoryLine}></View>
           <Text style={styles.signatoryText}>(Mga) May Sumbong</Text>
         </View>

@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     marginBottom: 8, // Spacing below the row
   },
   indent: {
-    indent: 20,
+    textIndent: 35,
     marginTop: 20,
     marginBottom: 3,
   },
@@ -129,10 +129,17 @@ const styles = StyleSheet.create({
     width: 1,
     backgroundColor: "black",
   },
+  explanation: {
+    marginLeft: 35,
+    marginRight: 35,
+    marginBottom: 10,
+    textDecoration: "underline",
+    textAlign: "justify",
+  },
 });
 
 // Component to render the form document
-const FormDocuments = ({ data }) => {
+const FormDocu7 = ({ data }) => {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -160,25 +167,25 @@ const FormDocuments = ({ data }) => {
         <View style={styles.twoColumnContainer}>
           {/* Left Column */}
           <View style={styles.column}>
-          <View style={{ marginVertical: 15, textAlign: "center" }}>
-            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "center", marginBottom: 5 }}>
+          <View style={{ marginVertical: 10, textAlign: "left" }}>
+            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "left", marginBottom: 5 }}>
               {data.form7MaySumbong || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
-            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "center", marginBottom: 5 }}>
+            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "left", marginBottom: 5, marginTop: 10 }}>
               {data.form7MaySumbong1 || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
-            <Text style={{ fontStyle: "italic", marginBottom: 2 }}>(Mga) Maysumbong</Text>
-            <Text>-laban kay/kina-</Text>
+            <Text style={{ fontStyle: "italic", marginBottom: 2, marginLeft: "37px" }}>(Mga) Maysumbong</Text>
+            <Text style={{ fontStyle: "italic", marginBottom: 2, marginLeft: "40px" }}>-laban kay/kina-</Text>
           </View>
 
-          <View style={{ marginVertical: 15, textAlign: "center" }}>
-            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "center", marginBottom: 5 }}>
+          <View style={{ marginVertical: 10, textAlign: "left" }}>
+            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "left", marginBottom: 5 }}>
               {data.form7Ipinagsumbong || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
-            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "center", marginBottom: 5 }}>
+            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "left", marginBottom: 5, marginTop: 10 }}>
               {data.form7Ipinagsumbong1 || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
-            <Text style={{ fontStyle: "italic", marginBottom: 2 }}>(Mga) Ipinagsusumbong</Text>
+            <Text style={{ marginLeft: "25px", marginBottom: 2 }}>(Mga) Ipinagsusumbong</Text>
           </View>
           </View>
 
@@ -206,29 +213,19 @@ const FormDocuments = ({ data }) => {
           </Text>
         </View>
         <View>
-          {[...Array(8)].map((_, index) => (
-            <Text key={index} style={styles.line}>
-              {data.reklamo || " "}
-            </Text>
-          ))}
+          <Text style={styles.explanation}>{data.reklamo}</Text>
         </View>
-        <br /> 
-          <br />
         <View style={styles.section}>          
           <Text style={styles.indent}> DAHIL DITO, AKO/KAMI, na nakikiusap na ipagkaloob sa akin/amin ang sumusunod na (mga) kalunasan nang naaalinsunod sa batas at/o pagkamakatuwiran:
           </Text>
         </View>
         <View>
-          {[...Array(2)].map((_, index) => (
-            <Text key={index} style={styles.line}>
-              {data.resolutionRequest || " "}
-            </Text>
-          ))}
+          <Text style={styles.explanation}>{data.resolutionRequest}</Text>
         </View>
         
 
         {/* Footer */}
-        <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10, marginTop: 20 }}>         
+        <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10, marginTop: 20, marginLeft: 35 }}>         
             <Text>Ginawa ngayong ika- </Text>
             <View style={{ borderBottom: "1px solid black", width: 60, marginLeft: 5 }}>
                 <Text>{data.form7Day || " "}</Text>
@@ -250,7 +247,7 @@ const FormDocuments = ({ data }) => {
           <Text style={styles.signatoryText}>(Mga) May Sumbong</Text>
         </View>
         <br />
-        <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10, marginTop: 20 }}>         
+        <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10, marginTop: 20, marginLeft: 35 }}>         
             <Text>Tinanggap at inihain ngayong ika- </Text>
             <View style={{ borderBottom: "1px solid black", width: 60, marginLeft: 5 }}>
                 <Text>{data.form7ReceiveDay || " "}</Text>
@@ -276,4 +273,4 @@ const FormDocuments = ({ data }) => {
   );
 };
 
-export default FormDocuments;
+export default FormDocu7;

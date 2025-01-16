@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import "../main.css";
 import Header from "./Header"; //
-import FormDocuments from "./FormDocuments";
+import FormDocu7 from "./FormDocu7";
 
 const Form7 = () => {
   const [formData, setFormData] = useState({
@@ -140,25 +140,16 @@ const Form7 = () => {
         </form>
       </div>
       <div className="form7-button-group">
-          <button
-            type="button"
+          <PDFDownloadLink
+            document={<FormDocu7 data={formData} />}
+            fileName="form7.pdf"
             className="form7-print-button"
-            onClick={() => window.print()}
           >
-            Print
-          </button>
-          <button type="button" className="form7-next-button">
-            {" "}
-            Next{" "}
-          </button>
-        </div>
-        
-        <PDFDownloadLink
-          document={<FormDocuments data={formData} />}
-          fileName="Form7_Sumbong.pdf"
-        >
-          {({ loading }) => (loading ? "Generating PDF..." : <button>Download PDF</button>)}
-        </PDFDownloadLink>
+            {({ blob, url, loading, error }) =>
+              loading ? "Loading document..." : "Print"
+            }
+          </PDFDownloadLink>
+      </div>
 
 
     </div>

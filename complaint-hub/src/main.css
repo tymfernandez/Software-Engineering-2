@@ -1840,6 +1840,7 @@ html, body {
   color: white;
   font-weight: bold;
   width: 150px;
+  text-align: center;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -2201,6 +2202,7 @@ label {
   font-weight: bold;
   padding: 10px 20px;
   border: none;
+  text-align: center;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;

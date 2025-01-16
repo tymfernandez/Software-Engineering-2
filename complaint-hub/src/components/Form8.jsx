@@ -139,24 +139,16 @@ const Form8 = () => {
           </form>
         </div>
         <div className="form8-button-group">
-          <button
-            type="button"
+          <PDFDownloadLink
+            document={<FormDocu8 data={formData} />}
+            fileName="form8.pdf"
             className="form8-print-button"
-            onClick={() => window.print()}
           >
-            Print
-          </button>
-          <button type="button" className="form8-next-button">
-            {" "}
-            Proceed to Form 9{" "}
-          </button>
-        </div>
-        <PDFDownloadLink
-          document={<FormDocu8 data={formData} />}
-          fileName="Form8.pdf"
-        >
-        {({ loading }) => (loading ? "Generating PDF..." : <button>Download PDF</button>)}
-        </PDFDownloadLink>
+            {({ blob, url, loading, error }) =>
+              loading ? "Loading document..." : "Print"
+            }
+          </PDFDownloadLink>
+      </div>
       </div>
     </div>
   );

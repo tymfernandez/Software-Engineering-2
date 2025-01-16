@@ -163,8 +163,9 @@ const styles = StyleSheet.create({
   blockText: {
     marginTop: 5, // Add spacing from the top or previous elements
     marginBottom: 10,
+    textIndent: 35,
     fontSize: 11,
-    lineHeight: 1.5, // Adjust line height for better readability
+    lineHeight: 1.25, // Adjust line height for better readability
     textAlign: "justify", // Justify text for a clean block appearance
 },
 });
@@ -198,22 +199,22 @@ const FormDocu9 = ({ data }) => {
         <View style={styles.twoColumnContainer}>
           {/* Left Column */}
           <View style={styles.column}>
-          <View style={{ marginVertical: 15, textAlign: "center" }}>
+          <View style={{ marginVertical: 10, textAlign: "left" }}>
             <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "left", marginBottom: 5 }}>
               {data.form9Maysumbong || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
-            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "left", marginBottom: 5 }}>
+            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "left", marginBottom: 5, marginTop: 10}}>
               {data.form9Maysumbong1 || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
-            <Text style={{ fontStyle: "italic", marginBottom: 2, marginLeft: "25px" }}>(Mga) Maysumbong</Text>
-            <Text style={{ fontStyle: "italic", marginBottom: 2, marginLeft: "25px" }}>-laban kay/kina-</Text>
+            <Text style={{ fontStyle: "italic", marginBottom: 2, marginLeft: "37px" }}>(Mga) Maysumbong</Text>
+            <Text style={{ fontStyle: "italic", marginBottom: 2, marginLeft: "40px" }}>-laban kay/kina-</Text>
           </View>
 
-          <View style={{ marginVertical: 15, textAlign: "center" }}>
+          <View style={{ marginVertical: 10, textAlign: "left" }}>
             <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "left", marginBottom: 5 }}>
               {data.form9Ipinagsumbong || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
-            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "left", marginBottom: 5 }}>
+            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "left", marginBottom: 5, marginTop: 10 }}>
               {data.form9Ipinagsumbong1 || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
             <Text style={{ fontStyle: "italic", marginBottom: 2, marginLeft: "25px" }}>(Mga) Ipinagsusumbong</Text>
@@ -271,7 +272,7 @@ const FormDocu9 = ({ data }) => {
         </View>
 
         {/*Body*/}
-        <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10 }}>
+        <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10, marginLeft: 35 }}>
             <Text>Sa pamamagitan nito, kayo ay ipinatawag upang personal na humarap sa aking kasama ang inyong mga </Text>
         </View>
         <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10 }}>
@@ -294,7 +295,7 @@ const FormDocu9 = ({ data }) => {
         </View>
 
         <View>
-          <Text style={styles.blockText}>
+          <Text style={{ marginTop: 2, textAlign: "justify", marginBottom: 5 }}>
           ng umaga/hapon, upang sagutin ang sumbong na ginawa sa harap ko, na ang sipi ay kalakip nito, para pamagitnaan/pagkasunduin ang inyong (mga) alitan ng (mga) nagsusumbong.
           </Text>
         </View>
@@ -348,17 +349,17 @@ const FormDocu9 = ({ data }) => {
           <Text>{'\n'}</Text> {/* Blank line */}
         </View>
 
-        <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10 }}>
+        <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10, marginLeft: 35 }}>
             <Text>Inihatid ang patawag na ito sa inirereklamo </Text>
             <View style={{ borderBottom: "1px solid black", width: 100, marginLeft: 5 }}>
                 <Text>{data.form9Pangalan || " "}</Text>
             </View>
             <Text> noong ika- </Text>
-            <View style={{ borderBottom: "1px solid black", width: 30, marginLeft: 5 }}>
+            <View style={{ borderBottom: "1px solid black", width: 20, marginLeft: 5 }}>
                 <Text>{data.form9DayUlat || " "}</Text>
             </View>
             <Text>araw ng </Text>
-            <View style={{ borderBottom: "1px solid black", width: 90, marginLeft: 5 }}>
+            <View style={{ borderBottom: "1px solid black", width: 70, marginLeft: 5 }}>
                 <Text>{data.form9MonthUlat || " "}</Text>
             </View>
         </View>
