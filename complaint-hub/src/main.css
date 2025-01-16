@@ -3221,7 +3221,7 @@ p {
   line-height: 1.5;
 }
 
-.form15-kp-input input {
+#form15Kpnum {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
@@ -3252,12 +3252,22 @@ p {
   flex: 1;
 }
 
-#form15-maysumbong {
+#form15Maysumbong {
   width: 250px;
   margin-bottom: 10px;
 }
 
-#form15-ipinagsumbong {
+#form15Maysumbong1 {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form15Ipinagsumbong {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form15Ipinagsumbong1 {
   width: 250px;
   margin-bottom: 10px;
 }
@@ -3287,7 +3297,7 @@ p {
   justify-content: flex-end;
 }
 
-.form15-blg-input input {
+#form15Blg {
   width: 50px !important;
   height: 35px;
   box-sizing: border-box;
@@ -3301,7 +3311,7 @@ p {
   justify-content: flex-end;
 }
 
-.form15-ukol-input input {
+#form15Ukol {
   width: 155px !important;
   height: 35px;
   box-sizing: border-box;
@@ -3324,7 +3334,7 @@ p {
   width: 270px;
 }
 
-#form15-gawad {
+#form15Gawad {
   margin-top: 10px;
 }
 
@@ -3347,29 +3357,20 @@ p {
   text-align: justify;
 }
 
-#form15-year {
+#form15Year {
   width: 40px;
 }
 
-#form15-day {
+#form15Day {
   width: 50px;
 }
 
-#form15-place {
+#form15Place {
   width: 140px;
 }
 
-#form15-name {
-  width: 300px;
-  height: 30px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-
-#form15-pangalan {
-  width: 230px;
-  height: 30px;
-  box-sizing: border-box;
+#form15Month {
+  width: 100px;
 }
 
 .form15-indent {
@@ -3479,6 +3480,7 @@ li {
   color: white;
   font-weight: bold;
   width: 150px;
+  text-align: center;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -3596,7 +3598,7 @@ p {
   line-height: 1.5;
 }
 
-.form16-kp-input input {
+#form16KpNum {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
@@ -3666,34 +3668,6 @@ p {
   width: 270px;
 }
 
-.form16-blg-input {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.form16-blg-input input {
-  width: 50px;
-  height: 35px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-
-.form16-ukol-input {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.form16-ukol-input input {
-  width: 155px;
-  height: 35px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-
 .form16-kay-input {
   display: flex;
   gap: 1px;
@@ -3744,26 +3718,40 @@ textarea {
   margin-bottom: 0px !important;
 }
 
-#form16-year {
+#form16Year {
   width: 50px;
 }
 
-#form16-day {
+#form16Day {
   width: 50px;
 }
 
-#form16-time {
-  width: 70px;
+#form16Month {
+  width: 120px;
 }
 
-#form16-maysumbong {
+#form16Maysumbong {
   width: 250px;
   margin-bottom: 10px;
 }
 
-#form16-ipinagsumbong {
+#form16Maysumbong1 {
   width: 250px;
   margin-bottom: 10px;
+}
+
+#form16Ipinagsumbong {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form16Ipinagsumbong1 {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form16Pagaayos{
+  margin-top: 10px;
 }
 
 .form16-indent {

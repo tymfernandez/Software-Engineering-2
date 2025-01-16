@@ -15,12 +15,9 @@ const styles = StyleSheet.create({
   },
   kpNum: {
     textAlign: "right",
-    marginTop: "5px",
-    marginBottom: "15px",
   },
   pormularyo: {
     textAlign: "left",
-    marginBottom: "15px",
   },
   formRow: {
     flexDirection: "row",
@@ -43,7 +40,13 @@ const styles = StyleSheet.create({
   indent: {
     textIndent: 35,
     marginTop: 20,
-    marginBottom: 3,
+    marginBottom: 5,
+    lineHeight: 1,
+  },
+  bullet: {
+    textIndent: 35,
+    marginTop: 5,
+    lineHeight: 1,
   },
   inputDay: {
     borderBottom: "1px solid black",
@@ -55,16 +58,13 @@ const styles = StyleSheet.create({
     borderBottom: "1px solid black",
     fontSize: 11,
     padding: 2,
-    width: "100px", // Adjust the width of the input box
+    width: "150px", // Adjust the width of the input box
   },
   inputYear: {
     borderBottom: "1px solid black",
     fontSize: 11,
     padding: 2,
     width: "50px", // Adjust the width of the input box
-  },
-  justify: {
-    textAlign: "justify",
   },
   textarea: {
     fontSize: 11,
@@ -87,16 +87,6 @@ const styles = StyleSheet.create({
     width: "70px", // Adjust the length of the line
     fontSize: 11,
   },
-  inputLineTime: {
-    borderBottom: "1px solid black",
-    width: "150px", // Adjust the length of the line
-    fontSize: 11,
-},
-  inputLineYear: {
-    borderBottom: "1px solid black",
-    width: "40px", // Adjust the length of the line
-    fontSize: 11,
-  },
   inputLiney: {
     borderBottom: "1px solid black",
     width: "150px", // Adjust the length of the line
@@ -110,7 +100,7 @@ const styles = StyleSheet.create({
   signatoryRight: {
     flexDirection: "column",
     alignItems: "flex-end", // Align content to the right side
-    marginTop: 50, // Adjust the vertical positioning as needed
+    marginTop: 30, // Adjust the vertical positioning as needed
   },
   signatoryLine: {
     borderBottom: "1px solid black",
@@ -120,16 +110,21 @@ const styles = StyleSheet.create({
   signatoryText: {
     fontSize: 11,
     textAlign: "center", // Center-align the text below the line
-    marginRight: "70px",
   },
   signatoryLeft: {
     flexDirection: "column",
     alignItems: "flex-start", // Align content to the left side
-    marginTop: 50, // Adjust the vertical positioning as needed
+    marginTop: 30, // Adjust the vertical positioning as needed
   },
   signText: {
     fontSize: 11,
     textAlign: "center", // Center-align the text below the line
+    marginLeft: "10px",
+  },
+  signaText: {
+    fontSize: 11,
+    textAlign: "center", // Center-align the text below the line
+    marginLeft: "70px",
   },
   twoColumnContainer: {
     flexDirection: "row",
@@ -162,37 +157,33 @@ const styles = StyleSheet.create({
     marginLeft: "20px", // Center-align text under the lines
     marginTop: 5, // Add spacing between the line and text
   },
-  blockText: {
-    textIndent: 35,
-    marginTop: 5, // Add spacing from the top or previous elements
-    marginBottom: 10,
-    fontSize: 11,
-    lineHeight: 1.5, // Adjust line height for better readability
-    textAlign: "justify", // Justify text for a clean block appearance
-},
+  divider: {
+    width: 1,
+    backgroundColor: "black",
+  },
 });
 
 // Component to render the form document
-const FormDocu14 = ({ data }) => {
+const FormDocu16 = ({ data }) => {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
         {/* Form Header */}
         <View style={styles.kpNum}>
-          <Text>KP Case Number: {data.form14KpNum || "                    "}</Text>
+          <Text>KP Case Number: {data.form16KpNum || "                    "}</Text>
         </View>
-        
+        <br />
         <View style={styles.pormularyo}>
-          <Text>Pormularyo ng KP Blg. 14</Text>
+          <Text>Pormularyo ng KP Blg. 16</Text>
         </View>
-        
+        <br />
         <View style={styles.header}>
           <Text>Republika ng Pilipinas</Text>
           <Text>Lalawigan ng Kabite</Text>
           <Text>Bayan ng Indang</Text>
           <Text>Barangay Poblacion 1</Text>
         </View>
-         
+        <br /> 
         <View style={styles.header}>
           <Text>TANGGAPAN NG LUPONG TAGAPAMAYAPA</Text>
         </View>
@@ -201,71 +192,62 @@ const FormDocu14 = ({ data }) => {
         <View style={styles.twoColumnContainer}>
           {/* Left Column */}
           <View style={styles.column}>
-          <View style={{ marginVertical: 15, textAlign: "left" }}>
-            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "left", marginBottom: 5 }}>
-              {data.form14MaySumbong || " ".repeat(25)} {/* Creates the underline effect */}
+          <View style={{ marginVertical: 10, textAlign: "left" }}>
+            <Text style={{ borderBottom: "1px solid black", width: "35%", alignSelf: "left", marginBottom: 5 }}>
+              {data.form16Maysumbong || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
-            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "left", marginBottom: 5,  marginTop: 10  }}>
-              {data.form14MaySumbong1 || " ".repeat(25)} {/* Creates the underline effect */}
+            <Text style={{ borderBottom: "1px solid black", width: "35%", alignSelf: "left", marginBottom: 5, marginTop: 10 }}>
+              {data.form16Maysumbong1 || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
             <Text style={{ fontStyle: "italic", marginBottom: 2, marginLeft: "37px" }}>(Mga) Maysumbong</Text>
             <Text style={{ fontStyle: "italic", marginBottom: 2, marginLeft: "40px" }}>-laban kay/kina-</Text>
           </View>
 
-          <View style={{ marginVertical: 15, textAlign: "left" }}>
-            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "left", marginBottom: 5 }}>
-              {data.form14IpinagSumbong || " ".repeat(25)} {/* Creates the underline effect */}
+          <View style={{ marginVertical: 10, textAlign: "left" }}>
+            <Text style={{ borderBottom: "1px solid black", width: "35%", alignSelf: "left", marginBottom: 5 }}>
+              {data.form16Ipinagsumbong || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
-            <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "left", marginBottom: 5,  marginTop: 10  }}>
-              {data.form14IpinagSumbong1 || " ".repeat(25)} {/* Creates the underline effect */}
+            <Text style={{ borderBottom: "1px solid black", width: "35%", alignSelf: "left", marginBottom: 5,  marginTop: 10 }}>
+              {data.form16Ipinagsumbong1 || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
-            <Text style={{ fontStyle: "italic", marginBottom: 2, marginLeft: "25px" }}>(Mga) Ipinagsusumbong</Text>
+            <Text style={{ marginLeft: "25px", marginBottom: 2 }}>(Mga) Ipinagsusumbong</Text>
           </View>
-          </View>
-
-          {/* Right Column */}
-          <View style={styles.column}>
-          <View style={styles.formRowRight}>
-            <Text style={styles.label}>Usaping Barangay Blg.:</Text>
-            <Text style={styles.inputLine}>
-              {data.form14Blg || " "}
-            </Text>
-          </View>
-            <View style={styles.formRowRight}>
-              <Text style={styles.label}>Ukol sa:</Text>
-              <Text style={styles.inputLiney}>{data.form14Ukol || " "}</Text>
-            </View>
           </View>
         </View>
 
+        {/* Textarea */}
         <View style={styles.section}>
-            <Text style={styles.center}>KASUNDUAN UKOL SA PAGHAHATOL NG TAGAPAMAGITAN</Text>
-            <Text>{'\n'}</Text> {/* Blank line */}
+          <Text style={styles.center}>KASUNDUANG PAG-AAYOS</Text> 
+          <Text style={styles.indent}>Kami, ang mga maysumbong at (mga) ipinagsusumbong sa mga usaping
+                isinasaad sa itaas, ay nagkakasundo sa pamamagitan nito na
+                aayusing ang aming alitan tulad ng mga sumusunod:</Text>
         </View>
-
         <View>
-          <Text style={styles.blockText}>
-                Sa pamamagitan nito'y nagkakasundo kami na pahatulan ang aming
-                alitan sa Punong Barangay/Pangkat at Tagapagkasundo (mangyaring
-                guhitan ang di-kailangan), at nangangako kami na tutupad sa
-                gawad na ihahatol ukol dito. Ginawa naming ang kasunduang ito ng
-                kusang-loob na may lubos na pagkakaunawa sa anumang kahihinatnan
-                nito.
+          {[...Array(3)].map((_, index) => (
+            <Text key={index} style={styles.line}>
+              {data.form15Gawad || " "}
             </Text>
+          ))}
+        </View>
+        <View style={styles.section}>
+          <Text style={{textAlign: "left"}}>at nangangako na aming tutuparin ng may katapatan ang mga
+          alituntunin ng pag-aayos.</Text>
         </View>
 
-        <View style={{ flexDirection: "row", alignItems: "center", marginTop: 10, marginLeft: 35}}>         
+
+        {/* Date */}
+        <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10, marginTop: 10, marginLeft: 35 }}>         
             <Text>Pinagkasunduan ngayong ika- </Text>
-            <View style={{ borderBottom: "1px solid black", width: 60, marginLeft: 5 }}>
-                <Text>{data.form14Day || " "}</Text>
+            <View style={{ borderBottom: "1px solid black", width: 40, marginLeft: 5 }}>
+                <Text>{data.form15Day || " "}</Text>
             </View>
             <Text> araw ng </Text>
             <View style={{ borderBottom: "1px solid black", width: 100, marginLeft: 5 }}>
-                <Text>{data.form14Month || " "}</Text>
+                <Text>{data.form15Month || " "}</Text>
             </View>
             <Text>, 20 </Text>
-            <View style={{ borderBottom: "1px solid black", width: 50, marginLeft: 5 }}>
-                <Text>{data.form14Year || " "}</Text>
+            <View style={{ borderBottom: "1px solid black", width: 40, marginLeft: 5 }}>
+                <Text>{data.form15Year || " "}</Text>
             </View>
             <Text>. </Text>
         </View>
@@ -291,32 +273,24 @@ const FormDocu14 = ({ data }) => {
           </View>
         </View>
 
-        <View>
-          <Text style={styles.label}>
-          PAGPAPATUNAY:
-          </Text>
+        <View style={styles.section}>
+          <Text style={styles.center}>PAGPAPATUNAY</Text>
         </View>
 
-        <View>
-            <Text>{'\n'}</Text> {/* Blank line */}
-            <Text style={styles.blockText}>
-             Sa pamamagitan nito’y pinatutunayan ko na ang sinusundang
-             Kasunduan ng Paghahatol ay pinagkasunduan ng mga panig nang
-             Malaya at kusang-loob, matapos kong maipaliwanag sa kanila kung
-             ano ang kasunduang ito at ang mga kahihinatnan nito.
-            </Text>
+        <View style={styles.section}>
+          <Text style={styles.indent}>Pinatutunayan ko sa pamamagitan nito na ang sinundang kasunduan
+                ng pag-aayos ay pinagkasunduan ng mga panig nang Malaya at
+                kusang-loob, matapos kong maipaliwanag sa kanila kung ano ang
+                pag-aayos na ito at ang mga kahihinatnan nito.</Text>
         </View>
 
-        {/* Left-Aligned Signatory */}
         <View style={styles.signatoryLeft}>
-          <br />
           <View style={styles.signatoryLine}></View>
-          <Text style={styles.signText}>Punong Barangay/Tagapangulo ng Lupon</Text>
-          <Text style={{marginLeft: "30px"}}>(Guhitan ang di-kailangan)</Text>
-        </View>  
+          <Text style={styles.signText}>Punong Barangay/Kalihim ng Lupon</Text>
+        </View>
       </Page>
     </Document>
-    );
-}
+  );
+};
 
-export default FormDocu14;
+export default FormDocu16;

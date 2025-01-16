@@ -198,7 +198,7 @@ const FormDocu9 = ({ data }) => {
         <View style={styles.twoColumnContainer}>
           {/* Left Column */}
           <View style={styles.column}>
-          <View style={{ marginVertical: 15, textAlign: "left" }}>
+          <View style={{ marginVertical: 15, textAlign: "center" }}>
             <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "left", marginBottom: 5 }}>
               {data.form9Maysumbong || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>
@@ -209,7 +209,7 @@ const FormDocu9 = ({ data }) => {
             <Text style={{ fontStyle: "italic", marginBottom: 2, marginLeft: "25px" }}>-laban kay/kina-</Text>
           </View>
 
-          <View style={{ marginVertical: 15, textAlign: "left" }}>
+          <View style={{ marginVertical: 15, textAlign: "center" }}>
             <Text style={{ borderBottom: "1px solid black", width: "75%", alignSelf: "left", marginBottom: 5 }}>
               {data.form9Ipinagsumbong || " ".repeat(25)} {/* Creates the underline effect */}
             </Text>

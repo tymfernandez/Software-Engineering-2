@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import "../main.css";
-import Header from "./Header";
+import Header from "./Header"; //
+import FormDocu16 from "./FormDocu16";
 
 const Form16 = () => {
+  const [formData, setFormData] = useState({
+    form16KpNum: "",
+    form16Maysumbong: "",
+    form16Maysumbong1: "",
+    form16Ipinagsumbong: "",
+    form16Ipinagsumbong1: "",
+    form16Pagaayos: "",
+    form16Day: "",
+    form16Month: "",
+    form16Year: "",
+
+  })
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
   return (
     <div className="form16-page">
       <Header showButton={false} />
@@ -13,7 +36,7 @@ const Form16 = () => {
           <form className="form16">
             <div className="form16-kp-input">
               <label className="form16-kpcase">KP Case Number:</label>
-              <input type="text" id="form16-kpnum" placeholder=" " />
+              <input type="text" id="form16KpNum" onChange={handleInputChange} />
             </div>
             <div className="form16-pormularyoblg">
               <label className="form16-pormularyo">Pormularyo ng KP Blg. 16</label>
@@ -33,13 +56,13 @@ const Form16 = () => {
             </div>
             <div className="form-row two-columns centered-row">
               <div className="form-group">
-                <input type="text" id="form16-maysumbong" /> <br />
-                <input type="text" id="form16-maysumbong" /> <br />
+                <input type="text" id="form16Maysumbong" onChange={handleInputChange} /> <br />
+                <input type="text" id="form16Maysumbong1" onChange={handleInputChange} /> <br />
                 <label className="form16-sumbong">
                   (Mga) May Sumbong <br /> -laban kay/kina-
                 </label> <br />
-                <input type="text" id="form16-ipinagsumbong" /> <br />
-                <input type="text" id="form16-ipinagsumbong" /> <br />
+                <input type="text" id="form16Ipinagsumbong" onChange={handleInputChange} /> <br />
+                <input type="text" id="form16Ipinagsumbong1" onChange={handleInputChange} /> <br />
                 <label className="form16-sumbong"> (Mga) Ipinagsusumbong </label>
               </div>
             </div>
@@ -53,7 +76,7 @@ const Form16 = () => {
                 isinasaad sa itaas, ay nagkakasundo sa pamamagitan nito na
                 aayusing ang aming alitan tulad ng mga sumusunod:
               </label>
-              <textarea placeholder=" "></textarea>
+              <textarea textarea id="form16Pagaayos" onChange={handleInputChange}></textarea>
             </div>
             <label className="form16-left">
               at nangangako na aming tutuparin ng may katapatan ang mga
@@ -62,11 +85,11 @@ const Form16 = () => {
             <br /> <br />
             <div className="form16-form-input">
               <label className="form16-indent">Pinagkasunduan ngayong ika-</label>
-              <input type="text" id="form16-day" placeholder=" " />
+              <input type="text" id="form16Day" onChange={handleInputChange} />
               <label>araw ng</label>
-              <input type="text" id="form16-month" placeholder=" " />
+              <input type="text" id="form16Month" onChange={handleInputChange} />
               <label>, 20</label>
-              <input type="text" id="form16-year" placeholder=" " />
+              <input type="text" id="form16Year" onChange={handleInputChange} />
               <label>.</label>
             </div>{" "}
             <br /> <br />
@@ -107,17 +130,15 @@ const Form16 = () => {
         </div>
 
         <div className="form16-button-group">
-          <button
-            type="button"
+          <PDFDownloadLink
+            document={<FormDocu16 data={formData} />}
+            fileName="form16.pdf"
             className="form16-print-button"
-            onClick={() => window.print()}
           >
-            Print
-          </button>
-          <button type="button" className="form16-next-button">
-            {" "}
-            Next{" "}
-          </button>
+            {({ blob, url, loading, error }) =>
+              loading ? "Loading document..." : "Print"
+            }
+          </PDFDownloadLink>
         </div>
       </div>
     </div>
