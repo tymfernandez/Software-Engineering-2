@@ -861,7 +861,6 @@ body {
   font-size: 25px; /* Slightly adjust font size */
   color: #ffffff; /* Adjust the text color */
   margin: 0;
-  background-color: ;
   background-image: url("../assets/new-report-bg.png"); /* Path to your background image */
   background-size: cover; /* Ensure the image covers the entire element */
   background-repeat: no-repeat; /* Prevent the image from repeating */
