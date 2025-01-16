@@ -912,6 +912,282 @@ button:hover {
   z-index: -1;
 }
 
+/*-----COMPLAINTS PAGE-----*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure the body can take up full height */
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.complaints-container {
+  min-height: 100vh; /* Ensures the container takes full height */
+  background-image: url("../assets/complaints-page.png"); /* Use your dashboard background */
+  background-size: cover; /* Ensure the background covers the entire container */
+  background-position: center; /* Align the background to the center */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  overflow-y: auto; /* Allow vertical scrolling */
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Ensure the Submit Button can be positioned within this container */
+  width: 100%; /* Ensure the container width is 100% of the viewport */
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Submit Blotter Button */
+.complaints-container .submit-blotter-header {
+  background-color: transparent !important;
+  color: #003366 !important;
+  padding: 5px 15px !important;
+  border: 2px solid #003366 !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  font-size: 16px;
+  font-weight: 700;
+  position: absolute !important; /* Absolute positioning to move it to the top-left corner */
+  top: 15px !important; /* Adjust as needed to position it */
+  right: 100px !important; /* Adjust as needed to position it */
+  z-index: 10 !important; /* Ensures it is above other elements */
+  width: auto;
+}
+
+/* Ensure scroll is working */
+.complaints-container::after {
+  content: "";
+  display: block;
+  height: 480px; /* Make the container tall enough to ensure scrolling */
+}
+
+/* Hover effect for Submit Blotter Button */
+.report-container .submit-blotter-header:hover {
+  background-color: #003366 !important;
+  color: #ffffff !important;
+}
+
+.complaints-title {
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 90px; /* Moves it down, you can adjust the value to your preference */
+  margin-left: 120px; /* Moves it to the left, adjust as needed */
+  text-align: left; /* Aligns the text to the left */
+  font-family: "Inria Sans", sans-serif;
+  color: #212121;
+  margin-bottom: 0;
+}
+
+/* Separator line style */
+.separator-line-c1 {
+  border: none;
+  border-top: 3px solid #6a7784;
+  width: 93%; /* Adjust the width as needed */
+  margin: 15px auto;
+}
+
+.search-bar-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  margin-right: 45px;
+}
+
+.search-bar-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 300px; /* Adjust the width as needed */
+}
+
+.search-bar {
+  width: 100%;
+  padding: 4px 45px 4px 40px; /* Add more padding to the left */
+  border: 2px solid #373737;
+  border-radius: 40px; /* Radius for rounded corners */
+  background-color: transparent; /* Transparent background */
+  font-size: 12px;
+  color: #373737; /* Text color */
+  line-height: 1.5; /* Adjusts vertical alignment */
+}
+
+.search-bar::placeholder {
+  color: #373737; /* Placeholder text color */
+  font-size: 12px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px; /* Icon stays in the same position */
+  top: 37%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust alignment with the text */
+  width: 20px;
+  height: 20px;
+  pointer-events: none; /* Makes the icon unclickable */
+}
+
+.filter-icon {
+  position: absolute;
+  right: 15px; /* Slightly adjust the horizontal position */
+  top: 37%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust alignment with the text */
+  width: 20px;
+  height: 20px;
+  cursor: pointer; /* Makes the filter icon clickable */
+}
+
+/* Container settings remain unchanged */
+.complaints-table-container {
+  width: 92%; /* Adjust the container width */
+  margin: 25px auto; /* Center the container */
+  padding: 0 0 15px 0;
+  background: #ffffff;
+  border-radius: 15px 15px 5px 5px;
+}
+
+/* Table and layout settings remain unchanged */
+.complaints-table-container table {
+  width: 100%; /* Ensure the table takes up the full width of the container */
+  border-spacing: 0; /* Remove gaps between cells */
+  border-collapse: collapse; /* Keeps the borders clean between cells */
+  border-radius: 10px; /* Apply radius to the table itself */
+  overflow: hidden; /* Ensures the container's corners are rounded */
+  table-layout: fixed; /* Ensures columns are the same width */
+}
+
+/* Header styles */
+.complaints-table-container thead {
+  background-image: url("../assets/new-report-bg.png"); /* Path to your background image */
+  background-size: cover; /* Ensure the image covers the row */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.complaints-table-container th {
+  background-color: transparent; /* Remove background color */
+  color: white; /* Ensure text is visible over the background */
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Inria Sans", sans-serif;
+  text-align: left;
+  padding: 0 15px; /* Add padding for better alignment */
+  height: 50px; /* Fixed height for consistent alignment */
+  border: none !important; /* Remove borders for a seamless design */
+  vertical-align: middle; /* Vertically align text in the header */
+  white-space: nowrap; /* Prevent text wrapping in headers */
+}
+
+.complaints-table-container th,
+.complaints-table-container td {
+  border-bottom: 1px solid #5b5858; /* Adds a line between rows */
+}
+
+.complaints-table-container th:first-child {
+  border-bottom-left-radius: 10px; /* Adjust the radius as needed */
+}
+
+.complaints-table-container th:last-child {
+  border-bottom-right-radius: 10px; /* Adjust the radius as needed */
+}
+
+/* Target specific columns for width adjustment */
+.complaints-table-container th:nth-child(1),
+.complaints-table-container td:nth-child(1) {
+  width: 15%; /* Adjust width for column 1 (KP Case) */
+  padding-left: 30px;
+}
+
+.complaints-table-container th:nth-child(2),
+.complaints-table-container td:nth-child(2) {
+  width: 22%; /* Adjust width for column 2 (Usaping Barangay Blg) */
+}
+
+.complaints-table-container th:nth-child(3),
+.complaints-table-container td:nth-child(3) {
+  width: 12%; /* Adjust width for column 3 (Date) */
+}
+
+.complaints-table-container th:nth-child(4),
+.complaints-table-container td:nth-child(4) {
+  width: 20%; /* Adjust width for column 4 (Type) */
+}
+
+.complaints-table-container th:nth-child(5),
+.complaints-table-container td:nth-child(5) {
+  width: 14%; /* Adjust width for column 5 (Status) */
+}
+
+.complaints-table-container th:nth-child(6),
+.complaints-table-container td:nth-child(6) {
+  width: 14%; /* Adjust width for column 6 (Priority) */
+}
+
+.complaints-table-container th:nth-child(7),
+.complaints-table-container td:nth-child(7) {
+  width: 12%; /* Adjust width for column 7 (Actions) */
+}
+
+.complaints-table-container tbody tr:first-child td {
+  border-top: none !important; /* Remove border above the first row */
+}
+
+.complaints-table-container td:last-child {
+  padding-right: 30px; /* Add more space on the right side */
+}
+
+/* Cell spacing and styles */
+.complaints-table-container td {
+  padding: 14px 15px; /* Adjust spacing */
+  text-align: left;
+  white-space: nowrap; /* Prevent text wrapping */
+  font-family: "Inria Sans", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #220505;
+  vertical-align: middle; /* Align cell content vertically */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+/* Link styling */
+.view-link {
+  color: #0056a9;
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.view-link:hover {
+  text-decoration: underline;
+}
+
+/* Button row styling */
+.button-row td {
+  text-align: center; /* Centers the button in the cell */
+  padding: 30px 0 0; /* Vertical padding only */
+  border-bottom: none;
+}
+
+/* See more button styling */
+.see-more-button {
+  width: 1100px; /* Fixed button width */
+  height: 27px; /* Optional: Fixed button height */
+  padding: 0; /* Adjust padding to avoid extra space inside the button */
+  background-color: #d9d9d9;
+  color: #3e3c3c;
+  font-size: 13px;
+  font-family: "Inria Sans", sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box; /* Ensures padding doesn't affect width calculation */
+}
+
+.see-more-button:hover {
+  background-color: rgb(202, 191, 191);
+}
+
+
 /*-----DASHBOARD PAGE-----*/
 html,
 body {
