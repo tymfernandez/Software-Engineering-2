@@ -9,6 +9,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Sidebar from "./components/Sidebar";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
+import Report from "./components/Report"; 
+import Complaints from "./components/Complaints"; 
+import Support from "./components/Support";
 import BlotterForm from "./components/BlotterForm";
 import Login from "./components/Login";
 import SignUp from "./components/signup";
@@ -53,6 +56,9 @@ const App = () => {
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/report" element={<Report />} />
+          <Route path="/complaints" element={<Complaints />} />
+          <Route path="/support" element={<Support />} />
           <Route path="/blotter-form" element={<BlotterForm />} />
           <Route path="/form7" element={<Form7 />} />
           <Route path="/form8" element={<Form8 />} />

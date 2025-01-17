@@ -3,8 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
-
-/*header page*/
+/*-----HEADER PAGE-----*/
 header {
   position: absolute; /* Absolute positioning */
   top: 20px; /* Space from the top */
@@ -163,6 +162,7 @@ header {
   width: 18px;
   height: 18px;
 }
+
 .logout-modal {
   position: fixed;
   top: 0;
@@ -206,7 +206,8 @@ header {
   color: white;
 }
 
-/*layout page*/
+/*-----LAYOUT PAGE-----*/
+/* Layout Styles */
 .layout-container {
   display: flex;
   position: relative;
@@ -249,17 +250,7 @@ header {
   }
 }
 
-/*sidebar page*/
-html,
-body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  box-sizing: border-box;
-}
-
+/*-----SIDEBAR PAGE-----*/
 .sidebar {
   display: flex; /* Use flexbox for layout */
   flex-direction: column; /* Stack items vertically */
@@ -464,8 +455,8 @@ hr {
   opacity: 0.8;
 }
 
-/* Help and Logout */
-.help,
+/* Support and Logout */
+.support,
 .logout {
   display: flex;
   align-items: center;
@@ -475,7 +466,7 @@ hr {
   font-family: "Inria Sans", sans-serif;
 }
 
-.help {
+.support {
   margin-bottom: 10px;
   margin-top: 30px;
 }
@@ -484,14 +475,14 @@ hr {
   margin-top: 10px;
 }
 
-.help:hover,
+.support:hover,
 .logout:hover {
   text-decoration: none;
   cursor: pointer;
   opacity: 0.8;
 }
 
-.help span,
+.support span,
 .logout span {
   color: white;
   font-size: 14px;
@@ -528,9 +519,9 @@ hr {
   display: none; /* Optionally hide the submit blotter button when collapsed */
 }
 
-.sidebar.collapsed .help,
+.sidebar.collapsed .support,
 .sidebar.collapsed .logout {
-  display: none; /* Optionally hide help and logout sections when collapsed */
+  display: none; /* Optionally hide support and logout sections when collapsed */
 }
 
 /* Main content area adjustment when sidebar is collapsed */
@@ -628,7 +619,349 @@ p {
   color: #ffffff; /* the confirmation of logout */
 }
 
-/*login page*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure the body can take up full height */
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Container for the entire page */
+.support-container {
+  text-align: center;
+  padding: 20px;
+  background-image: url("/support-first-page.png"); /* Use your dashboard background */
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  min-height: 100vh; /* Ensures the background fills the entire viewport height */
+  color: #333; /* Adjust text color if needed for readability */
+}
+
+/* Submit Blotter Button */
+.support-container .submit-blotter-header {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  padding: 5px 15px !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  font-size: 16px;
+  font-weight: 700;
+  position: absolute !important; /* Absolute positioning to move it to the top-left corner */
+  top: 15px !important; /* Adjust as needed to position it */
+  right: 100px !important; /* Adjust as needed to position it */
+  z-index: 10 !important; /* Ensures it is above other elements */
+  width: auto;
+}
+
+/* Hover effect for Submit Blotter Button */
+.support-container .submit-blotter-header:hover {
+  background-color: #ffffff !important;
+  color: #003366 !important;
+}
+
+.support-container::after {
+  content: "";
+  display: block;
+  height: 200px; /* Make the container tall enough to ensure scrolling */
+}
+
+/* Title and Subtitle */
+.support-title {
+  font-size: 4.5rem;
+  font-weight: bold;
+  margin-bottom: 3px;
+  color: #ffffff;
+  padding-top: 50px;
+}
+
+.support-subtitle {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 80px;
+  margin-top: 1px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Cards Container */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Each Card */
+.support-card {
+  background-color: white;
+  border-radius: 25px;
+  width: 230px;
+  height: 180px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
+
+/* Card Icon (the "pimple") */
+.support-card-icon {
+  width: 70px;
+  height: 70px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.support-card-icon img {
+  width: 70%; /* Increase the image size */
+  height: 70%; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the full image is visible */
+  position: absolute;
+  top: 17.5%; /* Adjust centering vertically */
+  left: 17.5%; /* Adjust centering horizontally */
+}
+
+/* Card Title */
+.support-card-title {
+  font-size: 1.5rem;
+  margin: 20px 0 15px;
+  color: #333;
+  text-align: center;
+}
+
+/* Card Description */
+.card-description {
+  font-size: 0.8rem;
+  color: #000000;
+  margin-bottom: 20px;
+  font-family: "Inria Sans", sans-serif;
+  font-weight: bold;
+}
+
+/* Card Button */
+/* Each Card */
+.support-card {
+  background-color: white;
+  border-radius: 25px;
+  height: 190px;
+  width: 225px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: relative; /* This makes the button position absolute relative to the card */
+  text-align: center;
+}
+
+/* Card Button */
+.card-button {
+  padding: 9px 0px;
+  background-color: #0056a9;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Inria Sans", sans-serif;
+  font-weight: bold;
+  font-size: 0.7rem;
+  transition: 0.3s ease;
+  position: absolute; /* Positioning the button at the bottom */
+  bottom: 25px; /* Adjust as needed for spacing from the bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Centers the button horizontally */
+  width: 135px;
+}
+
+.card-button:hover {
+  background-color: #1a2354;
+}
+
+/* FAQ title */
+.faq-title {
+  font-size: 4.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 180px;
+  letter-spacing: 2px;
+  color: #003366;
+}
+
+/* Container for the question cards */
+.question-cards-container {
+  display: flex;
+  justify-content: center; /* Center the cards in the container */
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allow wrapping if cards don't fit in a row */
+  gap: 40px; /* No gap between cards */
+  margin-top: 20px;
+  padding: 0; /* Remove any padding from the container */
+}
+
+/* Each question card */
+.question-card {
+  background-color: white;
+  border-radius: 20px;
+  width: 180px; /* Adjust the width of the card */
+  height: 120px; /* Set a fixed height for consistency */
+  padding: 20px; /* Padding inside the card */
+  box-shadow: -7px 7px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 25px; /* Add margin-bottom to prevent overlap */
+}
+
+/* Icon at the top of the card */
+.q-card-icon img {
+  width: 40px; /* Set the desired size for the icon */
+  height: 40px;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+/* Title of the card */
+.q-card-title {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 4px; /* Add spacing between the icon and text */
+  margin-bottom: 0;
+}
+
+/* Triangle icon indicating active card */
+.triangle-icon {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent; /* Increase size for the triangle */
+  border-right: 15px solid transparent;
+  border-top: 20px solid #ffffff; /* Adjust color to match the card background */
+  position: absolute;
+  bottom: -20px; /* Move closer to the bottom of the card */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1; /* Ensure it sits above other elements if needed */
+}
+
+/* Dropdown containers */
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Each dropdown content */
+.dropdown-content {
+  display: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Show the dropdown content when active */
+.dropdown-content.open {
+  display: block;
+}
+
+/* Container for vertically stacked containers */
+.vertical-containers {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+  align-items: center;
+  width: 100%;
+}
+
+/* Each vertical container */
+.vertical-container {
+  background-color: #ffffff;
+  padding: 10px 20px; /* Reduced padding to decrease height */
+  border-radius: 10px;
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  position: relative; /* Ensure that child elements can be positioned */
+  display: flex;
+  flex-direction: column; /* Stack question and answer vertically */
+  justify-content: flex-start; /* Align content to the top */
+  align-items: flex-start; /* Align text to the left */
+  padding-right: 30px; /* Prevent content from touching the icon */
+  max-height: 150px; /* Limit maximum height */
+  overflow: hidden; /* Ensure no overflow */
+}
+
+.vertical-container p {
+  font-family: "Inria Sans", sans-serif;
+  font-weight: bold;
+  font-size: 1.1rem; /* Adjust font size if necessary */
+  font-weight: bold; /* Optional: make the font bold */
+  color: #220505; /* Optional: change the font color */
+  text-align: left;
+}
+
+/* Arrow Icon */
+.arrow-icon {
+  position: absolute; /* Fix icon position */
+  top: 50%; /* Align it vertically centered */
+  right: 20px; /* Align it to the right side */
+  width: 35px; /* Increase icon size */
+  height: 35px; /* Increase icon size */
+  object-fit: contain;
+  margin-left: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for background color */
+  transform: translateY(-50%); /* Adjust vertical centering */
+
+  /* Circular background */
+  background-color: #0056a9; /* Default blue background */
+  border-radius: 50%; /* Make it a circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px; /* Increase padding for larger background */
+}
+
+.arrow-icon:hover {
+  cursor: pointer;
+}
+
+/* Rotate arrow when container is expanded */
+.arrow-icon.rotate {
+  transform: rotate(180deg) translateY(-50%);
+}
+
+/* When the container is open, change the icon's background to gray */
+.vertical-container.open .arrow-icon {
+  background-color: #939698; /* Change to gray when open */
+}
+
+/* Answer text */
+.answer {
+  font-size: 0.9rem;
+  color: #757171 !important;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+/* Toggle the open state for the container */
+.vertical-container.open .arrow-icon {
+  transform: rotate(180deg) translateY(-50%); /* Rotate the icon when open */
+}
+
+/*-----LOGIN PAGE-----*/
 /* General Styles */
 html, body {
   height: 100%; /* Ensures the full height of the viewport */
@@ -776,9 +1109,382 @@ html, body {
   text-decoration: underline;
 }
 
+/*-----REPORT PAGE-----*/
+input[type="radio"] {
+  all: unset; /* Remove all inherited styles */
+}
+/* Ensure html and body take up full height and allow scrolling */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure the body can take up full height */
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Report container */
+.report-container {
+  min-height: 100vh; /* Ensures the container takes full height */
+  background-image: url("/report-page.png"); /* Use your dashboard background */
+  background-size: cover; /* Ensure the background covers the entire container */
+  background-position: center; /* Align the background to the center */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  overflow-y: auto; /* Allow vertical scrolling */
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Ensure the Submit Button can be positioned within this container */
+  width: 100%; /* Ensure the container width is 100% of the viewport */
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Submit Blotter Button */
+.report-container .submit-blotter-header {
+  background-color: transparent !important;
+  color: #003366 !important;
+  padding: 5px 15px !important;
+  border: 2px solid #003366 !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  font-size: 16px;
+  font-weight: 700;
+  position: absolute !important; /* Absolute positioning to move it to the top-left corner */
+  top: 15px !important; /* Adjust as needed to position it */
+  right: 100px !important; /* Adjust as needed to position it */
+  z-index: 10 !important; /* Ensures it is above other elements */
+  width: auto;
+}
+
+/* Hover effect for Submit Blotter Button */
+.report-container .submit-blotter-header:hover {
+  background-color: #003366 !important;
+  color: #ffffff !important;
+}
+
+/* Ensure scroll is working */
+.report-container::after {
+  content: "";
+  display: block;
+  height: 385px; /* Make the container tall enough to ensure scrolling */
+}
+
+.report-title {
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 90px; /* Moves it down, you can adjust the value to your preference */
+  margin-left: 120px; /* Moves it to the left, adjust as needed */
+  text-align: left; /* Aligns the text to the left */
+  font-family: "Inria Sans", sans-serif;
+  color: #212121;
+  margin-bottom: 0;
+}
+
+/* Separator line style */
+.separator-line-r1 {
+  border: none;
+  border-top: 3px solid #6a7784;
+  width: 93%; /* Adjust the width as needed */
+  margin: 15px auto;
+}
+
+.generate-table {
+  width: 81%; /* Adjust this value to make it smaller */
+  margin: 13px auto 20px auto; /* Center the container */
+  padding: 0 0 70px 0;
+  background: #ffffff;
+  border-radius: 36px;
+  margin-top: 42px;
+  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.5); /* Darker and sharp shadow */
+}
+
+.generate-report {
+  text-align: left; /* Align text to the left */
+  font-size: 25px; /* Slightly adjust font size */
+  color: #ffffff; /* Adjust the text color */
+  margin: 0;
+  background-image: url("/new-report-bg.png"); /* Path to your background image */
+  background-size: cover; /* Ensure the image covers the entire element */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center; /* Center the image */
+  padding: 11px 10px 11px 35px; /* Add padding for spacing inside the element */
+  border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+.report-type {
+  display: flex; /* Use flexbox for horizontal alignment */
+  flex-direction: row; /* Align items in a row */
+  align-items: center; /* Align items vertically in the center */
+  gap: 30px; /* Add spacing between items */
+  margin-top: 37px;
+}
+
+.report-type span {
+  font-family: "Inria Sans", sans-serif; /* Change font family */
+  font-size: 16px; /* Adjust font size */
+  color: #000000; /* Adjust font color */
+  font-weight: bold; /* Make the text bold, if desired */
+  margin-left: 5px; /* Add spacing between the radio button and the text */
+  cursor: pointer; /* Change cursor to pointer for better interactivity */
+}
+
+.report-type label {
+  margin-right: 10px; /* Ensure space between the label and radio buttons */
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between the radio button and text */
+  cursor: pointer; /* Pointer cursor for the entire label */
+}
+
+.report-type div {
+  display: flex; /* Flexbox for aligning radio buttons and text horizontally */
+  gap: 10px; /* Add spacing between radio buttons and their labels */
+  align-items: center;
+}
+
+.report-type-label,
+.date-range-label {
+  font-weight: bold;
+  margin-left: 55px;
+  font-size: 17px;
+  font-family: "Inria Sans", sans-serif;
+}
+
+/* Default (Unselected) Radio Button Style */
+.report-type input[type="radio"] {
+  appearance: none; /* Fully remove default styles */
+  width: 12px; /* Set the size of the circle */
+  height: 12px;
+  border: 1.5px solid #000000; /* Border color for unselected */
+  border-radius: 50%; /* Make it circular */
+  position: relative;
+  outline: none; /* Remove focus outline */
+  background-color: #fff; /* Background color for unselected */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  transition: background-color 0.2s, border-color 0.2s; /* Add smooth transitions */
+}
+
+/* When the radio button is selected */
+.report-type input[type="radio"]:checked {
+  background-color: #ffffff; /* Background color when selected */
+  border-color: #000000; /* Border color when selected */
+  position: relative;
+}
+
+/* Add a dot inside the circle when selected */
+.report-type input[type="radio"]:checked::after {
+  content: ""; /* Add a pseudo-element */
+  width: 6px; /* Size of the dot */
+  height: 6px;
+  background-color: #000000; /* Color of the dot */
+  border-radius: 50%; /* Make it circular */
+  position: absolute;
+  top: 50%; /* Position vertically in the center */
+  left: 50%; /* Position horizontally in the center */
+  transform: translate(-50%, -50%); /* Center the dot exactly */
+}
+
+.separator-line-r2 {
+  border: none;
+  border-top: 2px solid #c9ccce;
+  width: 93%; /* Adjust the width as needed */
+  margin: 8px auto 13px auto;
+}
+
+.date-range {
+  display: flex; /* Use flexbox for layout */
+  align-items: center;
+  gap: 10px; /* Space between "From", "To", and input fields */
+  position: relative; /* Ensure the button can be positioned relative to this container */
+}
+
+.date-inputs {
+  display: flex;
+  gap: 10px; /* Space between the input groups */
+}
+
+.date-input-group {
+  display: flex;
+  flex-direction: column; /* Stack label and input */
+}
+
+.custom-date-input {
+  padding-right: 35px;
+  padding: 5px;
+  font-size: 17px;
+  width: 130px;
+  height: 22px;
+  border: 1px solid #3f3f3f;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0px 0 0 0;
+  background-color: #f2f0f0;
+}
+
+.date-input-with-icon {
+  position: relative; /* Allows positioning the icon within the container */
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  right: 5px; /* Position the icon on the right side */
+  width: 16px; /* Adjust icon size */
+  height: 16px; /* Adjust icon size */
+  pointer-events: none; /* Prevent the icon from interfering with input focus */
+}
+
+.custom-date-input::placeholder {
+  color: #000000; /* Change this to your desired color */
+  font-weight: lighter;
+  font-family: "Inria Sans", sans-serif;
+}
+
+.custom-date-input:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.custom-date-input::-webkit-calendar-picker-indicator {
+  display: none; /* Hide the default date picker button */
+}
+
+.generate-button {
+  position: absolute; /* Position relative to the .date-range container */
+  top: 51px; /* Adjust the distance from the bottom */
+  right: 28px; /* Adjust the distance from the right */
+  background-color: #1a2d42; /* Button background color */
+  color: #ffffff; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 7px; /* Optional: Add rounded corners */
+  padding: 6px 12px; /* Add padding for button size */
+  font-size: 12px; /* Adjust font size */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  transition: background-color 0.3s ease; /* Add a hover effect transition */
+  width: auto; /* Ensure the width adjusts to the content */
+  height: auto; /* Ensure height adjusts to content */
+  font-family: "Inter", serif;
+}
+
+/* Button Hover Effect */
+.generate-button:hover {
+  background-color: #163042; /* Slightly darker shade for hover effect */
+}
+
+.report-table-container {
+  width: 81%; /* Adjust the container width */
+  margin: 25px auto; /* Center the container */
+  padding: 0 0 10px 0;
+  background: #ffffff;
+  border-radius: 36px;
+  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.5); /* Darker and sharp shadow */
+}
+
+/* Table Styling */
+.report-table-container table {
+  width: 100%;
+  border-spacing: 0; /* Remove gaps between cells */
+  border-collapse: collapse; /* Keeps the borders clean between cells */
+  border-radius: 10px; /* Apply radius to the table itself */
+  overflow: hidden; /* Ensures the container's corners are rounded */
+}
+
+/* Apply background image and border-radius to the entire header */
+.report-table-container thead {
+  background-image: url("/new-report-bg.png"); /* Path to your background image */
+  background-size: cover; /* Ensure the image covers the row */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.report-table-container th {
+  background-color: transparent; /* Remove background color */
+  color: white; /* Ensure text is visible over the background */
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Inria Sans", sans-serif;
+  text-align: left;
+  padding: 0 15px; /* Add padding for better alignment */
+  height: 50px; /* Fixed height for consistent alignment */
+  border: none; /* Remove borders for a seamless design */
+  vertical-align: middle; /* Vertically align text in the header */
+  white-space: nowrap; /* Prevent text wrapping in headers */
+}
+
+/* Add border-radius to the first column header */
+.report-table-container th:first-child {
+  border-bottom-left-radius: 10px; /* Adjust the radius as needed */
+}
+
+.report-table-container th:last-child {
+  border-bottom-right-radius: 10px; /* Adjust the radius as needed */
+}
+
+/* Fix cell spacing */
+.report-table-container td {
+  padding: 10px 15px; /* Adjust spacing */
+  text-align: left;
+  white-space: nowrap; /* Prevent text wrapping */
+  font-family: "Inter", serif;
+  font-weight: 300;
+  color: #220505;
+}
+
+/* Adjust column widths */
+.report-table-container th:nth-child(1),
+.report-table-container td:nth-child(1) {
+  width: 10%; /* Adjust Report ID width */
+  padding-left: 30px;
+}
+
+.report-table-container th:nth-child(2),
+.report-table-container td:nth-child(2) {
+  width: 15%; /* Adjust Report Type width */
+}
+
+.report-table-container th:nth-child(3),
+.report-table-container td:nth-child(3) {
+  width: 20%; /* Adjust Date Generated width */
+}
+
+.report-table-container th:nth-child(4),
+.report-table-container td:nth-child(4) {
+  width: 20%; /* Adjust Total Complaints width */
+  text-align: center;
+}
+
+.report-table-container th:nth-child(5),
+.report-table-container td:nth-child(5) {
+  width: auto; /* Let Actions adjust to button size */
+  text-align: center;
+}
+
+/* Table Buttons */
+.report-table-container td button {
+  margin: 3px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #8b8b8b; /* Button background color */
+  color: #ffffff; /* Button text color */
+  font-size: 12px;
+  font-family: "Inter", serif;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: background-color 0.3s ease;
+  height: auto;
+  width: auto;
+  white-space: nowrap; /* Prevent text wrapping inside buttons */
+}
+
+/* Button Hover Effect */
+.report-table-container td button:hover {
+  background-color: #163042; /* Slightly darker on hover */
+}
 
 
-/*Home page*/
+/*-----HOME PAGE-----*/
+html,
 body {
   margin: 0;
   padding: 0;
@@ -789,33 +1495,35 @@ body {
 
 .home-container {
   min-height: 100vh;
-  background-image: url("home-page.png"); /* Updated path for public folder */
+  background-image: url("/home-page.png"); /* Updated path for public folder */
   background-size: cover; /* Ensure the background covers the entire container */
   background-position: center; /* Align the background to the center */
   background-repeat: no-repeat; /* Do not repeat the image */
+  overflow-y: auto; /* Allow vertical scrolling */
   display: flex;
   flex-direction: column;
-  position: fixed; /* Ensure the Submit Button can be positioned within this container */
+  position: relative; /* Ensure the Submit Button can be positioned within this container */
   width: 100%; /* Ensure the container width is 100% of the viewport */
   height: 100%;
-  top: 0;
-  left: 0;
+  overflow-x: hidden;
 }
 
 /* Ensure scroll is working */
 .home-container::after {
   content: "";
   display: block;
-  height: 700px; /* Make the container tall enough to ensure scrolling */
+  height: 720px; /* Make the container tall enough to ensure scrolling */
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start; /* Align items towards the top */
+  align-items: flex-start; /* Keep alignment to the left */
   flex-grow: 1;
   gap: 20px; /* Add space between sections */
+  margin-top: 170px; /* Move the content down */
+  margin-left: 50px; /* Move the content to the right */
 }
 
 .title-container {
@@ -918,7 +1626,284 @@ button:hover {
   z-index: -1;
 }
 
-/*dashboard page*/
+/*-----COMPLAINTS PAGE-----*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure the body can take up full height */
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.complaints-container {
+  min-height: 100vh; /* Ensures the container takes full height */
+  background-image: url("/complaints-page.png"); /* Use your dashboard background */
+  background-size: cover; /* Ensure the background covers the entire container */
+  background-position: center; /* Align the background to the center */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  overflow-y: auto; /* Allow vertical scrolling */
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Ensure the Submit Button can be positioned within this container */
+  width: 100%; /* Ensure the container width is 100% of the viewport */
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Submit Blotter Button */
+.complaints-container .submit-blotter-header {
+  background-color: transparent !important;
+  color: #003366 !important;
+  padding: 5px 15px !important;
+  border: 2px solid #003366 !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  font-size: 16px;
+  font-weight: 700;
+  position: absolute !important; /* Absolute positioning to move it to the top-left corner */
+  top: 15px !important; /* Adjust as needed to position it */
+  right: 100px !important; /* Adjust as needed to position it */
+  z-index: 10 !important; /* Ensures it is above other elements */
+  width: auto;
+}
+
+/* Ensure scroll is working */
+.complaints-container::after {
+  content: "";
+  display: block;
+  height: 480px; /* Make the container tall enough to ensure scrolling */
+}
+
+/* Hover effect for Submit Blotter Button */
+.report-container .submit-blotter-header:hover {
+  background-color: #003366 !important;
+  color: #ffffff !important;
+}
+
+.complaints-title {
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 90px; /* Moves it down, you can adjust the value to your preference */
+  margin-left: 120px; /* Moves it to the left, adjust as needed */
+  text-align: left; /* Aligns the text to the left */
+  font-family: "Inria Sans", sans-serif;
+  color: #212121;
+  margin-bottom: 0;
+}
+
+/* Separator line style */
+.separator-line-c1 {
+  border: none;
+  border-top: 3px solid #6a7784;
+  width: 93%; /* Adjust the width as needed */
+  margin: 15px auto;
+}
+
+.search-bar-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  margin-right: 45px;
+}
+
+.search-bar-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 300px; /* Adjust the width as needed */
+}
+
+.search-bar {
+  width: 100%;
+  padding: 4px 45px 4px 40px; /* Add more padding to the left */
+  border: 2px solid #373737;
+  border-radius: 40px; /* Radius for rounded corners */
+  background-color: transparent; /* Transparent background */
+  font-size: 12px;
+  color: #373737; /* Text color */
+  line-height: 1.5; /* Adjusts vertical alignment */
+}
+
+.search-bar::placeholder {
+  color: #373737; /* Placeholder text color */
+  font-size: 12px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px; /* Icon stays in the same position */
+  top: 37%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust alignment with the text */
+  width: 20px;
+  height: 20px;
+  pointer-events: none; /* Makes the icon unclickable */
+}
+
+.filter-icon {
+  position: absolute;
+  right: 15px; /* Slightly adjust the horizontal position */
+  top: 37%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust alignment with the text */
+  width: 20px;
+  height: 20px;
+  cursor: pointer; /* Makes the filter icon clickable */
+}
+
+/* Container settings remain unchanged */
+.complaints-table-container {
+  width: 92%; /* Adjust the container width */
+  margin: 25px auto; /* Center the container */
+  padding: 0 0 15px 0;
+  background: #ffffff;
+  border-radius: 15px 15px 5px 5px;
+}
+
+/* Table and layout settings remain unchanged */
+.complaints-table-container table {
+  width: 100%; /* Ensure the table takes up the full width of the container */
+  border-spacing: 0; /* Remove gaps between cells */
+  border-collapse: collapse; /* Keeps the borders clean between cells */
+  border-radius: 10px; /* Apply radius to the table itself */
+  overflow: hidden; /* Ensures the container's corners are rounded */
+  table-layout: fixed; /* Ensures columns are the same width */
+}
+
+/* Header styles */
+.complaints-table-container thead {
+  background-image: url("/new-report-bg.png"); /* Path to your background image */
+  background-size: cover; /* Ensure the image covers the row */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.complaints-table-container th {
+  background-color: transparent; /* Remove background color */
+  color: white; /* Ensure text is visible over the background */
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Inria Sans", sans-serif;
+  text-align: left;
+  padding: 0 15px; /* Add padding for better alignment */
+  height: 50px; /* Fixed height for consistent alignment */
+  border: none !important; /* Remove borders for a seamless design */
+  vertical-align: middle; /* Vertically align text in the header */
+  white-space: nowrap; /* Prevent text wrapping in headers */
+}
+
+.complaints-table-container th,
+.complaints-table-container td {
+  border-bottom: 1px solid #5b5858; /* Adds a line between rows */
+}
+
+.complaints-table-container th:first-child {
+  border-bottom-left-radius: 10px; /* Adjust the radius as needed */
+}
+
+.complaints-table-container th:last-child {
+  border-bottom-right-radius: 10px; /* Adjust the radius as needed */
+}
+
+/* Target specific columns for width adjustment */
+.complaints-table-container th:nth-child(1),
+.complaints-table-container td:nth-child(1) {
+  width: 15%; /* Adjust width for column 1 (KP Case) */
+  padding-left: 30px;
+}
+
+.complaints-table-container th:nth-child(2),
+.complaints-table-container td:nth-child(2) {
+  width: 22%; /* Adjust width for column 2 (Usaping Barangay Blg) */
+}
+
+.complaints-table-container th:nth-child(3),
+.complaints-table-container td:nth-child(3) {
+  width: 12%; /* Adjust width for column 3 (Date) */
+}
+
+.complaints-table-container th:nth-child(4),
+.complaints-table-container td:nth-child(4) {
+  width: 20%; /* Adjust width for column 4 (Type) */
+}
+
+.complaints-table-container th:nth-child(5),
+.complaints-table-container td:nth-child(5) {
+  width: 14%; /* Adjust width for column 5 (Status) */
+}
+
+.complaints-table-container th:nth-child(6),
+.complaints-table-container td:nth-child(6) {
+  width: 14%; /* Adjust width for column 6 (Priority) */
+}
+
+.complaints-table-container th:nth-child(7),
+.complaints-table-container td:nth-child(7) {
+  width: 12%; /* Adjust width for column 7 (Actions) */
+}
+
+.complaints-table-container tbody tr:first-child td {
+  border-top: none !important; /* Remove border above the first row */
+}
+
+.complaints-table-container td:last-child {
+  padding-right: 30px; /* Add more space on the right side */
+}
+
+/* Cell spacing and styles */
+.complaints-table-container td {
+  padding: 14px 15px; /* Adjust spacing */
+  text-align: left;
+  white-space: nowrap; /* Prevent text wrapping */
+  font-family: "Inria Sans", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #220505;
+  vertical-align: middle; /* Align cell content vertically */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+/* Link styling */
+.view-link {
+  color: #0056a9;
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.view-link:hover {
+  text-decoration: underline;
+}
+
+/* Button row styling */
+.button-row td {
+  text-align: center; /* Centers the button in the cell */
+  padding: 30px 0 0; /* Vertical padding only */
+  border-bottom: none;
+}
+
+/* See more button styling */
+.see-more-button {
+  width: 1100px; /* Fixed button width */
+  height: 27px; /* Optional: Fixed button height */
+  padding: 0; /* Adjust padding to avoid extra space inside the button */
+  background-color: #d9d9d9;
+  color: #3e3c3c;
+  font-size: 13px;
+  font-family: "Inria Sans", sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box; /* Ensures padding doesn't affect width calculation */
+}
+
+.see-more-button:hover {
+  background-color: rgb(202, 191, 191);
+}
+
+
+/*-----DASHBOARD PAGE-----*/
+html,
 body {
   margin: 0;
   padding: 0;
@@ -930,18 +1915,24 @@ body {
 /* Dashboard container */
 .dashboard-container {
   min-height: 100vh; /* Ensures the container takes full height */
-  background-image: url("dashboard-page.png"); /* Use your dashboard background */
+  background-image: url("/dashboard-page.png"); /* Use your dashboard background */
   background-size: cover; /* Ensure the background covers the entire container */
   background-position: center; /* Align the background to the center */
   background-repeat: no-repeat; /* Do not repeat the image */
   overflow-y: auto; /* Allow vertical scrolling */
   display: flex;
   flex-direction: column;
-  position: fixed; /* Ensure the Submit Button can be positioned within this container */
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
+  position: relative; /* Ensure the Submit Button can be positioned within this container */
+  width: 100%; /* Ensure the container width is 100% of the viewport */
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure scroll is working */
+.dashboard-container::after {
+  content: "";
+  display: block;
+  height: 600px; /* Make the container tall enough to ensure scrolling */
 }
 
 /* Submit Blotter Button */
@@ -1015,7 +2006,7 @@ body {
 .card-title {
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 7px;
+  margin-top: -2px;
   font-family: "Inria Sans", sans-serif;
   text-align: left;
   color: #034d66;
@@ -1059,13 +2050,6 @@ body {
 
 .card-percentage .percent-value {
   font-weight: bold;
-}
-
-/* Ensure scroll is working */
-.dashboard-container::after {
-  content: "";
-  display: block;
-  height: 650px; /* Make the container tall enough to ensure scrolling */
 }
 
 /* Chart container styles */
@@ -1388,10 +2372,61 @@ body {
   cursor: pointer;
 }
 
-/* blotter form */
-.centered-label {
-  font-size: 0.95rem;
+/*-----BLOTTER FORM-----*/
+.blotter-form-page {
+  font-family: Arial, sans-serif;
+  background-image: url("/assets/blotterformpage.png");
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.blotter-form-container {
+  background-color: white;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  width: 90%;
+  max-width: 800px;
+}
+
+h1 {
+  font-family: "Inria Sans", serif;
+  font-size: 3rem;
+  color: black;
+  margin-top: 50px;
+  margin-bottom: 10px;
   text-align: center;
+}
+
+.centered-text {
+  font-size: 1.2rem;
+  color: black;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.blotter-form {
+  display: flex;
+  flex-direction: column;
+}
+
+p { 
+  font-size: 0.95rem; 
+  color: black; 
+  margin-bottom: 20px;
+  text-align: left; } 
+
+.centered-label { 
+  font-size: 0.95rem;
+  text-align: center; 
 }
 
 /* Rows */
@@ -1400,7 +2435,7 @@ body {
   gap: 15px;
 }
 
-.three-columns .form-group,
+.three-columns .form-group, 
 .two-columns .form-group {
   flex: 1;
 }
@@ -1419,8 +2454,8 @@ label {
   text-align: left;
 }
 
-.optional-label {
-  font-style: italic;
+.optional-label { 
+  font-style: italic; 
   font-weight: normal;
   color: darkgrey;
 }
@@ -1448,13 +2483,57 @@ textarea {
   min-height: 80px;
 }
 
-.button-group {
+.date-section {
   display: flex;
-  justify-content: space-evenly;
-  gap: 15px;
-  margin-top: 20px;
-  margin-bottom: 50px;
+  align-items: center;
+  margin-bottom: 15px;
 }
+
+.date-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.date-input input {
+  width: 100px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.button-group { 
+  display: flex; 
+  justify-content: space-evenly; 
+  gap: 15px; 
+  margin-top: 20px; 
+  margin-bottom: 50px;
+} 
+
+.print-button, .next-button { 
+  background-color: #0056b3; 
+  color: white; 
+  font-weight: bold; 
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 5px; 
+  font-size: 1rem; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease, transform 0.2s ease; 
+} 
+.print-button:hover { 
+  background-color: #003d82; 
+  transform: scale(1.02); 
+} 
+.next-button:hover { 
+  background-color: #003d82; 
+  color: #ffffff; 
+  transform: scale(1.02); 
+} 
+.print-button:active, .next-button:active { 
+  transform: scale(0.98); 
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
