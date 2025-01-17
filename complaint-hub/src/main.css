@@ -2373,9 +2373,60 @@ body {
 }
 
 /*-----BLOTTER FORM-----*/
-.centered-label {
-  font-size: 0.95rem;
+.blotter-form-page {
+  font-family: Arial, sans-serif;
+  background-image: url("/assets/blotterformpage.png");
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.blotter-form-container {
+  background-color: white;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  width: 90%;
+  max-width: 800px;
+}
+
+h1 {
+  font-family: "Inria Sans", serif;
+  font-size: 3rem;
+  color: black;
+  margin-top: 50px;
+  margin-bottom: 10px;
   text-align: center;
+}
+
+.centered-text {
+  font-size: 1.2rem;
+  color: black;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.blotter-form {
+  display: flex;
+  flex-direction: column;
+}
+
+p { 
+  font-size: 0.95rem; 
+  color: black; 
+  margin-bottom: 20px;
+  text-align: left; } 
+
+.centered-label { 
+  font-size: 0.95rem;
+  text-align: center; 
 }
 
 /* Rows */
@@ -2384,7 +2435,7 @@ body {
   gap: 15px;
 }
 
-.three-columns .form-group,
+.three-columns .form-group, 
 .two-columns .form-group {
   flex: 1;
 }
@@ -2403,8 +2454,8 @@ label {
   text-align: left;
 }
 
-.optional-label {
-  font-style: italic;
+.optional-label { 
+  font-style: italic; 
   font-weight: normal;
   color: darkgrey;
 }
@@ -2432,13 +2483,57 @@ textarea {
   min-height: 80px;
 }
 
-.button-group {
+.date-section {
   display: flex;
-  justify-content: space-evenly;
-  gap: 15px;
-  margin-top: 20px;
-  margin-bottom: 50px;
+  align-items: center;
+  margin-bottom: 15px;
 }
+
+.date-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.date-input input {
+  width: 100px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.button-group { 
+  display: flex; 
+  justify-content: space-evenly; 
+  gap: 15px; 
+  margin-top: 20px; 
+  margin-bottom: 50px;
+} 
+
+.print-button, .next-button { 
+  background-color: #0056b3; 
+  color: white; 
+  font-weight: bold; 
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 5px; 
+  font-size: 1rem; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease, transform 0.2s ease; 
+} 
+.print-button:hover { 
+  background-color: #003d82; 
+  transform: scale(1.02); 
+} 
+.next-button:hover { 
+  background-color: #003d82; 
+  color: #ffffff; 
+  transform: scale(1.02); 
+} 
+.print-button:active, .next-button:active { 
+  transform: scale(0.98); 
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
