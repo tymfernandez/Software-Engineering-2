@@ -121,13 +121,13 @@ const Complaints = () => {
       <div className="search-bar-container">
         <div className="search-bar-wrapper">
           <img
-            src="../assets/search-icon.png"
+            src="/search-icon.png"
             alt="Search Icon"
             className="search-icon"
           />
           <input type="text" placeholder="Search" className="search-bar" />
           <img
-            src="../assets/filter-icon.png"
+            src="/filter-icon.png"
             alt="Filter Icon"
             className="filter-icon"
           />

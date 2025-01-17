@@ -632,7 +632,7 @@ body {
 .support-container {
   text-align: center;
   padding: 20px;
-  background-image: url("../assets/support-first-page.png"); /* Use your dashboard background */
+  background-image: url("/support-first-page.png"); /* Use your dashboard background */
   background-size: cover; /* Ensures the image covers the entire container */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -1126,7 +1126,7 @@ body {
 /* Report container */
 .report-container {
   min-height: 100vh; /* Ensures the container takes full height */
-  background-image: url("../assets/report-page.png"); /* Use your dashboard background */
+  background-image: url("/report-page.png"); /* Use your dashboard background */
   background-size: cover; /* Ensure the background covers the entire container */
   background-position: center; /* Align the background to the center */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -1203,7 +1203,7 @@ body {
   font-size: 25px; /* Slightly adjust font size */
   color: #ffffff; /* Adjust the text color */
   margin: 0;
-  background-image: url("../assets/new-report-bg.png"); /* Path to your background image */
+  background-image: url("/new-report-bg.png"); /* Path to your background image */
   background-size: cover; /* Ensure the image covers the entire element */
   background-repeat: no-repeat; /* Prevent the image from repeating */
   background-position: center; /* Center the image */
@@ -1392,7 +1392,7 @@ body {
 
 /* Apply background image and border-radius to the entire header */
 .report-table-container thead {
-  background-image: url("../assets/new-report-bg.png"); /* Path to your background image */
+  background-image: url("/new-report-bg.png"); /* Path to your background image */
   background-size: cover; /* Ensure the image covers the row */
   background-repeat: no-repeat;
   background-position: center;
@@ -1495,7 +1495,7 @@ body {
 
 .home-container {
   min-height: 100vh;
-  background-image: url("../assets/home-page.png"); /* Updated path for public folder */
+  background-image: url("/home-page.png"); /* Updated path for public folder */
   background-size: cover; /* Ensure the background covers the entire container */
   background-position: center; /* Align the background to the center */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -1638,7 +1638,7 @@ body {
 
 .complaints-container {
   min-height: 100vh; /* Ensures the container takes full height */
-  background-image: url("../assets/complaints-page.png"); /* Use your dashboard background */
+  background-image: url("/complaints-page.png"); /* Use your dashboard background */
   background-size: cover; /* Ensure the background covers the entire container */
   background-position: center; /* Align the background to the center */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -1771,7 +1771,7 @@ body {
 
 /* Header styles */
 .complaints-table-container thead {
-  background-image: url("../assets/new-report-bg.png"); /* Path to your background image */
+  background-image: url("/new-report-bg.png"); /* Path to your background image */
   background-size: cover; /* Ensure the image covers the row */
   background-repeat: no-repeat;
   background-position: center;
@@ -1915,7 +1915,7 @@ body {
 /* Dashboard container */
 .dashboard-container {
   min-height: 100vh; /* Ensures the container takes full height */
-  background-image: url("../assets/dashboard-page.png"); /* Use your dashboard background */
+  background-image: url("/dashboard-page.png"); /* Use your dashboard background */
   background-size: cover; /* Ensure the background covers the entire container */
   background-position: center; /* Align the background to the center */
   background-repeat: no-repeat; /* Do not repeat the image */

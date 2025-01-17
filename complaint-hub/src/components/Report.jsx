@@ -82,7 +82,7 @@ const Report = () => {
                   dateFormat="dd/MM/yyyy"
                 />
                 <img
-                  src="../assets/calendar-icon.png"
+                  src="/calendar-icon.png"
                   alt="calendar icon"
                   className="input-icon"
                 />
@@ -98,7 +98,7 @@ const Report = () => {
                   dateFormat="dd/MM/yyyy"
                 />
                 <img
-                  src="../assets/calendar-icon.png"
+                  src="/calendar-icon.png"
                   alt="calendar icon"
                   className="input-icon"
                 />

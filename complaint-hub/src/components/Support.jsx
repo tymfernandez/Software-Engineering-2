@@ -61,7 +61,7 @@ const Support = () => {
         {/* Card 1 */}
         <div className="support-card">
           <div className="support-card-icon">
-            <img src="../assets/support-icon1.png" alt="Icon 1" />
+            <img src="/support-icon1.png" alt="Icon 1" />
           </div>
           <h2 className="support-card-title">FAQ's</h2>
           <p className="card-description">
@@ -73,7 +73,7 @@ const Support = () => {
         {/* Card 2 */}
         <div className="support-card">
           <div className="support-card-icon">
-            <img src="../assets/support-icon2.png" alt="Icon 2" />
+            <img src="/support-icon2.png" alt="Icon 2" />
           </div>
           <h2 className="support-card-title">Contact Us</h2>
           <p className="card-description">
@@ -85,7 +85,7 @@ const Support = () => {
         {/* Card 3 */}
         <div className="support-card">
           <div className="support-card-icon">
-            <img src="../assets/support-icon3.png" alt="Icon 3" />
+            <img src="/support-icon3.png" alt="Icon 3" />
           </div>
           <h2 className="support-card-title">All about us</h2>
           <p className="card-description">Discover all about ResolvIT.</p>
@@ -106,19 +106,19 @@ const Support = () => {
               <div className="q-card-icon">
                 {/* Image Icon */}
                 {card === "Dashboard" && (
-                  <img src="../assets/q-icon1.png" alt="Dashboard Icon" />
+                  <img src="/q-icon1.png" alt="Dashboard Icon" />
                 )}
                 {card === "Generating Reports" && (
                   <img
-                    src="../assets/q-icon2.png"
+                    src="/q-icon2.png"
                     alt="Generating Reports Icon"
                   />
                 )}
                 {card === "Complaints" && (
-                  <img src="../assets/q-icon3.png" alt="Complaints Icon" />
+                  <img src="/q-icon3.png" alt="Complaints Icon" />
                 )}
                 {card === "User Profile" && (
-                  <img src="../assets/q-icon4.png" alt="User Profile Icon" />
+                  <img src="/q-icon4.png" alt="User Profile Icon" />
                 )}
               </div>
               <h3 className="q-card-title">{card}</h3>
@@ -144,7 +144,7 @@ const Support = () => {
             <p className="container-title">{item.title}</p>
             {/* Arrow Icon */}
             <img
-              src="../assets/q-icon.png"
+              src="/q-icon.png"
               alt="Arrow Icon"
               className={`arrow-icon ${
                 expandedIndex === index ? "rotate" : ""
