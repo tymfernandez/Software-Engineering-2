@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import "../main.css";
 import Header from "./Header"; //
@@ -38,6 +39,17 @@ const Form17 = () => {
         ...prevData,
         [id]: value,
       }));
+    };
+
+  const [showSuccess, setShowSuccess] = useState(false);
+    const navigate = useNavigate(); // Initialize navigate
+  
+    const handleSubmit = () => {
+      setShowSuccess(true); // Show success modal
+    };
+  
+    const handleContinue = () => {
+      navigate("/complaints"); // Navigate to Complaints page
     };
 
     // In your Form17 component, handle checkbox changes as you already have
@@ -250,7 +262,38 @@ const Form17 = () => {
               loading ? "Loading document..." : "Print"
             }
           </PDFDownloadLink>
+
+          {/* Submit Button */}
+          <button
+              className="form17-next-button"
+              onClick={handleSubmit}
+          >
+              Submit
+          </button>
         </div>
+
+        {showSuccess && (
+          <div className="form9-popup-overlay">
+            <div className="form9-popup-content">
+            <img
+                src="/successIcon.png"
+                alt="Success Icon"
+                className="success-icon"
+              />
+            <h2>Success!</h2>
+              <p>
+                Form 17 successfully submitted. Please click the button to
+                continue to Complaints page.
+              </p>
+              <button
+                className="form9-popup-continue-button"
+                onClick={handleContinue}
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

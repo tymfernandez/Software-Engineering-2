@@ -1,8 +1,23 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../main.css";
 import Header from "./Header";
 
 const Form18 = () => {
+  const handleInputChange = (e) => {
+      const { id, value } = e.target;
+      setFormData((prevData) => ({
+        ...prevData,
+        [id]: value,
+      }));
+    }
+  
+    const navigate = useNavigate();
+  
+    const handleProceedToForm19 = () => {
+      navigate("/form19");
+    };
+
   return (
     <div className="form18-page">
       <Header showButton={false} />
@@ -161,9 +176,11 @@ const Form18 = () => {
           >
             Print
           </button>
-          <button type="button" className="form18-next-button">
-            {" "}
-            Next{" "}
+          <button 
+            className="form8-next-button" 
+            onClick={() => handleProceedToForm19()}
+          >
+            Proceed to Form 19
           </button>
         </div>
       </div>
