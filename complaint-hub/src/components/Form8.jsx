@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import "../main.css";
 import Header from "./Header"; //
@@ -33,6 +34,13 @@ const Form8 = () => {
       [id]: value,
     }));
   }
+
+  const navigate = useNavigate();
+
+  const handleProceedToForm9 = () => {
+    navigate("/form9");
+  };
+  
 
   return (
     <div className="form8-page">
@@ -148,7 +156,15 @@ const Form8 = () => {
               loading ? "Loading document..." : "Print"
             }
           </PDFDownloadLink>
-      </div>
+
+          <button 
+            className="form8-next-button" 
+            onClick={() => handleProceedToForm9()}
+          >
+            Proceed to Form 9
+          </button>
+        </div>
+
       </div>
     </div>
   );

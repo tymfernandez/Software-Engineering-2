@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import "../main.css";
 import Header from "./Header"; //
@@ -41,6 +42,19 @@ const Form9 = () => {
       [id]: value,
     }));
   };
+
+  const [showPopup, setShowPopup] = useState(false); // State for pop-up visibility
+  const navigate = useNavigate(); // For navigating to the complaints page
+
+  const handleSubmit = () => {
+    setShowPopup(true); // Show the pop-up message
+  };
+
+  const handleContinue = () => {
+    setShowPopup(false);
+    navigate("/complaints"); // Redirect to the complaints page
+  };
+
 
   return (
     <div className="form9-page">
@@ -231,7 +245,7 @@ const Form9 = () => {
                     3. Iniwan ang nasabing patawag sa kanilang bahay kay
                   </label>
                 </div>
-                <input type="text" id="form9Name" onChange={handleInputChange} />
+                <input type="text" id="form9Name" placeholder="(pangalan)" onChange={handleInputChange} />
               </div>
               <div className="form9-reason-input">
                 <div className="form9-reasons-input">
@@ -246,7 +260,7 @@ const Form9 = () => {
               </div>
               <div className="form9-reasons-input">
 
-                <input type="text" id="form9Name1" onChange={handleInputChange} />
+                <input type="text" id="form9Name1" placeholder="(pangalan)" onChange={handleInputChange} />
                 <label> isang tao na siyang </label>
               </div>
               <label className="form9-four">namamahala dito.</label>
@@ -292,7 +306,40 @@ const Form9 = () => {
               loading ? "Loading document..." : "Print"
             }
           </PDFDownloadLink>
+
+          {/* Submit Button */}
+          <button
+              className="form9-next-button"
+              onClick={handleSubmit}
+          >
+              Submit
+          </button>
         </div>
+        
+        {/* Pop-up Modal */}
+        {showPopup && (
+          <div className="form9-popup-overlay">
+            <div className="form9-popup-content">
+            <img
+                src="/successIcon.png"
+                alt="Success Icon"
+                className="success-icon"
+              />
+            <h2>Success!</h2>
+              <p>
+                Form 8 & 9 successfully submitted. Please click the button to
+                continue to Complaints page.
+              </p>
+              <button
+                className="form9-popup-continue-button"
+                onClick={handleContinue}
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        )}
+
       </div>
     </div>
   );
