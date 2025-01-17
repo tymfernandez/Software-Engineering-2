@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Header from "./Header";
-import "./Complaints.css";
 
 const Complaints = () => {
   const [visibleRows, setVisibleRows] = useState(6); // Default visible rows

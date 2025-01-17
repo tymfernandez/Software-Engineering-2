@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Header from "./Header";
-import "./Support.css";
 
 const Support = () => {
   const [activeCard, setActiveCard] = useState(null); // Track active card
