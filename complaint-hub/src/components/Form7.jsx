@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Import navigate
+import { PDFDownloadLink } from "@react-pdf/renderer"; // Import PDFDownloadLink
 import "../main.css";
-import Header from "./Header";
+import Header from "./Header"; //
+import FormDocuments from "./FormDocuments";
 
 const Form7 = () => {
   const [kpCaseNumber, setKpCaseNumber] = useState(""); // Store kpCaseNumber
@@ -96,13 +98,13 @@ const Form7 = () => {
 
             <div className="form-row two-columns centered-row">
               <div className="form-group">
-                <input type="text" id="maysumbong1" name="maysumbong1" required /> <br />
-                <input type="text" id="maysumbong2" name="maysumbong2" required />
+                <input type="text" id="maySumbong1" name="maysumbong1" required /> <br />
+                <input type="text" id="maySumbong12" name="maysumbong2" required />
                 <label className="sumbong">
                   (Mga) May Sumbong <br /> -laban kay/kina-
                 </label>
                 <input type="text" id="ipinagsumbong1" name="ipinagsumbong1" required /> <br />
-                <input type="text" id="ipinagsumbong2" name="ipinagsumbong2" required />
+                <input type="text" id="ipinagsumbong12" name="ipinagsumbong2" required />
                 <label className="sumbong"> (Mga) Ipinagsusumbong </label>
               </div>
 

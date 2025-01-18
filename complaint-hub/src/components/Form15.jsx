@@ -1,8 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import "../main.css";
-import Header from "./Header";
+import Header from "./Header"; //
+import FormDocu15 from "./FormDocu15";
 
 const Form15 = () => {
+  const [formData, setFormData] = useState({
+    form15KpNum: "",
+    form15Blg: "",
+    form15Ukol: "",
+    form15Maysumbong: "",
+    form15Maysumbong1: "",
+    form15Ipinagsumbong: "",
+    form15Ipinagsumbong1: "",
+    form15Gawad: "",
+    form15Day: "",
+    form15Month: "",
+    form15Year: "",
+    form15Place: "",
+  })
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const [showSuccess, setShowSuccess] = useState(false);
+      const navigate = useNavigate(); // Initialize navigate
+    
+      const handleSubmit = () => {
+        setShowSuccess(true); // Show success modal
+      };
+    
+      const handleContinue = () => {
+        navigate("/complaints"); // Navigate to Complaints page
+      };
+
   return (
     <div className="form15-page">
       <Header showButton={false} />
@@ -13,7 +50,7 @@ const Form15 = () => {
           <form className="form15">
             <div className="form15-kp-input">
               <label className="form15-kpcase">KP Case Number:</label>
-              <input type="text" id="form15-kpnum" placeholder=" " />
+              <input type="text" id="form15Kpnum" onChange={handleInputChange} />
             </div>
             <div className="form15-pormularyoblg">
               <label className="form15-pormularyo">Pormularyo ng KP Blg. 15</label>
@@ -33,24 +70,24 @@ const Form15 = () => {
             </div>
             <div className="form-row two-columns centered-row">
               <div className="form-group">
-                <input type="text" id="form15-maysumbong" /> <br />
-                <input type="text" id="form15-maysumbong" />
+                <input type="text" id="form15Maysumbong" onChange={handleInputChange} /> <br />
+                <input type="text" id="form15Maysumbong1" onChange={handleInputChange} />
                 <label className="form15-sumbong">
                   (Mga) May Sumbong <br /> -laban kay/kina-
                 </label>
-                <input type="text" id="form15-ipinagsumbong" /> <br />
-                <input type="text" id="form15-ipinagsumbong" />
+                <input type="text" id="form15Ipinagsumbong" onChange={handleInputChange} /> <br />
+                <input type="text" id="form15Ipinagsumbong1" onChange={handleInputChange} />
                 <label className="form15-sumbong"> (Mga) Ipinagsusumbong </label>
               </div>
 
               <div className="form-group">
                 <div className="form15-blg-input">
                   <label>Usaping Barangay Blg. </label>
-                  <input type="text" id="form15-blg" placeholder=" " />
+                  <input type="text" id="form15Blg" onChange={handleInputChange} />
                 </div>
                 <div className="form15-ukol-input">
                   <label>Ukol sa:</label>
-                  <input type="text" id="form15-ukol" />
+                  <input type="text" id="form15Ukol" onChange={handleInputChange}/>
                 </div>
               </div>
             </div>
@@ -63,18 +100,18 @@ const Form15 = () => {
                 pagsusuri ng katibayan na iniharap sa usaping ito, iginagawad
                 ang mga sumusunod:
               </label>
-              <textarea id="form15-gawad" placeholder=" "></textarea>
+              <textarea id="form15Gawad" onChange={handleInputChange} ></textarea>
             </div>
             <br />
             <div className="form15-form-input">
               <label className="form15-indent">Ginawa ngayong ika-</label>
-              <input type="text" id="form15-day" placeholder=" " />
+              <input type="text" id="form15Day" onChange={handleInputChange} />
               <label>araw ng</label>
-              <input type="text" id="form15-month" placeholder=" " />
+              <input type="text" id="form15Month" onChange={handleInputChange} />
               <label>, 20</label>
-              <input type="text" id="form15-year" placeholder=" " />
+              <input type="text" id="form15Year" onChange={handleInputChange} />
               <label>sa</label>
-              <input type="text" id="form15-place" placeholder=" " />
+              <input type="text" id="form15Place" onChange={handleInputChange} />
               <label>.</label>
             </div>{" "}
             <br />
@@ -116,18 +153,47 @@ const Form15 = () => {
         </div>
 
         <div className="form15-button-group">
-          <button
-            type="button"
+          <PDFDownloadLink
+            document={<FormDocu15 data={formData} />}
+            fileName="form15.pdf"
             className="form15-print-button"
-            onClick={() => window.print()}
           >
-            Print
-          </button>
-          <button type="button" className="form15-next-button">
-            {" "}
-            Next{" "}
+            {({ blob, url, loading, error }) =>
+              loading ? "Loading document..." : "Print"
+            }
+          </PDFDownloadLink>
+
+          {/* Submit Button */}
+          <button
+              className="form15-next-button"
+              onClick={handleSubmit}
+          >
+              Submit
           </button>
         </div>
+
+        {showSuccess && (
+          <div className="form9-popup-overlay">
+            <div className="form9-popup-content">
+            <img
+                src="/successIcon.png"
+                alt="Success Icon"
+                className="success-icon"
+              />
+            <h2>Success!</h2>
+              <p>
+                Form 15 successfully submitted. Please click the button to
+                continue to Complaints page.
+              </p>
+              <button
+                className="form9-popup-continue-button"
+                onClick={handleContinue}
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
