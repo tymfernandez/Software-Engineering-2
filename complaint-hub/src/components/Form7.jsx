@@ -160,7 +160,8 @@ const Form7 = () => {
               <label>.</label>
             </div>
             <br />
-        </form>
+          </form>
+        </div>
       </div>
       <div className="form7-button-group">
           <PDFDownloadLink
