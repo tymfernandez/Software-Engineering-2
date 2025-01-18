@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import Header from "./Header"; 
-import { Bar, Doughnut } from 'react-chartjs-2';
+import Header from "./Header";
+import { Bar, Doughnut } from "react-chartjs-2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import ChartDataLabels from "chartjs-plugin-datalabels"; // Import the plugin
 import Chart from "chart.js/auto";
+import axios from "axios";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 import {
@@ -17,6 +18,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js"; // Import necessary components for Chart.js
+import { set } from "mongoose";
 
 // Register the Chart.js components
 ChartJS.register(
@@ -33,6 +35,134 @@ const Dashboard = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedGraph, setSelectedGraph] = useState("monthly");
   const [selectedGraphLabel, setSelectedGraphLabel] = useState("Monthly");
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+
+  const [statistics, setStatistics] = useState({
+    totalComplaints: 0,
+    pendingComplaints: 0,
+    inProgressComplaints: 0,
+    resolvedComplaints: 0,
+    typeBreakdown: [],
+  });
+  const [trendData, setTrendData] = useState([]);
+  const [recentComplaints, setRecentComplaints] = useState([]);
+
+  useEffect(() => {
+    const fetchComplaints = async () => {
+      try {
+        const response = await axios.get("http://localhost:3001/getRecent");
+        setRecentComplaints(response.data);
+      } catch (error) {
+        setError("Failed to fetch recent complaints. Please try again later.");
+        console.error("Error fetching recent complaints:", error.message);
+      }
+    };
+  
+    fetchComplaints();
+  }, []);
+
+  // Render recent complaints
+  const renderRecentComplaints = () => {
+    return recentComplaints.map((complaint, index) => (
+      <div key={index} className="complaint-item">
+        <p>
+          <strong>KP Case Number:</strong> {complaint.kpCaseNumber}
+        </p>
+        <p>
+          <strong>May Sumbong:</strong> {complaint.maySumbong}
+        </p>
+        <p>
+          <strong>Ipinagsumbong:</strong> {complaint.ipinagsumbong}
+        </p>
+        <p>
+          <strong>Usaping Blg:</strong> {complaint.usapingBlg}
+        </p>
+        <p>
+          <strong>Ukol Sa:</strong> {complaint.ukolSa}
+        </p>
+        <p>
+          <strong>Reklamo:</strong> {complaint.reklamo}
+        </p>
+        <p>
+          <strong>Kalunasan:</strong> {complaint.kalunasan}
+        </p>
+        <p>
+          <strong>Date:</strong>{" "}
+          {`${complaint.day}/${complaint.month}/${complaint.year}`}
+        </p>
+      </div>
+    ));
+  };
+
+  // Transform trend data for bar charts
+  const getBarData = () => {
+    const labels = trendData.map((item) => {
+      switch (selectedGraph) {
+        case "weekly":
+          return new Date(item.date).toLocaleDateString("en-US", {
+            weekday: "short",
+          });
+        case "monthly":
+          return new Date(item.date).toLocaleDateString("en-US", {
+            month: "short",
+          });
+        case "yearly":
+          return new Date(item.date).getFullYear().toString();
+        default:
+          return "";
+      }
+    });
+
+    const data = trendData.map((item) => item.count || 0);
+
+    return {
+      labels,
+      datasets: [
+        {
+          label: [],
+          data,
+          backgroundColor: "#003366",
+          borderRadius: 5,
+        },
+      ],
+    };
+  };
+
+  // Transform type breakdown for pie chart
+  const getPieData = () => {
+    const typeData = statistics.typeBreakdown || [];
+    const total = typeData.reduce((sum, item) => sum + item.count, 0);
+
+    return {
+      labels: typeData.map((item) => item._id),
+      datasets: [
+        {
+          data: typeData.map((item) => ((item.count / total) * 100).toFixed(2)),
+          backgroundColor: [
+            "#0C4094",
+            "#3B82F6",
+            "#466DAC",
+            "#355D9C",
+            "#A8C0E7",
+          ],
+          borderWidth: 0,
+          borderRadius: 3,
+          hoverOffset: 10,
+        },
+      ],
+    };
+  };
+
+  // Handle new complaint submission
+  const handleSubmitBlotter = async () => {
+    try {
+      // Navigate to blotter form or handle submission
+      console.log("Navigating to Blotter Form...");
+    } catch (error) {
+      console.error("Error submitting blotter:", error);
+    }
+  };
 
   const dropdownRef = useRef(null);
 
@@ -46,11 +176,6 @@ const Dashboard = () => {
       value === "weekly" ? "Weekly" : value === "monthly" ? "Monthly" : "Yearly"
     );
     setIsDropdownOpen(false);
-  };
-
-  const handleSubmitBlotter = () => {
-    // Logic for Submit Blotter button
-    console.log("Navigating to Blotter Form...");
   };
 
   // Close the dropdown when clicking outside of it
@@ -251,6 +376,10 @@ const Dashboard = () => {
 
   // Register the custom plugin
   Chart.register(customPlugin);
+
+  const handleViewComplaint = (id) => {
+    console.log(`Viewing complaint with id: ${id}`);
+  };
 
   return (
     <div className="dashboard-container">
@@ -499,11 +628,7 @@ const Dashboard = () => {
           }}
         >
           <h3>
-            <img
-              src="com-bd-icon.png"
-              alt="Icon"
-              className="com-bd-icon"
-            />
+            <img src="com-bd-icon.png" alt="Icon" className="com-bd-icon" />
             Complaints Breakdown
           </h3>
           <hr className="separator-line-3" />
@@ -573,151 +698,57 @@ const Dashboard = () => {
             />
             Recent Complaints
           </h3>
+          {renderRecentComplaints()}
           <h3 className="see-all">See all</h3>
         </div>
-
-        <table className="recent-complaints-table">
-          <thead>
-            <tr>
-              <th>KP Case</th>
-              <th>Usaping Barangay Blg.</th>
-              <th>Date</th>
-              <th>Type</th>
-              <th>Status</th>
-              <th>Priority</th>
-              <th>Actions</th>
+        return (
+  <div>
+    <table className="recent-complaints-table">
+      <thead>
+        <tr>
+          <th>KP Case Number</th>
+          <th>Usaping Barangay Blg.</th>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Priority</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {recentComplaints.length > 0 ? (
+          recentComplaints.map((complaint) => (
+            <tr key={complaint._id}>
+              <td>{complaint.kpCase}</td>
+              <td>{complaint.usapingBlg}</td>
+              <td>{complaint.date}</td>
+              <td>{complaint.type}</td>
+              <td>{complaint.status}</td>
+              <td>{complaint.priority}</td>
+              <td>
+                <button
+                  onClick={() => {
+                    console.log("Viewing complaint:", complaint);
+                    handleViewComplaint(complaint._id);
+                  }}
+                >
+                  View
+                </button>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {[
-              {
-                kpCase: "2024-007",
-                barangayCase: "3",
-                date: "12/12/24",
-                type: "Sexual Misconduct",
-                status: "Pending",
-                priority: "Medium",
-                actions: "view",
-              },
-              {
-                kpCase: "2024-008",
-                barangayCase: "3",
-                date: "12/12/24",
-                type: "Sexual Misconduct",
-                status: "Resolved",
-                priority: "High",
-                actions: "view",
-              },
-              {
-                kpCase: "2024-009",
-                barangayCase: "3",
-                date: "12/12/24",
-                type: "Sexual Misconduct",
-                status: "In Progress",
-                priority: "Low",
-                actions: "view",
-              },
-              {
-                kpCase: "2024-010",
-                barangayCase: "3",
-                date: "12/12/24",
-                type: "Sexual Misconduct",
-                status: "In Progress",
-                priority: "High",
-                actions: "view",
-              },
-              {
-                kpCase: "2024-011",
-                barangayCase: "3",
-                date: "12/12/24",
-                type: "Sexual Misconduct",
-                status: "Pending",
-                priority: "Low",
-                actions: "view",
-              },
-            ].map((complaint, index) => {
-              // Dynamically apply styles for the Status column
-              const getStatusStyles = (status) => {
-                switch (status) {
-                  case "Pending":
-                    return { color: "#FA8C16", backgroundColor: "#FFE1C1" };
-                  case "Resolved":
-                    return { color: "#1F4B2C", backgroundColor: "#D5F5AD" };
-                  case "In Progress":
-                    return { color: "#1367B5", backgroundColor: "#BADEFF" };
-                  default:
-                    return {};
-                }
-              };
-
-              // Dynamically apply styles for the Priority column
-              const getPriorityStyles = (priority) => {
-                switch (priority) {
-                  case "Medium":
-                    return { color: "#9A7723", backgroundColor: "#FFF3B1" };
-                  case "High":
-                    return { color: "#AE3132", backgroundColor: "#FFACAD" };
-                  case "Low":
-                    return { color: "#57259D", backgroundColor: "#D2B3FD" };
-                  default:
-                    return {};
-                }
-              };
-
-              // Determine the background color for the row (alternating)
-              const rowBackgroundColor =
-                index % 2 === 0 ? "#FAF8F8" : "#FFFFFF";
-
-              return (
-                <tr key={index} style={{ backgroundColor: rowBackgroundColor }}>
-                  <td>{complaint.kpCase}</td>
-                  <td>{complaint.barangayCase}</td>
-                  <td>{complaint.date}</td>
-                  <td>{complaint.type}</td>
-                  <td>
-                    <span
-                      style={{
-                        ...getStatusStyles(complaint.status),
-                        padding: "4px 7px",
-                        borderRadius: "5px",
-                        fontWeight: "bold",
-                        display: "inline-flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        width: "110px", // Fixed width for Status (larger size)
-                        height: "25px", // Fixed height for Status
-                        textAlign: "center",
-                      }}
-                    >
-                      {complaint.status}
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      style={{
-                        ...getPriorityStyles(complaint.priority),
-                        padding: "4px 7px",
-                        borderRadius: "5px",
-                        fontWeight: "bold",
-                        display: "inline-flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        width: "90px", // Fixed width for Priority (smaller size)
-                        height: "25px", // Fixed height for Priority
-                        textAlign: "center",
-                      }}
-                    >
-                      {complaint.priority}
-                    </span>
-                  </td>
-                  <td>
-                    <i>{complaint.actions}</i>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+          ))
+        ) : (
+          <tr>
+            <td colSpan="7" style={{ textAlign: "center" }}>
+              {console.log("No complaints to display")}
+              No recent complaints found
+            </td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+  </div>
+);
       </div>
     </div>
   );

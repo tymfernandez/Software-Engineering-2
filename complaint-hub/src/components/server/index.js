@@ -2,11 +2,15 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const bcrypt = require("bcryptjs");
-const Counter = require("./models/counter"); // Import Counter model
+const port = 3001;
+const Counter = require("./models/counter");
 const userModel = require("./models/user");
 const form7Model = require("./models/form7");
 const form8Model = require("./models/form8");
 const form9Model = require("./models/form9");
+const Complaint = require("./models/complaint");
+const Form14 = require("./models/form14");
+const Form22Model = require("./models/form22");
 
 const app = express();
 app.use(express.json());
@@ -47,6 +51,42 @@ const form9Db = mongoose.createConnection(
 form9Db.on("connected", () => {
   console.log("Connected to 'form9_data' database");
 });
+
+//connect to the 'form14_data' database for Form 14 data
+const form14Db = mongoose.createConnection(
+  "mongodb://127.0.0.1:27017/form14_data",
+  { useNewUrlParser: true, useUnifiedTopology: true }
+);
+form14Db.on("connected", () => {
+  console.log("Connected to 'form14_data' database");
+});
+
+// Connect to the 'form22_data' database for Form 22 data
+const form22Db = mongoose.createConnection(
+  "mongodb://127.0.0.1:27017/form22_data",
+  { useNewUrlParser: true, useUnifiedTopology: true }
+);
+
+form22Db.on("connected", () => {
+  console.log("Connected to 'form14_data' database");
+});
+
+// Connect to the 'dashboard' database
+const dashboardDb = mongoose.createConnection(
+  "mongodb://127.0.0.1:27017/dashboard",
+  { useNewUrlParser: true, useUnifiedTopology: true }
+);
+
+dashboardDb.on("connected", () => {
+  console.log("Connected to 'dashboard' database");
+});
+
+dashboardDb.on("error", (err) => {
+  console.log("Error connecting to 'dashboard' database:", err);
+});
+
+// Export dashboardDb
+module.exports = { dashboardDb };
 
 // Login route
 app.post("/login", (req, res) => {
@@ -235,6 +275,226 @@ app.post("/form9", async (req, res) => {
   }
 });
 
-app.listen(3001, () => {
-  console.log("server is running!!");
+app.get("/form14/autogenerate", async (req, res) => {
+  try {
+    // Fetch the next counter values for kpCaseNumber and usapingBlg
+    const kpCaseNumberCounter = await Counter.findOne({ name: "kpCaseNumber" });
+    const usapingBlgCounter = await Counter.findOne({ name: "usapingBlg" });
+
+    if (!kpCaseNumberCounter || !usapingBlgCounter) {
+      return res.status(400).json({ message: "Counter data not found." });
+    }
+
+    // Return the next auto-generated numbers
+    res.json({
+      kpCaseNumber: kpCaseNumberCounter.count + 1,
+      usapingBlg: usapingBlgCounter.count + 1,
+    });
+  } catch (err) {
+    console.error("Error in Form22 autogenerate:", err);
+    res.status(500).json({ error: "Error fetching auto-generated numbers" });
+  }
+});
+
+// Form14 route
+app.post("/form14", async (req, res) => {
+  try {
+    console.log("Received form data:", req.body); // Add this line
+    // Get next kpCaseNumber and usapingBlg
+    const kpCounter = await Counter.findOneAndUpdate(
+      { name: "kpCaseNumber" },
+      { $inc: { count: 1 } },
+      { new: true, upsert: true }
+    );
+
+    const blgCounter = await Counter.findOneAndUpdate(
+      { name: "usapingBlg" },
+      { $inc: { count: 1 } },
+      { new: true, upsert: true }
+    );
+
+    // Log the incoming form data
+    console.log("Counter values:", {
+      kp: kpCounter.count,
+      blg: blgCounter.count,
+    });
+
+    // Add the generated kpCaseNumber and usapingBlg to the form data
+    const form14Data = {
+      ...req.body, // Existing form data
+      form14KpNum: kpCounter.count, // Add the generated kpCaseNumber
+      form14Blg: blgCounter.count, // Add the generated usapingBlg
+    };
+
+    form14Db
+      .model("Form14", Form14.schema) // Use form7Db for the 'Form7' model
+      .create(form14Data)
+      .then((form14) => res.json(form14)) // Return the saved form7 data, including the generated numbers
+      .catch((err) => res.json(err));
+  } catch (err) {
+    res.json(err);
+  }
+});
+
+app.get("/form22/autogenerate", async (req, res) => {
+  try {
+    // Fetch the next counter values for kpCaseNumber and usapingBlg
+    const kpCaseNumberCounter = await Counter.findOne({ name: "kpCaseNumber" });
+    const usapingBlgCounter = await Counter.findOne({ name: "usapingBlg" });
+
+    if (!kpCaseNumberCounter || !usapingBlgCounter) {
+      return res.status(400).json({ message: "Counter data not found." });
+    }
+
+    // Return the next auto-generated numbers
+    res.json({
+      kpCaseNumber: kpCaseNumberCounter.count + 1,
+      usapingBlg: usapingBlgCounter.count + 1,
+    });
+  } catch (err) {
+    console.error("Error in Form22 autogenerate:", err);
+    res.status(500).json({ error: "Error fetching auto-generated numbers" });
+  }
+});
+
+// Form22 route
+app.post("/form22", async (req, res) => {
+  try {
+    console.log("Received form data:", req.body); // Add this line
+
+    // Get next kpCaseNumber and usapingBlg
+    const kpCounter = await Counter.findOneAndUpdate(
+      { name: "kpCaseNumber" },
+      { $inc: { count: 1 } },
+      { new: true, upsert: true }
+    );
+
+    const blgCounter = await Counter.findOneAndUpdate(
+      { name: "usapingBlg" },
+      { $inc: { count: 1 } },
+      { new: true, upsert: true }
+    );
+
+    // Log counter values
+    console.log("Counter values:", {
+      kp: kpCounter.count,
+      blg: blgCounter.count,
+    }); // Add this line
+
+    // Add the generated kpCaseNumber and usapingBlg to the form data
+    const form22Data = {
+      ...req.body, // Existing form data
+      form22KpNum: kpCounter.count, // Add the generated kpCaseNumber
+      form22Blg: blgCounter.count, // Add the generated usapingBlg
+    };
+
+    form22Db
+      .model("Form22", Form22Model.schema) // Use form8Db for the 'Form8' model
+      .create(form22Data)
+      .then((form22) => res.json(form22)) // Return the saved form8 data, including the generated numbers
+      .catch((err) => res.json(err));
+  } catch (err) {
+    res.status(500).json({ error: "Error saving Form 8" });
+  }
+});
+
+// Get dashboard statistics
+app.get("/api/dashboard/statistics", async (req, res) => {
+  try {
+    const totalComplaints = await Complaint.countDocuments();
+    const pendingComplaints = await Complaint.countDocuments({
+      status: "Pending",
+    });
+    const inProgressComplaints = await Complaint.countDocuments({
+      status: "In Progress",
+    });
+    const resolvedComplaints = await Complaint.countDocuments({
+      status: "Resolved",
+    });
+
+    // Get complaint type breakdown
+    const typeBreakdown = await Complaint.aggregate([
+      {
+        $group: {
+          _id: "$type",
+          count: { $sum: 1 },
+        },
+      },
+    ]);
+
+    res.json({
+      totalComplaints,
+      pendingComplaints,
+      inProgressComplaints,
+      resolvedComplaints,
+      typeBreakdown,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// Get recent complaints
+app.get("/getRecent", async (req, res) => {
+  try {
+    const form7Data = await form7Model
+      .find()
+      .sort({ createdAt: -1 })
+      .limit(5)
+      .select(
+        "kpCaseNumber maySumbong ipinagsumbong usapingBlg ukolSa reklamo kalunasan day month year createdAt"
+      ); // Select specific fields
+
+    console.log("Fetched form7Data:", form7Data); // Log the fetched data
+
+    res.json(form7Data);
+  } catch (error) {
+    console.error("Error fetching recent complaints:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// Get complaints by time period
+app.get("/api/dashboard/trends/:period", async (req, res) => {
+  const { period } = req.params;
+  const now = new Date();
+  let dateFilter = {};
+
+  switch (period) {
+    case "weekly":
+      dateFilter = {
+        date: {
+          $gte: new Date(now.setDate(now.getDate() - 7)),
+        },
+      };
+      break;
+    case "monthly":
+      dateFilter = {
+        date: {
+          $gte: new Date(now.setMonth(now.getMonth() - 1)),
+        },
+      };
+      break;
+    case "yearly":
+      dateFilter = {
+        date: {
+          $gte: new Date(now.setFullYear(now.getFullYear() - 1)),
+        },
+      };
+      break;
+    default:
+      return res.status(400).json({ message: "Invalid period" });
+  }
+
+  try {
+    const complaints = await complaints.find(dateFilter).sort({ date: 1 });
+    res.json(complaints);
+  } catch (error) {
+    console.error("Error fetching trend data:", error);
+    res.status(500).json({ message: error.message });
+  }
+});
+
+app.listen(port, () => {
+  console.log(`server is running on port ${port}`);
 });
