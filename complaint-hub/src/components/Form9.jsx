@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import "../main.css";
-import Header from "./Header";
+import Header from "./Header"; //
+import FormDocu9 from "./FormDocu9"; //
 
 const Form9 = () => {
   const [values, setValues] = useState({
@@ -194,8 +197,7 @@ const Form9 = () => {
                   placeholder=" "
                 />
                 <label className="form9-ipinagsusumbong">
-                  {" "}
-                  (Mga) Ipinagsusumbong{" "}
+                  {" "}(Mga) Ipinagsusumbong{" "}
                 </label>
               </div>
 
@@ -329,9 +331,8 @@ const Form9 = () => {
             </div>
           </form>
         </div>
-
+      
         {/* ------------------------------------------ */}
-
         <div className="form9-patawag-form-container">
           <form className="form9-patawag-form">
             <div className="form9-kp-input">
@@ -349,8 +350,7 @@ const Form9 = () => {
             {/* ULAT NG OPISYAL Section */}
             <div className="form-group">
               <label className="form9-centered-label">
-                {" "}
-                <br /> ULAT NG OPISYAL
+                {" "}<br /> ULAT NG OPISYAL
               </label>
               <div className="form9-name-input">
                 <label className="form9-indent">
@@ -468,7 +468,7 @@ const Form9 = () => {
                   </label>
                 </div>
                 <label className="form9-four">
-                  tanggapan/lugar ng kanyang pinagtatrabahuan kay
+                tanggapan/lugar ng kanyang pinagtatrabahuan kay
                 </label>
                 <div className="form9-reasons-input">
                   <input
@@ -483,6 +483,7 @@ const Form9 = () => {
                 </div>
                 <label className="form9-four">namamahala dito.</label>
               </div>
+              <label className="form9-four">namamahala dito.</label>
             </div>
             <br />
             <div className="form9-sign-container">
@@ -518,8 +519,9 @@ const Form9 = () => {
           </form>
         </div>
         <div className="form9-button-group">
-          <button
-            type="button"
+          <PDFDownloadLink
+            document={<FormDocu9 data={formData} />}
+            fileName="form9.pdf"
             className="form9-print-button"
             onClick={() => window.print()}
           >
@@ -534,6 +536,31 @@ const Form9 = () => {
             {isLoading ? "Submitting..." : "Next"}
           </button>
         </div>
+        
+        {/* Pop-up Modal */}
+        {showPopup && (
+          <div className="form9-popup-overlay">
+            <div className="form9-popup-content">
+            <img
+                src="/successIcon.png"
+                alt="Success Icon"
+                className="success-icon"
+              />
+            <h2>Success!</h2>
+              <p>
+                Form 8 & 9 successfully submitted. Please click the button to
+                continue to Complaints page.
+              </p>
+              <button
+                className="form9-popup-continue-button"
+                onClick={handleContinue}
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        )}
+
       </div>
     </div>
   );

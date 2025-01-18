@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Import navigate
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import "../main.css";
 import Header from "./Header";
+import Header from "./Header"; //
+import FormDocu7 from "./FormDocu7";
 
 const Form7 = () => {
   const [kpCaseNumber, setKpCaseNumber] = useState(""); // Store kpCaseNumber
@@ -156,17 +160,29 @@ const Form7 = () => {
               <label>.</label>
             </div>
             <br />
-            <div className="button-group">
-              <button type="button" className="print-button" onClick={() => window.print()}>
-                Print
-              </button>
-              <button type="submit" className="next-button">
-                Next
-              </button>
-            </div>
-          </form>
-        </div>
+        </form>
       </div>
+      <div className="form7-button-group">
+          <PDFDownloadLink
+            document={<FormDocu7 data={formData} />}
+            fileName="form7.pdf"
+            className="form7-print-button"
+          >
+            {({ blob, url, loading, error }) =>
+              loading ? "Loading document..." : "Print"
+            }
+          </PDFDownloadLink>
+          
+          <button
+            className="form7-next-button"
+            onClick={handleNext}
+            style={{ marginLeft: "10px" }} // Optional styling
+          >
+            Next
+          </button>
+      </div>
+
+
     </div>
   );
 };

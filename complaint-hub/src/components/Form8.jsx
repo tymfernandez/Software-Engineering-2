@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import "../main.css";
-import Header from "./Header";
+import Header from "./Header"; //
+import FormDocu8 from "./FormDocu8"; //
 
 const Form8 = () => {
   const [kpCaseNumber, setKpCaseNumber] = useState("");
@@ -219,6 +222,7 @@ const Form8 = () => {
             </div>
           </form>
         </div>
+
       </div>
     </div>
   );

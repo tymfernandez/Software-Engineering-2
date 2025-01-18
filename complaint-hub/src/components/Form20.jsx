@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "../main.css";
 import Header from "./Header"; 
 
 const Form20 = () => {
+
+  const [showSuccess, setShowSuccess] = useState(false);
+  const navigate = useNavigate(); // Initialize navigate
+  
+  const handleSubmit = () => {
+    setShowSuccess(true); // Show success modal
+  };
+  
+  const handleContinue = () => {
+    navigate("/complaints"); // Navigate to Complaints page
+  };
+
   return (
     <div className="form20-page">
       <Header showButton={false} />
@@ -138,11 +151,37 @@ const Form20 = () => {
           >
             Print
           </button>
-          <button type="button" className="form20-next-button">
-            {" "}
-            Next{" "}
+          {/* Submit Button */}
+          <button
+              className="form20-next-button"
+              onClick={handleSubmit}
+          >
+              Submit
           </button>
         </div>
+
+        {showSuccess && (
+          <div className="form9-popup-overlay">
+            <div className="form9-popup-content">
+            <img
+                src="/successIcon.png"
+                alt="Success Icon"
+                className="success-icon"
+              />
+            <h2>Success!</h2>
+              <p>
+                Form 20 successfully submitted. Please click the button to
+                continue to Complaints page.
+              </p>
+              <button
+                className="form9-popup-continue-button"
+                onClick={handleContinue}
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

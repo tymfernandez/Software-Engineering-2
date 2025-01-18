@@ -9,10 +9,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Sidebar from "./components/Sidebar";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
+import Report from "./components/Report"; 
+import Complaints from "./components/Complaints"; 
+import Support from "./components/Support";
 import BlotterForm from "./components/BlotterForm";
 import Login from "./components/Login";
 import SignUp from "./components/signup";
 import Form7 from "./components/Form7";
+import Form7Next from "./components/Form7Next";
 import Form8 from "./components/Form8";
 import Form9 from "./components/Form9";
 import Form14 from "./components/Form14";
@@ -53,8 +57,12 @@ const App = () => {
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/report" element={<Report />} />
+          <Route path="/complaints" element={<Complaints />} />
+          <Route path="/support" element={<Support />} />
           <Route path="/blotter-form" element={<BlotterForm />} />
           <Route path="/form7" element={<Form7 />} />
+          <Route path="/next" element={<Form7Next />} />
           <Route path="/form8" element={<Form8 />} />
           <Route path="/form9" element={<Form9 />} />
           <Route path="/form14" element={<Form14 />} />
