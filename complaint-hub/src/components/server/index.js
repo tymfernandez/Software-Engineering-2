@@ -68,7 +68,7 @@ const form22Db = mongoose.createConnection(
 );
 
 form22Db.on("connected", () => {
-  console.log("Connected to 'form14_data' database");
+  console.log("Connected to 'form22_data' database");
 });
 
 // Connect to the 'dashboard' database
