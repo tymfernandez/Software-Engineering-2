@@ -18,7 +18,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js"; // Import necessary components for Chart.js
-import { set } from "mongoose";
 
 // Register the Chart.js components
 ChartJS.register(
@@ -51,50 +50,20 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchComplaints = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/getRecent");
+        const response = await axios.get("http://localhost:3001/form7");
         setRecentComplaints(response.data);
+        setStatistics((prevStats) => ({
+          ...prevStats,
+          totalComplaints: response.data.length,
+        }));
       } catch (error) {
         setError("Failed to fetch recent complaints. Please try again later.");
         console.error("Error fetching recent complaints:", error.message);
       }
     };
-  
+
     fetchComplaints();
   }, []);
-
-  // Render recent complaints
-  const renderRecentComplaints = () => {
-    return recentComplaints.map((complaint, index) => (
-      <div key={index} className="complaint-item">
-        <p>
-          <strong>KP Case Number:</strong> {complaint.kpCaseNumber}
-        </p>
-        <p>
-          <strong>May Sumbong:</strong> {complaint.maySumbong}
-        </p>
-        <p>
-          <strong>Ipinagsumbong:</strong> {complaint.ipinagsumbong}
-        </p>
-        <p>
-          <strong>Usaping Blg:</strong> {complaint.usapingBlg}
-        </p>
-        <p>
-          <strong>Ukol Sa:</strong> {complaint.ukolSa}
-        </p>
-        <p>
-          <strong>Reklamo:</strong> {complaint.reklamo}
-        </p>
-        <p>
-          <strong>Kalunasan:</strong> {complaint.kalunasan}
-        </p>
-        <p>
-          <strong>Date:</strong>{" "}
-          {`${complaint.day}/${complaint.month}/${complaint.year}`}
-        </p>
-      </div>
-    ));
-  };
-
   // Transform trend data for bar charts
   const getBarData = () => {
     const labels = trendData.map((item) => {
@@ -403,7 +372,7 @@ const Dashboard = () => {
         <div className="summary-card">
           <h3 className="card-title">Total Complaints Received</h3>
           <div className="card-content">
-            <span className="card-number">20</span>
+            <span className="card-number">{statistics.totalComplaints}</span>
             <img
               src="complaints-icon.png"
               alt="Complaints Icon"
@@ -419,7 +388,7 @@ const Dashboard = () => {
         <div className="summary-card">
           <h3 className="card-title">Pending Progress</h3>
           <div className="card-content">
-            <span className="card-number">10</span>
+            <span className="card-number">{statistics.totalComplaints}</span>
             <img
               src="progress-icon.png"
               alt="Progress Icon"
@@ -435,7 +404,7 @@ const Dashboard = () => {
         <div className="summary-card">
           <h3 className="card-title">Complaints in Progress</h3>
           <div className="card-content">
-            <span className="card-number">10</span>
+            <span className="card-number">{statistics.totalComplaints}</span>
             <img
               src="in-progress-icon.png"
               alt="In Progress Icon"
@@ -451,7 +420,7 @@ const Dashboard = () => {
         <div className="summary-card">
           <h3 className="card-title">Resolved Complaints</h3>
           <div className="card-content">
-            <span className="card-number">15</span>
+            <span className="card-number">{statistics.totalComplaints}</span>
             <img
               src="resolved-icon.png"
               alt="Resolved Icon"
@@ -698,57 +667,61 @@ const Dashboard = () => {
             />
             Recent Complaints
           </h3>
-          {renderRecentComplaints()}
           <h3 className="see-all">See all</h3>
         </div>
-        return (
-  <div>
-    <table className="recent-complaints-table">
-      <thead>
-        <tr>
-          <th>KP Case Number</th>
-          <th>Usaping Barangay Blg.</th>
-          <th>Date</th>
-          <th>Type</th>
-          <th>Status</th>
-          <th>Priority</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {recentComplaints.length > 0 ? (
-          recentComplaints.map((complaint) => (
-            <tr key={complaint._id}>
-              <td>{complaint.kpCase}</td>
-              <td>{complaint.usapingBlg}</td>
-              <td>{complaint.date}</td>
-              <td>{complaint.type}</td>
-              <td>{complaint.status}</td>
-              <td>{complaint.priority}</td>
-              <td>
-                <button
-                  onClick={() => {
-                    console.log("Viewing complaint:", complaint);
-                    handleViewComplaint(complaint._id);
-                  }}
-                >
-                  View
-                </button>
-              </td>
-            </tr>
-          ))
-        ) : (
-          <tr>
-            <td colSpan="7" style={{ textAlign: "center" }}>
-              {console.log("No complaints to display")}
-              No recent complaints found
-            </td>
-          </tr>
-        )}
-      </tbody>
-    </table>
-  </div>
-);
+
+        <div>
+          <table className="recent-complaints-table">
+            <thead>
+              <tr>
+                <th>KP Case Number</th>
+                <th>Usaping Barangay Blg.</th>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {recentComplaints.length > 0 ? (
+                recentComplaints.map((complaint) => (
+                  <tr key={complaint._id}>
+                    <td>{complaint.kpCaseNumber}</td>
+                    <td>{complaint.usapingBlg}</td>
+                    <td>
+                      {complaint.month && complaint.day && complaint.year
+                        ? `${complaint.month}/${complaint.day}/${complaint.year}`
+                        : "N/A"}
+                    </td>
+                    <td>{complaint.ukolSa}</td>
+                    <td>{complaint.status}</td>
+                    <td>{complaint.priority}</td>
+                    <td>
+                      <a
+                        href="#"
+                        className="view-link"
+                        onClick={() => {
+                          console.log("Viewing complaint:", complaint);
+                          handleViewComplaint(complaint._id);
+                        }}
+                      >
+                        View
+                      </a>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="7" style={{ textAlign: "center" }}>
+                    {console.log("No complaints to display")}
+                    No recent complaints found
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

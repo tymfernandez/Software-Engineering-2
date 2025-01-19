@@ -1,10 +1,8 @@
-//AUTO INCREMENT COUNTER//
-
 const mongoose = require("mongoose");
 
 const counterSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  count: { type: Number, default: 0 }
+  name: { type: String, required: true, unique: true },
+  count: { type: Number, default: 0 },
 });
 
 const Counter = mongoose.model("Counter", counterSchema);

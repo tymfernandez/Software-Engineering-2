@@ -141,7 +141,33 @@ app.post("/register", (req, res) => {
   });
 });
 
-// Form7 route
+// First, update your GET route to use form7Db connection
+app.get("/form7", async (req, res) => {
+  try {
+    console.log("GET /form7 route hit");
+
+    // Use form7Db connection to get the Form7 model
+    const Form7Model = form7Db.model("Form7", form7Model.schema);
+
+    const form7Data = await Form7Model.find({})
+      .sort({ createdAt: -1 })
+      .lean()
+      .exec();
+
+    console.log(`Retrieved ${form7Data.length} documents`);
+
+    return res.json(form7Data);
+  } catch (err) {
+    console.error("Error in GET /form7:", err);
+    return res.status(500).json({
+      error: "Internal Server Error",
+      message: err.message,
+      details: process.env.NODE_ENV === "development" ? err.stack : undefined,
+    });
+  }
+});
+
+// Update your POST route as well
 app.post("/form7", async (req, res) => {
   try {
     // Get next kpCaseNumber and usapingBlg
@@ -157,24 +183,25 @@ app.post("/form7", async (req, res) => {
       { new: true, upsert: true }
     );
 
-    // Log the incoming form data
-    console.log(req.body);
-
-    // Add the generated kpCaseNumber and usapingBlg to the form data
     const form7Data = {
-      ...req.body, // Existing form data
-      kpCaseNumber: kpCounter.count, // Add the generated kpCaseNumber
-      usapingBlg: blgCounter.count, // Add the generated usapingBlg
+      ...req.body,
+      kpCaseNumber: kpCounter.count,
+      usapingBlg: blgCounter.count,
     };
 
-    // Create the form7 entry with the additional data
-    form7Db
-      .model("Form7", form7Model.schema) // Use form7Db for the 'Form7' model
-      .create(form7Data)
-      .then((form7) => res.json(form7)) // Return the saved form7 data, including the generated numbers
-      .catch((err) => res.json(err));
+    // Use form7Db connection to get the Form7 model
+    const Form7Model = form7Db.model("Form7", form7Model.schema);
+    const newForm7 = new Form7Model(form7Data);
+    const savedForm7 = await newForm7.save();
+
+    res.status(201).json(savedForm7);
   } catch (err) {
-    res.json(err);
+    console.error("Error in POST /form7:", err);
+    res.status(500).json({
+      error: "Internal Server Error",
+      message: err.message,
+      details: process.env.NODE_ENV === "development" ? err.stack : undefined,
+    });
   }
 });
 

@@ -1,60 +1,73 @@
 const mongoose = require("mongoose");
 
 // Form 7 Schema
-const form7Schema = new mongoose.Schema({
-  kpCaseNumber: {
-    type: String,
-    required: true,
-    trim: true,
+const form7Schema = new mongoose.Schema(
+  {
+    kpCaseNumber: {
+      type: Number, // Changed to Number since we're using a counter
+      required: true,
+    },
+    maySumbong: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    ipinagsumbong: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    usapingBlg: {
+      type: Number, // Changed to Number since we're using a counter
+      required: true,
+    },
+    ukolSa: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    reklamo: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    kalunasan: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    day: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    month: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    year: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    status: {
+      // Added status field
+      type: String,
+      default: "Pending",
+      enum: ["Pending", "In Progress", "Resolved", "Closed"],
+    },
+    priority: {
+      // Added priority field
+      type: String,
+      default: "Medium",
+      enum: ["Low", "Medium", "High"],
+    },
   },
-  maySumbong: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  ipinagsumbong: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  usapingBlg: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  ukolSa: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  reklamo: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  kalunasan: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  day: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  month: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  year: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-}, {
-  timestamps: true, // Add timestamps to track creation and update times
-});
+  {
+    timestamps: true,
+  }
+);
 
-// Export Form 7 Model
-module.exports = mongoose.model("Form7", form7Schema);
+const Form7 = mongoose.model("Form7", form7Schema);
+module.exports = Form7;
