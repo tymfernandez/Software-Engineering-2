@@ -31,9 +31,44 @@ import Form22 from "./components/Form22";
 import Form23 from "./components/Form23";
 import Form24 from "./components/Form24";
 import Form25 from "./components/Form25";
+import Form7View from "./components/Form7View";
+import Form8View from "./components/Form8View";
 import "./components/App.css";
 
 const App = () => {
+  const formData = {
+    form7KpCaseNumber: "",
+    form7MaySumbong: " ",
+    form7Blg: "",
+    form7UkolSa: "",
+    reklamo: "",
+    resolutionRequest: "",
+    form7Day: "",
+    form7Month: "",
+    form7Year: "",
+    form7ReceiveDay: "",
+    form7ReceiveMonth: "",
+    form7ReceiveYear: "",
+    
+    form8KpCaseNumber: "",
+    form8Kay: "",
+    form8Sumbong: "",
+    form8Date: "",
+    form8Day: "",
+    form8Month: "",
+    form8Year: "",
+    form8DayUtos: "",
+    form8MonthUtos: "",
+    form8YearUtos: "",
+    form8DayNow: "",
+    form8MonthNow: "",
+    form8YearNow: "",
+    form8DayBiso: "",
+    form8MonthBiso: "",
+    form8YearBiso: "",
+    form8Time: "",
+  };
+  
   const [isCollapsed, setIsCollapsed] = useState(false); // State to control sidebar collapse
   const location = useLocation();
 
@@ -77,6 +112,8 @@ const App = () => {
           <Route path="/form23" element={<Form23 />} />
           <Route path="/form24" element={<Form24 />} />
           <Route path="/form25" element={<Form25 />} />
+          <Route path="/form7/view" element={<Form7View formData={formData} />} />
+          <Route path="/form8/view" element={<Form8View formData={formData}/>} />
         </Routes>
       </div>
     </div>

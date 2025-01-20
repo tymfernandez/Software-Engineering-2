@@ -2576,7 +2576,6 @@ html, body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
   width: 50% !important;
-  position: sticky;
 }
 
 .form7-title {
@@ -2635,7 +2634,9 @@ html, body {
   text-align: right;
   margin-bottom: 8px;
   gap: 5px;
+  justify-content: flex-end;
 }
+
 
 #form7-kpCaseNumber {
   width: 120px !important;
@@ -3085,6 +3086,25 @@ label {
 
 .continue-button:hover {
   background-color: #2980b9;
+}
+
+/*Form7View page*/
+.form7-view-page {
+  background-color: white;
+  padding: 40px 60px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  width: 80%;
+}
+
+.form7-view-container {
+  font-family: Arial, sans-serif;
+}
+
+p {
+  margin: 10px 0;
+  font-size: 1rem;
 }
 
 
