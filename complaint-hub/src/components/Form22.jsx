@@ -1,9 +1,34 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import "../main.css";
-import Header from "./Header";
+import Header from "./Header"; //
+import FormDocu22 from "./FormDocu22"; //
 
 const Form22 = () => {
+  const [formData, setFormData] = useState({
+      form22KpNum: "",
+      form22Blg: "",
+      form22Ukol: "",
+      form22MaySumbong: "",
+      form22MaySumbong1: "",
+      form22Ipinagsumbong: "",
+      form22Ipinagsumbong1: "",
+      form22Pangalan: "",
+      form22Pangalan1: "",
+      form22Day: "",
+      form22Month: "",
+      form22Year: "",
+    });
+  
+    const handleInputChange = (e) => {
+      const { id, value } = e.target;
+      setFormData((prevData) => ({
+        ...prevData,
+        [id]: value,
+      }));
+    };
+
   const [showSuccess, setShowSuccess] = useState(false);
   const navigate = useNavigate(); // Initialize navigate
 
@@ -28,7 +53,7 @@ const Form22 = () => {
           <form className="form22">
             <div className="form22-kp-input">
               <label className="form22-kpcase">KP Case Number:</label>
-              <input type="text" id="form22-kpnum" placeholder=" " />
+              <input type="text" id="form22KpNum" onChange={handleInputChange} />
             </div>
             <div className="form22-pormularyoblg">
               <label className="form22-pormularyo">Pormularyo ng KP Blg. 22</label>
@@ -48,24 +73,24 @@ const Form22 = () => {
             </div>
             <div className="form-row two-columns centered-row">
               <div className="form-group">
-              <input type="text" id="form22-maysumbong" />
-              <input type="text" id="form22-maysumbong" />
+              <input type="text" id="form22MaySumbong" onChange={handleInputChange}/>
+              <input type="text" id="form22MaySumbong1" onChange={handleInputChange}/>
                 <label className="form22-sumbong">
                   (Mga) May Sumbong <br /> -laban kay/kina-
                 </label>
-                <input type="text" id="form22-ipinagsumbong" /> 
-                <input type="text" id="form22-ipinagsumbong" /> 
+                <input type="text" id="form22Ipinagsumbong" onChange={handleInputChange} /> 
+                <input type="text" id="form22Ipinagsumbong1" onChange={handleInputChange} /> 
                 <label className="form22-sumbong"> (Mga) Ipinagsusumbong </label>
               </div>
               
               <div className="form-group">
                 <div className="form22-blg-input">
                   <label>Usaping Barangay Blg. </label>
-                  <input type="text" id="form22-blg" placeholder=" " />
+                  <input type="text" id="form22Blg" onChange={handleInputChange} />
                 </div>
                 <div className="form22-ukol-input">
                   <label>Ukol sa</label>
-                  <input type="text" />
+                  <input type="text" id="form22Ukol" onChange={handleInputChange} />
                 </div>
               </div>
             </div>
@@ -83,9 +108,9 @@ const Form22 = () => {
             </div>
             <div className="form22-form-input">
               <label>sina</label>
-              <input type="text" id="form22-pangalan" placeholder=" " />
+              <input type="text" id="form22Pangalan" onChange={handleInputChange} />
               <label>(pangalan) at </label>
-              <input type="text" id="form22-pangalan" placeholder=" " />
+              <input type="text" id="form22Pangalan1" onChange={handleInputChange} />
               <label>(pangalan) </label>
             </div>
             <div className="form22-form-input">
@@ -100,11 +125,11 @@ const Form22 = () => {
             <br />
             <div className="form22-form-input">
               <label className="form22-indent">Ngayong ika-</label>
-              <input type="text" id="form22-day" placeholder=" " />
+              <input type="text" id="form22Day" onChange={handleInputChange} />
               <label>araw ng</label>
-              <input type="text" id="form22-month" placeholder=" " />
+              <input type="text" id="form22Month" onChange={handleInputChange} />
               <label>, 20</label>
-              <input type="text" id="form22-year" placeholder=" " />
+              <input type="text" id="form22Year" onChange={handleInputChange} />
               <label>.</label>
             </div>
             <br />
@@ -133,13 +158,15 @@ const Form22 = () => {
         </div>
 
         <div className="form22-button-group">
-          <button
-            type="button"
+        <PDFDownloadLink
+            document={<FormDocu22 data={formData} />}
+            fileName="form22.pdf"
             className="form22-print-button"
-            onClick={() => window.print()}
           >
-            Print
-          </button>
+            {({ blob, url, loading, error }) =>
+              loading ? "Loading document..." : "Print"
+            }
+          </PDFDownloadLink>
           <button
             type="button"
             className="form22-next-button"

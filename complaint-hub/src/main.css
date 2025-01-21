@@ -2649,8 +2649,6 @@ html, body {
 .form7-container, .form7-page {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Center-align the text */
@@ -7035,7 +7033,7 @@ label {
   line-height: 1.5;
 }
 
-.form22-kp-input input {
+#form22KpNum {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
@@ -7071,16 +7069,25 @@ label {
   width: 250px;
 }
 
-#form22-maysumbong {
+#form22MaySumbong {
   width: 300px;
   margin-bottom: 10px;
 }
 
-#form22-ipinagsumbong {
+#form22MaySumbong1 {
   width: 300px;
   margin-bottom: 10px;
 }
 
+#form22Ipinagsumbong {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+#form22Ipinagsumbong1 {
+  width: 300px;
+  margin-bottom: 10px;
+}
 
 .form22-sumbong {
   margin-bottom: 25px;
@@ -7105,7 +7112,7 @@ label {
   justify-content: flex-end;
 }
 
-.form22-blg-input input {
+#form22Blg {
   width: 50px !important;
   height: 35px;
   box-sizing: border-box;
@@ -7119,27 +7126,11 @@ label {
   justify-content: flex-end;
 }
 
-.form22-ukol-input input {
+#form22Ukol {
   width: 155px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
-}
-
-.form22-kay-input {
-  display: flex;
-  gap: 1px;
-  align-items: center;
-}
-
-.form22-kay-input input {
-  height: 38px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-
-#form22-kay {
-  width: 270px;
 }
 
 .form22-form-input {
@@ -7161,19 +7152,25 @@ label {
   text-align: justify;
 }
 
-#form22-year {
+#form22Year {
   width: 40px;
 }
 
-#form22-day {
+#form22Day {
   width: 50px;
 }
 
-#form22-time {
+#form22Time {
   width: 70px;
 }
 
-#form22-pangalan {
+#form22Pangalan {
+  width: 260px !important;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+#form22Pangalan1 {
   width: 260px !important;
   height: 30px;
   box-sizing: border-box;
@@ -7254,6 +7251,7 @@ label {
   color: white;
   font-weight: bold;
   width: 150px;
+  text-align: center;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
