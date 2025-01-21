@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import { Bar, Doughnut } from "react-chartjs-2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -36,6 +37,7 @@ const Dashboard = () => {
   const [selectedGraphLabel, setSelectedGraphLabel] = useState("Monthly");
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const [statistics, setStatistics] = useState({
     totalComplaints: 0,
@@ -355,7 +357,13 @@ const Dashboard = () => {
       {/* Header Section with Submit Blotter Button */}
       <Header />
       <div className="header-buttons">
-        <button onClick={handleSubmitBlotter} className="submit-blotter-header">
+        <button
+          onClick={() => {
+            console.log("Navigating to Blotter Form...");
+            navigate("/form7");
+          }}
+          className="submit-blotter-header"
+        >
           Submit Blotter
         </button>
       </div>

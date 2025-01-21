@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap");
@@ -2370,7 +2371,6 @@ body {
   color: #3c3c3c;
   text-decoration: none;
   cursor: pointer;
-  
 }
 
 /*-----BLOTTER FORM-----*/
@@ -2577,7 +2577,6 @@ html, body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
   width: 50% !important;
-  position: sticky;
 }
 
 .form7-title {
@@ -2636,7 +2635,9 @@ html, body {
   text-align: right;
   margin-bottom: 8px;
   gap: 5px;
+  justify-content: flex-end;
 }
+
 
 #form7-kpCaseNumber {
   width: 120px !important;
@@ -2649,8 +2650,6 @@ html, body {
 .form7-container, .form7-page {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Center-align the text */
@@ -3086,6 +3085,25 @@ label {
 
 .continue-button:hover {
   background-color: #2980b9;
+}
+
+/*Form7View page*/
+.form7-view-page {
+  background-color: white;
+  padding: 40px 60px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  width: 80%;
+}
+
+.form7-view-container {
+  font-family: Arial, sans-serif;
+}
+
+p {
+  margin: 10px 0;
+  font-size: 1rem;
 }
 
 
@@ -7016,7 +7034,7 @@ label {
   line-height: 1.5;
 }
 
-.form22-kp-input input {
+#form22KpNum {
   width: 150px;
   height: 30px;
   box-sizing: border-box;
@@ -7052,16 +7070,25 @@ label {
   width: 250px;
 }
 
-#form22-maysumbong {
+#form22MaySumbong {
   width: 300px;
   margin-bottom: 10px;
 }
 
-#form22-ipinagsumbong {
+#form22MaySumbong1 {
   width: 300px;
   margin-bottom: 10px;
 }
 
+#form22Ipinagsumbong {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+#form22Ipinagsumbong1 {
+  width: 300px;
+  margin-bottom: 10px;
+}
 
 .form22-sumbong {
   margin-bottom: 25px;
@@ -7086,7 +7113,7 @@ label {
   justify-content: flex-end;
 }
 
-.form22-blg-input input {
+#form22Blg {
   width: 50px !important;
   height: 35px;
   box-sizing: border-box;
@@ -7100,27 +7127,11 @@ label {
   justify-content: flex-end;
 }
 
-.form22-ukol-input input {
+#form22Ukol {
   width: 155px !important;
   height: 35px;
   box-sizing: border-box;
   margin-bottom: 10px;
-}
-
-.form22-kay-input {
-  display: flex;
-  gap: 1px;
-  align-items: center;
-}
-
-.form22-kay-input input {
-  height: 38px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-
-#form22-kay {
-  width: 270px;
 }
 
 .form22-form-input {
@@ -7142,19 +7153,25 @@ label {
   text-align: justify;
 }
 
-#form22-year {
+#form22Year {
   width: 40px;
 }
 
-#form22-day {
+#form22Day {
   width: 50px;
 }
 
-#form22-time {
+#form22Time {
   width: 70px;
 }
 
-#form22-pangalan {
+#form22Pangalan {
+  width: 260px !important;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+#form22Pangalan1 {
   width: 260px !important;
   height: 30px;
   box-sizing: border-box;
@@ -7235,6 +7252,7 @@ label {
   color: white;
   font-weight: bold;
   width: 150px;
+  text-align: center;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;

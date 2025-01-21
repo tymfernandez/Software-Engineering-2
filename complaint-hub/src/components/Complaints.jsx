@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../main.css";
 import axios from "axios";
 import Header from "./Header";
@@ -9,6 +10,7 @@ const Complaints = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchForm7Data();
@@ -95,7 +97,10 @@ const Complaints = () => {
       <Header />
       <div className="header-buttons">
         <button
-          onClick={() => console.log("Navigating to Blotter Form...")}
+          onClick={() => {
+            console.log("Navigating to Blotter Form...");
+            navigate("/form7");
+          }}
           className="submit-blotter-header"
         >
           Submit Blotter
@@ -161,7 +166,14 @@ const Complaints = () => {
                     <td>{data.status}</td>
                     <td>{data.priority}</td>
                     <td>
-                      <a href="#" className="view-link">
+                      <a
+                        href="#"
+                        className="view-link"
+                        onClick={() => {
+                          console.log("Navigating to Form7View...");
+                          navigate("/form7view");
+                        }}
+                      >
                         View
                       </a>
                     </td>

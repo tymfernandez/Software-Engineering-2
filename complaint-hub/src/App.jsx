@@ -31,6 +31,8 @@ import Form22 from "./components/Form22";
 import Form23 from "./components/Form23";
 import Form24 from "./components/Form24";
 import Form25 from "./components/Form25";
+import Form7View from "./components/Form7View";
+import Form8View from "./components/Form8View";
 import "./components/App.css";
 
 const App = () => {
@@ -62,7 +64,7 @@ const App = () => {
           <Route path="/support" element={<Support />} />
           <Route path="/blotter-form" element={<BlotterForm />} />
           <Route path="/form7" element={<Form7 />} />
-          <Route path="/next" element={<Form7Next />} />
+          <Route path="/form7next" element={<Form7Next />} />
           <Route path="/form8" element={<Form8 />} />
           <Route path="/form9" element={<Form9 />} />
           <Route path="/form14" element={<Form14 />} />
@@ -77,6 +79,8 @@ const App = () => {
           <Route path="/form23" element={<Form23 />} />
           <Route path="/form24" element={<Form24 />} />
           <Route path="/form25" element={<Form25 />} />
+          <Route path="/form7view" element={<Form7View />} />
+          <Route path="/form8view" element={<Form8View />} />
         </Routes>
       </div>
     </div>

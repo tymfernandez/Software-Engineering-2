@@ -9,29 +9,27 @@ const Form7Next = () => {
   const [nextPage, setNextPage] = useState(""); // State to determine navigation path
   const navigate = useNavigate(); // React Router hook for navigation
 
+  const handleMediationChange = (event) => {
+    const value = event.target.value;
+    if (value === "yes") {
+      setPopupMessage(
+        "Form 7: Sumbong was successfully submitted. Please click the button to continue to Form 8: Paabiso ng Pagdinig sa Complainant."
+      );
+      setNextPage("/form8"); // Set next page to Form 8
+    } else {
+      setPopupMessage(
+        "Form 7: Sumbong was successfully submitted. Please click the button to continue to Complaints Page."
+      );
+      setNextPage("/complaints"); // Set next page to Complaint page
+    }
+    setIsPopupVisible(true); // Show popup
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault(); // Prevent default form behavior
     const selectedOption = document.querySelector(
       'input[name="mediation"]:checked'
     );
-
-    if (selectedOption) {
-      const value = selectedOption.value;
-      if (value === "yes") {
-        setPopupMessage(
-          "Form 7: Sumbong was successfully submitted. Please click the button to continue to Form 8: Paabiso ng Pagdinig sa Complainant."
-        );
-        setNextPage("/form8"); // Set next page to Form 8
-      } else {
-        setPopupMessage(
-          "Form 7: Sumbong was successfully submitted. Please click the button to continue to Complaints Page."
-        );
-        setNextPage("/complaint"); // Set next page to Complaint page
-      }
-      setIsPopupVisible(true); // Show popup
-    } else {
-      alert("Please select an option before submitting."); // Validation if no option is selected
-    }
   };
 
   const handleContinue = () => {
@@ -57,15 +55,25 @@ const Form7Next = () => {
                 hearing? <span className="hint">(choose below)</span>
               </p>
               <div className="form-options">
-                <div className="form-option">
-                  <input type="radio" id="yes" name="mediation" value="yes" />
-                  <label htmlFor="yes">Yes</label>
-                </div>
+              <div className="form-option">
+                <input
+                  type="radio"
+                  id="yes"
+                  name="mediation"
+                  value="yes"
+                  onChange={handleMediationChange}
+                />
+                <label htmlFor="yes">Yes</label>
               </div>
-              <div className="form-options">
-                <div className="form-option">
-                  <input type="radio" id="no" name="mediation" value="no" />
-                  <label htmlFor="no">No</label>
+              <div className="form-option">
+                <input
+                  type="radio"
+                  id="no"
+                  name="mediation"
+                  value="no"
+                  onChange={handleMediationChange}
+                />
+                <label htmlFor="no">No</label>
                 </div>
               </div>
               <br />
