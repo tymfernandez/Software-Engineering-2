@@ -5,16 +5,17 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Sidebar from "./components/Sidebar";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
-import Report from "./components/Report"; 
-import Complaints from "./components/Complaints"; 
+import Report from "./components/Report";
+import Complaints from "./components/Complaints";
 import Support from "./components/Support";
 import BlotterForm from "./components/BlotterForm";
 import Login from "./components/Login";
 import SignUp from "./components/signup";
+import PrivateRoute from "./components/PrivateRoute";
 import Form7 from "./components/Form7";
 import Form7Next from "./components/Form7Next";
 import Form8 from "./components/Form8";
@@ -57,7 +58,14 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/" element={<Login />} />
-          <Route path="/home" element={<Home />} />
+          <Route
+            path="/home"
+            element={
+              <PrivateRoute>
+                <Home />
+              </PrivateRoute>
+            }
+          />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/report" element={<Report />} />
           <Route path="/complaints" element={<Complaints />} />

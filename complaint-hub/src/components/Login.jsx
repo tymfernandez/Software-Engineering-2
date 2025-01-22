@@ -35,8 +35,8 @@ function Login() {
         console.log("Server response:", result.data); // Debugging response
 
         if (result.data.includes("Login successful")) {
-          // Check if response includes "Login successful"
-          navigate("/home"); // Redirect on success
+          localStorage.setItem('authToken', result.data.token); // Store auth token
+          navigate("/home"); // Redirect on successful login
         } else {
           setError({ login: "Invalid login credentials" });
         }
