@@ -122,7 +122,7 @@ const Complaints = () => {
       <div className="search-bar-container">
         <div className="search-bar-wrapper">
           <img
-            src="/search-icon.png"
+            src="../assets/search-icon.png"
             alt="Search Icon"
             className="search-icon"
           />

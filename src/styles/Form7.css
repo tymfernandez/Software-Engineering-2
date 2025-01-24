@@ -393,6 +393,60 @@ html, body {
   transform: scale(0.98);
 }
 
+.form7-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.form7-popup-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form7-popup-content h2 {
+  color: #2980b9;
+  margin-bottom: 10px;
+  font-style: bold;
+}
+
+.success-icon {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.form7-popup-content p {
+  color: #000000;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.form7-popup-continue-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form7-popup-continue-button:hover {
+  background-color: #2980b9;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .form-row {

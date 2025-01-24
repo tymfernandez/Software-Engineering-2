@@ -537,7 +537,7 @@ const Dashboard = () => {
             >
               <h3>
                 <img
-                  src="com-stats-icon.png"
+                  src="../assets/com-stats-icon.png"
                   alt="Icon"
                   className="com-stats-icon"
                 />

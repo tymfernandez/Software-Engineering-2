@@ -6,13 +6,14 @@ import "../styles/Login.css";
 function Signup() {
   const [values, setValues] = useState({
     name: "",
-    position: "Secretary", // Default value for dropdown
     username: "",
     password: "",
   });
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [passwordStrength, setPasswordStrength] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false); // For showing the signup success modal
+  const [modalMessage, setModalMessage] = useState(""); // Success message for modal
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -44,11 +45,16 @@ function Signup() {
     event.preventDefault();
     setIsLoading(true);
     setError("");
-
+    // Ensure the backend URL is correct
     axios
       .post("http://localhost:3001/register", values)
       .then(() => {
-        navigate("/login");
+        setModalMessage("Signup successful! \nRedirecting to Login...");
+        setShowModal(true); // Show success modal
+        setTimeout(() => {
+          navigate("/login"); // Redirect to login page after 2 seconds
+          setShowModal(false); // Close modal after redirect
+        }, 2000);
       })
       .catch((err) => {
         console.error("Error during signup:", err);
@@ -58,7 +64,6 @@ function Signup() {
         setIsLoading(false);
       });
   };
-
   return (
     <div className="outer-container">
       <div className="container">
@@ -118,7 +123,11 @@ function Signup() {
                   required
                 />
                 <img
-                  src={passwordVisible ? "../assets/eyeIcon.png" : "../assets/eyeSlashIcon.png"}
+                  src={
+                    passwordVisible
+                      ? "../assets/eyeIcon.png"
+                      : "../assets/eyeSlashIcon.png"
+                  }
                   alt={passwordVisible ? "Hide password" : "Show password"}
                   className="toggle-password-icon"
                   onClick={togglePasswordVisibility}
@@ -147,6 +156,20 @@ function Signup() {
           </p>
         </div>
       </div>
+        {/* Modal Popup for Signup Success */}
+        {showModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <p>{modalMessage}</p>
+            <button
+              className="modal-close-button"
+              onClick={() => setShowModal(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

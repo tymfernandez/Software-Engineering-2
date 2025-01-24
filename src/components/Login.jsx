@@ -9,8 +9,11 @@ function Login() {
     username: "",
     password: "",
   });
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const [error, setError] = useState({});
-  const [isLoading, setIsLoading] = useState(false); // Added isLoading state
+  const [isLoading, setIsLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false); // For showing the login success modal
+  const [modalMessage, setModalMessage] = useState(""); // Success message for modal
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -35,14 +38,20 @@ function Login() {
         console.log("Server response:", result.data); // Debugging response
 
         if (result.data.includes("Login successful")) {
-          localStorage.setItem('authToken', result.data.token); // Store auth token
-          navigate("/home"); // Redirect on successful login
+          setModalMessage("Login successful! Redirecting..."); // Success message for modal
+          setShowModal(true); // Show success modal
+          setTimeout(() => {
+            navigate("/home"); // Redirect to home after success
+            setShowModal(false); // Close modal after redirect
+          }, 2000);
         } else {
           setError({ login: "Invalid login credentials" });
         }
       } catch (err) {
         console.error("Error during login:", err);
-        setError({ login: "An error occurred during login. Please try again." });
+        setError({
+          login: "An error occurred during login. Please try again.",
+        });
       } finally {
         setIsLoading(false); // Stop loading indicator
       }
@@ -81,23 +90,32 @@ function Login() {
               )}
             </div>
 
-            {/* Password Field */}
-            <div className="form-group">
+             {/* Password Field */}
+             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                name="password"
-                value={values.password}
-                onChange={handleInputChange}
-                className="input"
-              />
+              <div className="input-wrapper">
+                <input
+                  type={passwordVisible ? "text" : "password"}
+                  name="password"
+                  value={values.password}
+                  onChange={handleInputChange}
+                  className="input"
+                />
+                {/* Eye Icon for Show/Hide Password */}
+                <img
+                  src={passwordVisible ? "../assets/eyeIcon.png" : "../assets/eyeSlashIcon.png"}
+                  alt={passwordVisible ? "Hide password" : "Show password"}
+                  className="toggle-password-icon"
+                  onClick={() => setPasswordVisible(!passwordVisible)}
+                />
+              </div>
               {error.password && (
                 <span className="error-text">{error.password}</span>
               )}
               <Link to="/forgot-password" className="forgot-password">
                 <i>Forgot password?</i>
               </Link>
-            </div>
+              </div>
 
             {error.login && <p className="error-text">{error.login}</p>}
 
@@ -120,6 +138,20 @@ function Login() {
           </p>
         </div>
       </div>
+      {/* Modal Popup for Login Success */}
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <p>{modalMessage}</p>
+            <button
+              className="modal-close-button"
+              onClick={() => setShowModal(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -164,4 +164,37 @@ body {
   width: 20px; /* Adjust size */
   height: 20px;
 }
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+}
+
+.modal-close-button {
+  text-align: center;
+  margin-left: 40px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-close-button:hover {
+  background-color: #2980b9;
+}
