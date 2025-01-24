@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "./Header";
-import "../styles/Dashboard.css";
-import { Bar } from "react-chartjs-2"; // Import Bar chart from chart.js
-import { Doughnut } from "react-chartjs-2";
+import { Bar, Doughnut } from "react-chartjs-2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import ChartDataLabels from "chartjs-plugin-datalabels"; // Import the plugin
 import Chart from "chart.js/auto";
+import axios from "axios";
+import "../styles/Dashboard.css";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 import {
@@ -19,7 +20,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js"; // Import necessary components for Chart.js
-import "../styles/Dashboard.css"; // Import the CSS specific to the Dashboard component
 
 // Register the Chart.js components
 ChartJS.register(
@@ -36,6 +36,105 @@ const Dashboard = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedGraph, setSelectedGraph] = useState("monthly");
   const [selectedGraphLabel, setSelectedGraphLabel] = useState("Monthly");
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  const [statistics, setStatistics] = useState({
+    totalComplaints: 0,
+    pendingComplaints: 0,
+    inProgressComplaints: 0,
+    resolvedComplaints: 0,
+    typeBreakdown: [],
+  });
+  const [trendData, setTrendData] = useState([]);
+  const [recentComplaints, setRecentComplaints] = useState([]);
+
+  useEffect(() => {
+    const fetchComplaints = async () => {
+      try {
+        const response = await axios.get("http://localhost:3001/form7");
+        setRecentComplaints(response.data);
+        setStatistics((prevStats) => ({
+          ...prevStats,
+          totalComplaints: response.data.length,
+        }));
+      } catch (error) {
+        setError("Failed to fetch recent complaints. Please try again later.");
+        console.error("Error fetching recent complaints:", error.message);
+      }
+    };
+
+    fetchComplaints();
+  }, []);
+  // Transform trend data for bar charts
+  const getBarData = () => {
+    const labels = trendData.map((item) => {
+      switch (selectedGraph) {
+        case "weekly":
+          return new Date(item.date).toLocaleDateString("en-US", {
+            weekday: "short",
+          });
+        case "monthly":
+          return new Date(item.date).toLocaleDateString("en-US", {
+            month: "short",
+          });
+        case "yearly":
+          return new Date(item.date).getFullYear().toString();
+        default:
+          return "";
+      }
+    });
+
+    const data = trendData.map((item) => item.count || 0);
+
+    return {
+      labels,
+      datasets: [
+        {
+          label: [],
+          data,
+          backgroundColor: "#003366",
+          borderRadius: 5,
+        },
+      ],
+    };
+  };
+
+  // Transform type breakdown for pie chart
+  const getPieData = () => {
+    const typeData = statistics.typeBreakdown || [];
+    const total = typeData.reduce((sum, item) => sum + item.count, 0);
+
+    return {
+      labels: typeData.map((item) => item._id),
+      datasets: [
+        {
+          data: typeData.map((item) => ((item.count / total) * 100).toFixed(2)),
+          backgroundColor: [
+            "#0C4094",
+            "#3B82F6",
+            "#466DAC",
+            "#355D9C",
+            "#A8C0E7",
+          ],
+          borderWidth: 0,
+          borderRadius: 3,
+          hoverOffset: 10,
+        },
+      ],
+    };
+  };
+
+  // Handle new complaint submission
+  const handleSubmitBlotter = async () => {
+    try {
+      // Navigate to blotter form or handle submission
+      console.log("Navigating to Blotter Form...");
+    } catch (error) {
+      console.error("Error submitting blotter:", error);
+    }
+  };
 
   const dropdownRef = useRef(null);
 
@@ -49,11 +148,6 @@ const Dashboard = () => {
       value === "weekly" ? "Weekly" : value === "monthly" ? "Monthly" : "Yearly"
     );
     setIsDropdownOpen(false);
-  };
-
-  const handleSubmitBlotter = () => {
-    // Logic for Submit Blotter button
-    console.log("Navigating to Blotter Form...");
   };
 
   // Close the dropdown when clicking outside of it
@@ -76,7 +170,7 @@ const Dashboard = () => {
     datasets: [
       {
         label: [],
-        data: [5, 8, 4, 6, 7, 3, 2], // Sample data for weekly complaints
+        data: [2, 0, 2, 1, 0, 1, 0], // Sample data for weekly complaints
         backgroundColor: "#003366", // Bar color
         borderRadius: 5,
       },
@@ -102,7 +196,7 @@ const Dashboard = () => {
     datasets: [
       {
         label: [],
-        data: [10, 12, 15, 20, 25, 30, 18, 22, 14, 19, 28, 35], // Sample data for monthly complaints
+        data: [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Sample data for monthly complaints
         backgroundColor: "#003366", // Bar color
         borderRadius: 5,
       },
@@ -115,7 +209,7 @@ const Dashboard = () => {
     datasets: [
       {
         label: [],
-        data: [150, 180, 200, 220, 240, 260], // Sample data for yearly complaints
+        data: [0, 0, 0, 0, 0, 5], // Sample data for yearly complaints
         backgroundColor: "#003366", // Bar color
         borderRadius: 5,
       },
@@ -129,10 +223,10 @@ const Dashboard = () => {
       const percentValueElement = element.querySelector(".percent-value");
       const value = parseFloat(percentValueElement.textContent);
 
-      if (value > 0) {
+      if (value < 0) {
         element.style.backgroundColor = "#FFCBBB"; // Negative: light red background
         percentValueElement.style.color = "#DE2B00"; // Negative: darker red text
-      } else if (value < 0) {
+      } else if (value > 0) {
         element.style.backgroundColor = "#D0EBF4"; // Positive: light blue background
         percentValueElement.style.color = "#258EB1"; // Positive: darker blue text
       }
@@ -142,15 +236,16 @@ const Dashboard = () => {
   // Static data for the pie chart
   const pieData = {
     labels: [
+      "Away Magasawa",
+      "Nakawan",
+      "Pambubugbog",
+      "Away",
       "Sexual Misconduct",
-      "Noise",
-      "Theft",
-      "Physical Altercation",
       "Others",
     ],
     datasets: [
       {
-        data: [25, 23.75, 20, 18.75, 12.5],
+        data: [5, 5, 5, 5, 5],
         backgroundColor: [
           "#0C4094",
           "#3B82F6",
@@ -255,12 +350,22 @@ const Dashboard = () => {
   // Register the custom plugin
   Chart.register(customPlugin);
 
+  const handleViewComplaint = (id) => {
+    console.log(`Viewing complaint with id: ${id}`);
+  };
+
   return (
     <div className="dashboard-container">
       {/* Header Section with Submit Blotter Button */}
       <Header />
       <div className="header-buttons">
-        <button onClick={handleSubmitBlotter} className="submit-blotter-header">
+        <button
+          onClick={() => {
+            console.log("Navigating to Blotter Form...");
+            navigate("/form7");
+          }}
+          className="submit-blotter-header"
+        >
           Submit Blotter
         </button>
       </div>
@@ -277,7 +382,7 @@ const Dashboard = () => {
         <div className="summary-card">
           <h3 className="card-title">Total Complaints Received</h3>
           <div className="card-content">
-            <span className="card-number">20</span>
+            <span className="card-number">{statistics.totalComplaints}</span>
             <img
               src="../assets/complaints-icon.png"
               alt="Complaints Icon"
@@ -285,7 +390,7 @@ const Dashboard = () => {
             />
           </div>
           <div className="card-percentage">
-            <span className="percent-value">-5%</span> from last month
+            <span className="percent-value">0%</span> from last month
           </div>
         </div>
 
@@ -293,7 +398,7 @@ const Dashboard = () => {
         <div className="summary-card">
           <h3 className="card-title">Pending Progress</h3>
           <div className="card-content">
-            <span className="card-number">10</span>
+            <span className="card-number">{statistics.totalComplaints}</span>
             <img
               src="../assets/progress-icon.png"
               alt="Progress Icon"
@@ -301,7 +406,7 @@ const Dashboard = () => {
             />
           </div>
           <div className="card-percentage">
-            <span className="percent-value">+10%</span> from last month
+            <span className="percent-value">0%</span> from last month
           </div>
         </div>
 
@@ -309,7 +414,7 @@ const Dashboard = () => {
         <div className="summary-card">
           <h3 className="card-title">Complaints in Progress</h3>
           <div className="card-content">
-            <span className="card-number">10</span>
+            <span className="card-number">0</span>
             <img
               src="../assets/in-progress-icon.png"
               alt="In Progress Icon"
@@ -317,7 +422,7 @@ const Dashboard = () => {
             />
           </div>
           <div className="card-percentage">
-            <span className="percent-value">+10%</span> from last month
+            <span className="percent-value">+0%</span> from last month
           </div>
         </div>
 
@@ -325,7 +430,7 @@ const Dashboard = () => {
         <div className="summary-card">
           <h3 className="card-title">Resolved Complaints</h3>
           <div className="card-content">
-            <span className="card-number">15</span>
+            <span className="card-number">0</span>
             <img
               src="../assets/resolved-icon.png"
               alt="Resolved Icon"
@@ -333,7 +438,7 @@ const Dashboard = () => {
             />
           </div>
           <div className="card-percentage">
-            <span className="percent-value">+10%</span> from last month
+            <span className="percent-value">+0%</span> from last month
           </div>
         </div>
       </div>
@@ -432,7 +537,7 @@ const Dashboard = () => {
             >
               <h3>
                 <img
-                  src="../assets/com-stats-icon.png"
+                  src="com-stats-icon.png"
                   alt="Icon"
                   className="com-stats-icon"
                 />
@@ -466,8 +571,7 @@ const Dashboard = () => {
               }}
             >
               <h3>
-                <img
-                  src="../assets/com-stats-icon.png"
+                <img src="../assets/com-stats-icon.png"
                   alt="Icon"
                   className="com-stats-icon"
                 />
@@ -502,11 +606,7 @@ const Dashboard = () => {
           }}
         >
           <h3>
-            <img
-              src="../assets/com-bd-icon.png"
-              alt="Icon"
-              className="com-bd-icon"
-            />
+            <img src="../assets/com-bd-icon.png" alt="Icon" className="com-bd-icon" />
             Complaints Breakdown
           </h3>
           <hr className="separator-line-3" />
@@ -527,15 +627,15 @@ const Dashboard = () => {
                 className="color-box"
                 style={{ backgroundColor: "#0C4094" }}
               ></div>
-              <div className="label">Sexual Misconduct</div>
-              <div className="percentage">25%</div>
+              <div className="label">Nakawan</div>
+              <div className="percentage">5%</div>
             </div>
             <div>
               <div
                 className="color-box"
                 style={{ backgroundColor: "#3B82F6" }}
               ></div>
-              <div className="label">Noise</div>
+              <div className="label">Pambubugbog</div>
               <div className="percentage">23.75%</div>
             </div>
             <div>
@@ -543,15 +643,15 @@ const Dashboard = () => {
                 className="color-box"
                 style={{ backgroundColor: "#466DAC" }}
               ></div>
-              <div className="label">Theft</div>
-              <div className="percentage">20%</div>
+              <div className="label">Away Magasawa</div>
+              <div className="percentage">5%</div>
             </div>
             <div>
               <div
                 className="color-box"
                 style={{ backgroundColor: "#355D9C" }}
               ></div>
-              <div className="label">Physical Altercation</div>
+              <div className="label">Sexual Misconduct</div>
               <div className="percentage">18.75%</div>
             </div>
             <div>
@@ -579,148 +679,58 @@ const Dashboard = () => {
           <h3 className="see-all">See all</h3>
         </div>
 
-        <table className="recent-complaints-table">
-          <thead>
-            <tr>
-              <th>KP Case</th>
-              <th>Usaping Barangay Blg.</th>
-              <th>Date</th>
-              <th>Type</th>
-              <th>Status</th>
-              <th>Priority</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              {
-                kpCase: "2024-007",
-                barangayCase: "3",
-                date: "12/12/24",
-                type: "Sexual Misconduct",
-                status: "Pending",
-                priority: "Medium",
-                actions: "view",
-              },
-              {
-                kpCase: "2024-008",
-                barangayCase: "3",
-                date: "12/12/24",
-                type: "Sexual Misconduct",
-                status: "Resolved",
-                priority: "High",
-                actions: "view",
-              },
-              {
-                kpCase: "2024-009",
-                barangayCase: "3",
-                date: "12/12/24",
-                type: "Sexual Misconduct",
-                status: "In Progress",
-                priority: "Low",
-                actions: "view",
-              },
-              {
-                kpCase: "2024-010",
-                barangayCase: "3",
-                date: "12/12/24",
-                type: "Sexual Misconduct",
-                status: "In Progress",
-                priority: "High",
-                actions: "view",
-              },
-              {
-                kpCase: "2024-011",
-                barangayCase: "3",
-                date: "12/12/24",
-                type: "Sexual Misconduct",
-                status: "Pending",
-                priority: "Low",
-                actions: "view",
-              },
-            ].map((complaint, index) => {
-              // Dynamically apply styles for the Status column
-              const getStatusStyles = (status) => {
-                switch (status) {
-                  case "Pending":
-                    return { color: "#FA8C16", backgroundColor: "#FFE1C1" };
-                  case "Resolved":
-                    return { color: "#1F4B2C", backgroundColor: "#D5F5AD" };
-                  case "In Progress":
-                    return { color: "#1367B5", backgroundColor: "#BADEFF" };
-                  default:
-                    return {};
-                }
-              };
-
-              // Dynamically apply styles for the Priority column
-              const getPriorityStyles = (priority) => {
-                switch (priority) {
-                  case "Medium":
-                    return { color: "#9A7723", backgroundColor: "#FFF3B1" };
-                  case "High":
-                    return { color: "#AE3132", backgroundColor: "#FFACAD" };
-                  case "Low":
-                    return { color: "#57259D", backgroundColor: "#D2B3FD" };
-                  default:
-                    return {};
-                }
-              };
-
-              // Determine the background color for the row (alternating)
-              const rowBackgroundColor =
-                index % 2 === 0 ? "#FAF8F8" : "#FFFFFF";
-
-              return (
-                <tr key={index} style={{ backgroundColor: rowBackgroundColor }}>
-                  <td>{complaint.kpCase}</td>
-                  <td>{complaint.barangayCase}</td>
-                  <td>{complaint.date}</td>
-                  <td>{complaint.type}</td>
-                  <td>
-                    <span
-                      style={{
-                        ...getStatusStyles(complaint.status),
-                        padding: "4px 7px",
-                        borderRadius: "5px",
-                        fontWeight: "bold",
-                        display: "inline-flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        width: "110px", // Fixed width for Status (larger size)
-                        height: "25px", // Fixed height for Status
-                        textAlign: "center",
-                      }}
-                    >
-                      {complaint.status}
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      style={{
-                        ...getPriorityStyles(complaint.priority),
-                        padding: "4px 7px",
-                        borderRadius: "5px",
-                        fontWeight: "bold",
-                        display: "inline-flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        width: "90px", // Fixed width for Priority (smaller size)
-                        height: "25px", // Fixed height for Priority
-                        textAlign: "center",
-                      }}
-                    >
-                      {complaint.priority}
-                    </span>
-                  </td>
-                  <td>
-                    <i>{complaint.actions}</i>
+        <div>
+          <table className="recent-complaints-table">
+            <thead>
+              <tr>
+                <th>KP Case Number</th>
+                <th>Usaping Barangay Blg.</th>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {recentComplaints.length > 0 ? (
+                recentComplaints.map((complaint) => (
+                  <tr key={complaint._id}>
+                    <td>{complaint.kpCaseNumber}</td>
+                    <td>{complaint.usapingBlg}</td>
+                    <td>
+                      {complaint.month && complaint.day && complaint.year
+                        ? `${complaint.month}/${complaint.day}/${complaint.year}`
+                        : "N/A"}
+                    </td>
+                    <td>{complaint.ukolSa}</td>
+                    <td>{complaint.status}</td>
+                    <td>{complaint.priority}</td>
+                    <td>
+                      <a
+                        href="#"
+                        className="view-link"
+                        onClick={() => {
+                          console.log("Viewing complaint:", complaint);
+                          navigate("/form7view");
+                        }}
+                      >
+                        View
+                      </a>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="7" style={{ textAlign: "center" }}>
+                    {console.log("No complaints to display")}
+                    No recent complaints found
                   </td>
                 </tr>
-              );
-            })}
-          </tbody>
-        </table>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

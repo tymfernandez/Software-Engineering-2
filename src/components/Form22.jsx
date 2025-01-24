@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
-import { PDFDownloadLink } from "@react-pdf/renderer";
+import axios from "axios";
 import "../styles/Form22.css";
-import Header from "./Header"; //
-import FormDocu22 from "./FormDocu22"; //
+import Header from "./Header";
 
 const Form22 = () => {
   const [formData, setFormData] = useState({
@@ -12,14 +11,35 @@ const Form22 = () => {
     form22Ukol: "",
     form22MaySumbong: "",
     form22MaySumbong1: "",
-    form22Ipinagsumbong: "",
-    form22Ipinagsumbong1: "",
+    form22IpinagSumbong: "",
+    form22IpinagSumbong1: "",
     form22Pangalan: "",
     form22Pangalan1: "",
     form22Day: "",
     form22Month: "",
     form22Year: "",
   });
+
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/form22/autogenerate")
+      .then((response) => {
+        setFormData((prevData) => ({
+          ...prevData,
+          form22KpNum: response.data.kpCaseNumber,
+          form22Blg: response.data.usapingBlg,
+        }));
+      })
+      .catch((error) => {
+        console.error("Error fetching auto-generated numbers: ", error);
+        setError("Failed to fetch auto-generated numbers");
+      });
+  }, []);
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -29,16 +49,32 @@ const Form22 = () => {
     }));
   };
 
-  const [showSuccess, setShowSuccess] = useState(false);
-  const navigate = useNavigate(); // Initialize navigate
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+    setError(null);
 
-  const handleSubmit = () => {
-    setShowSuccess(true); // Show success modal
+    try {
+      await axios.post("http://localhost:3001/form22", formData);
+      setShowSuccess(true);
+    } catch (error) {
+      console.error("Error submitting Form 22 data:", error);
+      if (error.response) {
+        setError(
+          error.response.data.message || "Failed to submit Form 22 data"
+        );
+      } else {
+        setError("Failed to submit Form 22 data. Please try again.");
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleContinue = () => {
-    navigate("/complaints"); // Navigate to Complaints page
+    navigate("/complaints");
   };
+
   return (
     <div className="form22-page">
       <Header showButton={false} />
@@ -55,7 +91,8 @@ const Form22 = () => {
               <label className="form22-kpcase">KP Case Number:</label>
               <input
                 type="text"
-                id="form22KpNum"
+                id="form22kpnum"
+                value={formData.form22KpNum}
                 onChange={handleInputChange}
               />
             </div>
@@ -82,11 +119,13 @@ const Form22 = () => {
                 <input
                   type="text"
                   id="form22MaySumbong"
+                  value={formData.form22MaySumbong}
                   onChange={handleInputChange}
                 />
                 <input
                   type="text"
-                  id="form22MaySumbong1"
+                  id="form22MaySumbong1" // Note the "1" for the second input
+                  value={formData.form22MaySumbong1}
                   onChange={handleInputChange}
                 />
                 <label className="form22-sumbong">
@@ -94,12 +133,14 @@ const Form22 = () => {
                 </label>
                 <input
                   type="text"
-                  id="form22Ipinagsumbong"
+                  id="form22IpinagSumbong"
+                  value={formData.form22IpinagSumbong}
                   onChange={handleInputChange}
                 />
                 <input
                   type="text"
-                  id="form22Ipinagsumbong1"
+                  id="form22IpinagSumbong1" // Note the "1" for the second input
+                  value={formData.form22IpinagSumbong1}
                   onChange={handleInputChange}
                 />
                 <label className="form22-sumbong">
@@ -114,6 +155,7 @@ const Form22 = () => {
                   <input
                     type="text"
                     id="form22Blg"
+                    value={formData.form22Blg} // Changed from form22KpNum
                     onChange={handleInputChange}
                   />
                 </div>
@@ -122,6 +164,7 @@ const Form22 = () => {
                   <input
                     type="text"
                     id="form22Ukol"
+                    value={formData.form22Ukol}
                     onChange={handleInputChange}
                   />
                 </div>
@@ -144,13 +187,17 @@ const Form22 = () => {
               <input
                 type="text"
                 id="form22Pangalan"
+                value={formData.form22Pangalan}
                 onChange={handleInputChange}
+                placeholder=" "
               />
               <label>(pangalan) at </label>
               <input
                 type="text"
-                id="form22Pangalan1"
+                id="form22Pangalan1" // Note the "1" for the second input
+                value={formData.form22Pangalan1}
                 onChange={handleInputChange}
+                placeholder=" "
               />
               <label>(pangalan) </label>
             </div>
@@ -165,16 +212,31 @@ const Form22 = () => {
             </div>
             <br />
             <div className="form22-form-input">
-              <label className="form22-indent">Ngayong ika-</label>
-              <input type="text" id="form22Day" onChange={handleInputChange} />
-              <label>araw ng</label>
+              <label className="form22-indent">
+                Ngayong ika-</label>
+              <input
+                type="text"
+                id="form22Day"
+                value={formData.form22Day}
+                onChange={handleInputChange}
+                placeholder=" "
+              />
+               <label>araw ng</label>
               <input
                 type="text"
                 id="form22Month"
+                value={formData.form22Month}
                 onChange={handleInputChange}
+                placeholder=" "
               />
-              <label>, 20</label>
-              <input type="text" id="form22Year" onChange={handleInputChange} />
+              <label>20</label>
+              <input
+                type="text"
+                id="form22Year"
+                value={formData.form22Year}
+                onChange={handleInputChange}
+                placeholder=" "
+              />
               <label>.</label>
             </div>
             <br />
@@ -203,15 +265,13 @@ const Form22 = () => {
         </div>
 
         <div className="form22-button-group">
-          <PDFDownloadLink
-            document={<FormDocu22 data={formData} />}
-            fileName="form22.pdf"
+          <button
+            type="button"
             className="form22-print-button"
+            onClick={() => window.print()}
           >
-            {({ blob, url, loading, error }) =>
-              loading ? "Loading document..." : "Print"
-            }
-          </PDFDownloadLink>
+            Print
+          </button>
           <button
             type="button"
             className="form22-next-button"

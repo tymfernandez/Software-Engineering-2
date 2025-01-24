@@ -35,16 +35,14 @@ function Login() {
         console.log("Server response:", result.data); // Debugging response
 
         if (result.data.includes("Login successful")) {
-          // Check if response includes "Login successful"
-          navigate("/home"); // Redirect on success
+          localStorage.setItem('authToken', result.data.token); // Store auth token
+          navigate("/home"); // Redirect on successful login
         } else {
           setError({ login: "Invalid login credentials" });
         }
       } catch (err) {
         console.error("Error during login:", err);
-        setError({
-          login: "An error occurred during login. Please try again.",
-        });
+        setError({ login: "An error occurred during login. Please try again." });
       } finally {
         setIsLoading(false); // Stop loading indicator
       }
@@ -56,7 +54,7 @@ function Login() {
       <div className="container">
         <div className="card">
           <div className="logo-section">
-            <img src="resolvIT-logo.png" alt="ResolvIT Logo" className="logo" />
+            <img src="../assets/resolvIT-logo.png" alt="ResolvIT Logo" className="logo" />
             <h1 className="title">
               Resolv<span className="text-highlight">IT</span>
             </h1>

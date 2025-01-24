@@ -1,4 +1,9 @@
 /*Form7 Next page*/
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 .form7Next-container {
   font-family: Arial, sans-serif;
   background-color: white;

@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { PDFDownloadLink } from "@react-pdf/renderer";
+import axios from "axios";
 import "../styles/Form14.css";
 import Header from "./Header"; //
 import FormDocu14 from "./FormDocu14"; //
 
 const Form14 = () => {
+  const navigate = useNavigate();
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     form14KpNum: "",
     form14Blg: "",
@@ -19,6 +24,22 @@ const Form14 = () => {
     form14Year: "",
   });
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/form14/autogenerate")
+      .then((response) => {
+        setFormData((prevData) => ({
+          ...prevData,
+          form14KpNum: response.data.kpCaseNumber,
+          form14Blg: response.data.usapingBlg,
+        }));
+      })
+      .catch((error) => {
+        console.error("Error fetching auto-generated numbers: ", error);
+        setError("Failed to fetch auto-generated numbers");
+      });
+  }, []);
+
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     setFormData((prevData) => ({
@@ -27,15 +48,32 @@ const Form14 = () => {
     }));
   };
 
-  const [showSuccess, setShowSuccess] = useState(false);
-  const navigate = useNavigate(); // Initialize navigate
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setError(null);
+    setLoading(true);
 
-  const handleSubmit = () => {
-    setShowSuccess(true); // Show success modal
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/form14",
+        formData
+      );
+      console.log("Form submitted successfully:", response.data);
+      // Handle successful form submission
+      navigate("/complaints");
+    } catch (error) {
+      console.error("Error submitting Form 14 data:", error);
+      if (error.response) {
+        console.error("Server responded with:", error.response.data);
+      }
+      setError("Failed to submit Form 14 data");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleContinue = () => {
-    navigate("/complaints"); // Navigate to Complaints page
+    navigate("/complaints");
   };
 
   return (
@@ -54,6 +92,7 @@ const Form14 = () => {
               <input
                 type="text"
                 id="form14KpNum"
+                value={formData.form14KpNum}
                 onChange={handleInputChange}
               />
             </div>
@@ -80,12 +119,14 @@ const Form14 = () => {
                 <input
                   type="text"
                   id="form14MaySumbong"
+                  value={formData.form14MaySumbong}
                   onChange={handleInputChange}
                 />{" "}
                 <br />
                 <input
                   type="text"
                   id="form14MaySumbong1"
+                  value={formData.form14MaySumbong1}
                   onChange={handleInputChange}
                 />
                 <label className="form14-sumbong">
@@ -94,12 +135,14 @@ const Form14 = () => {
                 <input
                   type="text"
                   id="form14IpinagSumbong"
+                  value={formData.form14IpinagSumbong}
                   onChange={handleInputChange}
                 />{" "}
                 <br />
                 <input
                   type="text"
                   id="form14IpinagSumbong1"
+                  value={formData.form14IpinagSumbong1}
                   onChange={handleInputChange}
                 />
                 <label className="form14-sumbong">
@@ -114,6 +157,7 @@ const Form14 = () => {
                   <input
                     type="text"
                     id="form14Blg"
+                    value={formData.form14Blg}
                     onChange={handleInputChange}
                   />
                 </div>
@@ -122,6 +166,7 @@ const Form14 = () => {
                   <input
                     type="text"
                     id="form14Ukol"
+                    value={formData.form14Ukol}
                     onChange={handleInputChange}
                   />
                 </div>
@@ -148,15 +193,20 @@ const Form14 = () => {
               <label className="form14-indent">
                 Pinagkasunduan ngayong ika-
               </label>
-              <input type="text" id="form14Day" onChange={handleInputChange} />
+              <input type="text" id="form14Day" 
+              value={formData.form14Day}
+              onChange={handleInputChange} />
               <label>araw ng</label>
               <input
                 type="text"
                 id="form14Month"
+                value={formData.form14Month}
                 onChange={handleInputChange}
               />
               <label>, 20</label>
-              <input type="text" id="form14Year" onChange={handleInputChange} />
+              <input type="text" id="form14Year"
+              value={formData.form14Year}
+              onChange={handleInputChange} />
               <label>.</label>
             </div>{" "}
             <br /> <br />

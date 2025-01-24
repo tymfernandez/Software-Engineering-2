@@ -115,7 +115,7 @@ const App = () => {
           <Route path="/form24" element={<Form24 />} />
           <Route path="/form25" element={<Form25 />} />
           <Route
-            path="/form7/view"
+            path="/form7view"
             element={<Form7View formData={formData} />}
           />
           <Route

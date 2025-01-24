@@ -1,4 +1,9 @@
 /*Form7View page*/
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 .form7-view-page {
   background-color: white;
   padding: 40px 60px;

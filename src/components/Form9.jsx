@@ -1,58 +1,70 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { PDFDownloadLink } from "@react-pdf/renderer";
+import axios from "axios";
 import "../styles/Form9.css";
-import Header from "./Header"; //
-import FormDocu9 from "./FormDocu9"; //
+import Header from "./Header";
 
 const Form9 = () => {
-  const [formData, setFormData] = useState({
-    form9KpCaseNumber: "",
-    form9Maysumbong: "",
-    form9Maysumbong1: "",
-    form9Ipinagsumbong: "",
-    form9Ipinagsumbong1: "",
-    form9Blg: "",
-    form9Ukol: "",
-    form9Kay: "",
-    form9SumbongKay: "",
-    form9Day: "",
-    form9Month: "",
-    form9Year: "",
-    form9Time: "",
-    form9DayNow: "",
-    form9MonthNow: "",
-    form9YearNow: "",
-    form9Pangalan: "",
-    form9DayUlat: "",
-    form9MonthUlat: "",
-    form9YearUlat: "",
-    form9Blank1: "",
-    form9Blank2: "",
-    form9Blank3: "",
-    form9Blank4: "",
-    form9Name: "",
-    form9Name1: "",
+  const [values, setValues] = useState({
+    kpCaseNumber: "",
+    maySumbong: "",
+    ipinagsumbong: "",
+    usapingBlg: "",
+    ukolSa: "",
+    day: "",
+    month: "",
+    year: "",
+    time: "",
+    kay: "",
+    sumbongKay: "",
+    pangalan: "",
+    blank: "",
+    name: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-  const handleInputChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [id]: value,
+  useEffect(() => {
+    // Fetch auto-generated numbers for kpCaseNumber and usapingBlg
+    axios
+      .get("http://localhost:3001/form7/autogenerate")
+      .then((response) => {
+        setValues((prev) => ({
+          ...prev,
+          kpCaseNumber: response.data.kpCaseNumber,
+          usapingBlg: response.data.usapingBlg,
+        }));
+      })
+      .catch((error) => {
+        console.error("Error fetching auto-generated numbers: ", error);
+      });
+  }, []);
+
+  const handleInput = (event) => {
+    setValues((prev) => ({
+      ...prev,
+      [event.target.name]: event.target.value,
     }));
   };
 
-  const [showPopup, setShowPopup] = useState(false); // State for pop-up visibility
-  const navigate = useNavigate(); // For navigating to the complaints page
+  const handleNext = () => {
+    setIsLoading(true);
+    setError("");
 
-  const handleSubmit = () => {
-    setShowPopup(true); // Show the pop-up message
-  };
-
-  const handleContinue = () => {
-    setShowPopup(false);
-    navigate("/complaints"); // Redirect to the complaints page
+    axios
+      .post("http://localhost:3001/form9", values)
+      .then((response) => {
+        console.log(response);
+        window.location.href = "/dashboard";
+      })
+      .catch((error) => {
+        console.error("Error adding Form 9 data: ", error);
+        setError("An error occurred during form submission. Please try again.");
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -68,8 +80,12 @@ const Form9 = () => {
               <label className="form9-kpcase">KP Case Number:</label>
               <input
                 type="text"
-                id="form9KpCaseNumber"
-                onChange={handleInputChange}
+                id="form9-kpnum"
+                name="kpCaseNumber"
+                value={values.kpCaseNumber}
+                onChange={handleInput}
+                placeholder=" "
+                readOnly
               />
             </div>
             <div className="form9-pormularyoblg">
@@ -94,32 +110,38 @@ const Form9 = () => {
               <div className="form-group">
                 <input
                   type="text"
-                  id="form9Maysumbong"
-                  onChange={handleInputChange}
+                  id="form9-maysumbong"
+                  name="maySumbong"
+                  value={values.maySumbong}
+                  onChange={handleInput}
                 />{" "}
                 <br />
                 <input
                   type="text"
-                  id="form9Maysumbong1"
-                  onChange={handleInputChange}
+                  id="form9-maysumbong"
+                  name="maySumbong"
+                  value={values.maySumbong}
+                  onChange={handleInput}
                 />{" "}
                 <br />
                 <label className="form9-sumbong">
                   (Mga) May Sumbong <br /> -laban kay/kina-
-                </label>{" "}
-                <br />
+                </label>
                 <input
                   type="text"
-                  id="form9Ipinagsumbong"
-                  onChange={handleInputChange}
+                  id="form9-ipinagsumbong"
+                  name="ipinagsumbong"
+                  value={values.ipinagsumbong}
+                  onChange={handleInput}
                 />{" "}
                 <br />
                 <input
                   type="text"
-                  id="form9Ipinagsumbong1"
-                  onChange={handleInputChange}
-                />{" "}
-                <br />
+                  id="form9-ipinagsumbong"
+                  name="ipinagsumbong"
+                  value={values.ipinagsumbong}
+                  onChange={handleInput}
+                />
                 <label className="form9-sumbong"> (Mga) Ipinagsusumbong </label>
               </div>
 
@@ -128,16 +150,21 @@ const Form9 = () => {
                   <label>Usaping Barangay Blg. </label>
                   <input
                     type="text"
-                    id="form9Blg"
-                    onChange={handleInputChange}
+                    id="form9-blg"
+                    name="usapingBlg"
+                    value={values.usapingBlg}
+                    onChange={handleInput}
+                    placeholder=" "
+                    readOnly
                   />
                 </div>
                 <div className="form9-ukol-input">
                   <label>Ukol sa:</label>
                   <input
                     type="text"
-                    id="form9Ukol"
-                    onChange={handleInputChange}
+                    name="ukolSa"
+                    value={values.ukolSa}
+                    onChange={handleInput}
                   />
                 </div>
               </div>
@@ -151,14 +178,20 @@ const Form9 = () => {
                   <label>KAY: </label>
                   <input
                     type="text"
-                    id="form9Kay"
-                    onChange={handleInputChange}
+                    id="form9-kay"
+                    name="kay"
+                    value={values.kay}
+                    onChange={handleInput}
+                    placeholder=" "
                   />
                 </div>
                 <input
                   type="text"
-                  id="form9SumbongKay"
-                  onChange={handleInputChange}
+                  id="form9-sumbong-kay"
+                  name="sumbongKay"
+                  value={values.sumbongKay}
+                  onChange={handleInput}
+                  placeholder=" "
                 />
                 <label className="form9-ipinagsusumbong">
                   {" "}
@@ -169,13 +202,17 @@ const Form9 = () => {
               <div className="form-group">
                 <input
                   type="text"
-                  id="form9SumbongKay"
-                  onChange={handleInputChange}
+                  id="form9-kay"
+                  name="kay"
+                  value={values.kay}
+                  onChange={handleInput}
                 />
                 <input
                   type="text"
-                  id="form9SumbongKay"
-                  onChange={handleInputChange}
+                  id="form9-kay"
+                  name="kay"
+                  value={values.kay}
+                  onChange={handleInput}
                 />
               </div>
             </div>
@@ -187,15 +224,43 @@ const Form9 = () => {
             </div>
             <div className="form9-form-input">
               <label>ang inyong mga testigo, sa ika-</label>
-              <input type="text" id="form9Day" onChange={handleInputChange} />
+              <input
+                type="text"
+                id="form9-day"
+                name="day"
+                value={values.day}
+                onChange={handleInput}
+                placeholder=" "
+              />
               <label>araw ng</label>
-              <input type="text" id="form9Month" onChange={handleInputChange} />
+              <input
+                type="text"
+                id="form9-month"
+                name="month"
+                value={values.month}
+                onChange={handleInput}
+                placeholder=" "
+              />
               <label>, 20</label>
-              <input type="text" id="form9Year" onChange={handleInputChange} />
+              <input
+                type="text"
+                id="form9-year"
+                name="year"
+                value={values.year}
+                onChange={handleInput}
+                placeholder=" "
+              />
               <label>sa ganap na ika-</label>
             </div>
             <div className="form9-form-input">
-              <input type="text" id="form9Time" onChange={handleInputChange} />
+              <input
+                type="text"
+                id="form9-time"
+                name="time"
+                value={values.time}
+                onChange={handleInput}
+                placeholder=" "
+              />
               <label>
                 ng umaga/hapon, upang sagutin ang sumbong na ginawa sa harap ko,
                 na ang sipi ay
@@ -207,8 +272,11 @@ const Form9 = () => {
                 kalakip nito, para pamagitnaan/pagkasunduin ang inyong (mga)
                 alitan ng (mga) nagsusumbong.
               </label>
-            </div>
+            </div>{" "}
+            <br />
             <div className="form9-form-input">
+              {" "}
+              <br />
               <label className="form9-indent">
                 Sa pamamagitan nito kayo’y binabalaan na ang inyong pagtanggi o
                 kusang di pagharap bilang pagtalima sa patawag na ito, kayo ay
@@ -226,20 +294,29 @@ const Form9 = () => {
               <label className="form9-indent">Ngayong ika-</label>
               <input
                 type="text"
-                id="form9DayNow"
-                onChange={handleInputChange}
+                id="form9-day"
+                name="day"
+                value={values.day}
+                onChange={handleInput}
+                placeholder=" "
               />
               <label>araw ng</label>
               <input
                 type="text"
-                id="form9MonthNow"
-                onChange={handleInputChange}
+                id="form9-month"
+                name="month"
+                value={values.month}
+                onChange={handleInput}
+                placeholder=" "
               />
               <label>, 20</label>
               <input
                 type="text"
-                id="form9YearNow"
-                onChange={handleInputChange}
+                id="form9-year"
+                name="year"
+                value={values.year}
+                onChange={handleInput}
+                placeholder=" "
               />
               <label>.</label>
             </div>{" "}
@@ -254,14 +331,19 @@ const Form9 = () => {
         </div>
 
         {/* ------------------------------------------ */}
+
         <div className="form9-patawag-form-container">
           <form className="form9-patawag-form">
             <div className="form9-kp-input">
               <label className="form9-kpcase">KP Case Number:</label>
               <input
                 type="text"
-                id="form9KpCaseNumber"
-                onChange={handleInputChange}
+                id="form9-kpnum"
+                name="kpCaseNumber"
+                value={values.kpCaseNumber}
+                onChange={handleInput}
+                placeholder=" "
+                readOnly
               />
             </div>
             {/* ULAT NG OPISYAL Section */}
@@ -276,28 +358,40 @@ const Form9 = () => {
                 </label>
                 <input
                   type="text"
-                  id="form9Pangalan"
-                  onChange={handleInputChange}
+                  id="form9-pangalan"
+                  name="pangalan"
+                  value={values.pangalan}
+                  onChange={handleInput}
+                  placeholder=" "
                 />
                 <label>noong ika-</label>
                 <input
                   type="text"
-                  id="form9DayUlat"
-                  onChange={handleInputChange}
+                  id="form9-day"
+                  name="day"
+                  value={values.day}
+                  onChange={handleInput}
+                  placeholder=" "
                 />
               </div>
               <div className="form9-form-input">
                 <label>araw ng</label>
                 <input
                   type="text"
-                  id="form9MonthUlat"
-                  onChange={handleInputChange}
+                  id="form9-month"
+                  name="month"
+                  value={values.month}
+                  onChange={handleInput}
+                  placeholder=" "
                 />
                 <label>, 20</label>
                 <input
                   type="text"
-                  id="form9YearUlat"
-                  onChange={handleInputChange}
+                  id="form9-year"
+                  name="year"
+                  value={values.year}
+                  onChange={handleInput}
+                  placeholder=" "
                 />
                 <label>
                   sa pamamagitan ng (isulat ang pangalan/mga pangalan ng
@@ -312,8 +406,11 @@ const Form9 = () => {
               <div className="form9-reasons-input">
                 <input
                   type="text"
-                  id="form9Blank1"
-                  onChange={handleInputChange}
+                  id="form9-blank"
+                  name="blank"
+                  value={values.blank}
+                  onChange={handleInput}
+                  placeholder=" "
                 />
                 <label>
                   1. Ibinigay sa kanila nang personal ang patawag o{" "}
@@ -322,8 +419,11 @@ const Form9 = () => {
               <div className="form9-reasons-input">
                 <input
                   type="text"
-                  id="form9Blank2"
-                  onChange={handleInputChange}
+                  id="form9-blank"
+                  name="blank"
+                  value={values.blank}
+                  onChange={handleInput}
+                  placeholder=""
                 />
                 <label>
                   2. Ibinigay sa kanila ang patawag, subalit tinanggihan itong
@@ -334,8 +434,11 @@ const Form9 = () => {
                 <div className="form9-reasons-input">
                   <input
                     type="text"
-                    id="form9Blank3"
-                    onChange={handleInputChange}
+                    id="form9-blank"
+                    name="blank"
+                    value={values.blank}
+                    onChange={handleInput}
+                    placeholder=""
                   />
                   <label>
                     3. Iniwan ang nasabing patawag sa kanilang bahay kay
@@ -343,17 +446,22 @@ const Form9 = () => {
                 </div>
                 <input
                   type="text"
-                  id="form9Name"
-                  placeholder="(pangalan)"
-                  onChange={handleInputChange}
+                  id="form9-name"
+                  name="name"
+                  value={values.name}
+                  onChange={handleInput}
+                  placeholder="Pangalan"
                 />
               </div>
               <div className="form9-reason-input">
                 <div className="form9-reasons-input">
                   <input
                     type="text"
-                    id="form9Blank4"
-                    onChange={handleInputChange}
+                    id="form9-blank"
+                    name="blank"
+                    value={values.blank}
+                    onChange={handleInput}
+                    placeholder=""
                   />
                   <label>
                     4. Iniwan ang nasabing patawag sa kanya/kanilang
@@ -362,17 +470,19 @@ const Form9 = () => {
                 <label className="form9-four">
                   tanggapan/lugar ng kanyang pinagtatrabahuan kay
                 </label>
+                <div className="form9-reasons-input">
+                  <input
+                    type="text"
+                    id="form9-name"
+                    name="name"
+                    value={values.name}
+                    onChange={handleInput}
+                    placeholder="Pangalan"
+                  />
+                  <label> ang tao na siyang </label>
+                </div>
+                <label className="form9-four">namamahala dito.</label>
               </div>
-              <div className="form9-reasons-input">
-                <input
-                  type="text"
-                  id="form9Name1"
-                  placeholder="(pangalan)"
-                  onChange={handleInputChange}
-                />
-                <label> isang tao na siyang </label>
-              </div>
-              <label className="form9-four">namamahala dito.</label>
             </div>
             <br />
             <div className="form9-sign-container">
@@ -403,48 +513,27 @@ const Form9 = () => {
                 <p className="form9-signature-text">Pangalan, Lagda at Petsa</p>
               </div>
             </div>
+            {error && <p className="error-text">{error}</p>}{" "}
+            {/* Display error */}
           </form>
         </div>
         <div className="form9-button-group">
-          <PDFDownloadLink
-            document={<FormDocu9 data={formData} />}
-            fileName="form9.pdf"
+          <button
+            type="button"
             className="form9-print-button"
+            onClick={() => window.print()}
           >
-            {({ blob, url, loading, error }) =>
-              loading ? "Loading document..." : "Print"
-            }
-          </PDFDownloadLink>
-
-          {/* Submit Button */}
-          <button className="form9-next-button" onClick={handleSubmit}>
-            Submit
+            Print
+          </button>
+          <button
+            type="button"
+            className="form9-next-button"
+            onClick={handleNext}
+            disabled={isLoading}
+          >
+            {isLoading ? "Submitting..." : "Next"}
           </button>
         </div>
-
-        {/* Pop-up Modal */}
-        {showPopup && (
-          <div className="form9-popup-overlay">
-            <div className="form9-popup-content">
-              <img
-                src="/successIcon.png"
-                alt="Success Icon"
-                className="success-icon"
-              />
-              <h2>Success!</h2>
-              <p>
-                Form 8 & 9 successfully submitted. Please click the button to
-                continue to Complaints page.
-              </p>
-              <button
-                className="form9-popup-continue-button"
-                onClick={handleContinue}
-              >
-                Continue
-              </button>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

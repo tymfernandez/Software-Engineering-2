@@ -119,13 +119,14 @@ button {
   background-color: #0099cc; /* Blue background */
   border: none; /* No border */
   font-weight: 700;
+
 }
 
 /* Dashboard Button */
 .button-container button:last-child {
-  color: #0099cc; /* Blue text */
+  color: #ffffff; /* Blue text */
   background-color: transparent; /* Transparent background */
-  border: 2px solid #0099cc; /* Blue border */
+  border: 2px solid #ffffff; /* Blue border */
   font-weight: 700;
 }
 

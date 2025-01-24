@@ -9,29 +9,27 @@ const Form7Next = () => {
   const [nextPage, setNextPage] = useState(""); // State to determine navigation path
   const navigate = useNavigate(); // React Router hook for navigation
 
+  const handleMediationChange = (event) => {
+    const value = event.target.value;
+    if (value === "yes") {
+      setPopupMessage(
+        "Form 7: Sumbong was successfully submitted. Please click the button to continue to Form 8: Paabiso ng Pagdinig sa Complainant."
+      );
+      setNextPage("/form8"); // Set next page to Form 8
+    } else {
+      setPopupMessage(
+        "Form 7: Sumbong was successfully submitted. Please click the button to continue to Complaints Page."
+      );
+      setNextPage("/complaints"); // Set next page to Complaint page
+    }
+    setIsPopupVisible(true); // Show popup
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault(); // Prevent default form behavior
     const selectedOption = document.querySelector(
       'input[name="mediation"]:checked'
     );
-
-    if (selectedOption) {
-      const value = selectedOption.value;
-      if (value === "yes") {
-        setPopupMessage(
-          "Form 7: Sumbong was successfully submitted. Please click the button to continue to Form 8: Paabiso ng Pagdinig sa Complainant."
-        );
-        setNextPage("/form8"); // Set next page to Form 8
-      } else {
-        setPopupMessage(
-          "Form 7: Sumbong was successfully submitted. Please click the button to continue to Complaints Page."
-        );
-        setNextPage("/complaint"); // Set next page to Complaint page
-      }
-      setIsPopupVisible(true); // Show popup
-    } else {
-      alert("Please select an option before submitting."); // Validation if no option is selected
-    }
   };
 
   const handleContinue = () => {
@@ -53,19 +51,29 @@ const Form7Next = () => {
             <div className="form-box">
               <br />
               <p className="form7Next-text">
-                Do you want the involved parties to be summoned for mediation
-                and hearing? <span className="hint">(choose below)</span>
+                Do you want the involved parties to be summoned for mediation and
+                hearing? <span className="hint">(choose below)</span>
               </p>
               <div className="form-options">
-                <div className="form-option">
-                  <input type="radio" id="yes" name="mediation" value="yes" />
-                  <label htmlFor="yes">Yes</label>
-                </div>
+              <div className="form-option">
+                <input
+                  type="radio"
+                  id="yes"
+                  name="mediation"
+                  value="yes"
+                  onChange={handleMediationChange}
+                />
+                <label htmlFor="yes">Yes</label>
               </div>
-              <div className="form-options">
-                <div className="form-option">
-                  <input type="radio" id="no" name="mediation" value="no" />
-                  <label htmlFor="no">No</label>
+              <div className="form-option">
+                <input
+                  type="radio"
+                  id="no"
+                  name="mediation"
+                  value="no"
+                  onChange={handleMediationChange}
+                />
+                <label htmlFor="no">No</label>
                 </div>
               </div>
               <br />
@@ -84,9 +92,9 @@ const Form7Next = () => {
         <div className="popup-overlay">
           <div className="popup-content">
             <img
-              src="/successIcon.png"
-              alt="Success Icon"
-              className="success-icon"
+                src="/successIcon.png"
+                alt="Success Icon"
+                className="success-icon"
             />
             <h2>Success!</h2>
             <p>{popupMessage}</p>
