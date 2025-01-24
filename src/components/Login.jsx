@@ -56,7 +56,11 @@ function Login() {
       <div className="container">
         <div className="card">
           <div className="logo-section">
-            <img src="resolvIT-logo.png" alt="ResolvIT Logo" className="logo" />
+            <img
+              src="../assets/resolvIT-logo.png"
+              alt="ResolvIT Logo"
+              className="logo"
+            />
             <h1 className="title">
               Resolv<span className="text-highlight">IT</span>
             </h1>
