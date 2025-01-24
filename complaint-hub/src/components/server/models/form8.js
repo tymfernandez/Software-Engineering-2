@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const form8Schema = new mongoose.Schema({
   kpCaseNumber: {
-    type: String,
+    type: Number, // Changed to Number since we're using a counter
     required: true, // The case number is required
   },
   kay: {

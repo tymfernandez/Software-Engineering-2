@@ -169,7 +169,7 @@ const Dashboard = () => {
     datasets: [
       {
         label: [],
-        data: [5, 8, 4, 6, 7, 3, 2], // Sample data for weekly complaints
+        data: [2, 0, 2, 1, 0, 1, 0], // Sample data for weekly complaints
         backgroundColor: "#003366", // Bar color
         borderRadius: 5,
       },
@@ -195,7 +195,7 @@ const Dashboard = () => {
     datasets: [
       {
         label: [],
-        data: [10, 12, 15, 20, 25, 30, 18, 22, 14, 19, 28, 35], // Sample data for monthly complaints
+        data: [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Sample data for monthly complaints
         backgroundColor: "#003366", // Bar color
         borderRadius: 5,
       },
@@ -208,7 +208,7 @@ const Dashboard = () => {
     datasets: [
       {
         label: [],
-        data: [150, 180, 200, 220, 240, 260], // Sample data for yearly complaints
+        data: [0, 0, 0, 0, 0, 5], // Sample data for yearly complaints
         backgroundColor: "#003366", // Bar color
         borderRadius: 5,
       },
@@ -235,15 +235,16 @@ const Dashboard = () => {
   // Static data for the pie chart
   const pieData = {
     labels: [
+      "Away Magasawa",
+      "Try",
+      "we",
+      "Away",
       "Sexual Misconduct",
-      "Noise",
-      "Theft",
-      "Physical Altercation",
       "Others",
     ],
     datasets: [
       {
-        data: [25, 23.75, 20, 18.75, 12.5],
+        data: [5, 5, 5, 5, 5],
         backgroundColor: [
           "#0C4094",
           "#3B82F6",
@@ -626,15 +627,15 @@ const Dashboard = () => {
                 className="color-box"
                 style={{ backgroundColor: "#0C4094" }}
               ></div>
-              <div className="label">Sexual Misconduct</div>
-              <div className="percentage">25%</div>
+              <div className="label">Try</div>
+              <div className="percentage">5%</div>
             </div>
             <div>
               <div
                 className="color-box"
                 style={{ backgroundColor: "#3B82F6" }}
               ></div>
-              <div className="label">Noise</div>
+              <div className="label">We</div>
               <div className="percentage">23.75%</div>
             </div>
             <div>
@@ -642,15 +643,15 @@ const Dashboard = () => {
                 className="color-box"
                 style={{ backgroundColor: "#466DAC" }}
               ></div>
-              <div className="label">Theft</div>
-              <div className="percentage">20%</div>
+              <div className="label">Away Magasawa</div>
+              <div className="percentage">5%</div>
             </div>
             <div>
               <div
                 className="color-box"
                 style={{ backgroundColor: "#355D9C" }}
               ></div>
-              <div className="label">Physical Altercation</div>
+              <div className="label">Sexual Misconduct</div>
               <div className="percentage">18.75%</div>
             </div>
             <div>

@@ -60,7 +60,7 @@ const Form7 = () => {
       .post("http://localhost:3001/form7", form7Data)
       .then((response) => {
         console.log(response);
-        navigate("/form8"); // Redirect to form8 on success
+        navigate("/form7next"); // Redirect to form7next on success
       })
       .catch((error) => {
         console.error("Error adding Form 7 data: ", error);
@@ -87,7 +87,7 @@ const Form7 = () => {
   }, []);
 
   const handleNext = () => {
-    navigate("/form8");
+    navigate("/form7next");
   };
 
   return (
@@ -208,6 +208,7 @@ const Form7 = () => {
               type="submit"
               className="form7-next-button"
               style={{ marginLeft: "10px" }} // Optional styling
+              onClick={handleNext}
             >
               Next
             </button>
