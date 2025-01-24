@@ -1,0 +1,471 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap");
+
+/* Ensure html and body take up full height and allow scrolling */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure the body can take up full height */
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Dashboard container */
+.dashboard-container {
+  min-height: 100vh; /* Ensures the container takes full height */
+  background-image: url("../assets/dashboard-page.png"); /* Use your dashboard background */
+  background-size: cover; /* Ensure the background covers the entire container */
+  background-position: center; /* Align the background to the center */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  overflow-y: auto; /* Allow vertical scrolling */
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Ensure the Submit Button can be positioned within this container */
+  width: 100%; /* Ensure the container width is 100% of the viewport */
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure scroll is working */
+.dashboard-container::after {
+  content: "";
+  display: block;
+  height: 600px; /* Make the container tall enough to ensure scrolling */
+}
+
+/* Submit Blotter Button */
+.dashboard-container .submit-blotter-header {
+  background-color: transparent !important;
+  color: #003366 !important;
+  padding: 5px 15px !important;
+  border: 2px solid #003366 !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  font-size: 16px;
+  font-weight: 700;
+  position: absolute !important; /* Absolute positioning to move it to the top-left corner */
+  top: 15px !important; /* Adjust as needed to position it */
+  right: 100px !important; /* Adjust as needed to position it */
+  z-index: 10 !important; /* Ensures it is above other elements */
+  width: auto;
+}
+
+/* Hover effect for Submit Blotter Button */
+.dashboard-container .submit-blotter-header:hover {
+  background-color: #003366 !important;
+  color: #ffffff !important;
+}
+
+/* Icon style */
+.icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* Dashboard title styles */
+.dashboard-title {
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 90px; /* Moves it down, you can adjust the value to your preference */
+  margin-left: 120px; /* Moves it to the left, adjust as needed */
+  text-align: left; /* Aligns the text to the left */
+  font-family: "Inria Sans", sans-serif;
+  color: #212121;
+  margin-bottom: 0;
+}
+
+/* Separator line style */
+.separator-line-1 {
+  border: none;
+  border-top: 3px solid #6a7784;
+  width: 93%; /* Adjust the width as needed */
+  margin: 15px auto;
+}
+
+/* Summary card styles */
+.summary-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 41px; /* Add some space on the sides */
+}
+
+.summary-card {
+  flex: 1 1 21%; /* Adjust the width to fit 4 cards in one line */
+  height: 152px; /* Set a fixed height (adjust the value as needed) */
+  background-color: #ffffff; /* Semi-transparent background */
+  padding: 15px;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: -2px;
+  font-family: "Inria Sans", sans-serif;
+  text-align: left;
+  color: #034d66;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.card-number {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: "Inria Sans", sans-serif;
+  color: #034d66;
+  text-align: left;
+  margin-left: 8px;
+}
+
+.card-icon {
+  width: 52px;
+  height: 52px;
+  text-align: right;
+  margin-right: 30px;
+}
+
+.card-percentage {
+  font-size: 13px;
+  padding: 3px 13px;
+  border-radius: 15px;
+  display: block; /* Use block to ensure it's treated as a block-level element */
+  color: #263236; /* Default text color */
+  margin-top: 0px;
+  text-align: left; /* Align text inside the box to the left */
+  font-family: "Inria Sans", sans-serif;
+  font-weight: bold;
+  width: fit-content; /* Ensures the width adjusts based on content */
+}
+
+.card-percentage .percent-value {
+  font-weight: bold;
+}
+
+/* Chart container styles */
+.graph-chart-container {
+  display: flex; /* Arrange children horizontally */
+  justify-content: space-between; /* Add space between the items */
+  align-items: center; /* Align items vertically */
+  margin-top: 0; /* Add some space above */
+  padding: 0 40px; /* Optional: Add padding for spacing */
+}
+
+.graph-wrapper h3 {
+  position: absolute; /* Position the title absolutely */
+  top: 15px; /* Distance from the top of the graph-wrapper */
+  left: 20px; /* Distance from the left side of the graph-wrapper */
+  margin: 0; /* Reset default margins */
+  font-size: 26px; /* Adjust font size as needed */
+  font-weight: bold; /* Make the title bold */
+  color: #1e1e1e; /* Optional: Title color */
+  text-align: left; /* Ensure left-aligned text */
+  font-family: "Inria Sans", sans-serif;
+}
+
+/* Styling for icons next to headings */
+.com-stats-icon {
+  width: 24px; /* Adjust icon size */
+  height: 24px;
+  margin-right: 10px; /* Space between the icon and text */
+  vertical-align: middle; /* Align the icon vertically with the text */
+}
+
+.separator-line-2 {
+  border: none;
+  border-top: 1.2px solid #757575;
+  width: 670px; /* Adjust the width as needed */
+  margin: 0px auto 320px auto;
+  position: absolute;
+}
+
+/* Adjust the graph-wrapper to support absolute positioning */
+.graph-wrapper {
+  position: relative; /* Ensure children (like h3) can be positioned absolutely */
+  background-color: #ffffff;
+  width: 715px;
+  height: 400px;
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  margin-left: 0px; /* Aligns the wrapper to the left */
+  margin-top: 15px;
+  border-radius: 18px;
+  padding-top: 40px; /* Add padding to prevent overlap with the h3 */
+  box-sizing: border-box; /* Include padding in the total dimensions */
+}
+
+/* Bar graph container */
+.bar-graph-container {
+  width: 600px; /* Set width to 100% of parent container */
+  height: 300px; /* Adjust height as necessary */
+  display: block; /* Ensure it’s a block-level element */
+  margin-top: 15px;
+  background-color: transparent; /* Transparent background */
+  padding: 0; /* Remove padding */
+}
+
+/* Styling for the dropdown */
+.graph-selection {
+  margin-bottom: 18px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 150px;
+}
+
+/* Custom Dropdown */
+.custom-dropdown {
+  position: relative;
+  background-color: transparent;
+  border: 2px solid #757575;
+  border-radius: 12px;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 700;
+  color: #757575;
+  font-size: 16px;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+/* When dropdown is open (selected) */
+.custom-dropdown.open {
+  border-color: #033343;
+  color: #033343; /* Change text color when selected */
+}
+
+/* FontAwesome Icon Styling */
+.caret-icon {
+  font-size: 18px; /* Adjust icon size */
+  color: #757575; /* Icon color */
+  transition: transform 0.3s ease; /* Smooth transition */
+  margin-left: 8px; /* Space between icon and text */
+  position: absolute;
+  right: 10px;
+  top: 4px;
+}
+
+/* Rotate caret icon when the dropdown is open (facing up) */
+.custom-dropdown.open .caret-icon {
+  transform: rotate(360deg); /* Rotate caret 180 degrees */
+  color: #033343;
+}
+
+/* Selected option styling */
+.selected-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Dropdown options container */
+.dropdown-options {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 7px;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: none;
+  z-index: 1000;
+}
+
+.dropdown-options.open {
+  display: block;
+}
+
+/* Individual dropdown option styling */
+.dropdown-option {
+  padding: 8px 12px;
+  color: #263236;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-option:hover {
+  background-color: #e7e7e7;
+  text-decoration: none;
+}
+
+/* Pie chart CSS */
+.chart-wrapper h3 {
+  top: -32px; /* Reduced distance from the top */
+  font-family: "Inria Sans", sans-serif;
+  font-size: 26px; /* Adjust font size as needed */
+  font-weight: bold; /* Make the title bold */
+  color: #1e1e1e; /* Title color */
+  margin-bottom: 18px;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+  position: relative; /* Ensure positioning works */
+}
+
+/* Styling for icons next to headings */
+.com-bd-icon {
+  width: 24px; /* Adjust icon size */
+  height: 24px;
+  margin-right: 10px; /* Space between the icon and text */
+  vertical-align: middle; /* Align the icon vertically with the text */
+}
+
+.separator-line-3 {
+  border: none;
+  border-top: 1.2px solid #757575;
+  width: 418px; /* Adjust the width as needed */
+  margin: 0px auto 279.5px auto;
+  position: absolute;
+}
+
+.chart-wrapper {
+  position: relative; /* Ensure children (like h3) can be positioned absolutely */
+  background-color: #ffffff;
+  width: 450px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centers content vertically */
+  margin-left: 41px; /* Aligns the wrapper to the left */
+  border-radius: 18px !important;
+  box-sizing: border-box; /* Include padding in the total dimensions */
+  margin-top: 14px;
+}
+
+.chart-description {
+  margin-top: 0px;
+  font-size: 14px;
+  width: 100%; /* Ensure full width for alignment */
+  display: flex;
+  flex-direction: column; /* Stack labels vertically */
+  align-items: center; /* Center-align the descriptions */
+  gap: 5px; /* Add space between rows */
+  margin-left: 100px;
+}
+
+/* Individual description rows */
+.chart-description div {
+  display: flex;
+  align-items: center; /* Vertically center items in each row */
+  justify-content: flex-start;
+  max-width: 400px; /* Constrain the width for better centering */
+  width: 95%;
+}
+
+/* Color palette box */
+.color-box {
+  width: 25px !important;
+  height: 10px;
+  margin-right: 10px;
+}
+
+/* Label and percentage styling */
+.label {
+  flex-grow: 1; /* Take remaining space */
+  text-align: left;
+  color: #033343;
+  width: 30px;
+  margin-right: 100px;
+}
+
+.percentage {
+  width: 20px;
+  text-align: right;
+  color: #033343;
+}
+
+/* Recent Complaints Table */
+.recent-complaints-container {
+  width: 94%; /* Adjust this value to make it smaller */
+  margin: 13px auto 20px auto; /* Center the container */
+  padding: 20px 0;
+  background: #ffffff;
+  border-radius: 18px;
+}
+
+.recent-complaints-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Inria Sans", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 20px;
+  padding: 5px 0; /* Reduced padding to decrease height */
+  height: 40px; /* Optional: Set a fixed height */
+}
+
+.recent-complaints-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.see-all {
+  cursor: pointer;
+  color: #5b5858;
+  font-weight: bold;
+  font-family: "Inria Sans", sans-serif;
+  font-size: 15px !important;
+  margin-right: 27px;
+}
+
+.recent-complaints-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.recent-complaints-table th,
+.recent-complaints-table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #5b5858;
+  font-family: "Inria Sans", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.recent-complaints-table th:first-child,
+.recent-complaints-table td:first-child {
+  padding-left: 33px; /* Add space only to the first column */
+}
+
+.recent-complaints-table th:last-child,
+.recent-complaints-table td:last-child {
+  padding-right: 25px; /* Add space only to the first column */
+}
+
+.recent-complaints-table th {
+  background: #ffffff;
+  padding: 8px 5px;
+}
+
+.recent-complaints-table td {
+  color: #3c3c3c;
+  padding: 8px 5px;
+}
+
+.recent-complaints-table tbody tr:hover {
+  background: #f1f1f1;
+  cursor: pointer;
+}
+
+.recent-complaints-table td:last-child {
+  color: #3c3c3c;
+  text-decoration: none;
+  cursor: pointer;
+}

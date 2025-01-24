@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure the body can take up full height */
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Report container */
+.notifications-container {
+  min-height: 100vh; /* Ensures the container takes full height */
+  background-image: url("../assets/notifications-page.png"); /* Use your dashboard background */
+  background-size: cover; /* Ensure the background covers the entire container */
+  background-position: center; /* Align the background to the center */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  overflow-y: auto; /* Allow vertical scrolling */
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Ensure the Submit Button can be positioned within this container */
+  width: 100%; /* Ensure the container width is 100% of the viewport */
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.notifications-container::after {
+  content: "";
+  display: block;
+  height: 385px; /* Make the container tall enough to ensure scrolling */
+}
+
+/* Submit Blotter Button */
+.notifications-container .submit-blotter-header {
+  background-color: transparent !important;
+  color: #003366 !important;
+  padding: 5px 15px !important;
+  border: 2px solid #003366 !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  font-size: 16px;
+  font-weight: 700;
+  position: absolute !important; /* Absolute positioning to move it to the top-left corner */
+  top: 15px !important; /* Adjust as needed to position it */
+  right: 100px !important; /* Adjust as needed to position it */
+  z-index: 10 !important; /* Ensures it is above other elements */
+  width: auto;
+}
+
+/* Hover effect for Submit Blotter Button */
+.notifications-container .submit-blotter-header:hover {
+  background-color: #003366 !important;
+  color: #ffffff !important;
+}
+
+.notifications-box {
+  background-color: #ffffff;
+  width: 700px;
+  height: auto;
+  margin: 100px auto 0 auto;
+  border-radius: 15px;
+  padding-bottom: 15px;
+}
+
+.notifications-title {
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-align: left;
+  margin-left: 40px;
+}
+
+.notifications-options {
+  margin-bottom: 20px;
+  margin-left: 40px;
+}
+
+.notifications-btn {
+  padding: 5px 13px;
+  margin-right: 15px;
+  border: none;
+  cursor: pointer;
+  color: #3e3c3c;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 40px;
+  font-family: "Inria Sans", sans-serif;
+  width: auto;
+}
+
+.notifications-btn.active {
+  background-color: #206bb4;
+  color: white;
+}
+
+.notification-list {
+  margin-top: 20px;
+}
+
+.notification {
+  width: 100%;
+  padding: 10px 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.notification:hover {
+  background-color: #eae6e6;
+}
+
+.notification.unread strong {
+  font-weight: bolder;
+  font-family: "Inria Sans", sans-serif;
+}
+
+.notification.read strong {
+  font-weight: normal;
+  font-family: "Inria Sans", sans-serif;
+}
+
+.unread-circle {
+  width: 13px;
+  height: 13px;
+  background-color: #206bb4; /* Circle color for unread notifications */
+  border-radius: 50%; /* Make it round */
+  display: inline-block; /* Ensures proper display */
+  position: absolute; /* Position the circle */
+  top: 50%; /* Center vertically */
+  right: 30px; /* Adjust distance from the right edge */
+  transform: translateY(-50%); /* Center properly */
+}
+
+.notif-content {
+  font-family: "Inria Sans", serif;
+  font-size: 13px;
+  color: black;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.notif-time {
+  color: #206bb4;
+  font-size: 12px; /* Optional: Adjust size if needed */
+  margin: 0; /* Optional: Add spacing if necessary */
+  font-family: "Inria Sans", sans-serif;
+  font-weight: bold;
+  text-align: left;
+}
+
+.show-more-btn {
+  width: 94%; /* Set the width to 90% */
+  margin: 10px auto; /* Center the button horizontally */
+  display: block; /* Ensures the button takes up the entire width */
+  padding: 7px 20px; /* Add padding for better spacing */
+  background-color: #d9d9d9; /* Green background color */
+  color: white; /* White text color */
+  font-size: 14px; /* Adjust font size */
+  text-align: center; /* Center the text */
+  border: none; /* Remove borders */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Show pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  color: #3e3c3c;
+  font-weight: bold;
+  font-family: "Inria Sans", sans-serif;
+}
+
+.show-more-btn:hover {
+  background-color: rgb(202, 191, 191); /* Darker green on hover */
+}

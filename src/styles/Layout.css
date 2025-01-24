@@ -1,0 +1,42 @@
+/* Layout Styles */
+.layout-container {
+  display: flex;
+  position: relative;
+  height: 100vh; /* Ensure it takes full screen height */
+}
+
+.main-content {
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+  padding: 20px;
+  background-color: #f4f4f4; /* Adjust based on your theme */
+  overflow-y: auto;
+  /* No margin left here since the sidebar will overlap the content */
+}
+
+.sidebar {
+  width: 250px;
+  position: fixed; /* Fixed positioning so it overlays */
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(0, 153, 204, 0.6); /* Semi-transparent */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  z-index: 100;
+  backdrop-filter: blur(10px); /* Apply blur to the background */
+  -webkit-backdrop-filter: blur(10px); /* Safari */
+  transition: transform 0.3s ease; /* Smooth animation when sliding */
+}
+
+.sidebar.collapsed {
+  transform: translateX(-100%); /* Slide out the sidebar when collapsed */
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0; /* Full width for mobile */
+  }
+}

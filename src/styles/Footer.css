@@ -1,0 +1,10 @@
+.footer {
+  position: absolute; /* Positions the footer at the bottom */
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Makes the footer span the entire width */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  color: #fff; /* White text color */
+  text-align: center; /* Center text alignment */
+  padding: 10px 0; /* Vertical padding for spacing */
+}

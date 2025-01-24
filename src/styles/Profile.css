@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure the body can take up full height */
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.profile-container {
+  min-height: 100vh; /* Ensures the container takes full height */
+  background-image: url("../assets/profile-page.png"); /* Use your dashboard background */
+  background-size: cover; /* Ensure the background covers the entire container */
+  background-position: center; /* Align the background to the center */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  overflow-y: auto; /* Allow vertical scrolling */
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Ensure the Submit Button can be positioned within this container */
+  width: 100%; /* Ensure the container width is 100% of the viewport */
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.profile-container .submit-blotter-header {
+  background-color: transparent !important;
+  color: #003366 !important;
+  padding: 5px 15px !important;
+  border: 2px solid #003366 !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  font-size: 16px;
+  font-weight: 700;
+  position: absolute !important; /* Absolute positioning to move it to the top-left corner */
+  top: 15px !important; /* Adjust as needed to position it */
+  right: 100px !important; /* Adjust as needed to position it */
+  z-index: 10 !important; /* Ensures it is above other elements */
+  width: auto;
+}
+
+/* Ensure scroll is working */
+.profile-container::after {
+  content: "";
+  display: block;
+  height: 480px; /* Make the container tall enough to ensure scrolling */
+}
+
+.profile-content {
+  margin: 50px auto 0 auto;
+  background-color: #ffffff;
+  width: 800px;
+  height: 350px;
+  border-radius: 25px;
+}
+
+.profile-title {
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 90px; /* Moves it down, you can adjust the value to your preference */
+  margin-left: 120px; /* Moves it to the left, adjust as needed */
+  text-align: left; /* Aligns the text to the left */
+  font-family: "Inria Sans", sans-serif;
+  color: #212121;
+  margin-bottom: 0;
+}
+
+/* Separator line style */
+.separator-line-p1 {
+  border: none;
+  border-top: 3px solid #6a7784;
+  width: 93%; /* Adjust the width as needed */
+  margin: 15px auto;
+}
+
+.profile-edit-button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+}
+
+.edit-profile-btn {
+  display: flex;
+  align-items: center;
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-profile-btn .edit-icon {
+  margin-right: 5px; /* Add spacing between icon and text */
+}
+
+.profile-body {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.photo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  margin-top: 15px; /* Adjust this value to move the photo container further down */
+  margin-left: 15px;
+}
+
+.photo-box {
+  position: relative;
+  width: 185px;
+  height: 185px;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.upload-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: #007bff;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.p-username {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 20px 0px 0px 0px;
+}
+
+.user-role {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.details-container {
+  width: 65%;
+}
+
+.section-title {
+  font-size: 21px;
+  font-weight: bold;
+  margin-top: 4px;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.section-separator {
+  margin: 5px 0;
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.details-container p {
+  margin: 5px 0;
+}

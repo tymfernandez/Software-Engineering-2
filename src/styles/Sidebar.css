@@ -1,0 +1,390 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap");
+
+/* Sidebar Styles */
+.sidebar {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  width: 250px; /* Set your sidebar width */
+  background-color: #033343; /* Sidebar color with transparency */
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  position: fixed; /* Make it fixed to the left side */
+  top: 0;
+  left: 0;
+  z-index: 100; /* Ensure it's above other content */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.sidebar.collapsed {
+  width: 0px; /* Reduced width when collapsed */
+  background-color: transparent; /* Make the background transparent when collapsed */
+  padding: 0; /* Remove padding when collapsed */
+  box-shadow: none; /* Remove any shadow if applied */
+}
+
+/* Hamburger Icon (Left position when sidebar is collapsed) */
+.hamburger-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 101; /* Ensure the hamburger icon is above other content */
+  background: none;
+  border: none;
+  display: block; /* Ensure the hamburger icon is visible */
+}
+
+/* Less Than Symbol (Right position when sidebar is expanded) */
+.sidebar:not(.collapsed) .hamburger-icon {
+  right: 20px; /* Move the less than symbol to the right */
+  left: unset; /* Remove left positioning */
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  align-items: center;
+  background-color: transparent;
+  position: relative;
+  padding: 0px 20px 20px 0px;
+  margin-left: -5px;
+  margin-top: -10px;
+}
+
+/* H2 css*/
+.side-header {
+  font-family: "Inria Sans", sans-serif;
+  font-size: 25px;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.logo-container {
+  position: absolute; /* Use absolute positioning */
+  top: 10px; /* Adjust this value to move it upwards or downwards */
+  left: 20px; /* Adjust this value to move it left or right */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-logo img {
+  width: 37px;
+  height: 41px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* Title Styles */
+.title {
+  font-size: 17px;
+  color: white;
+  display: block;
+}
+
+/* User Info Styles */
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Adjust spacing as needed */
+  gap: 8px;
+  padding: 7px;
+}
+
+.user-info .active {
+  background-color: #075a75;
+  color: white;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.user-info:hover {
+  background-color: rgba(
+    128,
+    128,
+    128,
+    0.329
+  ); /* Set background to white on hover */
+  border-radius: 5px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column; /* Stack text vertically */
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e5e5e6; /* Adjust color if needed */
+  font-family: "Inria Sans", sans-serif;
+  font-weight: bold;
+}
+
+.user-description {
+  font-size: 13px;
+  font-family: "Josefin Sans", sans-serif; /* Ensure the font is loaded */
+  color: #e5e5e6; /* Adjust text color */
+  margin-top: 2px; /* Spacing below 'Lollima' */
+}
+
+hr {
+  margin: 0; /* Remove margin to eliminate spacing */
+}
+
+/* Menu Styles */
+.menu {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  font-family: "Inria Sans", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 7px;
+}
+
+.menu-item.active {
+  background-color: #075a75;
+  color: white;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.menu-item a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: inherit; /* Inherit from the parent (.menu) */
+}
+
+.menu-item:hover {
+  background-color: rgba(
+    128,
+    128,
+    128,
+    0.329
+  ); /* Set background to white on hover */
+  border-radius: 5px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.menu-item .sidebar-logo img {
+  opacity: 0; /* Make the logo transparent on hover */
+  cursor: pointer;
+}
+
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto; /* Push this section to the bottom */
+  padding-bottom: 0px; /* Add padding at the bottom for spacing */
+}
+
+/* Submit Blotter Button */
+.submit-blotter-btn {
+  align-self: center; /* Horizontally center the button */
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  padding: 12px 25px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: Arial !important;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+.blotter-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Style the button to remove default link styling if necessary */
+.blotter-btn-wrapper a {
+  text-decoration: none; /* Remove underline from the link */
+}
+
+.submit-blotter-btn:hover {
+  opacity: 0.8;
+}
+
+/* Support and Logout */
+.support,
+.logout {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10px;
+  gap: 10px;
+  font-family: "Inria Sans", sans-serif;
+}
+
+.support {
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+.logout {
+  margin-top: 10px;
+}
+
+.support:hover,
+.logout:hover {
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.support span,
+.logout span {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Collapse behaviors */
+.sidebar.collapsed .header {
+  background-color: transparent; /* Ensure transparent header when collapsed */
+}
+
+.sidebar.collapsed .collapse-btn {
+  background-color: transparent; /* Ensure transparent collapse button */
+  border: none; /* Remove any border */
+}
+
+.sidebar.collapsed hr {
+  border: 0; /* Remove the line */
+}
+
+.sidebar.collapsed .menu-item {
+  display: none; /* Hide the menu items when collapsed */
+}
+
+.sidebar.collapsed .sidebar-logo img {
+  display: none; /* Hide the logo when collapsed */
+}
+
+.sidebar.collapsed .user-info {
+  display: none; /* Optionally hide user info when collapsed */
+}
+
+.sidebar.collapsed .submit-blotter-btn {
+  display: none; /* Optionally hide the submit blotter button when collapsed */
+}
+
+.sidebar.collapsed .support,
+.sidebar.collapsed .logout {
+  display: none; /* Optionally hide support and logout sections when collapsed */
+}
+
+/* Main content area adjustment when sidebar is collapsed */
+.main-content {
+  margin-left: 250px; /* Adjust based on sidebar width */
+  transition: margin-left 0.3s ease;
+  width: 100%;
+  box-sizing: border-box; /* Make sure padding doesn’t overflow */
+}
+
+.sidebar.collapsed + .main-content {
+  margin-left: 0px; /* Remove left margin when sidebar is collapsed */
+  width: 100vw; /* Ensure full width when sidebar is collapsed */
+}
+
+/* Full-screen Layout for Main Content */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure full height */
+}
+
+main {
+  flex-grow: 1; /* Allow the main content to take up available space */
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Ensure it takes up the full screen width */
+}
+
+/* Prevent unnecessary white space around the home page */
+html,
+body {
+  height: 100%; /* Full height */
+  width: 100%; /* Full width */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  box-sizing: border-box; /* Ensure padding and border are included in width/height */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; /* Inherit box-sizing for all elements */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar.collapsed {
+    width: 0; /* Ensure the sidebar is fully collapsed on mobile */
+  }
+
+  .sidebar.collapsed .menu-item {
+    display: none; /* Hide menu items on mobile when collapsed */
+  }
+
+  .sidebar.collapsed .sidebar-logo img {
+    display: none; /* Hide logo when collapsed on mobile */
+  }
+
+  .hamburger-icon {
+    display: block; /* Show the hamburger icon */
+  }
+
+  /* Adjust the main content layout for mobile */
+  .main-content {
+    margin-left: 0; /* Remove margin for mobile when sidebar is collapsed */
+    width: 100%; /* Full width */
+  }
+}
+
+/* Overlay effect when sidebar is collapsed and the user clicks outside */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999; /* Make sure the overlay is above the content */
+}
+
+.overlay.visible {
+  display: block; /* Show the overlay when visible */
+}
+
+p {
+  color: #ffffff; /* the confirmation of logout */
+}

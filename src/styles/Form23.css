@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+.form23-page {
+  font-family: Arial, sans-serif;
+  background-color: #e7f6ff;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.form23-container {
+  background-color: white;
+  padding: 50px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  width: 100% !important;
+  max-width: 850px;
+}
+
+.form23-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
+  color: black;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.form23-subtitle {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Ensure the parent container centers its children */
+.form23-container, .form23-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form23-head, .form23-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form23-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form23-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.form23-centered-text {
+  font-size: 1.2rem;
+  color: black;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form23-centered-label {
+  margin-bottom: 30px;
+}
+
+.form23-kp-input {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.form23-kp-input input {
+  width: 150px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form23-kp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.form23-kpcase {
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.form23-kp input {
+  width: 120px;
+}
+
+.form23-head {
+  text-align: center;
+}
+
+.three-columns .form-group,
+.two-columns .form-group {
+  flex: 1;
+}
+
+.three-columns .form-group input,
+.two-columns .form-group input {
+  width: 250px;
+}
+
+#form23-maysumbong {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+#form23-ipinagsumbong {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+
+.form23-sumbong {
+  margin-bottom: 25px;
+  margin-left: 15px !important;
+}
+
+.form23-ipinagsusumbong {
+  text-align: center;
+  margin-bottom: 25px;
+  margin-left: 35px;
+}
+
+#form23-sumbong-kay {
+  margin-left: 40px;
+  width: 270px;
+}
+
+.form23-blg-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.form23-blg-input input {
+  width: 50px !important;
+  height: 35px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form23-ukol-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.form23-ukol-input input {
+  width: 160px !important;
+  height: 35px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form23-kay-input {
+  display: flex;
+  gap: 1px;
+  align-items: center;
+}
+
+.form23-kay-input input {
+  height: 38px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+#form23-kay {
+  width: 270px;
+}
+
+.form23-form-input {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.form23-form-input input {
+  width: 110px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form23-justify {
+  text-align: justify;
+  line-height: 1.5;
+  margin-left: 50px;
+}
+
+#form23-year {
+  width: 40px;
+}
+
+#form23-day {
+  width: 50px;
+}
+
+#form23-time {
+  width: 70px;
+}
+
+#form23-name {
+  width: 300px !important;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+#form23-petsa {
+  width: 250px !important;
+  height: 30px;
+  text-align: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.form23-indent {
+  text-indent: 50px;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.form23-paragraph {
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  display: block;
+  color: black;
+  text-align: left;
+}
+
+.form23-sign-line {
+  border-top: 1px solid black;
+  width: 250px !important;
+  margin-left: 10px !important;
+}
+
+.form23-signa-line {
+  border-top: 1px solid black;
+  width: 300px !important;
+  margin-left: 105px !important;
+}
+
+.form23-sign-text {
+  justify-content: flex-end;
+  margin-top: 10px;
+  font-weight: bold;
+  font-style: normal !important;
+  text-align: left !important;
+  margin-left: 120px !important;
+}
+
+.form23-signa-text {
+  justify-content: flex-end;
+  margin-top: 10px;
+  font-weight: bold;
+  font-style: normal !important;
+  text-align: left !important;
+  margin-left: 125px !important;
+}
+
+.form23-button-group {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.form23-print-button,
+.form23-next-button {
+  background-color: #0056b3;
+  color: white;
+  font-weight: bold;
+  width: 150px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.form23-print-button:hover {
+  background-color: #000000;
+  transform: scale(1.02);
+}
+.form23-next-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+  transform: scale(1.02);
+}
+.form23-print-button:active,
+.form23-next-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+}

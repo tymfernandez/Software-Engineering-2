@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.form14-page {
+  font-family: Arial, sans-serif;
+  background-color: #e7f6ff;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%; /* Ensure the container width is 100% of the viewport */
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.form14-container {
+  background-color: white;
+  padding: 50px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+.form14-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
+  color: black;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.form14-subtitle {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Ensure the parent container centers its children */
+.form14-container, .form14-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form14-head, .form14-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form14-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form14-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+p {
+  font-family: "Inria Sans", serif;
+  font-size: 0.95rem;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form14-centered-text {
+  font-size: 1.2rem;
+  color: black;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form14-centered-label {
+  margin-bottom: 30px;
+}
+
+.form14-kp-input {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+#form14KpNum {
+  width: 150px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form14-kp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.form14-kpcase {
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.form14-kp input {
+  width: 120px;
+}
+
+.form14-head {
+  text-align: center;
+}
+
+.two-columns .form-group {
+  flex: 1;
+}
+
+.form14-sumbong {
+  text-align: left;
+  margin-bottom: 25px;
+  margin-left: 15px;
+}
+
+.form14-mgasumbong {
+  text-align: center !important;
+  margin-left: 90px !important;
+  margin-bottom: 10px;
+}
+
+#form14-mgamaysumbong {
+  width: 250px !important;
+  align-items: center;
+  justify-content: center !important;
+  margin-left: 45px !important;
+  margin-bottom: 10px;
+}
+
+#form14-mgaipinagsumbong {
+  width: 250px !important;
+  align-items: center;
+  justify-content: center !important;
+  margin-left: 45px !important;
+  margin-bottom: 10px;
+}
+
+.form14-ipinagsusumbong {
+  text-align: center;
+  margin-bottom: 25px;
+  margin-left: 35px;
+}
+
+#form14-sumbong-kay {
+  margin-left: 40px;
+  width: 270px;
+}
+
+.form14-blg-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: right;
+}
+
+#form14Blg {
+  width: 50px !important;
+  height: 35px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form14-ukol-input {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#form14Ukol {
+  width: 155px !important;
+  height: 35px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form14-kay-input {
+  display: flex;
+  gap: 1px;
+  align-items: center;
+}
+
+.form14-kay-input input {
+  height: 38px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+#form14-kay {
+  width: 270px;
+}
+
+.form14-form-input {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.form14-form-input input {
+  width: 110px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form14-justify {
+  text-align: justify;
+}
+
+.form14-left {
+  text-align: left;
+}
+
+#form14Year {
+  width: 50px;
+}
+
+#form14Day {
+  width: 50px;
+}
+
+#form14Month {
+  width: 120px;
+}
+
+#form14MaySumbong {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form14MaySumbong1 {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form14IpinagSumbong {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form14IpinagSumbong1 {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.form14-indent {
+  text-indent: 50px;
+  text-align: justify;
+}
+
+.form14-paragraph {
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  line-height: 1.5;
+  display: block;
+  color: black;
+  text-align: left;
+}
+
+.form14-line {
+  border-top: 1px solid black;
+  width: 250px !important;
+  margin: auto;
+  margin-top: 30px !important;
+}
+
+.form14-sign-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form14-sig-container {
+  justify-content: flex-start;
+}
+
+.form14-sig-line {
+  border-top: 1px solid black;
+  width: 300px !important;
+  margin: 0px !important;
+}
+
+.form14-sig-text {
+  text-align: left !important;
+  margin-top: 10px;
+  margin-left: 10px !important;
+  font-weight: bold;
+  font-style: normal !important;
+}
+
+.form14-signa-text {
+  text-align: left !important;
+  margin-left: 50px !important;
+  font-weight: bold;
+  font-style: normal !important;
+}
+
+.form14-button-group {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.form14-print-button,
+.form14-next-button {
+  background-color: #0056b3;
+  color: white;
+  font-weight: bold;
+  width: 150px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form14-print-button:hover {
+  background-color: #003d82;
+  transform: scale(1.02);
+}
+
+.form14-next-button:hover {
+  background-color: #003d82;
+  color: #ffffff;
+  transform: scale(1.02);
+}
+
+.form14-print-button:active,
+.form14-next-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+}

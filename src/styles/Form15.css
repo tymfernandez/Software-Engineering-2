@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.form15-page {
+  font-family: Arial, sans-serif;
+  background-color: #e7f6ff;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.form15-container {
+  background-color: white;
+  padding: 50px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+.form15-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
+  color: black;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* Ensure the parent container centers its children */
+.form15-container, .form15-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form15-head, .form15-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form15-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form15-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+p {
+  font-family: "Inria Sans", serif;
+  font-size: 0.95rem;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form15-kp-input {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+#form15Kpnum {
+  width: 150px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form15-kp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.form15-kpcase {
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.form15-kp input {
+  width: 120px;
+}
+
+.form15-head {
+  text-align: center;
+}
+
+.three-columns .form-group,
+.two-columns .form-group {
+  flex: 1;
+}
+
+#form15Maysumbong {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form15Maysumbong1 {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form15Ipinagsumbong {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form15Ipinagsumbong1 {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.form15-sumbong {
+  text-align: left;
+  margin-bottom: 25px;
+  margin-left: 15px;
+}
+
+.form15-ipinagsusumbong {
+  text-align: center;
+  margin-bottom: 25px;
+  margin-left: 35px;
+}
+
+#form15-sumbong-kay {
+  margin-left: 40px;
+  width: 270px;
+  margin-bottom: 10px;
+}
+
+.form15-blg-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#form15Blg {
+  width: 50px !important;
+  height: 35px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form15-ukol-input {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#form15Ukol {
+  width: 155px !important;
+  height: 35px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form15-kay-input {
+  display: flex;
+  gap: 1px;
+  align-items: center;
+}
+
+.form15-kay-input input {
+  height: 38px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+#form15-kay {
+  width: 270px;
+}
+
+#form15Gawad {
+  margin-top: 10px;
+}
+
+.form15-form-input {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.form15-form-input input {
+  width: 110px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form15-justify {
+  text-align: justify;
+}
+
+#form15Year {
+  width: 40px;
+}
+
+#form15Day {
+  width: 50px;
+}
+
+#form15Place {
+  width: 140px;
+}
+
+#form15Month {
+  width: 100px;
+}
+
+.form15-indent {
+  text-indent: 50px;
+  text-align: justify;
+}
+
+.form15-paragraph {
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  line-height: 1.5;
+  display: block;
+  color: black;
+  text-align: left;
+}
+
+.form15-sign-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form15-sig-container {
+  justify-content: flex-start;
+}
+
+.form15-sig-line {
+  border-top: 1px solid black;
+  width: 200px !important;
+  margin: 0;
+}
+
+.form15-sig-text {
+  text-align: left;
+  margin-top: 7px;
+  margin-left: 75px !important;
+  font-weight: bold;
+  font-style: normal !important;
+}
+
+.form15-sign-container {
+  align-items: center;
+  margin-top: 50px;
+}
+
+.form15-sign-line {
+  border-top: 1px solid black;
+  width: 300px !important;
+  margin-left: auto !important;
+}
+
+.form15-sign-text {
+  justify-content: flex-end;
+  margin-top: 10px;
+  font-weight: bold;
+  font-style: normal !important;
+  text-align: right !important;
+  margin-right: 3px !important;
+}
+
+.form15-signa-line {
+  border-top: 1px solid black;
+  width: 255px !important;
+  margin: 0 !important;
+}
+
+.form15-signa-text {
+  text-align: left !important;
+  margin-top: 7px;
+  margin-left: 5px !important;
+  font-weight: bold;
+  font-style: normal !important;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+  margin-left: 50px !important;
+  line-height: 1.5;
+}
+
+.form15-button-group {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.form15-print-button,
+.form15-next-button {
+  background-color: #0056b3;
+  color: white;
+  font-weight: bold;
+  width: 150px;
+  text-align: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form15-print-button:hover {
+  background-color: #000000;
+  transform: scale(1.02);
+}
+
+.form15-next-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+  transform: scale(1.02);
+}
+
+.form15-print-button:active,
+.form15-next-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+}

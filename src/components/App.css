@@ -1,0 +1,18 @@
+/* General Layout */
+.app-container {
+  display: flex;
+  position: relative;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex-grow: 1;
+  background-color: #f4f4f4;
+  transition: margin-left 0.3s ease; /* Smooth transition when sidebar collapses */
+  margin-left: 0; /* No margin when the sidebar is open */
+}
+
+/* When Sidebar is opened */
+.main-content.sidebar-open {
+  margin-left: 250px; /* Adjust margin when sidebar is open */
+}

@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.form9-page {
+  font-family: Arial, sans-serif;
+  background-color: #e7f6ff;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.tanggapan-form-container {
+  background-color: white;
+  padding: 50px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+.form9-patawag-form-container {
+  background-color: white;
+  padding: 50px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+.form9-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
+  color: black;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.form9-subtitle {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Ensure the parent container centers its children */
+.form9-container, .form9-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form9-head, .form9-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form9-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form9-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.form9-centered-text {
+  font-size: 1.2rem;
+  color: black;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form9-centered-label {
+  margin-bottom: 30px;
+}
+
+.form9-kp-input {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+#form9KpCaseNumber {
+  width: 150px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form9-kp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.form9-kpcase {
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.form9-kp input {
+  width: 120px;
+}
+
+.form9-head {
+  text-align: center;
+}
+
+.three-columns .form-group,
+.two-columns .form-group {
+  flex: 1;
+}
+
+#form9Maysumbong {
+  width: 250px;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+#form9Maysumbong1 {
+  width: 250px;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+#form9Ipinagsumbong {
+  width: 250px;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+#form9Ipinagsumbong1 {
+  width: 250px;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+.form9-sumbong {
+  text-align: left;
+  margin-bottom: 25px;
+  margin-left: 15px;
+}
+
+.form9-ipinagsusumbong {
+  text-align: center;
+  margin-bottom: 25px;
+  margin-left: 80px;
+}
+
+#form9SumbongKay {
+  margin-left: 40px;
+  width: 270px;
+  margin-bottom: 10px;
+}
+
+.form9-blg-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#form9Blg {
+  width: 50px !important;
+  height: 35px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form9-ukol-input {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#form9Ukol {
+  width: 155px !important;
+  height: 35px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form9-kay-input {
+  display: flex;
+  gap: 1px;
+  align-items: center;
+}
+
+.form9-kay-input input {
+  height: 50px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+#form9Kay {
+  width: 270px;
+  margin-bottom: 10px;
+}
+
+.form9-form-input {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.form9-form-input input {
+  width: 110px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+#form9Year {
+  width: 50px;
+  height: 35px;
+}
+
+#form9Month {
+  width: 130px;
+  height: 35px;
+}
+
+#form9Day {
+  width: 50px;
+  height: 35px;
+}
+
+#form9ReceiveYear {
+  width: 50px;
+  height: 35px;
+}
+
+#form9ReceiveMonth {
+  width: 130px;
+  height: 35px;
+}
+
+#form9ReceiveDay {
+  width: 50px;
+  height: 35px;
+}
+
+#form9YearNow {
+  width: 50px;
+  height: 35px;
+}
+
+#form9MonthNow {
+  width: 130px;
+  height: 35px;
+}
+
+#form9DayNow {
+  width: 50px;
+  height: 35px;
+}
+
+#form9YearUlat {
+  width: 50px;
+  height: 35px;
+}
+
+#form9MonthUlat {
+  width: 130px;
+  height: 35px;
+}
+
+#form9DayUlat {
+  width: 50px;
+  height: 35px;
+}
+
+#form9Time {
+  width: 100px;
+  height: 35px;
+}
+
+#form9Blank1 {
+  width: 150px;
+  height: 35px;
+}
+
+#form9Blank2 {
+  width: 150px;
+  height: 35px;
+}
+
+#form9Blank3 {
+  width: 150px;
+  height: 35px;
+}
+
+#form9Blank4 {
+  width: 150px;
+  height: 35px;
+}
+
+#form9Name {
+  width: 250px;
+  margin-left: 150px !important;
+  height: 35px;
+}
+
+#form9Name1 {
+  width: 250px;
+  margin-left: 150px !important;
+  height: 35px;
+}
+
+#form9Pangalan {
+  width: 200px;
+  height: 35px;
+}
+
+.form9-four {
+  margin-left: 150px;
+}
+
+.form9-patawag-input {
+  margin-left: 0px;
+}
+
+.form9-name-input {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.form9-name-input input {
+  width: 200px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form9-reasons-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.form9-reasons-input input {
+  width: 200px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.form9-reasons-input label {
+  align-items: center;
+}
+
+.form9-reason-input input[type="radio"] {
+  width: 10px;
+  height: 10px;
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+.form9-reason-input input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: #0056b3;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form9-indent {
+  text-indent: 50px !important;
+  text-align: justify;
+}
+
+.form9-paragraph {
+  text-indent: 40px !important;
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  display: block;
+  color: black;
+  text-align: justify;
+}
+
+.form9-sign-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form9-signature-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.form9-signature-line {
+  border-top: 1px solid black;
+  width: 300px !important;
+  margin: 0;
+}
+
+.form9-signature-text {
+  margin-top: 10px;
+  font-weight: bold;
+  font-style: normal !important;
+  text-align: left !important;
+  margin-left: 25px !important;
+}
+
+.form9-sign-container {
+  align-items: center;
+  margin-top: 50px;
+}
+
+.form9-sign-line {
+  border-top: 1px solid black;
+  width: 200px !important;
+  margin-left: auto !important;
+}
+
+.form9-sign-text {
+  margin-top: 10px;
+  font-weight: bold;
+  font-style: normal !important;
+  text-align: right;
+  margin-right: 70px !important;
+}
+
+.form9-signa-line {
+  border-top: 1px solid black;
+  width: 250px !important;
+  margin: 0px !important;
+}
+
+.form9-button-group {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.form9-print-button,
+.form9-next-button {
+  background-color: #0056b3;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  width: 150px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form9-print-button:hover {
+  background-color: #000000;
+  transform: scale(1.02);
+}
+
+.form9-next-button:hover {
+  background-color: #003d82;
+  color: #ffffff;
+  transform: scale(1.02);
+}
+
+.form9-print-button:active,
+.form9-next-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+.form9-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.form9-popup-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form9-popup-content h2 {
+  color: #2980b9;
+  margin-bottom: 10px;
+}
+
+.success-icon {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.form9-popup-content p {
+  color: #000000;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.form9-popup-continue-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form9-popup-continue-button:hover {
+  background-color: #2980b9;
+}

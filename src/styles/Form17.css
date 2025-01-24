@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.form17-page {
+  font-family: Arial, sans-serif;
+  background-color: #e7f6ff;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.form17-container {
+  background-color: white;
+  padding: 50px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+.form17-title {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: bold;
+  color: black;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.form17-centered-text {
+  font-size: 1.2rem;
+  color: black;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form17-centered-label {
+  margin-bottom: 30px;
+}
+
+.form17-kp-input {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+#form17KpNum {
+  width: 150px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form17-kp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.form17-kpcase {
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.form17-kp input {
+  width: 120px;
+}
+
+.form17-head {
+  text-align: center;
+}
+
+/* Ensure the parent container centers its children */
+.form17-container, .form17-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center-align the text */
+.form17-head, .form17-centered-label {
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  margin: 0 auto; /* Center the block-level element */
+}
+
+/* Add spacing and adjust layout if needed */
+.form17-head {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.form17-centered-label {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.three-columns .form-group,
+.two-columns .form-group {
+  flex: 1;
+}
+
+#form17Maysumbong {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form17Maysumbong1 {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form17Ipinagsumbong {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#form17Ipinagsumbong1 {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.form17-sumbong {
+  text-align: left;
+  margin-bottom: 25px;
+  margin-left: 15px;
+}
+
+.form17-ipinagsusumbong {
+  text-align: center;
+  margin-bottom: 25px;
+  margin-left: 35px;
+}
+
+#sumbong-kay {
+  margin-left: 40px;
+  width: 270px;
+}
+
+.form17-mgasumbong {
+  text-align: center !important;
+  margin-left: 90px !important;
+}
+
+#form17-mgamaysumbong {
+  width: 250px !important;
+  align-items: center;
+  justify-content: center !important;
+  margin-left: 45px !important;
+  margin-bottom: 10px !important; 
+}
+
+#form17-mgaipinagsumbong {
+  width: 250px !important;
+  align-items: center;
+  justify-content: center !important;
+  margin-left: 45px !important;
+  margin-bottom: 10px !important;
+}
+
+.form17-blg-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#form17Blg {
+  width: 50px !important;
+  height: 35px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form17-ukol-input {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#form17Ukol {
+  width: 155px !important;
+  height: 35px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form17-kay-input {
+  display: flex;
+  gap: 1px;
+  align-items: center;
+}
+
+.form17-kay-input input {
+  height: 38px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+#form17-kay {
+  width: 270px;
+}
+
+.form17-form-input {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.form17-form-input input {
+  width: 110px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form17-justify {
+  text-align: justify;
+}
+
+#form17Year {
+  width: 40px;
+}
+
+#form17Day {
+  width: 50px;
+}
+
+#form17Month {
+  width: 120px;
+}
+
+#form17YearReceived {
+  width: 40px;
+}
+
+#form17DayReceived {
+  width: 50px;
+}
+
+#form17MonthReceived {
+  width: 120px;
+}
+
+#form17YearSigned {
+  width: 40px;
+}
+
+#form17DaySigned {
+  width: 50px;
+}
+
+#form17MonthSigned {
+  width: 120px;
+}
+
+
+#form17PlaceSigned {
+  width: 140px;
+}
+
+.form17-indent {
+  text-indent: 50px;
+  text-align: justify;
+}
+
+.form17-paragraph {
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  margin-right: 5px;
+
+  display: block;
+  color: black;
+  text-align: left;
+}
+
+.form17-checkbox-container {
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form17-checkbox-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form17-checkbox {
+  width: 15px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.form17-checkbox-label {
+  font-size: 0.9rem;
+}
+
+#form17Panlilinlang {
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  width: 500px;
+  height: 60px;
+}
+
+#form17Karahasan {
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  width: 500px;
+  height: 60px;
+}
+
+#form17Pananakot {
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  width: 500px;
+  height: 60px;
+}
+
+.form17-checkbox:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.form17-line {
+  border-top: 1px solid black;
+  width: 250px !important;
+  margin: auto;
+  margin-top: 30px !important;
+}
+
+.form17-sign-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form17-sign-container {
+  align-items: center;
+  margin-top: 50px;
+}
+
+.form17-sign-line {
+  border-top: 1px solid black;
+  width: 350px !important;
+  margin-left: 5px !important;
+}
+
+.form17-sign-text {
+  justify-content: flex-start;
+  font-style: normal !important;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: left !important;
+  margin-left: 10px !important;
+}
+
+.form17-button-group {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.form17-print-button,
+.form17-next-button {
+  background-color: #0056b3;
+  color: white;
+  font-weight: bold;
+  width: 150px;
+  text-align: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form17-print-button:hover {
+  background-color: #000000;
+  transform: scale(1.02);
+}
+
+.form17-next-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+  transform: scale(1.02);
+}
+
+.form17-print-button:active,
+.form17-next-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
