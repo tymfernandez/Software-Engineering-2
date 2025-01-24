@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:wght@300;400;500&display=swap');
 
 html, body {
+=======
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+html,
+body {
+>>>>>>> 6317b20c6236e91130346cdc0f8fc5d69941b845
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
@@ -93,22 +100,21 @@ html, body {
   justify-content: flex-end;
 }
 
-
 #form7-kpCaseNumber {
   width: 120px !important;
   height: 30px !important;
-  
-  
 }
 
 /* Ensure the parent container centers its children */
-.form7-container, .form7-page {
+.form7-container,
+.form7-page {
   display: flex;
   flex-direction: column;
 }
 
 /* Center-align the text */
-.form7-head, .form7-centered-label {
+.form7-head,
+.form7-centered-label {
   text-align: center;
   width: 100%; /* Ensure it spans the full width of its parent */
   margin: 0 auto; /* Center the block-level element */
@@ -176,7 +182,6 @@ html, body {
   margin-bottom: 8px;
   margin-right: 10px;
   justify-content: flex-end;
-
 }
 
 #form7Blg {
