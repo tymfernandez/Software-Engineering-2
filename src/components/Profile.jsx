@@ -35,14 +35,8 @@ const Profile = () => {
                 <i className="upload-icon-style"></i> {/* Upload icon */}
               </div>
             </div>
-            <p>
-              <span className="label">Email:</span>
-              <span className="value">JohnResolvIT@gmail.com</span>
-            </p>
-            <p>
-              <span className="label">Phone:</span>
-              <span className="value">+63 908 694 2023</span>
-            </p>
+            <p className="p-username">Username</p>
+            <p className="user-role">Barangay Secretary</p>
           </div>
 
           {/* Right Side - Info Sections */}

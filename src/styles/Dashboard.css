@@ -159,8 +159,9 @@ body {
   display: flex; /* Arrange children horizontally */
   justify-content: space-between; /* Add space between the items */
   align-items: center; /* Align items vertically */
-  margin-top: 0; /* Add some space above */
+  margin: 0 auto 0 auto; /* Add some space above */
   padding: 0 40px; /* Optional: Add padding for spacing */
+  max-width: 1300px;
 }
 
 .graph-wrapper h3 {

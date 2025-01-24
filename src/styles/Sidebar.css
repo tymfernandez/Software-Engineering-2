@@ -236,6 +236,87 @@ hr {
   font-family: "Inria Sans", sans-serif;
 }
 
+/* Modal Background */
+.logout-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it overlays everything */
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 0s, opacity 0.3s ease-in-out; /* Smooth show/hide */
+}
+
+/* When modal is active */
+.logout-modal.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 400px; /* Adjust as needed */
+}
+
+/* Text in Modal */
+.modal-contentText {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Action Buttons Container */
+.modal-actions {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+/* Yes and No Buttons */
+.yes-btn, .no-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.yes-btn {
+  background-color: #0056b3; /* Blue button */
+  color: white; /* White text */
+}
+
+.no-btn {
+  background-color: #ccc; /* Gray button */
+  color: black;
+}
+
+.yes-btn:hover {
+  background-color: white; /* Hover background for Yes */
+  color: #0056b3; /* Text color for Yes */
+  border: 2px solid #0056b3; /* Add border */
+}
+
+.no-btn:hover {
+  background-color: #666; /* Darker gray for hover */
+  color: white;
+}
+
+
 .support {
   margin-bottom: 10px;
   margin-top: 30px;

@@ -28,7 +28,7 @@ html, body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
-  width: 50% !important;
+  width: 55% !important;
 }
 
 .form7-title {
@@ -90,22 +90,21 @@ html, body {
   justify-content: flex-end;
 }
 
-
 #form7-kpCaseNumber {
   width: 120px !important;
   height: 30px !important;
-  
-  
 }
 
 /* Ensure the parent container centers its children */
-.form7-container, .form7-page {
+.form7-container,
+.form7-page {
   display: flex;
   flex-direction: column;
 }
 
 /* Center-align the text */
-.form7-head, .form7-centered-label {
+.form7-head,
+.form7-centered-label {
   text-align: center;
   width: 100%; /* Ensure it spans the full width of its parent */
   margin: 0 auto; /* Center the block-level element */
@@ -173,7 +172,6 @@ html, body {
   margin-bottom: 8px;
   margin-right: 10px;
   justify-content: flex-end;
-
 }
 
 #form7Blg {
@@ -230,7 +228,7 @@ html, body {
 
 .form7-justify {
   text-align: justify;
-  margin-right: 100px;
+  margin-right: 0px;
   margin-bottom: 20px;
 }
 
@@ -299,8 +297,10 @@ html, body {
   font-size: 0.916rem;
   line-height: 1.5;
   margin-bottom: 16px;
+  margin-right: 10px;
   text-align: justify;
 }
+
 
 .label {
   font-weight: bold;
