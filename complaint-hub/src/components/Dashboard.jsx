@@ -712,7 +712,7 @@ const Dashboard = () => {
                         className="view-link"
                         onClick={() => {
                           console.log("Viewing complaint:", complaint);
-                          handleViewComplaint(complaint._id);
+                          navigate("/form7view");
                         }}
                       >
                         View
