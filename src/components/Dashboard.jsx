@@ -643,7 +643,7 @@ const Dashboard = () => {
                 className="color-box"
                 style={{ backgroundColor: "#466DAC" }}
               ></div>
-              <div className="label">Away Magasawa</div>
+              <div className="label">Away asawa</div>
               <div className="percentage">5%</div>
             </div>
             <div>

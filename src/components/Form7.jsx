@@ -60,7 +60,7 @@ const Form7 = () => {
       .post("http://localhost:3001/form7", form7Data)
       .then((response) => {
         console.log(response);
-        navigate("/form7next"); // Redirect to form7next on success
+        navigate("/complaints"); // Redirect to form7next on success
       })
       .catch((error) => {
         console.error("Error adding Form 7 data: ", error);
@@ -101,7 +101,7 @@ const Form7 = () => {
           <div className="form7-kp-input">
             <label className="form7-kpcase">
               KP Case Number: &nbsp;
-              <input type="text" id="form7KpCaseNumber" value={formData.form7KpCaseNumber} readOnly />
+              <input type="text" id="form7KpCaseNumber" value={formData.form7KpCaseNumber} readOnly required />
             </label>
           </div>
           <div className="form7-pormularyoblg">
@@ -122,24 +122,24 @@ const Form7 = () => {
           </div>
           <div className="form-row two-columns centered-row">
             <div className="form-group">
-              <input type="text" id="form7MaySumbong" value={formData.form7MaySumbong} onChange={handleInputChange} /> <br />
-              <input type="text" id="form7MaySumbong1" value={formData.form7MaySumbong1} onChange={handleInputChange} /> <br />
+              <input type="text" id="form7MaySumbong" value={formData.form7MaySumbong} onChange={handleInputChange} required /> <br />
+              <input type="text" id="form7MaySumbong1" value={formData.form7MaySumbong1} onChange={handleInputChange} required /> <br />
               <label className="form7-sumbong">
                 (Mga) May Sumbong <br /> -laban kay/kina-
               </label> <br />
-              <input type="text" id="form7Ipinagsumbong" value={formData.form7Ipinagsumbong} onChange={handleInputChange} /> <br />
-              <input type="text" id="form7Ipinagsumbong1" value={formData.form7Ipinagsumbong1} onChange={handleInputChange} /> <br />
+              <input type="text" id="form7Ipinagsumbong" value={formData.form7Ipinagsumbong} onChange={handleInputChange} required /> <br />
+              <input type="text" id="form7Ipinagsumbong1" value={formData.form7Ipinagsumbong1} onChange={handleInputChange} required /> <br />
               <label className="form7-sumbong"> (Mga) Ipinagsusumbong </label>
             </div>
 
             <div className="form-group">
               <div className="form7-blg-input">
                 <label>Usaping Barangay Blg. </label>
-                <input type="text" id="form7Blg" value={formData.form7Blg} readOnly />
+                <input type="text" id="form7Blg" value={formData.form7Blg} readOnly required />
               </div>
               <div className="form7-ukol-input">
                 <label>Ukol sa:</label>
-                <input type="text" id="form7UkolSa" value={formData.form7UkolSa} onChange={handleInputChange} />
+                <input type="text" id="form7UkolSa" value={formData.form7UkolSa} onChange={handleInputChange} required />
               </div>
             </div>
           </div>
@@ -149,7 +149,7 @@ const Form7 = () => {
           <div className="form7-paragraph">
             <label className="form7-justify">
               AKO/KAMI, ay nagrereklamo laban sa mga ipinagsusumbong na binanggit sa itaas dahil sa paglabag sa aking/aming mga karapatan at kapakanan sa sumusunod na pamamaraan:
-              <textarea id="reklamo" value={formData.reklamo} onChange={handleInputChange}></textarea>
+              <textarea id="reklamo" value={formData.reklamo} onChange={handleInputChange} required ></textarea>
             </label>
           </div>
           <div className="form7-paragraph">
@@ -157,17 +157,17 @@ const Form7 = () => {
               DAHIL DITO, AKO/KAMI, na nakikiusap na ipagkaloob sa akin/amin
               ang sumusunod na (mga) kalunasan nang naaalinsunod sa batas at/o
               pagkamakatuwiran:
-              <textarea id="resolutionRequest" value={formData.resolutionRequest} onChange={handleInputChange}></textarea>
+              <textarea id="resolutionRequest" value={formData.resolutionRequest} onChange={handleInputChange} required ></textarea>
             </label>
           </div>
 
           <div className="form7-form-input">
             <label className="form7-indent">Ginawa ngayong ika-</label>
-            <input type="text" id="form7Day" value={formData.form7Day} onChange={handleInputChange} />
+            <input type="text" id="form7Day" value={formData.form7Day} onChange={handleInputChange} required />
             <label>araw ng</label>
-            <input type="text" id="form7Month" value={formData.form7Month} onChange={handleInputChange} />
+            <input type="text" id="form7Month" value={formData.form7Month} onChange={handleInputChange} required />
             <label>20</label>
-            <input type="text" id="form7Year" value={formData.form7Year} onChange={handleInputChange} />
+            <input type="text" id="form7Year" value={formData.form7Year} onChange={handleInputChange} required />
             <label>.</label>
           </div>
           <br />
@@ -179,11 +179,11 @@ const Form7 = () => {
           <br />
           <div className="form7-form-input">
             <label className="form7-indent">Tinanggap at inihain ngayong ika-</label>
-            <input type="text" id="form7ReceiveDay" value={formData.form7ReceiveDay} onChange={handleInputChange} />
+            <input type="text" id="form7ReceiveDay" value={formData.form7ReceiveDay} onChange={handleInputChange} required />
             <label>araw ng</label>
-            <input type="text" id="form7ReceiveMonth" value={formData.form7ReceiveMonth} onChange={handleInputChange} />
+            <input type="text" id="form7ReceiveMonth" value={formData.form7ReceiveMonth} onChange={handleInputChange} required />
             <label>20</label>
-            <input type="text" id="form7ReceiveYear" value={formData.form7ReceiveYear} onChange={handleInputChange} />
+            <input type="text" id="form7ReceiveYear" value={formData.form7ReceiveYear} onChange={handleInputChange} required />
             <label>.</label>
           </div>
           <br /> <br /> 
@@ -208,7 +208,6 @@ const Form7 = () => {
               type="submit"
               className="form7-next-button"
               style={{ marginLeft: "10px" }} // Optional styling
-              onClick={handleNext}
             >
               Submit
             </button>

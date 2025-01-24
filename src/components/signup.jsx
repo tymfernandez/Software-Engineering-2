@@ -117,12 +117,12 @@ function Signup() {
                   className="input"
                   required
                 />
-                 <img
-                    src={passwordVisible ? "/eyeIcon.png" : "/eyeSlashIcon.png"}
-                    alt={passwordVisible ? "Hide password" : "Show password"}
-                    className="toggle-password-icon"
-                    onClick={togglePasswordVisibility}
-                  />
+                <img
+                  src={passwordVisible ? "../assets/eyeIcon.png" : "../assets/eyeSlashIcon.png"}
+                  alt={passwordVisible ? "Hide password" : "Show password"}
+                  className="toggle-password-icon"
+                  onClick={togglePasswordVisibility}
+                />
               </div>
               <div className={`password-strength ${passwordStrength}`}></div>
               {error && <p className="error-text">{error}</p>}
