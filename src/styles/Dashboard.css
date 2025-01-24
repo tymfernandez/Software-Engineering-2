@@ -301,7 +301,6 @@ body {
 
 /* Pie chart CSS */
 .chart-wrapper h3 {
-  top: -32px; /* Reduced distance from the top */
   font-family: "Inria Sans", sans-serif;
   font-size: 26px; /* Adjust font size as needed */
   font-weight: bold; /* Make the title bold */

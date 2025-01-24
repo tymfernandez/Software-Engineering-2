@@ -35,8 +35,14 @@ const Profile = () => {
                 <i className="upload-icon-style"></i> {/* Upload icon */}
               </div>
             </div>
-            <p className="p-username">Username</p>
-            <p className="user-role">Barangay Secretary</p>
+            <p>
+              <span className="label">Email:</span>
+              <span className="value">JohnResolvIT@gmail.com</span>
+            </p>
+            <p>
+              <span className="label">Phone:</span>
+              <span className="value">+63 908 694 2023</span>
+            </p>
           </div>
 
           {/* Right Side - Info Sections */}
@@ -44,21 +50,42 @@ const Profile = () => {
             {/* Contact Information */}
             <h2 className="section-title">CONTACT INFORMATION</h2>
             <hr className="section-separator" />
-            <p>Email: JohnResolvIT@gmail.com</p>
-            <p>Phone: +63 908 694 2023</p>
+            <p>
+              <span className="label">Email:</span>
+              <span className="value">JohnResolvIT@gmail.com</span>
+            </p>
+            <p>
+              <span className="label">Phone:</span>
+              <span className="value">+63 908 694 2023</span>
+            </p>
 
             {/* Account Details */}
             <h2 className="section-title">ACCOUNT DETAILS</h2>
             <hr className="section-separator" />
-            <p>Full Name: mrjohnresolvit</p>
-            <p>Username: mrjohnresolvit</p>
+            <p>
+              <span className="label">Full Name:</span>
+              <span className="value">mrjohnresolvit</span>
+            </p>
+            <p>
+              <span className="label">Username:</span>
+              <span className="value">mrjohnresolvit</span>
+            </p>
 
             {/* Administrative Info */}
             <h2 className="section-title">ADMINISTRATIVE INFO</h2>
             <hr className="section-separator" />
-            <p>Province: Cavite</p>
-            <p>City/Municipality: Indang</p>
-            <p>Barangay: Barangay Poblacion Uno</p>
+            <p>
+              <span className="label">Province:</span>
+              <span className="value">Cavite</span>
+            </p>
+            <p>
+              <span className="label">City/Municipality:</span>
+              <span className="value">Indang</span>
+            </p>
+            <p>
+              <span className="label">Barangay:</span>
+              <span className="value">Barangay Poblacion Uno</span>
+            </p>
           </div>
         </div>
       </div>

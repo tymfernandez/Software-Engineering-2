@@ -50,8 +50,8 @@ body {
 .profile-content {
   margin: 50px auto 0 auto;
   background-color: #ffffff;
-  width: 800px;
-  height: 350px;
+  width: 1000px;
+  height: 370px;
   border-radius: 25px;
 }
 
@@ -98,7 +98,7 @@ body {
 .profile-body {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 35px;
 }
 
 .photo-container {
@@ -106,14 +106,14 @@ body {
   flex-direction: column;
   align-items: center;
   width: 30%;
-  margin-top: 15px; /* Adjust this value to move the photo container further down */
-  margin-left: 15px;
+  margin-top: 10px; /* Adjust this value to move the photo container further down */
+  margin-left: 10px;
 }
 
 .photo-box {
   position: relative;
-  width: 185px;
-  height: 185px;
+  width: 215px;
+  height: 215px;
   overflow: hidden;
   border: 2px solid #ccc;
   display: flex;
@@ -151,10 +151,12 @@ body {
 
 .details-container {
   width: 65%;
+  padding-left: 25px;
 }
 
 .section-title {
-  font-size: 21px;
+  font-size: 26px;
+  font-family: "Inria Sans", sans-serif;
   font-weight: bold;
   margin-top: 4px;
   margin-bottom: 0;
@@ -169,5 +171,16 @@ body {
 }
 
 .details-container p {
-  margin: 5px 0;
+  display: flex;
+  justify-content: space-between; /* Distribute label and value evenly */
+  margin: 0px 0; /* Add spacing between lines */
+  font-size: 16px; /* Adjust font size if necessary */
+}
+
+.details-container .label-p {
+  width: 40%; /* Set width for labels */
+}
+
+.details-container p span {
+  word-wrap: break-word; /* Ensure long values break into multiple lines if needed */
 }
