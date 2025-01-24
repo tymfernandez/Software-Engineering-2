@@ -145,3 +145,23 @@ body {
 .signup-link:hover {
   text-decoration: underline;
 }
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  flex: 1;
+  padding-right: 2.5rem; /* Space for the icon */
+}
+
+.toggle-password-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  width: 20px; /* Adjust size */
+  height: 20px;
+}
+

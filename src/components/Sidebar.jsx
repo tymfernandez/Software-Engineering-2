@@ -194,7 +194,7 @@ const Sidebar = () => {
       {showLogoutModal && (
         <div className="logout-modal">
           <div className="modal-content">
-            <p>Are you sure you want to logout?</p>
+            <p className="modal-contentText">Are you sure you want to logout?</p>
             <div className="modal-actions">
               <button
                 className="yes-btn"

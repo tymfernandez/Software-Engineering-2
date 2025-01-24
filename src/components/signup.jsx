@@ -85,21 +85,6 @@ function Signup() {
               />
             </div>
 
-            {/* Position Dropdown */}
-            <div className="form-group">
-              <label htmlFor="position">Position</label>
-              <select
-                name="position"
-                value={values.position}
-                onChange={handleInput}
-                className="input"
-                required
-              >
-                <option value="Secretary">Secretary</option>
-                <option value="Brgy. Captain">Brgy. Captain</option>
-              </select>
-            </div>
-
             {/* Username Field */}
             <div className="form-group">
               <label htmlFor="username">Username</label>
@@ -128,19 +113,16 @@ function Signup() {
                   className="input"
                   required
                 />
-                <button
-                  type="button"
-                  className="toggle-password"
-                  onClick={togglePasswordVisibility}
-                  aria-label="Toggle password visibility"
-                >
-                  {passwordVisible ? "Hide" : "Show"}
-                </button>
+                 <img
+                    src={passwordVisible ? "/eyeIcon.png" : "/eyeSlashIcon.png"}
+                    alt={passwordVisible ? "Hide password" : "Show password"}
+                    className="toggle-password-icon"
+                    onClick={togglePasswordVisibility}
+                  />
               </div>
               <div className={`password-strength ${passwordStrength}`}></div>
+              {error && <p className="error-text">{error}</p>}
             </div>
-
-            {error && <p className="error-text">{error}</p>}
 
             {/* Submit Button */}
             <button
