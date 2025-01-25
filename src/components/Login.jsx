@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/Login.css";
 import Validation from "./LoginValidation";
+import ForgotPasswordModal from "./ForgotPasswordModal"; // Import the modal component
 
 function Login() {
   const [values, setValues] = useState({
@@ -10,7 +11,8 @@ function Login() {
     password: "",
   });
   const [error, setError] = useState({});
-  const [isLoading, setIsLoading] = useState(false); // Added isLoading state
+  const [isLoading, setIsLoading] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -20,23 +22,21 @@ function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const validationErrors = Validation(values); // Perform validation
+    const validationErrors = Validation(values);
     setError(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      setIsLoading(true); // Start loading indicator
-      setError({}); // Clear previous errors
-
+      setIsLoading(true);
+      setError({});
       try {
         const result = await axios.post("http://localhost:3001/login", {
-          username: values.username.toLowerCase(), // Convert username to lowercase
+          username: values.username.toLowerCase(),
           password: values.password,
         });
-        console.log("Server response:", result.data); // Debugging response
+        console.log("Server response:", result.data);
 
         if (result.data.includes("Login successful")) {
-          // Check if response includes "Login successful"
-          navigate("/home"); // Redirect on success
+          navigate("/home");
         } else {
           setError({ login: "Invalid login credentials" });
         }
@@ -46,7 +46,7 @@ function Login() {
           login: "An error occurred during login. Please try again.",
         });
       } finally {
-        setIsLoading(false); // Stop loading indicator
+        setIsLoading(false);
       }
     }
   };
@@ -92,9 +92,13 @@ function Login() {
               {error.password && (
                 <span className="error-text">{error.password}</span>
               )}
-              <Link to="/forgot-password" className="forgot-password">
-                <i>Forgot password?</i>
-              </Link>
+              <button
+                type="button"
+                className="forgot-password"
+                onClick={() => setIsModalOpen(true)} // Open the modal
+              >
+                Forgot password?
+              </button>
             </div>
 
             {error.login && <p className="error-text">{error.login}</p>}
@@ -118,6 +122,12 @@ function Login() {
           </p>
         </div>
       </div>
+
+      {/* Forgot Password Modal */}
+      <ForgotPasswordModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)} // Close the modal
+      />
     </div>
   );
 }

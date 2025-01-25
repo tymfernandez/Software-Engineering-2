@@ -108,12 +108,21 @@ body {
 }
 
 .forgot-password {
-  display: block;
-  text-align: right;
-  font-size: 14px;
+  border: none;
+  background: none;
   color: grey;
+  font-size: 14px;
+  padding: 0;
+  cursor: pointer;
+  text-align: right;
+  float: right;
   text-decoration: none;
+  display: block;
   margin-top: 5px;
+}
+
+.forgot-password:hover {
+  color: #003366;
 }
 
 .error-text {
