@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import "../styles/Notifications.css"; // Add styles for this page
 
 const Notifications = () => {
+  const navigate = useNavigate();
+
   const handleSubmitBlotter = () => {
     console.log("Navigating to Blotter Form...");
+    navigate("/form7");
   };
 
   const timeAgo = (timestamp) => {
