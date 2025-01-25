@@ -23,21 +23,23 @@ function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+  
     const validationErrors = Validation(values); // Perform validation
     setError(validationErrors);
-
+  
     if (Object.keys(validationErrors).length === 0) {
       setIsLoading(true); // Start loading indicator
       setError({}); // Clear previous errors
-
+  
       try {
         const result = await axios.post("http://localhost:3001/login", {
           username: values.username.toLowerCase(), // Convert username to lowercase
           password: values.password,
         });
         console.log("Server response:", result.data); // Debugging response
-
+  
         if (result.data.includes("Login successful")) {
+          localStorage.setItem('isAuthenticated', 'true'); // Set authentication state
           setModalMessage("Login successful! Redirecting..."); // Success message for modal
           setShowModal(true); // Show success modal
           setTimeout(() => {

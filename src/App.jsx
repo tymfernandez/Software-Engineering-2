@@ -34,6 +34,7 @@ import Form24 from "./components/Form24";
 import Form25 from "./components/Form25";
 import Form7View from "./components/Form7View";
 import Form8View from "./components/Form8View";
+import PrivateRoute from "./components/PrivateRoute";
 import "./components/App.css";
 
 const App = () => {
@@ -91,7 +92,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/" element={<Login />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={<PrivateRoute element={Home} />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/complaints" element={<Complaints />} />
           <Route path="/notifications" element={<Notifications />} />

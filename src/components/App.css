@@ -1,3 +1,18 @@
+/* App.css or your main container CSS */
+html,
+body {
+  height: 100%; /* Ensure the body takes full height of the viewport */
+  margin: 0; /* Remove default margin */
+}
+
+body {
+  display: flex; /* Use flexbox to control layout */
+  flex-direction: column; /* Stack the elements vertically */
+}
+
+main {
+  flex: 1; /* Allow main content to take up available space */
+}
 /* General Layout */
 .app-container {
   display: flex;
