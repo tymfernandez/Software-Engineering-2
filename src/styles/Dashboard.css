@@ -1,11 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap");
 
 /* Ensure html and body take up full height and allow scrolling */
-html, body {
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
+html,
 body {
   margin: 0;
   padding: 0;
@@ -17,13 +13,12 @@ body {
 /* Dashboard container */
 .dashboard-container {
   min-height: 100vh; /* Ensures the container takes full height */
-  background-image: url("C:\Users\Tym\Desktop\SE2\Software-Engineering-2\public\assets\dashboard-page.png"); /* Use your dashboard background */
+  background-image: url("../assets/dashboard-page(2).png"); /* Use your dashboard background */
   background-size: cover; /* Ensure the background covers the entire container */
   background-position: center; /* Align the background to the center */
   background-repeat: no-repeat; /* Do not repeat the image */
   overflow-y: auto; /* Allow vertical scrolling */
   display: flex;
-  position: fixed;
   flex-direction: column;
   position: relative; /* Ensure the Submit Button can be positioned within this container */
   width: 100%; /* Ensure the container width is 100% of the viewport */
@@ -35,7 +30,7 @@ body {
 .dashboard-container::after {
   content: "";
   display: block;
-  height: 600px; /* Make the container tall enough to ensure scrolling */
+  height: 250px; /* Make the container tall enough to ensure scrolling */
 }
 
 /* Submit Blotter Button */
@@ -159,7 +154,7 @@ body {
 .graph-chart-container {
   display: flex; /* Arrange children horizontally */
   justify-content: space-between; /* Add space between the items */
-  align-items: left; /* Align items vertically */
+  align-items: center; /* Align items vertically */
   margin: 0 auto 0 auto; /* Add some space above */
   padding: 0 40px; /* Optional: Add padding for spacing */
   max-width: 1300px;
@@ -167,7 +162,7 @@ body {
 
 .graph-wrapper h3 {
   position: absolute; /* Position the title absolutely */
-  top: 50px; /* Distance from the top of the graph-wrapper */
+  top: 15px; /* Distance from the top of the graph-wrapper */
   left: 20px; /* Distance from the left side of the graph-wrapper */
   margin: 0; /* Reset default margins */
   font-size: 26px; /* Adjust font size as needed */
@@ -183,7 +178,6 @@ body {
   height: 24px;
   margin-right: 10px; /* Space between the icon and text */
   vertical-align: middle; /* Align the icon vertically with the text */
-  
 }
 
 .separator-line-2 {

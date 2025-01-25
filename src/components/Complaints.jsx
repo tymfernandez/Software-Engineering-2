@@ -10,11 +10,20 @@ const Complaints = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [statusData, setStatusData] = useState([]);
+  const [priorityData, setPriorityData] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchForm7Data();
   }, []);
+
+  useEffect(() => {
+    if (form7Data.length > 0) {
+      setStatusData(form7Data.map((item) => item.status || "Pending"));
+      setPriorityData(form7Data.map((item) => item.priority || "Medium"));
+    }
+  }, [form7Data]);
 
   const fetchForm7Data = async () => {
     try {
@@ -61,6 +70,18 @@ const Complaints = () => {
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
+  };
+
+  const handleStatusChange = (index, newStatus) => {
+    const updatedStatus = [...statusData];
+    updatedStatus[index] = newStatus;
+    setStatusData(updatedStatus);
+  };
+
+  const handlePriorityChange = (index, newPriority) => {
+    const updatedPriority = [...priorityData];
+    updatedPriority[index] = newPriority;
+    setPriorityData(updatedPriority);
   };
 
   const complaintsData = form7Data.map((item) => ({
@@ -163,8 +184,46 @@ const Complaints = () => {
                     <td>{data.barangayBlg}</td>
                     <td>{data.date}</td>
                     <td>{data.type}</td>
-                    <td>{data.status}</td>
-                    <td>{data.priority}</td>
+                    <td>
+                      <select
+                        value={statusData[index]}
+                        onChange={(e) =>
+                          handleStatusChange(index, e.target.value)
+                        }
+                        style={{
+                          padding: "4px 7px",
+                          borderRadius: "5px",
+                          fontWeight: "bold",
+                          width: "95px",
+                          border: "none",
+                          outline: "none",
+                        }}
+                      >
+                        <option value="Pending">Pending</option>
+                        <option value="Resolved">Resolved</option>
+                        <option value="Ongoing">Ongoing</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select
+                        value={priorityData[index]}
+                        onChange={(e) =>
+                          handlePriorityChange(index, e.target.value)
+                        }
+                        style={{
+                          padding: "4px 7px",
+                          borderRadius: "5px",
+                          fontWeight: "bold",
+                          width: "95px",
+                          border: "none",
+                          outline: "none",
+                        }}
+                      >
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                      </select>
+                    </td>
                     <td>
                       <a
                         href="#"

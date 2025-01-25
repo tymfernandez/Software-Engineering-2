@@ -12,6 +12,9 @@ const Sidebar = () => {
   const sidebarRef = useRef(null);
   const hamburgerRef = useRef(null); // Ref for the hamburger icon
 
+  const isLoginOrSignup =
+    location.pathname === "/login" || location.pathname === "/signup";
+
   // Toggle sidebar collapse
   const handleCollapse = (event) => {
     event.stopPropagation(); // Prevent outside click logic from triggering
@@ -67,6 +70,10 @@ const Sidebar = () => {
   //Function to determine if a menu item is active
   const isActive = (path) => location.pathname === path;
 
+  if (isLoginOrSignup) {
+    return null;
+  }
+
   return (
     <div
       className={`sidebar ${isCollapsed ? "collapsed" : ""}`}
@@ -80,7 +87,10 @@ const Sidebar = () => {
       <div
         className="hamburger-icon"
         onClick={handleCollapse}
-        ref={hamburgerRef} // Attach ref to hamburger icon
+        ref={hamburgerRef} // Attach ref to the hamburger icon
+        style={{
+          color: location.pathname === "/notifications" ? "#033343" : "white", // Change color dynamically
+        }}
       >
         {isCollapsed ? <FaBars size={24} /> : <FaAngleLeft size={28} />}
       </div>
@@ -106,7 +116,7 @@ const Sidebar = () => {
               width={27}
             />
             <div className="user-details">
-              <span className="user-name">Secretary</span>
+              <span className="user-name">Lollima</span>
               <span className="user-description">Barangay Secretary</span>
             </div>
           </div>
@@ -194,7 +204,7 @@ const Sidebar = () => {
       {showLogoutModal && (
         <div className="logout-modal">
           <div className="modal-content">
-            <p className="modal-contentText">Are you sure you want to logout?</p>
+            <p>Are you sure you want to logout?</p>
             <div className="modal-actions">
               <button
                 className="yes-btn"
