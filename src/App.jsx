@@ -73,14 +73,14 @@ const App = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const location = useLocation();
 
-  // Determine if the current path is the login page
-  const isLoginPage =
-    location.pathname === "/login" || location.pathname === "/";
+  // Determine if the current path is the login or signup page
+  const isAuthPage =
+    location.pathname === "/login" || location.pathname === "/signup";
 
   return (
     <div className="app-container">
-      {/* Render Sidebar only if not on the login page */}
-      {!isLoginPage && (
+      {/* Render Sidebar only if not on an authentication page */}
+      {!isAuthPage && (
         <Sidebar isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
       )}
 

@@ -12,7 +12,7 @@ body {
 
 .home-container {
   min-height: 100vh;
-  background-image: url("../assets/home-page.png"); /* Updated path for public folder */
+  background-image: url("../assets/landing-page(2).png"); /* Updated path for public folder */
   background-size: cover; /* Ensure the background covers the entire container */
   background-position: center; /* Align the background to the center */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -23,13 +23,6 @@ body {
   width: 100%; /* Ensure the container width is 100% of the viewport */
   height: 100%;
   overflow-x: hidden;
-}
-
-/* Ensure scroll is working */
-.home-container::after {
-  content: "";
-  display: block;
-  height: 720px; /* Make the container tall enough to ensure scrolling */
 }
 
 .content {
@@ -123,7 +116,7 @@ button {
 
 /* Dashboard Button */
 .button-container button:last-child {
-  color: #0099cc; /* Blue text */
+  color: #ffffff; /* Blue text */
   background-color: transparent; /* Transparent background */
   border: 2px solid #0099cc; /* Blue border */
   font-weight: 700;

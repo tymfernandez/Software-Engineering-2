@@ -13,7 +13,7 @@ body {
 /* Dashboard container */
 .dashboard-container {
   min-height: 100vh; /* Ensures the container takes full height */
-  background-image: url("../assets/dashboard-page.png"); /* Use your dashboard background */
+  background-image: url("../assets/dashboard-page(2).png"); /* Use your dashboard background */
   background-size: cover; /* Ensure the background covers the entire container */
   background-position: center; /* Align the background to the center */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -30,7 +30,7 @@ body {
 .dashboard-container::after {
   content: "";
   display: block;
-  height: 600px; /* Make the container tall enough to ensure scrolling */
+  height: 250px; /* Make the container tall enough to ensure scrolling */
 }
 
 /* Submit Blotter Button */

@@ -12,6 +12,9 @@ const Sidebar = () => {
   const sidebarRef = useRef(null);
   const hamburgerRef = useRef(null); // Ref for the hamburger icon
 
+  const isLoginOrSignup =
+    location.pathname === "/login" || location.pathname === "/signup";
+
   // Toggle sidebar collapse
   const handleCollapse = (event) => {
     event.stopPropagation(); // Prevent outside click logic from triggering
@@ -67,6 +70,10 @@ const Sidebar = () => {
   //Function to determine if a menu item is active
   const isActive = (path) => location.pathname === path;
 
+  if (isLoginOrSignup) {
+    return null;
+  }
+
   return (
     <div
       className={`sidebar ${isCollapsed ? "collapsed" : ""}`}
@@ -80,7 +87,10 @@ const Sidebar = () => {
       <div
         className="hamburger-icon"
         onClick={handleCollapse}
-        ref={hamburgerRef} // Attach ref to hamburger icon
+        ref={hamburgerRef} // Attach ref to the hamburger icon
+        style={{
+          color: location.pathname === "/notifications" ? "#033343" : "white", // Change color dynamically
+        }}
       >
         {isCollapsed ? <FaBars size={24} /> : <FaAngleLeft size={28} />}
       </div>

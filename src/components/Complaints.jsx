@@ -4,7 +4,6 @@ import "../styles/Complaints.css";
 
 const Complaints = () => {
   const [visibleRows, setVisibleRows] = useState(6); // Default visible rows
-
   const handleSeeMore = () => {
     setVisibleRows((prev) => prev + 6); // Load 6 more rows on each click
   };
@@ -128,6 +127,28 @@ const Complaints = () => {
     }
   };
 
+  // State to hold status and priority for each row
+  const [statusData, setStatusData] = useState(
+    exampleData.map((item) => item.status)
+  );
+  const [priorityData, setPriorityData] = useState(
+    exampleData.map((item) => item.priority)
+  );
+
+  // Handle status change
+  const handleStatusChange = (index, newStatus) => {
+    const updatedStatus = [...statusData];
+    updatedStatus[index] = newStatus;
+    setStatusData(updatedStatus);
+  };
+
+  // Handle priority change
+  const handlePriorityChange = (index, newPriority) => {
+    const updatedPriority = [...priorityData];
+    updatedPriority[index] = newPriority;
+    setPriorityData(updatedPriority);
+  };
+
   return (
     <div className="complaints-container">
       <Header />
@@ -154,11 +175,6 @@ const Complaints = () => {
             className="search-icon"
           />
           <input type="text" placeholder="Search" className="search-bar" />
-          <img
-            src="../assets/filter-icon.png"
-            alt="Filter Icon"
-            className="filter-icon"
-          />
         </div>
       </div>
 
@@ -191,34 +207,50 @@ const Complaints = () => {
                     <td>{data.date}</td>
                     <td>{data.type}</td>
                     <td>
-                      <span
+                      <select
+                        value={statusData[index]}
+                        onChange={(e) =>
+                          handleStatusChange(index, e.target.value)
+                        }
                         style={{
-                          ...getStatusStyles(data.status),
+                          ...getStatusStyles(statusData[index]),
                           padding: "4px 7px",
                           borderRadius: "5px",
                           fontWeight: "bold",
-                          display: "inline-block",
-                          textAlign: "center",
-                          width: "90px",
+                          width: "95px",
+                          border: "none",
+                          outline: "none",
                         }}
                       >
-                        {data.status}
-                      </span>
+                        <option value="Pending">Pending</option>
+                        <option value="Resolved">Resolved</option>
+                        <option value="Ongoing">Ongoing</option>
+                      </select>
                     </td>
                     <td>
-                      <span
+                      <select
+                        value={priorityData[index]}
+                        onChange={(e) =>
+                          handlePriorityChange(index, e.target.value)
+                        }
                         style={{
-                          ...getPriorityStyles(data.priority),
+                          ...getPriorityStyles(priorityData[index]),
                           padding: "4px 7px",
                           borderRadius: "5px",
                           fontWeight: "bold",
-                          display: "inline-block",
-                          textAlign: "center",
-                          width: "90px",
+                          width: "95px",
+                          border: "none",
+                          outline: "none",
                         }}
                       >
-                        {data.priority}
-                      </span>
+                        <option value="SELECT" disabled>
+                          Select
+                        </option>{" "}
+                        {/* Default option */}
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                      </select>
                     </td>
                     <td>
                       <a href="#" className="view-link">
